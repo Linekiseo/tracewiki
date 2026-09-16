@@ -1,0 +1,162 @@
+{
+  "manifest_schema_version": "code-golden-manifest-v1",
+  "dataset_id": "code-golden",
+  "dataset_version": "code-golden-v1",
+  "source_domain": "code",
+  "status": "annotated",
+  "immutable": true,
+  "created_at": "2026-07-27",
+  "revision_policy": "Any case, judgment, fixture, or annotation-contract change requires a new dataset version; treatment-aware edits are forbidden.",
+  "files": {
+    "cases": "evals/code/code-golden-v1.cases.yaml",
+    "annotation_contract": "evals/code/annotation-contract-v1.schema.json",
+    "fixture_manifest": "tests/fixtures/code_golden/fixture_manifest.json"
+  },
+  "sha256": {
+    "cases": "e00479e3c0fb78b6e89a522b2aa63c59f7315af9fa068ffb8ff26378bff58bf5",
+    "annotation_contract": "e1414a67e30adfc59df17b6609b4239e5c79d6fd727e80a3347ffe3e7fa7a7b4",
+    "fixture_manifest": "1c0f95bc7bb74423f005c84475143aa10d1c98bf38cee903abb78902d95e697a"
+  },
+  "counts": {
+    "cases": 50,
+    "smoke_cases": 15,
+    "hard_negative_judgments": 53,
+    "unanswerable_ambiguous_or_acl_cases": 7,
+    "delayed_or_second_reviewed_cases": 11
+  },
+  "task_distribution": {
+    "exact_location": 7,
+    "implementation": 7,
+    "call_reference_path": 7,
+    "bug_localization": 7,
+    "impact_analysis": 7,
+    "change_context": 5,
+    "historical_version": 5,
+    "test_validation": 5
+  },
+  "required_slices": [
+    "chinese",
+    "english",
+    "natural_language_to_code",
+    "identifier_heavy",
+    "low_lexical_overlap",
+    "same_name_hard_negative",
+    "wrong_version",
+    "generated_vendor",
+    "unanswerable",
+    "acl_forbidden",
+    "dirty_current",
+    "graph_required",
+    "graph_harmful"
+  ],
+  "slice_counts": {
+    "chinese": 9,
+    "english": 41,
+    "natural_language_to_code": 18,
+    "identifier_heavy": 22,
+    "low_lexical_overlap": 12,
+    "same_name_hard_negative": 21,
+    "wrong_version": 17,
+    "generated_vendor": 12,
+    "unanswerable": 7,
+    "acl_forbidden": 3,
+    "dirty_current": 14,
+    "graph_required": 24,
+    "graph_harmful": 13
+  },
+  "smoke_case_ids": [
+    "code-golden-v1-001",
+    "code-golden-v1-003",
+    "code-golden-v1-004",
+    "code-golden-v1-008",
+    "code-golden-v1-015",
+    "code-golden-v1-018",
+    "code-golden-v1-022",
+    "code-golden-v1-023",
+    "code-golden-v1-029",
+    "code-golden-v1-036",
+    "code-golden-v1-041",
+    "code-golden-v1-042",
+    "code-golden-v1-046",
+    "code-golden-v1-047",
+    "code-golden-v1-048"
+  ],
+  "annotation_policy": {
+    "stable_entity_first": true,
+    "acceptable_retrieval_units_required_for_answerable_targets": true,
+    "relevance_grades": [
+      -1,
+      0,
+      1,
+      2
+    ],
+    "required_path_direction_is_explicit": true,
+    "context_roles_are_required": true,
+    "forbidden_and_harmful_are_explicit": true,
+    "minimum_review_fraction": 0.2,
+    "treatment_blinded": true
+  },
+  "review": {
+    "primary_reviewer": "c0-02-primary",
+    "delayed_reviewer": "c0-02-delayed-review",
+    "reviewed_fraction": 0.22,
+    "disagreements": [
+      {
+        "id": "DG-001",
+        "topic": "Whether overload signatures are harmful or merely helpful for a concrete-implementation query.",
+        "resolution": "Signature stubs remain grade 1; same-name admin/vendor implementations are grade -1."
+      },
+      {
+        "id": "DG-002",
+        "topic": "Whether a clean passing validation can support the dirty worktree.",
+        "resolution": "Validation is exact-ref scoped; clean pass is forbidden for dirty-current claims."
+      }
+    ]
+  },
+  "c0_01_integration": {
+    "evaluation_cases": {
+      "name": "case_id",
+      "question": "query",
+      "expected_sources": "constant ['code']",
+      "expected_entity_ids": "expected_entity_ids",
+      "expected_paths": "required_paths[*].nodes",
+      "expected_commit_ids": "expected_entity_ids filtered to Commit",
+      "forbidden_entity_ids": "forbidden_entity_ids",
+      "required_version": "expected_ref",
+      "tags": "slices plus task"
+    },
+    "evaluation_case_profiles": {
+      "source_domain": "constant 'code'",
+      "task": "task",
+      "query_profile_json": "adapter adds repository_ids=[query_profile.repository_id], commit=query_profile.scope_ref, and languages=code_languages excluding text; style, acl_refs, and graph_requirement are retained",
+      "expected_unit_ids_json": "expected_unit_ids",
+      "expected_entity_types_json": "expected_entity_types",
+      "expected_locators_json": "expected_locators",
+      "required_edge_types_json": "required_edge_types",
+      "expected_context_roles_json": "expected_context_roles",
+      "expected_ref": "expected_ref",
+      "expected_answer_mode": "expected_answer_mode"
+    },
+    "evaluation_candidate_judgments": {
+      "case_id": "case_id",
+      "entity_id": "candidate_judgments[*].entity_id",
+      "retrieval_unit_id": "candidate_judgments[*].retrieval_unit_id",
+      "relevance_grade": "candidate_judgments[*].relevance_grade",
+      "necessity_role": "candidate_judgments[*].necessity_role",
+      "note": "candidate_judgments[*].note"
+    },
+    "required_path_extension": {
+      "field": "required_paths",
+      "reason": "Preserves edge type and incoming/outgoing traversal direction that legacy expected_paths cannot represent; cases 029-030 intentionally exercise incoming paths."
+    }
+  },
+  "known_integration_gaps": [
+    "C0-01 must add a durable loader that materializes YAML cases and candidate judgments into evaluation tables; tests/test_code_golden_dataset.py validates the adapter payload against the live C0-01 Pydantic contract.",
+    "The current legacy expected_paths representation loses edge type and direction; use required_paths for Code V2 path metrics.",
+    "C0-01 has no per-case access-context field; acl_refs are preserved in query_profile, but ACL-forbidden cases need runner-side authorization-context support before execution.",
+    "C0-01 persists expected_answer_mode but does not yet score refusal, clarification, or missing-evidence outcomes for unanswerable cases.",
+    "Fixture retrieval_unit_ids are immutable annotation IDs; a future Unit builder must publish matching IDs or provide a deterministic locator-based resolver.",
+    "Historical fixture snapshots are a logical partial catalog, not a nested .git directory; C0-03 must materialize them in a temporary repository or resolve catalog IDs without changing Golden v1.",
+    "No baseline or treatment result is included in this dataset."
+  ]
+}

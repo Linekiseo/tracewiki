@@ -1,0 +1,873 @@
+{
+  "acceptance": {
+    "audit_control_run_ids": [
+      "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+      "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064"
+    ],
+    "audit_controls_are_qualified_baselines": false,
+    "decision": "not-qualified",
+    "gates": [
+      {
+        "evidence": {
+          "c3_03_gate_approved": true,
+          "calibration_artifact": {
+            "artifact_fingerprint": "sha256:e4e0f88d64751ab1d560b460c2def7638791fb9a82f181a9f92a08dee9019b73",
+            "brier": null,
+            "class": "CalibrationArtifact",
+            "ece": null,
+            "index_version": "code-hybrid-v2:index-set-8f85fac21244d43c",
+            "labeled_count": 13,
+            "method": "rank_percentile_empirical",
+            "model_version": "deterministic-rules-v1",
+            "module": "evidence_rag.rag.sources.code.rerank_v2",
+            "profile_version": "code-query-profile-v1",
+            "provisional": true,
+            "reranker_version": "code-deterministic-reranker-v1",
+            "sample_count": 160,
+            "status": "provisional",
+            "unavailable_reason": "",
+            "version": "code-rerank-calibration-v1"
+          },
+          "execution_mode": "qualified",
+          "hybrid_retriever": {
+            "channels": [
+              "exact",
+              "sparse",
+              "dense"
+            ],
+            "class": "CodeHybridV2Retriever",
+            "fusion": "deterministic-weighted-rrf-v2",
+            "index_family": "ast-v2",
+            "module": "evidence_rag.rag.sources.code.dense_v2",
+            "version": "code-hybrid-v2"
+          },
+          "publisher": {
+            "class": "CodeDenseProfilePublisher",
+            "module": "evidence_rag.rag.sources.code.dense_v2",
+            "version": "code-dense-publication-v1"
+          },
+          "reranker": {
+            "class": "CodeRerankedRetriever",
+            "fallback_policy": "preserve-hybrid-order-v1",
+            "module": "evidence_rag.rag.sources.code.rerank_v2",
+            "policy": "deterministic-rules-v1",
+            "version": "code-deterministic-reranker-v1"
+          }
+        },
+        "gate": "production_component_identity_and_c3_03_gate",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "case_count": 33,
+          "result_count": 33
+        },
+        "gate": "complete_33_case_coverage",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "clean": true
+        },
+        "gate": "artifact_security",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "baseline": {
+            "available_cases": 6,
+            "denominator": 6.0,
+            "eligible_cases": 6,
+            "membership_case_count": 7,
+            "metric_name": "entity_recall@10",
+            "numerator": 5.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.8333333333333334
+          },
+          "delta": {
+            "direction": "higher",
+            "directional_delta": 0.0,
+            "status": "available",
+            "treatment_minus_baseline": 0.0
+          },
+          "membership": {
+            "canonical_case_ids": [
+              "code-golden-v2-001",
+              "code-golden-v2-002",
+              "code-golden-v2-003",
+              "code-golden-v2-004",
+              "code-golden-v2-005",
+              "code-golden-v2-006",
+              "code-golden-v2-007"
+            ],
+            "case_count": 7,
+            "case_membership_hash": "sha256:ca0588e6e5e177e95eec303594da460397a8fb1eece9a6cadf400078ff264f96"
+          },
+          "metric_denominator_equal": true,
+          "metric_name": "entity_recall@10",
+          "same_case_membership": true,
+          "scope": "exact",
+          "treatment": {
+            "available_cases": 6,
+            "denominator": 6.0,
+            "eligible_cases": 6,
+            "membership_case_count": 7,
+            "metric_name": "entity_recall@10",
+            "numerator": 5.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.8333333333333334
+          }
+        },
+        "gate": "cb0_exact_non_regression",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "baseline": {
+            "available_cases": 6,
+            "denominator": 10.0,
+            "eligible_cases": 6,
+            "membership_case_count": 9,
+            "metric_name": "entity_recall@10",
+            "numerator": 10.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 1.0
+          },
+          "delta": {
+            "direction": "higher",
+            "directional_delta": 0.0,
+            "status": "available",
+            "treatment_minus_baseline": 0.0
+          },
+          "membership": {
+            "canonical_case_ids": [
+              "code-golden-v2-002",
+              "code-golden-v2-005",
+              "code-golden-v2-007",
+              "code-golden-v2-015",
+              "code-golden-v2-017",
+              "code-golden-v2-021",
+              "code-golden-v2-028",
+              "code-golden-v2-029",
+              "code-golden-v2-035"
+            ],
+            "case_count": 9,
+            "case_membership_hash": "sha256:72ea399fe97be26548c55f231ffbefeeb7a2ac06ffce32900b39634142d3e3a9"
+          },
+          "metric_denominator_equal": true,
+          "metric_name": "entity_recall@10",
+          "same_case_membership": true,
+          "scope": "identifier",
+          "treatment": {
+            "available_cases": 6,
+            "denominator": 10.0,
+            "eligible_cases": 6,
+            "membership_case_count": 9,
+            "metric_name": "entity_recall@10",
+            "numerator": 10.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 1.0
+          }
+        },
+        "gate": "cb0_identifier_non_regression",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "baseline": {
+            "available_cases": 28,
+            "denominator": 44.0,
+            "eligible_cases": 28,
+            "membership_case_count": 33,
+            "metric_name": "expected_locator_recall@10",
+            "numerator": 37.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.8409090909090909
+          },
+          "delta": {
+            "direction": "higher",
+            "directional_delta": -0.20454545454545459,
+            "status": "available",
+            "treatment_minus_baseline": -0.20454545454545459
+          },
+          "membership": {
+            "canonical_case_ids": [
+              "code-golden-v2-001",
+              "code-golden-v2-002",
+              "code-golden-v2-003",
+              "code-golden-v2-004",
+              "code-golden-v2-005",
+              "code-golden-v2-006",
+              "code-golden-v2-007",
+              "code-golden-v2-008",
+              "code-golden-v2-009",
+              "code-golden-v2-010",
+              "code-golden-v2-011",
+              "code-golden-v2-012",
+              "code-golden-v2-013",
+              "code-golden-v2-014",
+              "code-golden-v2-015",
+              "code-golden-v2-016",
+              "code-golden-v2-017",
+              "code-golden-v2-018",
+              "code-golden-v2-019",
+              "code-golden-v2-021",
+              "code-golden-v2-022",
+              "code-golden-v2-023",
+              "code-golden-v2-025",
+              "code-golden-v2-026",
+              "code-golden-v2-027",
+              "code-golden-v2-028",
+              "code-golden-v2-029",
+              "code-golden-v2-030",
+              "code-golden-v2-031",
+              "code-golden-v2-032",
+              "code-golden-v2-033",
+              "code-golden-v2-034",
+              "code-golden-v2-035"
+            ],
+            "case_count": 33,
+            "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+          },
+          "metric_denominator_equal": true,
+          "metric_name": "expected_locator_recall@10",
+          "same_case_membership": true,
+          "scope": "overall",
+          "treatment": {
+            "available_cases": 28,
+            "denominator": 44.0,
+            "eligible_cases": 28,
+            "membership_case_count": 33,
+            "metric_name": "expected_locator_recall@10",
+            "numerator": 28.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.6363636363636364
+          }
+        },
+        "gate": "cb0_locator_non_regression",
+        "passed": false,
+        "reason": "treatment regressed or the fixed C-B0 comparison is unavailable",
+        "status": "failed"
+      },
+      {
+        "evidence": {
+          "hard_negative": {
+            "baseline": {
+              "available_cases": 4,
+              "denominator": 4.0,
+              "eligible_cases": 4,
+              "membership_case_count": 4,
+              "metric_name": "hard_negative_error@10",
+              "numerator": 4.0,
+              "reason": null,
+              "status": "available",
+              "unavailable_cases": 0,
+              "value": 1.0
+            },
+            "delta": {
+              "direction": "lower",
+              "directional_delta": -0.0,
+              "status": "available",
+              "treatment_minus_baseline": 0.0
+            },
+            "membership": {
+              "canonical_case_ids": [
+                "code-golden-v2-006",
+                "code-golden-v2-021",
+                "code-golden-v2-023",
+                "code-golden-v2-028"
+              ],
+              "case_count": 4,
+              "case_membership_hash": "sha256:933ce0b477390eea075c7f907fee9b005293270158a418abe5cbf5e5501c321b"
+            },
+            "metric_denominator_equal": true,
+            "metric_name": "hard_negative_error@10",
+            "same_case_membership": true,
+            "scope": "same_name_hard_negative",
+            "treatment": {
+              "available_cases": 4,
+              "denominator": 4.0,
+              "eligible_cases": 4,
+              "membership_case_count": 4,
+              "metric_name": "hard_negative_error@10",
+              "numerator": 4.0,
+              "reason": null,
+              "status": "available",
+              "unavailable_cases": 0,
+              "value": 1.0
+            }
+          },
+          "harmful": {
+            "baseline": {
+              "available_cases": 17,
+              "denominator": 92.0,
+              "eligible_cases": 17,
+              "membership_case_count": 33,
+              "metric_name": "harmful_candidate_rate@10",
+              "numerator": 7.0,
+              "reason": null,
+              "status": "available",
+              "unavailable_cases": 0,
+              "value": 0.07608695652173914
+            },
+            "delta": {
+              "direction": "lower",
+              "directional_delta": -0.0024844720496894346,
+              "status": "available",
+              "treatment_minus_baseline": 0.0024844720496894346
+            },
+            "membership": {
+              "canonical_case_ids": [
+                "code-golden-v2-001",
+                "code-golden-v2-002",
+                "code-golden-v2-003",
+                "code-golden-v2-004",
+                "code-golden-v2-005",
+                "code-golden-v2-006",
+                "code-golden-v2-007",
+                "code-golden-v2-008",
+                "code-golden-v2-009",
+                "code-golden-v2-010",
+                "code-golden-v2-011",
+                "code-golden-v2-012",
+                "code-golden-v2-013",
+                "code-golden-v2-014",
+                "code-golden-v2-015",
+                "code-golden-v2-016",
+                "code-golden-v2-017",
+                "code-golden-v2-018",
+                "code-golden-v2-019",
+                "code-golden-v2-021",
+                "code-golden-v2-022",
+                "code-golden-v2-023",
+                "code-golden-v2-025",
+                "code-golden-v2-026",
+                "code-golden-v2-027",
+                "code-golden-v2-028",
+                "code-golden-v2-029",
+                "code-golden-v2-030",
+                "code-golden-v2-031",
+                "code-golden-v2-032",
+                "code-golden-v2-033",
+                "code-golden-v2-034",
+                "code-golden-v2-035"
+              ],
+              "case_count": 33,
+              "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+            },
+            "metric_denominator_equal": false,
+            "metric_name": "harmful_candidate_rate@10",
+            "same_case_membership": true,
+            "scope": "overall",
+            "treatment": {
+              "available_cases": 17,
+              "denominator": 140.0,
+              "eligible_cases": 17,
+              "membership_case_count": 33,
+              "metric_name": "harmful_candidate_rate@10",
+              "numerator": 11.0,
+              "reason": null,
+              "status": "available",
+              "unavailable_cases": 0,
+              "value": 0.07857142857142857
+            }
+          }
+        },
+        "gate": "hard_negative_or_harmful_non_regression",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "all_timeout_fallbacks_valid": true,
+          "fallback_rate": {
+            "denominator": 33,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "fallback_reasons": {},
+          "fallback_valid_count": 0,
+          "invalid_timeout_fallback_count": 0,
+          "policy": "preserve-hybrid-order-v1",
+          "timeout_budget_ms": 100,
+          "timeout_count": 0,
+          "timeout_fallback_rate": {
+            "denominator": 33,
+            "numerator": 0,
+            "value": 0.0
+          },
+          "timeout_p95_ms": {
+            "reason": "no timing samples",
+            "sample_count": 0,
+            "status": "unavailable",
+            "value": null
+          }
+        },
+        "gate": "timeout_fallback_correctness",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "artifact": {
+            "artifact_fingerprint": "sha256:e4e0f88d64751ab1d560b460c2def7638791fb9a82f181a9f92a08dee9019b73",
+            "brier": null,
+            "class": "CalibrationArtifact",
+            "ece": null,
+            "index_version": "code-hybrid-v2:index-set-8f85fac21244d43c",
+            "labeled_count": 13,
+            "method": "rank_percentile_empirical",
+            "model_version": "deterministic-rules-v1",
+            "module": "evidence_rag.rag.sources.code.rerank_v2",
+            "profile_version": "code-query-profile-v1",
+            "provisional": true,
+            "reranker_version": "code-deterministic-reranker-v1",
+            "sample_count": 160,
+            "status": "provisional",
+            "unavailable_reason": "",
+            "version": "code-rerank-calibration-v1"
+          },
+          "brier": {
+            "status": "provisional",
+            "value": 0.3070288461538462
+          },
+          "ece": {
+            "bin_count": 10,
+            "bins": [
+              {
+                "absolute_gap": 0.5775,
+                "count": 20,
+                "empirical_positive_rate": 0.6,
+                "lower": 0.0,
+                "mean_score": 0.022500000000000003,
+                "upper": 0.1
+              },
+              {
+                "absolute_gap": 0.425,
+                "count": 5,
+                "empirical_positive_rate": 0.6,
+                "lower": 0.1,
+                "mean_score": 0.175,
+                "upper": 0.2
+              },
+              {
+                "absolute_gap": 0.32500000000000007,
+                "count": 5,
+                "empirical_positive_rate": 0.8,
+                "lower": 0.4,
+                "mean_score": 0.475,
+                "upper": 0.5
+              },
+              {
+                "absolute_gap": 0.028124999999999956,
+                "count": 8,
+                "empirical_positive_rate": 0.5,
+                "lower": 0.5,
+                "mean_score": 0.528125,
+                "upper": 0.6
+              },
+              {
+                "absolute_gap": 0.11111111111111116,
+                "count": 27,
+                "empirical_positive_rate": 0.8888888888888888,
+                "lower": 0.9,
+                "mean_score": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "status": "provisional",
+            "value": 0.28500000000000003
+          },
+          "interpretation": "provisional calibrated scores only; probability claims are forbidden",
+          "minimum_final_observations": 100,
+          "observation_count": 65,
+          "probability_claim_allowed": false,
+          "status": "provisional",
+          "unavailable_reasons": {
+            "CalibrationArtifactMismatchError: calibration artifact profile/model/index/reranker version mismatch": 120
+          }
+        },
+        "gate": "calibration_evidence_and_claim_honesty",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      }
+    ],
+    "qualified_baseline_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+    "schema_version": "code-c-b5-acceptance-v1"
+  },
+  "artifact_set_hash": "sha256:4598fca1682f6e94467ecdde70f3948f7f940ee4455aafba30a2697882db7946",
+  "artifacts": {
+    "attempt-audit.json": {
+      "bytes": 719,
+      "sha256": "sha256:6a9d4bcd929e89b73e3db145ee127279b00cd3579c2a98ce4ebdbd44b17717d7"
+    },
+    "coverage.json": {
+      "bytes": 14716,
+      "sha256": "sha256:3eb91604f2876fa4d1d04301b139dfccb0a9566900fdd04ca8002237f9d1c7a7"
+    },
+    "error-analysis.json": {
+      "bytes": 198257,
+      "sha256": "sha256:6c75c4dde7f267450577a5e9dfc55d18fd00573feb49fa542111dee6ce533329"
+    },
+    "evaluation.sqlite3": {
+      "bytes": 10846208,
+      "sha256": "sha256:0b2ec52a685de6d56e8c2ad2eb81e7508bbbf4782bde1548def896c1d3aaff6b"
+    },
+    "latency.json": {
+      "bytes": 16534,
+      "sha256": "sha256:13698dd94d02ed4ed23f79b375bbf21355e2c0868b2f0d59d462433895df9369"
+    },
+    "materialization.json": {
+      "bytes": 30294,
+      "sha256": "sha256:6f11e3b9e3a64e4b8e12b39e48801b84947c3017c78ce3c19ed5d5bc6bfd7f87"
+    },
+    "metrics.json": {
+      "bytes": 1485074,
+      "sha256": "sha256:599a494be3f8e126769dd5985416b900f41c11be03773a8b65abebe0e216c2ca"
+    },
+    "slices.json": {
+      "bytes": 1008284,
+      "sha256": "sha256:3551030cb24e4bfddbe5e0879e75143b8025686c83a533e9afba41a379d0ed0c"
+    },
+    "storage.json": {
+      "bytes": 2083,
+      "sha256": "sha256:7022ca97f022d6a443de2cacf8834bd122177aeac147f3c9327a34baddb7539d"
+    }
+  },
+  "c3_03_gate_approved": true,
+  "completed_at": "2026-07-27T13:38:34.747373+00:00",
+  "config": {
+    "audit_control_run_ids": [
+      "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+      "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064"
+    ],
+    "audit_controls_are_qualified_baselines": false,
+    "calibration_artifact": {
+      "artifact_fingerprint": "sha256:e4e0f88d64751ab1d560b460c2def7638791fb9a82f181a9f92a08dee9019b73",
+      "brier": null,
+      "class": "CalibrationArtifact",
+      "ece": null,
+      "index_version": "code-hybrid-v2:index-set-8f85fac21244d43c",
+      "labeled_count": 13,
+      "method": "rank_percentile_empirical",
+      "model_version": "deterministic-rules-v1",
+      "module": "evidence_rag.rag.sources.code.rerank_v2",
+      "profile_version": "code-query-profile-v1",
+      "provisional": true,
+      "reranker_version": "code-deterministic-reranker-v1",
+      "sample_count": 160,
+      "status": "provisional",
+      "unavailable_reason": "",
+      "version": "code-rerank-calibration-v1"
+    },
+    "capability_boundary": {
+      "available": [
+        "active-generation ast-v2 retrieval units",
+        "exact, sparse, and local dense hybrid retrieval",
+        "deterministic reranking with explicit timeout fallback",
+        "versioned calibration artifact states",
+        "candidate explanation codes and negative reason auditing"
+      ],
+      "unavailable": [
+        {
+          "capability": "cross-encoder reranking",
+          "execution": "not-run",
+          "reason": "C-B5 is deterministic and offline; no cross-encoder is installed or authorized.",
+          "status": "unavailable"
+        },
+        {
+          "capability": "remote model reranking or calibration",
+          "reason": "C-B5 is a local, deterministic treatment.",
+          "status": "disabled"
+        },
+        {
+          "capability": "historical, graph, and validation retrieval",
+          "reason": "The released 17 ineligible cases remain outside the fixed denominator.",
+          "status": "out-of-scope"
+        }
+      ]
+    },
+    "channel_budget": {
+      "context_token_budget": 4000,
+      "dense_candidates": 40,
+      "exact_candidates": 20,
+      "graph_candidates": 0,
+      "graph_edge_budget": 0,
+      "graph_node_budget": 0,
+      "history_candidates": 0,
+      "sparse_candidates": 40,
+      "test_candidates": 0,
+      "total_candidates": 60
+    },
+    "cross_encoder": {
+      "execution": "not-run",
+      "reason": "C-B5 is deterministic and offline; no cross-encoder is installed or authorized.",
+      "status": "unavailable"
+    },
+    "flag_snapshot": {
+      "calibration_enabled": true,
+      "context": "snippet-v1",
+      "cross_encoder_enabled": false,
+      "graph_candidate_enabled": false,
+      "hybrid_enabled": true,
+      "local_dense_required": true,
+      "remote_model_enabled": false,
+      "rerank_timeout_ms": 100,
+      "reranker_enabled": true,
+      "semantic_resolver": "off",
+      "timeout_fallback": "preserve-hybrid-order-v1",
+      "unit_builder": "ast-v2"
+    },
+    "hybrid_retriever": {
+      "channels": [
+        "exact",
+        "sparse",
+        "dense"
+      ],
+      "class": "CodeHybridV2Retriever",
+      "fusion": "deterministic-weighted-rrf-v2",
+      "index_family": "ast-v2",
+      "module": "evidence_rag.rag.sources.code.dense_v2",
+      "version": "code-hybrid-v2"
+    },
+    "production_identity": {
+      "calibration_artifact_class": "CalibrationArtifact",
+      "hybrid_retriever_class": "CodeHybridV2Retriever",
+      "module": "evidence_rag.rag.sources.code",
+      "publisher_class": "CodeDenseProfilePublisher",
+      "reranker_class": "CodeRerankedRetriever",
+      "stage_order": [
+        "ast-v2",
+        "local-dense-ready",
+        "exact-sparse-dense-hybrid",
+        "deterministic-rerank"
+      ]
+    },
+    "profile": {
+      "batch_size": 64,
+      "dimension": 384,
+      "id": "code_nl/local-hash-v2",
+      "instruction": "",
+      "instruction_revision": "none-v1",
+      "locality": "local",
+      "max_tokens": 8192,
+      "model": "local-hash-v2",
+      "normalization_revision": "local-hash-v2",
+      "purpose": "code_nl",
+      "redaction_policy": "deny-secrets-v1",
+      "revision": "1"
+    },
+    "provider_provenance": {
+      "dimension": 384,
+      "locality": "local",
+      "model": "local-hash-v2",
+      "provider": "local-hash",
+      "revision": "2"
+    },
+    "publisher": {
+      "class": "CodeDenseProfilePublisher",
+      "module": "evidence_rag.rag.sources.code.dense_v2",
+      "version": "code-dense-publication-v1"
+    },
+    "qualified_baseline_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+    "reranker": {
+      "class": "CodeRerankedRetriever",
+      "fallback_policy": "preserve-hybrid-order-v1",
+      "module": "evidence_rag.rag.sources.code.rerank_v2",
+      "policy": "deterministic-rules-v1",
+      "version": "code-deterministic-reranker-v1"
+    },
+    "schema_version": "code-c-b5-config-snapshot-v1",
+    "sparse_index_version": "fts5-code-v2",
+    "top_k": 20,
+    "treatment": "C-B5 deterministic reranker plus calibration"
+  },
+  "config_fingerprint": "sha256:7ff98b1c7831423bced2085dff010f64bff107e35106783625817e6aa70959b0",
+  "controls": {
+    "cb1_not_qualified_audit": {
+      "artifact_directory": "33f76ed55a3d4c9ab1060a54bfa13d35",
+      "artifact_set_hash": "sha256:8804f5338a3284e4bd877e3b3e28365c0a67553e2a9db18a1dede3e644778f50",
+      "manifest_canonical_hash": "sha256:868a89a906e176cc9a94ac6a7d151266ae73291bb9e6d4b9fa7386c1f3a85355",
+      "qualification_use": "forbidden",
+      "run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+      "treatment_qualified": false
+    },
+    "cb2_not_qualified_audit": {
+      "artifact_directory": "6fad2dd1c67846668ba38045ddae0064",
+      "artifact_set_hash": "sha256:24d0e24c92294e43fe310b9502b5ea47f0848b9f433561819bc0714b7f653667",
+      "manifest_canonical_hash": "sha256:7051a1e0e6ad897da739709bc73593d19e84f9e0af7816bafa89f4809500afc6",
+      "qualification_use": "forbidden",
+      "run_id": "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064",
+      "treatment_qualified": false
+    },
+    "qualified_baseline": {
+      "artifact_directory": "5a92eafdff5d49e6aae8bb55fdc14061",
+      "artifact_set_hash": "sha256:9d9f3bc86a2e9e0419db54a85b89156c7593596a1903a940e2e37f8c1e33ab44",
+      "manifest_canonical_hash": "sha256:6ef5a2f1b3c82ed9007da41fd17d07ad8fd64fd0f12532b2751dc0dd510035ca",
+      "qualification_record_hash": "sha256:9ba8081fa67285e5e9d418703b53d1ffc42562f33e24de2028afeaaa223a034f",
+      "run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "treatment_qualified": true
+    }
+  },
+  "dataset": {
+    "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+    "eligible_cases": 33,
+    "id": "code-golden",
+    "ineligible_cases": 17,
+    "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+    "release_record_id": "code-golden-v2-release-001",
+    "total_cases": 50,
+    "version": "code-golden-v2"
+  },
+  "display_key": "CODE-EVAL-BAF5B9EB",
+  "execution_mode": "qualified",
+  "implementation": {
+    "evaluation_runner": "code-evaluation-v2.1",
+    "input_fingerprint": {
+      "cb0_qualified_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "cb1_audit_is_qualified_baseline": false,
+      "cb1_audit_run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+      "cb2_audit_is_qualified_baseline": false,
+      "cb2_audit_run_id": "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064",
+      "cb5_treatment_input_hash": "sha256:cd82ea354628ffe4ec2e4837fe395389298b5ad4f405d1f60dd2807c5c096ee3",
+      "flag_snapshot_fingerprint": "sha256:f304109677e494a26195669855cabb6dd8b83b4e76471eb540624467f0b770d0",
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "implementation_input_hash": "sha256:ac46bbce76e1c72c2bb5b75e4b0e8bf23f78d68557f11787334eca0b947695b6",
+      "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+      "production_identity_fingerprint": "sha256:22eb81e609a8e8a1386a2050d450c3f6655364a6f6afc2b53fff3157d61b2e09",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:82f486fdb2cf60cfd3db6d9529b4312ecd088fbe72d81b8dbc88179c91515593",
+      "workspace_status_hash": "sha256:fbb7879cc03320c3dc8ebfc201497fef39e296538b7184128ee507a5b3438dc4",
+      "worktree_list_hash": "sha256:f752ead7f0430a859108ac8788410a4332b4c14d2d23c14107566b552924688e"
+    },
+    "input_fingerprint_after": {
+      "cb0_qualified_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "cb1_audit_is_qualified_baseline": false,
+      "cb1_audit_run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+      "cb2_audit_is_qualified_baseline": false,
+      "cb2_audit_run_id": "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064",
+      "cb5_treatment_input_hash": "sha256:cd82ea354628ffe4ec2e4837fe395389298b5ad4f405d1f60dd2807c5c096ee3",
+      "flag_snapshot_fingerprint": "sha256:f304109677e494a26195669855cabb6dd8b83b4e76471eb540624467f0b770d0",
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "implementation_input_hash": "sha256:ac46bbce76e1c72c2bb5b75e4b0e8bf23f78d68557f11787334eca0b947695b6",
+      "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+      "production_identity_fingerprint": "sha256:22eb81e609a8e8a1386a2050d450c3f6655364a6f6afc2b53fff3157d61b2e09",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:82f486fdb2cf60cfd3db6d9529b4312ecd088fbe72d81b8dbc88179c91515593",
+      "workspace_status_hash": "sha256:fbb7879cc03320c3dc8ebfc201497fef39e296538b7184128ee507a5b3438dc4",
+      "worktree_list_hash": "sha256:f752ead7f0430a859108ac8788410a4332b4c14d2d23c14107566b552924688e"
+    },
+    "input_fingerprint_matched": true,
+    "runner": "code-c-b5-runner-v1"
+  },
+  "project_id": "project-code-golden-v2",
+  "run_id": "evaluation-run://project-code-golden-v2/baf5b9eb49464ca79920030fd1c772de",
+  "schema_version": "code-c-b5-reranker-calibration-treatment-artifact-v1",
+  "security": {
+    "absolute_temporary_paths_included": false,
+    "credentials_included": false,
+    "network_used": false,
+    "portable_placeholders": [
+      "<redacted-temp-path>"
+    ],
+    "scanner_rule_ids": [
+      "portable-system-temp-roots-v1",
+      "high-confidence-credential-assignments-v1"
+    ],
+    "scanner_scope": "all SQLite TEXT columns and all artifact JSON files"
+  },
+  "snapshot": {
+    "case_membership_hash": "sha256:91a5ab7c4d61fbb4d6b587d77e06a264ca38372745897663fd2fee7e3c1d5f74",
+    "comparison_fingerprint": "sha256:e5ba9ed52a4a6bc3cbabde2a4e2740cfdaf792cb2da54925e605a85118b325ba",
+    "observed_index_generations": [
+      "gen-070d8558-8aed-4d1c-b79e-1dcc32c62b3e",
+      "gen-2b524a06-8831-4539-b579-0a7928d18658",
+      "gen-d67af58d-c0d3-487d-9028-2c2d00102c5d"
+    ],
+    "observed_retriever": {
+      "calibration_index_version": [
+        "code-hybrid-v2:index-set-8f85fac21244d43c"
+      ],
+      "calibration_model_version": [
+        "deterministic-rules-v1"
+      ],
+      "calibration_profile_version": [
+        "code-query-profile-v1"
+      ],
+      "calibration_reranker_version": [
+        "code-deterministic-reranker-v1"
+      ],
+      "calibration_version": [
+        "code-rerank-calibration-v1"
+      ],
+      "embedding_model": [
+        "local-hash-v2"
+      ],
+      "embedding_model_revision": [
+        "2"
+      ],
+      "embedding_profile_id": [
+        "code_nl/local-hash-v2"
+      ],
+      "embedding_profile_revision": [
+        "1"
+      ],
+      "fusion": [
+        "deterministic-weighted-rrf-v2"
+      ],
+      "graph_candidate_enabled": false,
+      "index_version": [
+        "code-hybrid-v2:index-set-0af3c397a621e75d",
+        "code-hybrid-v2:index-set-8f85fac21244d43c",
+        "code-hybrid-v2:index-set-f8d71f16d18f2206"
+      ],
+      "publisher_version": [
+        "code-dense-publication-v1"
+      ],
+      "reranker_class": [
+        "CodeRerankedRetriever"
+      ],
+      "reranker_version": [
+        "code-deterministic-reranker-v1"
+      ],
+      "retriever_version": [
+        "code-hybrid-v2"
+      ],
+      "unit_builder_version": [
+        "ast-v2"
+      ]
+    },
+    "schema_version": 191,
+    "snapshot_id": "sha256:2bb693913e067974571dd0df37dc194bd9f957ada4a80f6f6cff03c72eefe032"
+  },
+  "started_at": "2026-07-27T13:38:21.070455+00:00",
+  "status": "completed",
+  "treatment_qualified": false
+}

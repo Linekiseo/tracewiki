@@ -1,0 +1,48 @@
+{
+  "artifact_id": "a22b322a141741ae9a710aa347fbf032",
+  "database_bytes": 626688,
+  "executed_at_utc": "2026-07-28T07:18:14+00:00",
+  "index_build_time_ms": 0.605625,
+  "measurement_method": {
+    "clock": "time.perf_counter_ns",
+    "index": "isolated-portable-sqlite-index-build",
+    "ingest": "isolated-portable-sqlite-transaction-per-case-arm",
+    "memory": "python-tracemalloc-peak-per-case-arm"
+  },
+  "pipeline_profile": "golden-python30-three-arm-production-v1",
+  "retrieval_latency_ms_p95": {
+    "acceptance_eligible": false,
+    "reason": "retrieval phase is outside this semantic-edge treatment Run",
+    "status": "unavailable",
+    "value": null
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/a22b322a141741ae9a710aa347fbf032",
+  "sample_count": 90,
+  "schema_version": "code-c-b4-performance-v1",
+  "treatments": {
+    "merged_policy": {
+      "case_count": 30,
+      "ingest_latency_ms_p95": 0.404458,
+      "ingest_time_ms": 8.728286,
+      "peak_memory_bytes": 18984,
+      "treatment_latency_ms_p95": 3.228958,
+      "treatment_time_ms": 51.419285
+    },
+    "scip_semantic": {
+      "case_count": 30,
+      "ingest_latency_ms_p95": 0.354666,
+      "ingest_time_ms": 8.565834,
+      "peak_memory_bytes": 19170,
+      "treatment_latency_ms_p95": 2.358417,
+      "treatment_time_ms": 37.597418
+    },
+    "tree_sitter_conservative": {
+      "case_count": 30,
+      "ingest_latency_ms_p95": 0.329917,
+      "ingest_time_ms": 8.360877,
+      "peak_memory_bytes": 13766,
+      "treatment_latency_ms_p95": 0.960875,
+      "treatment_time_ms": 17.249501
+    }
+  }
+}

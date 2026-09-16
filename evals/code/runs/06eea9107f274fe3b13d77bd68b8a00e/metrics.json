@@ -1,0 +1,440 @@
+{
+  "arms": {
+    "ast_enclosing": {
+      "ambiguity_noise_unavailable": {
+        "ambiguity_case_count": 1,
+        "expected_status_counts": {
+          "ambiguous": 1,
+          "labeled": 8,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        },
+        "noise_case_count": 1,
+        "observed_ambiguity_rate": 0.0,
+        "observed_noise_rate": 0.083333333333,
+        "observed_status_counts": {
+          "available": 9,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        },
+        "observed_unavailable_rate": 0.083333333333,
+        "rejected_case_count": 1,
+        "unavailable_case_count": 1
+      },
+      "arm": "ast_enclosing",
+      "by_role": {
+        "introduced": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 1
+        },
+        "modified": {
+          "f1": 0.923076923077,
+          "false_negative": 0,
+          "false_positive": 2,
+          "precision": 0.857142857143,
+          "recall": 1.0,
+          "true_positive": 12
+        },
+        "removed": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 1
+        },
+        "renamed": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 2
+        }
+      },
+      "by_side": {
+        "new": {
+          "f1": 0.941176470588,
+          "false_negative": 0,
+          "false_positive": 1,
+          "precision": 0.888888888889,
+          "recall": 1.0,
+          "true_positive": 8
+        },
+        "old": {
+          "f1": 0.941176470588,
+          "false_negative": 0,
+          "false_positive": 1,
+          "precision": 0.888888888889,
+          "recall": 1.0,
+          "true_positive": 8
+        }
+      },
+      "change_context": {
+        "hit_count": 8,
+        "recall": 1.0,
+        "required_case_count": 8
+      },
+      "false_affected_symbol": {
+        "count": 2,
+        "predicted_symbol_count": 18,
+        "rate": 0.111111111111
+      },
+      "label_status": {
+        "canonical_symbol_label_count": 16,
+        "labeled_case_count": 8,
+        "labels_are_production_results": false,
+        "labels_are_programmatic_fixture_truth": true,
+        "membership_digest": "sha256:48d74df8b1914af770e343f0a604bdb71dd5bdded7101cb1c2d7cf07a27ee4cf",
+        "record_count": 12,
+        "status_counts": {
+          "ambiguous": 1,
+          "labeled": 8,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        }
+      },
+      "measurement_source": "production-cb6-run",
+      "overall": {
+        "f1": 0.941176470588,
+        "false_negative": 0,
+        "false_positive": 2,
+        "precision": 0.888888888889,
+        "recall": 1.0,
+        "true_positive": 16
+      },
+      "performance": {
+        "latency_ms": {
+          "p50": 3.865792,
+          "p95": 4.319709
+        },
+        "memory_bytes": {
+          "p50": 125985,
+          "p95": 129851,
+          "peak": 129851
+        },
+        "observation_count": 12
+      },
+      "production_result": true,
+      "quality_claim": "derived-production-diff-binding-audit",
+      "schema_version": "code-c-b6-metric-contract-v1"
+    },
+    "ast_rename_lineage_merged": {
+      "ambiguity_noise_unavailable": {
+        "ambiguity_case_count": 1,
+        "expected_status_counts": {
+          "ambiguous": 1,
+          "labeled": 8,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        },
+        "noise_case_count": 1,
+        "observed_ambiguity_rate": 0.0,
+        "observed_noise_rate": 0.083333333333,
+        "observed_status_counts": {
+          "available": 9,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        },
+        "observed_unavailable_rate": 0.083333333333,
+        "rejected_case_count": 1,
+        "unavailable_case_count": 1
+      },
+      "arm": "ast_rename_lineage_merged",
+      "by_role": {
+        "introduced": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 1
+        },
+        "modified": {
+          "f1": 0.923076923077,
+          "false_negative": 0,
+          "false_positive": 2,
+          "precision": 0.857142857143,
+          "recall": 1.0,
+          "true_positive": 12
+        },
+        "removed": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 1
+        },
+        "renamed": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 2
+        }
+      },
+      "by_side": {
+        "new": {
+          "f1": 0.941176470588,
+          "false_negative": 0,
+          "false_positive": 1,
+          "precision": 0.888888888889,
+          "recall": 1.0,
+          "true_positive": 8
+        },
+        "old": {
+          "f1": 0.941176470588,
+          "false_negative": 0,
+          "false_positive": 1,
+          "precision": 0.888888888889,
+          "recall": 1.0,
+          "true_positive": 8
+        }
+      },
+      "change_context": {
+        "hit_count": 8,
+        "recall": 1.0,
+        "required_case_count": 8
+      },
+      "false_affected_symbol": {
+        "count": 2,
+        "predicted_symbol_count": 18,
+        "rate": 0.111111111111
+      },
+      "label_status": {
+        "canonical_symbol_label_count": 16,
+        "labeled_case_count": 8,
+        "labels_are_production_results": false,
+        "labels_are_programmatic_fixture_truth": true,
+        "membership_digest": "sha256:48d74df8b1914af770e343f0a604bdb71dd5bdded7101cb1c2d7cf07a27ee4cf",
+        "record_count": 12,
+        "status_counts": {
+          "ambiguous": 1,
+          "labeled": 8,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        }
+      },
+      "measurement_source": "production-cb6-run",
+      "overall": {
+        "f1": 0.941176470588,
+        "false_negative": 0,
+        "false_positive": 2,
+        "precision": 0.888888888889,
+        "recall": 1.0,
+        "true_positive": 16
+      },
+      "performance": {
+        "latency_ms": {
+          "p50": 4.032958,
+          "p95": 4.383875
+        },
+        "memory_bytes": {
+          "p50": 128070,
+          "p95": 132127,
+          "peak": 132127
+        },
+        "observation_count": 12
+      },
+      "production_result": true,
+      "quality_claim": "derived-production-diff-binding-audit",
+      "schema_version": "code-c-b6-metric-contract-v1"
+    },
+    "line_overlap_legacy": {
+      "ambiguity_noise_unavailable": {
+        "ambiguity_case_count": 1,
+        "expected_status_counts": {
+          "ambiguous": 1,
+          "labeled": 8,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        },
+        "noise_case_count": 1,
+        "observed_ambiguity_rate": 0.0,
+        "observed_noise_rate": 0.083333333333,
+        "observed_status_counts": {
+          "available": 9,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        },
+        "observed_unavailable_rate": 0.083333333333,
+        "rejected_case_count": 1,
+        "unavailable_case_count": 1
+      },
+      "arm": "line_overlap_legacy",
+      "by_role": {
+        "introduced": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 1
+        },
+        "modified": {
+          "f1": 0.923076923077,
+          "false_negative": 0,
+          "false_positive": 2,
+          "precision": 0.857142857143,
+          "recall": 1.0,
+          "true_positive": 12
+        },
+        "removed": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 1
+        },
+        "renamed": {
+          "f1": 1.0,
+          "false_negative": 0,
+          "false_positive": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "true_positive": 2
+        }
+      },
+      "by_side": {
+        "new": {
+          "f1": 0.941176470588,
+          "false_negative": 0,
+          "false_positive": 1,
+          "precision": 0.888888888889,
+          "recall": 1.0,
+          "true_positive": 8
+        },
+        "old": {
+          "f1": 0.941176470588,
+          "false_negative": 0,
+          "false_positive": 1,
+          "precision": 0.888888888889,
+          "recall": 1.0,
+          "true_positive": 8
+        }
+      },
+      "change_context": {
+        "hit_count": 8,
+        "recall": 1.0,
+        "required_case_count": 8
+      },
+      "false_affected_symbol": {
+        "count": 2,
+        "predicted_symbol_count": 18,
+        "rate": 0.111111111111
+      },
+      "label_status": {
+        "canonical_symbol_label_count": 16,
+        "labeled_case_count": 8,
+        "labels_are_production_results": false,
+        "labels_are_programmatic_fixture_truth": true,
+        "membership_digest": "sha256:48d74df8b1914af770e343f0a604bdb71dd5bdded7101cb1c2d7cf07a27ee4cf",
+        "record_count": 12,
+        "status_counts": {
+          "ambiguous": 1,
+          "labeled": 8,
+          "noise": 1,
+          "rejected": 1,
+          "unavailable": 1
+        }
+      },
+      "measurement_source": "production-cb6-run",
+      "overall": {
+        "f1": 0.941176470588,
+        "false_negative": 0,
+        "false_positive": 2,
+        "precision": 0.888888888889,
+        "recall": 1.0,
+        "true_positive": 16
+      },
+      "performance": {
+        "latency_ms": {
+          "p50": 2.114042,
+          "p95": 2.451083
+        },
+        "memory_bytes": {
+          "p50": 109254,
+          "p95": 113311,
+          "peak": 113311
+        },
+        "observation_count": 12
+      },
+      "production_result": true,
+      "quality_claim": "derived-production-diff-binding-audit",
+      "schema_version": "code-c-b6-metric-contract-v1"
+    }
+  },
+  "denominator": {
+    "arm_membership_digests": {
+      "ast_enclosing": "sha256:609a11322a88a21b6db9b3c82ed2e908f537fed863997ab2017975fe8d6fb4da",
+      "ast_rename_lineage_merged": "sha256:609a11322a88a21b6db9b3c82ed2e908f537fed863997ab2017975fe8d6fb4da",
+      "line_overlap_legacy": "sha256:609a11322a88a21b6db9b3c82ed2e908f537fed863997ab2017975fe8d6fb4da"
+    },
+    "case_count": 12,
+    "case_ids": [
+      "cb6-add",
+      "cb6-ambiguous",
+      "cb6-binary",
+      "cb6-class-level",
+      "cb6-delete",
+      "cb6-file-top-level",
+      "cb6-function-body",
+      "cb6-function-signature",
+      "cb6-multi-symbol",
+      "cb6-rename",
+      "cb6-whitespace-only",
+      "cb6-wrong-parent"
+    ],
+    "membership_digest": "sha256:609a11322a88a21b6db9b3c82ed2e908f537fed863997ab2017975fe8d6fb4da",
+    "same_denominator": true,
+    "same_parent_target_membership": true
+  },
+  "fixture_digest": "sha256:d75b530049a249adf1fefb52bf21f3a84301301a8be9ceb0e6ca522d062d4518",
+  "label_membership_digest": "sha256:48d74df8b1914af770e343f0a604bdb71dd5bdded7101cb1c2d7cf07a27ee4cf",
+  "measurement_source": "production-cb6-run",
+  "production_result": true,
+  "qualification": {
+    "checks": {
+      "change_context_recall": true,
+      "f1": true,
+      "false_affected_rate": false,
+      "precision": false,
+      "recall": true,
+      "sample_size": false
+    },
+    "contract": {
+      "maximum_false_affected_rate": 0.1,
+      "minimum_change_context_recall": 0.9,
+      "minimum_f1": 0.9,
+      "minimum_labeled_cases": 30,
+      "minimum_precision": 0.9,
+      "minimum_recall": 0.9,
+      "small_sample_status": "PROVISIONAL NOT QUALIFIED"
+    },
+    "engineering_pass_is_quality_qualification": false,
+    "reason": "the fixed 8-case labeled fixture is below the 30-case qualification floor",
+    "status": "PROVISIONAL NOT QUALIFIED",
+    "treatment_arm": "ast_rename_lineage_merged",
+    "treatment_qualified": false
+  },
+  "qualification_source": "fixed-c-b6-contract",
+  "replaces_cb0": false,
+  "run_id": "evaluation-run://project-code-cb6-v1/06eea9107f274fe3b13d77bd68b8a00e",
+  "schema_version": "code-c-b6-metric-contract-v1",
+  "scope": "independent-diff-binding-quality-audit"
+}

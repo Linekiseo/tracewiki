@@ -1,0 +1,665 @@
+{
+  "dense_index": {
+    "p95_ms": {
+      "sample_count": 3,
+      "status": "available",
+      "unavailable_reason": null,
+      "value": 499.8748788
+    },
+    "samples_ms": [
+      68.154291,
+      547.843833,
+      31.990125
+    ],
+    "total_ms": 647.988249
+  },
+  "ingest": {
+    "p95_ms": {
+      "sample_count": 3,
+      "status": "available",
+      "unavailable_reason": null,
+      "value": 567.5296294999999
+    },
+    "per_source_ms": {
+      "controlled_multilingual": 478.771292,
+      "current_project_snapshot": 577.391667,
+      "historical_error": 368.399834
+    },
+    "total_ms": 1581.968875
+  },
+  "query": {
+    "graph_off": {
+      "cases": [
+        {
+          "case_id": "code-golden-v2-001",
+          "latency_ms": 71.96354202460498
+        },
+        {
+          "case_id": "code-golden-v2-002",
+          "latency_ms": 83.0653749871999
+        },
+        {
+          "case_id": "code-golden-v2-003",
+          "latency_ms": 69.5975829148665
+        },
+        {
+          "case_id": "code-golden-v2-004",
+          "latency_ms": 514.1609159763902
+        },
+        {
+          "case_id": "code-golden-v2-005",
+          "latency_ms": 507.96533399261534
+        },
+        {
+          "case_id": "code-golden-v2-006",
+          "latency_ms": 84.5887919422239
+        },
+        {
+          "case_id": "code-golden-v2-007",
+          "latency_ms": 86.9801250519231
+        },
+        {
+          "case_id": "code-golden-v2-008",
+          "latency_ms": 71.29025005269796
+        },
+        {
+          "case_id": "code-golden-v2-009",
+          "latency_ms": 81.92666596733034
+        },
+        {
+          "case_id": "code-golden-v2-010",
+          "latency_ms": 86.53849991969764
+        },
+        {
+          "case_id": "code-golden-v2-011",
+          "latency_ms": 641.7380409548059
+        },
+        {
+          "case_id": "code-golden-v2-012",
+          "latency_ms": 524.8828750336543
+        },
+        {
+          "case_id": "code-golden-v2-013",
+          "latency_ms": 2.6584159350022674
+        },
+        {
+          "case_id": "code-golden-v2-014",
+          "latency_ms": 7.54745805170387
+        },
+        {
+          "case_id": "code-golden-v2-015",
+          "latency_ms": 82.81875005923212
+        },
+        {
+          "case_id": "code-golden-v2-016",
+          "latency_ms": 73.63387499935925
+        },
+        {
+          "case_id": "code-golden-v2-017",
+          "latency_ms": 100.72504193522036
+        },
+        {
+          "case_id": "code-golden-v2-018",
+          "latency_ms": 74.76712495554239
+        },
+        {
+          "case_id": "code-golden-v2-019",
+          "latency_ms": 2.592707984149456
+        },
+        {
+          "case_id": "code-golden-v2-021",
+          "latency_ms": 105.27529194951057
+        },
+        {
+          "case_id": "code-golden-v2-022",
+          "latency_ms": 81.93625009153038
+        },
+        {
+          "case_id": "code-golden-v2-023",
+          "latency_ms": 95.72941705118865
+        },
+        {
+          "case_id": "code-golden-v2-025",
+          "latency_ms": 2.840832923538983
+        },
+        {
+          "case_id": "code-golden-v2-026",
+          "latency_ms": 568.4701669961214
+        },
+        {
+          "case_id": "code-golden-v2-027",
+          "latency_ms": 74.8450419632718
+        },
+        {
+          "case_id": "code-golden-v2-028",
+          "latency_ms": 81.54395793098956
+        },
+        {
+          "case_id": "code-golden-v2-029",
+          "latency_ms": 95.12895799707621
+        },
+        {
+          "case_id": "code-golden-v2-030",
+          "latency_ms": 72.73100002203137
+        },
+        {
+          "case_id": "code-golden-v2-031",
+          "latency_ms": 92.13700005784631
+        },
+        {
+          "case_id": "code-golden-v2-032",
+          "latency_ms": 72.42679200135171
+        },
+        {
+          "case_id": "code-golden-v2-033",
+          "latency_ms": 574.3026670534164
+        },
+        {
+          "case_id": "code-golden-v2-034",
+          "latency_ms": 2.5974580785259604
+        },
+        {
+          "case_id": "code-golden-v2-035",
+          "latency_ms": 18.180000013671815
+        }
+      ],
+      "graph_p95_ms": {
+        "authoritative_source": "production GraphTraversalTrace.latency_ms",
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+        "membership_case_count": 33,
+        "sample_count": 0,
+        "status": "unavailable",
+        "unavailable_reason": "no production timing samples",
+        "value": null
+      },
+      "p95_ms": {
+        "authoritative_source": "evaluation_metric_values",
+        "available_cases": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "numerator": 570.8031670190394,
+        "status": "available",
+        "unavailable_cases": 0,
+        "unavailable_reason": null,
+        "value": 570.8031670190394
+      }
+    },
+    "graph_post_only": {
+      "cases": [
+        {
+          "case_id": "code-golden-v2-001",
+          "latency_ms": 138.94012500531971
+        },
+        {
+          "case_id": "code-golden-v2-002",
+          "latency_ms": 149.08258302602917
+        },
+        {
+          "case_id": "code-golden-v2-003",
+          "latency_ms": 146.03020902723074
+        },
+        {
+          "case_id": "code-golden-v2-004",
+          "latency_ms": 608.8344580493867
+        },
+        {
+          "case_id": "code-golden-v2-005",
+          "latency_ms": 626.2259999057278
+        },
+        {
+          "case_id": "code-golden-v2-006",
+          "latency_ms": 155.93729203101248
+        },
+        {
+          "case_id": "code-golden-v2-007",
+          "latency_ms": 159.1683749575168
+        },
+        {
+          "case_id": "code-golden-v2-008",
+          "latency_ms": 135.46954200137407
+        },
+        {
+          "case_id": "code-golden-v2-009",
+          "latency_ms": 147.76879199780524
+        },
+        {
+          "case_id": "code-golden-v2-010",
+          "latency_ms": 146.21033298317343
+        },
+        {
+          "case_id": "code-golden-v2-011",
+          "latency_ms": 692.3631669487804
+        },
+        {
+          "case_id": "code-golden-v2-012",
+          "latency_ms": 632.8995410585776
+        },
+        {
+          "case_id": "code-golden-v2-013",
+          "latency_ms": 2.7555000269785523
+        },
+        {
+          "case_id": "code-golden-v2-014",
+          "latency_ms": 7.43533403147012
+        },
+        {
+          "case_id": "code-golden-v2-015",
+          "latency_ms": 154.0065420558676
+        },
+        {
+          "case_id": "code-golden-v2-016",
+          "latency_ms": 138.5437500430271
+        },
+        {
+          "case_id": "code-golden-v2-017",
+          "latency_ms": 172.88566706702113
+        },
+        {
+          "case_id": "code-golden-v2-018",
+          "latency_ms": 145.17154195345938
+        },
+        {
+          "case_id": "code-golden-v2-019",
+          "latency_ms": 2.6472500758245587
+        },
+        {
+          "case_id": "code-golden-v2-021",
+          "latency_ms": 169.8002910707146
+        },
+        {
+          "case_id": "code-golden-v2-022",
+          "latency_ms": 149.14941706229
+        },
+        {
+          "case_id": "code-golden-v2-023",
+          "latency_ms": 172.11441695690155
+        },
+        {
+          "case_id": "code-golden-v2-025",
+          "latency_ms": 3.1274170614778996
+        },
+        {
+          "case_id": "code-golden-v2-026",
+          "latency_ms": 692.0607080683112
+        },
+        {
+          "case_id": "code-golden-v2-027",
+          "latency_ms": 132.58479197975248
+        },
+        {
+          "case_id": "code-golden-v2-028",
+          "latency_ms": 148.83204200305045
+        },
+        {
+          "case_id": "code-golden-v2-029",
+          "latency_ms": 157.24562504328787
+        },
+        {
+          "case_id": "code-golden-v2-030",
+          "latency_ms": 129.96154197026044
+        },
+        {
+          "case_id": "code-golden-v2-031",
+          "latency_ms": 159.42533290944993
+        },
+        {
+          "case_id": "code-golden-v2-032",
+          "latency_ms": 140.84166707471013
+        },
+        {
+          "case_id": "code-golden-v2-033",
+          "latency_ms": 698.5566249350086
+        },
+        {
+          "case_id": "code-golden-v2-034",
+          "latency_ms": 2.9096670914441347
+        },
+        {
+          "case_id": "code-golden-v2-035",
+          "latency_ms": 17.10250007454306
+        }
+      ],
+      "graph_p95_ms": {
+        "authoritative_source": "production GraphTraversalTrace.latency_ms",
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+        "membership_case_count": 33,
+        "sample_count": 27,
+        "status": "available",
+        "unavailable_reason": null,
+        "value": 119.64995014714077
+      },
+      "p95_ms": {
+        "authoritative_source": "evaluation_metric_values",
+        "available_cases": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "numerator": 692.1816916204989,
+        "status": "available",
+        "unavailable_cases": 0,
+        "unavailable_reason": null,
+        "value": 692.1816916204989
+      }
+    },
+    "graph_reranker": {
+      "cases": [
+        {
+          "case_id": "code-golden-v2-001",
+          "latency_ms": 140.77375002671033
+        },
+        {
+          "case_id": "code-golden-v2-002",
+          "latency_ms": 149.66724999248981
+        },
+        {
+          "case_id": "code-golden-v2-003",
+          "latency_ms": 145.2654590830207
+        },
+        {
+          "case_id": "code-golden-v2-004",
+          "latency_ms": 628.8425410166383
+        },
+        {
+          "case_id": "code-golden-v2-005",
+          "latency_ms": 630.9608750743791
+        },
+        {
+          "case_id": "code-golden-v2-006",
+          "latency_ms": 163.0693330662325
+        },
+        {
+          "case_id": "code-golden-v2-007",
+          "latency_ms": 174.0877500269562
+        },
+        {
+          "case_id": "code-golden-v2-008",
+          "latency_ms": 143.08200008235872
+        },
+        {
+          "case_id": "code-golden-v2-009",
+          "latency_ms": 157.3032500455156
+        },
+        {
+          "case_id": "code-golden-v2-010",
+          "latency_ms": 154.3262500781566
+        },
+        {
+          "case_id": "code-golden-v2-011",
+          "latency_ms": 736.4982910221443
+        },
+        {
+          "case_id": "code-golden-v2-012",
+          "latency_ms": 649.298332980834
+        },
+        {
+          "case_id": "code-golden-v2-013",
+          "latency_ms": 2.6875409530475736
+        },
+        {
+          "case_id": "code-golden-v2-014",
+          "latency_ms": 7.409750018268824
+        },
+        {
+          "case_id": "code-golden-v2-015",
+          "latency_ms": 153.67833292111754
+        },
+        {
+          "case_id": "code-golden-v2-016",
+          "latency_ms": 138.4581249440089
+        },
+        {
+          "case_id": "code-golden-v2-017",
+          "latency_ms": 166.69283306691796
+        },
+        {
+          "case_id": "code-golden-v2-018",
+          "latency_ms": 142.53687497694045
+        },
+        {
+          "case_id": "code-golden-v2-019",
+          "latency_ms": 2.624250017106533
+        },
+        {
+          "case_id": "code-golden-v2-021",
+          "latency_ms": 169.00749993510544
+        },
+        {
+          "case_id": "code-golden-v2-022",
+          "latency_ms": 147.45508297346532
+        },
+        {
+          "case_id": "code-golden-v2-023",
+          "latency_ms": 162.77079191058874
+        },
+        {
+          "case_id": "code-golden-v2-025",
+          "latency_ms": 3.156582941301167
+        },
+        {
+          "case_id": "code-golden-v2-026",
+          "latency_ms": 677.3813329637051
+        },
+        {
+          "case_id": "code-golden-v2-027",
+          "latency_ms": 134.52825008425862
+        },
+        {
+          "case_id": "code-golden-v2-028",
+          "latency_ms": 162.6191670075059
+        },
+        {
+          "case_id": "code-golden-v2-029",
+          "latency_ms": 163.83033304009587
+        },
+        {
+          "case_id": "code-golden-v2-030",
+          "latency_ms": 131.79541705176234
+        },
+        {
+          "case_id": "code-golden-v2-031",
+          "latency_ms": 164.40841695293784
+        },
+        {
+          "case_id": "code-golden-v2-032",
+          "latency_ms": 149.59124999586493
+        },
+        {
+          "case_id": "code-golden-v2-033",
+          "latency_ms": 715.2394170407206
+        },
+        {
+          "case_id": "code-golden-v2-034",
+          "latency_ms": 3.695665975101292
+        },
+        {
+          "case_id": "code-golden-v2-035",
+          "latency_ms": 18.475582939572632
+        }
+      ],
+      "graph_p95_ms": {
+        "authoritative_source": "production GraphTraversalTrace.latency_ms",
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+        "membership_case_count": 33,
+        "sample_count": 27,
+        "status": "available",
+        "unavailable_reason": null,
+        "value": 124.44382128305733
+      },
+      "p95_ms": {
+        "authoritative_source": "evaluation_metric_values",
+        "available_cases": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "numerator": 692.5245665945113,
+        "status": "available",
+        "unavailable_cases": 0,
+        "unavailable_reason": null,
+        "value": 692.5245665945113
+      }
+    },
+    "typed_graph": {
+      "cases": [
+        {
+          "case_id": "code-golden-v2-001",
+          "latency_ms": 138.70949996635318
+        },
+        {
+          "case_id": "code-golden-v2-002",
+          "latency_ms": 150.82941693253815
+        },
+        {
+          "case_id": "code-golden-v2-003",
+          "latency_ms": 138.35079199634492
+        },
+        {
+          "case_id": "code-golden-v2-004",
+          "latency_ms": 633.6834579706192
+        },
+        {
+          "case_id": "code-golden-v2-005",
+          "latency_ms": 632.7247080625966
+        },
+        {
+          "case_id": "code-golden-v2-006",
+          "latency_ms": 159.57741695456207
+        },
+        {
+          "case_id": "code-golden-v2-007",
+          "latency_ms": 168.19620796013623
+        },
+        {
+          "case_id": "code-golden-v2-008",
+          "latency_ms": 135.52316697314382
+        },
+        {
+          "case_id": "code-golden-v2-009",
+          "latency_ms": 151.1245829751715
+        },
+        {
+          "case_id": "code-golden-v2-010",
+          "latency_ms": 154.0212919935584
+        },
+        {
+          "case_id": "code-golden-v2-011",
+          "latency_ms": 721.4049589820206
+        },
+        {
+          "case_id": "code-golden-v2-012",
+          "latency_ms": 628.9067920297384
+        },
+        {
+          "case_id": "code-golden-v2-013",
+          "latency_ms": 2.600915962830186
+        },
+        {
+          "case_id": "code-golden-v2-014",
+          "latency_ms": 6.926167057827115
+        },
+        {
+          "case_id": "code-golden-v2-015",
+          "latency_ms": 147.40912499837577
+        },
+        {
+          "case_id": "code-golden-v2-016",
+          "latency_ms": 135.4734170017764
+        },
+        {
+          "case_id": "code-golden-v2-017",
+          "latency_ms": 158.76870800275356
+        },
+        {
+          "case_id": "code-golden-v2-018",
+          "latency_ms": 139.78991599287838
+        },
+        {
+          "case_id": "code-golden-v2-019",
+          "latency_ms": 2.67933402210474
+        },
+        {
+          "case_id": "code-golden-v2-021",
+          "latency_ms": 170.6001249840483
+        },
+        {
+          "case_id": "code-golden-v2-022",
+          "latency_ms": 147.48529205098748
+        },
+        {
+          "case_id": "code-golden-v2-023",
+          "latency_ms": 154.28712498396635
+        },
+        {
+          "case_id": "code-golden-v2-025",
+          "latency_ms": 2.7026659809052944
+        },
+        {
+          "case_id": "code-golden-v2-026",
+          "latency_ms": 690.6663329573348
+        },
+        {
+          "case_id": "code-golden-v2-027",
+          "latency_ms": 135.13575005345047
+        },
+        {
+          "case_id": "code-golden-v2-028",
+          "latency_ms": 151.41104196663946
+        },
+        {
+          "case_id": "code-golden-v2-029",
+          "latency_ms": 163.0864579929039
+        },
+        {
+          "case_id": "code-golden-v2-030",
+          "latency_ms": 129.84995800070465
+        },
+        {
+          "case_id": "code-golden-v2-031",
+          "latency_ms": 159.57062493544072
+        },
+        {
+          "case_id": "code-golden-v2-032",
+          "latency_ms": 139.6900418912992
+        },
+        {
+          "case_id": "code-golden-v2-033",
+          "latency_ms": 678.1367500079796
+        },
+        {
+          "case_id": "code-golden-v2-034",
+          "latency_ms": 2.8649159939959645
+        },
+        {
+          "case_id": "code-golden-v2-035",
+          "latency_ms": 16.785249928943813
+        }
+      ],
+      "graph_p95_ms": {
+        "authoritative_source": "production GraphTraversalTrace.latency_ms",
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+        "membership_case_count": 33,
+        "sample_count": 27,
+        "status": "available",
+        "unavailable_reason": null,
+        "value": 121.7089374200441
+      },
+      "p95_ms": {
+        "authoritative_source": "evaluation_metric_values",
+        "available_cases": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "numerator": 683.1485831877217,
+        "status": "available",
+        "unavailable_cases": 0,
+        "unavailable_reason": null,
+        "value": 683.1485831877217
+      }
+    }
+  },
+  "schema_version": "code-c-b3-latency-v1"
+}

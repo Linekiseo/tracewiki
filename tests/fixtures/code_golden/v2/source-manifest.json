@@ -1,0 +1,672 @@
+{
+  "schema_version": "code-golden-source-manifest-v2",
+  "dataset_id": "code-golden",
+  "dataset_version": "code-golden-v2",
+  "materializer": {
+    "path": "tests/fixtures/code_golden/v2/materializer.py",
+    "entrypoint": "materialize_all",
+    "adapter_contract": "RepositoryResolver.resolve(local_path) followed by IngestionService.run",
+    "determinism": {
+      "git_author": "Code Golden Fixture <code-golden@fixtures.invalid>",
+      "timezone": "UTC",
+      "fixed_commit_timestamps": true,
+      "network_required": false,
+      "writes_outside_caller_temp_root": false
+    }
+  },
+  "source_classes": [
+    {
+      "source_class": "current_project_snapshot",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "remote_url": "https://fixtures.invalid/code-golden/current-project-snapshot.git",
+      "materialization": "local no-local sparse checkout of the fixed object from the current project",
+      "fixed_ref": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "active_ref": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "dirty": false,
+      "sparse_paths": [
+        "src/evidence_rag/code_history/service.py",
+        "src/evidence_rag/ingestion.py",
+        "src/evidence_rag/repository.py"
+      ],
+      "ingest_ignore": [
+        "generated",
+        "vendor"
+      ]
+    },
+    {
+      "source_class": "controlled_multilingual",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "remote_url": "https://fixtures.invalid/code-golden/controlled-multilingual.git",
+      "materialization": "fresh independent Git repository from versioned source templates",
+      "fixed_ref": "85e41dc96462ddfa897483d17388d2be5f9d5fff",
+      "active_ref": "85e41dc96462ddfa897483d17388d2be5f9d5fff",
+      "dirty": false,
+      "languages": [
+        "python",
+        "typescript",
+        "javascript"
+      ],
+      "ingest_ignore": [
+        "generated",
+        "vendor"
+      ]
+    },
+    {
+      "source_class": "historical_error",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "remote_url": "https://fixtures.invalid/code-golden/historical-error.git",
+      "materialization": "fresh independent Git repository with deterministic history and a dirty worktree",
+      "fixed_ref": "6bb97313737dbb53ac508dba84f01082dda7fab4",
+      "active_ref": "6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809",
+      "dirty": true,
+      "ingest_ignore": [
+        "generated",
+        "vendor"
+      ]
+    }
+  ],
+  "refs": {
+    "project_fixed_head": {
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "kind": "commit",
+      "name": "fixed-head",
+      "sha": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "resolver_status": "available"
+    },
+    "controlled_main": {
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "kind": "branch",
+      "name": "main",
+      "sha": "85e41dc96462ddfa897483d17388d2be5f9d5fff",
+      "resolver_status": "available"
+    },
+    "history_initial": {
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "kind": "commit",
+      "name": "initial",
+      "sha": "e46ce01ad5701c1dc3a3a6fc77f4d2c09cc0ae0b",
+      "resolver_status": "available"
+    },
+    "history_release_branch": {
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "kind": "branch",
+      "name": "release-v1",
+      "sha": "5e14f7af3812336eee75ce57ae9ba48134d64576",
+      "resolver_status": "available"
+    },
+    "history_release_tag": {
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "kind": "tag",
+      "name": "v1.0.0",
+      "sha": "5e14f7af3812336eee75ce57ae9ba48134d64576",
+      "resolver_status": "unavailable",
+      "unavailable_reason": "C0-01 CodeHistoryService indexes branches and commits but does not expose tags as resolvable refs; the materializer still verifies the real Git tag object."
+    },
+    "history_main": {
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "kind": "branch",
+      "name": "main",
+      "sha": "6bb97313737dbb53ac508dba84f01082dda7fab4",
+      "resolver_status": "available"
+    },
+    "history_dirty": {
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "kind": "dirty",
+      "name": "dirty",
+      "base_sha": "6bb97313737dbb53ac508dba84f01082dda7fab4",
+      "resolved_ref": "6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809",
+      "resolver_status": "available"
+    }
+  },
+  "entities": {
+    "project_repository_resolver": {
+      "entity_id": "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "ref_key": "project_fixed_head",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.evidence_rag.repository.RepositoryResolver",
+      "path": "src/evidence_rag/repository.py",
+      "span": {
+        "start_line": 71,
+        "end_line": 335
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "project_resolve": {
+      "entity_id": "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver.resolve",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "ref_key": "project_fixed_head",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.evidence_rag.repository.RepositoryResolver.resolve",
+      "path": "src/evidence_rag/repository.py",
+      "span": {
+        "start_line": 75,
+        "end_line": 86
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "project_local_resolver": {
+      "entity_id": "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._local",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "ref_key": "project_fixed_head",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.evidence_rag.repository.RepositoryResolver._local",
+      "path": "src/evidence_rag/repository.py",
+      "span": {
+        "start_line": 128,
+        "end_line": 180
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "project_ingestion_run": {
+      "entity_id": "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService.run",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "ref_key": "project_fixed_head",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.evidence_rag.ingestion.IngestionService.run",
+      "path": "src/evidence_rag/ingestion.py",
+      "span": {
+        "start_line": 57,
+        "end_line": 258
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "project_build_records": {
+      "entity_id": "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._build_records",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "ref_key": "project_fixed_head",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.evidence_rag.ingestion.IngestionService._build_records",
+      "path": "src/evidence_rag/ingestion.py",
+      "span": {
+        "start_line": 260,
+        "end_line": 433
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "project_history_read_file": {
+      "entity_id": "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.read_file",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "ref_key": "project_fixed_head",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.evidence_rag.code_history.service.CodeHistoryService.read_file",
+      "path": "src/evidence_rag/code_history/service.py",
+      "span": {
+        "start_line": 128,
+        "end_line": 173
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_format_line": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.pricing.format_line",
+      "path": "src/checkout/pricing.py",
+      "span": {
+        "start_line": 6,
+        "end_line": 7
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_apply_discount": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.pricing.apply_discount",
+      "path": "src/checkout/pricing.py",
+      "span": {
+        "start_line": 10,
+        "end_line": 13
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_calculate_total": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.pricing.calculate_total",
+      "path": "src/checkout/pricing.py",
+      "span": {
+        "start_line": 16,
+        "end_line": 18
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_price_quote": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.pricing.PriceEngine.quote",
+      "path": "src/checkout/pricing.py",
+      "span": {
+        "start_line": 22,
+        "end_line": 24
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_tax": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.tax.calculate_tax",
+      "path": "src/checkout/tax.py",
+      "span": {
+        "start_line": 1,
+        "end_line": 2
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_tax_format_line": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.tax.format_line",
+      "path": "src/checkout/tax.py",
+      "span": {
+        "start_line": 5,
+        "end_line": 6
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_gold_test": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "tests.pricing_cases.test_gold_customer_discount",
+      "path": "tests/pricing_cases.py",
+      "span": {
+        "start_line": 4,
+        "end_line": 5
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_regular_test": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "tests.pricing_cases.test_regular_customer_total",
+      "path": "tests/pricing_cases.py",
+      "span": {
+        "start_line": 8,
+        "end_line": 9
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_ts_checkout": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/web/checkout.ts#symbol=web.checkout.renderCheckout",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "web.checkout.renderCheckout",
+      "path": "web/checkout.ts",
+      "span": {
+        "start_line": 3,
+        "end_line": 5
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_ts_money": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/web/money.ts#symbol=web.money.formatMoney",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "web.money.formatMoney",
+      "path": "web/money.ts",
+      "span": {
+        "start_line": 1,
+        "end_line": 3
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_js_format": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/web/admin.js#symbol=web.admin.formatLine",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "web.admin.formatLine",
+      "path": "web/admin.js",
+      "span": {
+        "start_line": 1,
+        "end_line": 3
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "controlled_generated_charge": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/generated/client.ts#symbol=generated.client.generatedCharge",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "generated.client.generatedCharge",
+      "path": "generated/client.ts",
+      "span": {
+        "start_line": 1,
+        "end_line": 3
+      },
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "generated is an explicit ingest ignore root and is machine-verified absent from the active generation"
+    },
+    "controlled_vendor_charge": {
+      "entity_id": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/vendor/payment_sdk.js#symbol=vendor.payment_sdk.charge",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "ref_key": "controlled_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "vendor.payment_sdk.charge",
+      "path": "vendor/payment_sdk.js",
+      "span": {
+        "start_line": 1,
+        "end_line": 3
+      },
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "vendor is a resolver default ignore root and is machine-verified absent from the active generation"
+    },
+    "history_dirty_apply_coupon": {
+      "entity_id": "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_coupon",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_dirty",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.pricing.apply_coupon",
+      "path": "src/checkout/pricing.py",
+      "span": {
+        "start_line": 4,
+        "end_line": 7
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "history_dirty_total": {
+      "entity_id": "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_dirty",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.pricing.calculate_total",
+      "path": "src/checkout/pricing.py",
+      "span": {
+        "start_line": 10,
+        "end_line": 12
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "history_dirty_tax": {
+      "entity_id": "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_dirty",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.tax.calculate_tax",
+      "path": "src/checkout/tax.py",
+      "span": {
+        "start_line": 1,
+        "end_line": 2
+      },
+      "materialization_status": "available",
+      "treatment_status": "available"
+    },
+    "history_initial_round": {
+      "entity_id": "code://fixtures.invalid/code-golden/historical-error@e46ce01ad5701c1dc3a3a6fc77f4d2c09cc0ae0b/src/checkout/legacy_total.py#symbol=src.checkout.legacy_total.legacy_round_total",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_initial",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.legacy_total.legacy_round_total",
+      "path": "src/checkout/legacy_total.py",
+      "span": {
+        "start_line": 1,
+        "end_line": 2
+      },
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "C0-01 active-generation entity storage does not publish historical CodeSymbol rows; CodeHistoryService.read_file still verifies this symbol and locator."
+    },
+    "history_initial_total": {
+      "entity_id": "code://fixtures.invalid/code-golden/historical-error@e46ce01ad5701c1dc3a3a6fc77f4d2c09cc0ae0b/src/checkout/legacy_total.py#symbol=src.checkout.legacy_total.calculate_total",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_initial",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.legacy_total.calculate_total",
+      "path": "src/checkout/legacy_total.py",
+      "span": {
+        "start_line": 5,
+        "end_line": 6
+      },
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "C0-01 active-generation entity storage does not publish historical CodeSymbol rows; CodeHistoryService.read_file still verifies this symbol and locator."
+    },
+    "history_release_round": {
+      "entity_id": "code://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/src/checkout/totals.py#symbol=src.checkout.totals.round_total",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_release_branch",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.totals.round_total",
+      "path": "src/checkout/totals.py",
+      "span": {
+        "start_line": 1,
+        "end_line": 2
+      },
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "C0-01 active-generation entity storage does not publish historical CodeSymbol rows; CodeHistoryService.read_file still verifies this symbol and locator."
+    },
+    "history_release_total": {
+      "entity_id": "code://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/src/checkout/totals.py#symbol=src.checkout.totals.calculate_total",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_release_branch",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.totals.calculate_total",
+      "path": "src/checkout/totals.py",
+      "span": {
+        "start_line": 5,
+        "end_line": 6
+      },
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "C0-01 active-generation entity storage does not publish historical CodeSymbol rows; CodeHistoryService.read_file still verifies this symbol and locator."
+    },
+    "history_main_total": {
+      "entity_id": "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_main",
+      "entity_type": "CodeSymbol",
+      "qualified_name": "src.checkout.pricing.calculate_total",
+      "path": "src/checkout/pricing.py",
+      "span": {
+        "start_line": 4,
+        "end_line": 5
+      },
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "The active resolver ref is dirty; C0-01 does not publish a second clean historical generation alongside it. CodeHistoryService.read_file verifies this symbol and locator."
+    }
+  },
+  "paths": {
+    "controlled_quote_to_total": {
+      "availability": "available",
+      "nodes": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total"
+      ],
+      "edges": [
+        {
+          "source": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+          "edge_type": "CALLS",
+          "target": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+          "direction": "outgoing"
+        }
+      ]
+    },
+    "controlled_total_to_discount": {
+      "availability": "available",
+      "nodes": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount"
+      ],
+      "edges": [
+        {
+          "source": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+          "edge_type": "CALLS",
+          "target": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+          "direction": "outgoing"
+        }
+      ]
+    },
+    "controlled_total_to_tax": {
+      "availability": "available",
+      "nodes": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax"
+      ],
+      "edges": [
+        {
+          "source": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+          "edge_type": "CALLS",
+          "target": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+          "direction": "outgoing"
+        }
+      ]
+    },
+    "controlled_test_to_total": {
+      "availability": "available",
+      "nodes": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount"
+      ],
+      "edges": [
+        {
+          "source": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+          "edge_type": "CALLS",
+          "target": "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+          "direction": "incoming"
+        }
+      ]
+    },
+    "history_dirty_total_to_coupon": {
+      "availability": "available",
+      "nodes": [
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_coupon"
+      ],
+      "edges": [
+        {
+          "source": "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+          "edge_type": "CALLS",
+          "target": "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_coupon",
+          "direction": "outgoing"
+        }
+      ]
+    },
+    "history_release_total_to_round": {
+      "availability": "unavailable",
+      "unavailable_reason": "C0-01 active-generation graph storage does not publish historical symbol edges; the validator reconstructs and verifies the call from CodeHistoryService.read_file.",
+      "nodes": [
+        "code://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/src/checkout/totals.py#symbol=src.checkout.totals.calculate_total",
+        "code://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/src/checkout/totals.py#symbol=src.checkout.totals.round_total"
+      ],
+      "edges": [
+        {
+          "source": "code://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/src/checkout/totals.py#symbol=src.checkout.totals.calculate_total",
+          "edge_type": "CALLS",
+          "target": "code://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/src/checkout/totals.py#symbol=src.checkout.totals.round_total",
+          "direction": "outgoing"
+        }
+      ]
+    }
+  },
+  "validation_targets": {
+    "history_release_failing": {
+      "target_id": "validation://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/historical-release-failing",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_release_branch",
+      "path": "validation/check_status.py",
+      "span": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "expected_status": "failed",
+      "expected_exit_code": 1,
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+    },
+    "history_main_passing": {
+      "target_id": "validation://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4/historical-main-passing",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_main",
+      "path": "validation/check_status.py",
+      "span": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "expected_status": "passed",
+      "expected_exit_code": 0,
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+    },
+    "history_dirty_failing": {
+      "target_id": "validation://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/historical-dirty-failing",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "ref_key": "history_dirty",
+      "path": "validation/check_status.py",
+      "span": {
+        "start_line": 1,
+        "end_line": 1
+      },
+      "expected_status": "failed",
+      "expected_exit_code": 1,
+      "materialization_status": "available",
+      "treatment_status": "unavailable",
+      "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+    }
+  },
+  "leakage_policy": {
+    "ingest_root_forbidden_paths": [
+      "README.md",
+      "fixture_manifest.json",
+      "source-manifest.json",
+      "code-golden-v2.cases.yaml",
+      "annotation-contract-v2.schema.json"
+    ],
+    "ingest_content_forbidden_literals": [
+      "code-golden-v2",
+      "expected_unit_ids",
+      "retrieval_unit_id",
+      "package_hash",
+      "review_record_id",
+      "answerability"
+    ],
+    "scan_languages_only": false
+  },
+  "unit_treatment": {
+    "baseline_expected_unit_ids": "forbidden",
+    "candidate_retrieval_unit_id": "forbidden",
+    "pending_layer": "evals/code/code-golden-v2.unit-annotations.pending.yaml",
+    "activation_requirement": "C2 must provide a concrete builder_version and rebuild provenance before any Unit annotation may enter a treatment."
+  }
+}

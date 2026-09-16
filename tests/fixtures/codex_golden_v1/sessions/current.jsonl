@@ -1,0 +1,12 @@
+{"cwd":"${PROJECT_ROOT}","thread_id":"codex-golden-current","timestamp":"2026-07-01T08:00:00Z","type":"thread.started"}
+{"timestamp":"2026-07-01T08:00:01Z","turn_id":"current-turn","type":"turn.started"}
+{"item":{"id":"current-goal","message":"Repair the retry-safe parser in src/parser.py and validate the final attempt.","type":"user_message"},"timestamp":"2026-07-01T08:00:02Z","type":"item.completed"}
+{"item":{"id":"current-plan","items":["inspect parser state","reproduce the failure","apply the minimal patch","run validation"],"type":"plan_update"},"timestamp":"2026-07-01T08:00:03Z","type":"item.completed"}
+{"item":{"aggregated_output":"1 failed: parser still accepts a stale token","command":"pytest -q tests/test_parser.py","exit_code":1,"id":"current-test-old","type":"command_execution"},"timestamp":"2026-07-01T08:00:04Z","type":"item.completed"}
+{"item":{"arguments":"{\"patch\":\"update src/parser.py using the first attempt\"}","call_id":"current-patch-old","id":"current-patch-call-old","name":"apply_patch","type":"function_call"},"timestamp":"2026-07-01T08:00:05Z","type":"item.completed"}
+{"item":{"call_id":"current-patch-old","id":"current-patch-result-old","output":{"error":"context mismatch","exit_code":1},"type":"function_call_output"},"timestamp":"2026-07-01T08:00:06Z","type":"item.completed"}
+{"item":{"aggregated_output":"src/parser.py:41:def parse_token","command":"rg -n parse_token src/parser.py","exit_code":0,"id":"current-read-retry","type":"command_execution"},"timestamp":"2026-07-01T08:00:07Z","type":"item.completed"}
+{"item":{"changes":[{"kind":"update","path":"src/parser.py"}],"id":"current-change","type":"file_change"},"timestamp":"2026-07-01T08:00:08Z","type":"item.completed"}
+{"item":{"aggregated_output":"12 passed","command":"pytest -q tests/test_parser.py","exit_code":0,"id":"current-test-new","type":"command_execution"},"timestamp":"2026-07-01T08:00:09Z","type":"item.completed"}
+{"item":{"id":"current-outcome","text":"The second attempt changed src/parser.py; the observed parser validation now passes.","type":"agent_message"},"timestamp":"2026-07-01T08:00:10Z","type":"item.completed"}
+{"timestamp":"2026-07-01T08:00:11Z","turn_id":"current-turn","type":"turn.completed"}

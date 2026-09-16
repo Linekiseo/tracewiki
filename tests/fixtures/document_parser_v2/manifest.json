@@ -1,0 +1,9 @@
+{
+  "files": {
+    "layout.pdf": "sha256:3bc46c958e3dfb05bf655a5afb7c1709f42af2dd175baeeab0e72372dee6a1e8",
+    "mixed.pdf": "sha256:75be2bb21f0edfc8686f11c13cf723734d47ab1a63a9d821303ab5707b1b3072",
+    "ocr_payloads.json": "sha256:a076495cb07acc9d56b89e802d77dcecd941876e09487d1081915c2e83b3a6ac",
+    "scanned.pdf": "sha256:ba8c254dd64f5e144a824af3a96d8d82a08029b6b2481c2d56a3ca452af0ccb9"
+  },
+  "fixture_version": "document-parser-v2"
+}

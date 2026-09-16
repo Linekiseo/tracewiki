@@ -1,0 +1,248 @@
+{
+  "acceptance": {
+    "decision": "not-qualified",
+    "gates": [
+      {
+        "delta": {
+          "direction": "higher",
+          "directional_delta": -0.8333333333333334,
+          "status": "available",
+          "treatment_minus_baseline": -0.8333333333333334
+        },
+        "gate": "exact_non_regression",
+        "metric_name": "entity_recall@10",
+        "passed": false,
+        "reason": "treatment regressed against qualified C-B0",
+        "scope": "exact",
+        "status": "failed"
+      },
+      {
+        "delta": {
+          "direction": "higher",
+          "directional_delta": -1.0,
+          "status": "available",
+          "treatment_minus_baseline": -1.0
+        },
+        "gate": "identifier_non_regression",
+        "metric_name": "entity_recall@10",
+        "passed": false,
+        "reason": "treatment regressed against qualified C-B0",
+        "scope": "identifier",
+        "status": "failed"
+      },
+      {
+        "delta": {
+          "direction": "higher",
+          "directional_delta": -0.8409090909090909,
+          "status": "available",
+          "treatment_minus_baseline": -0.8409090909090909
+        },
+        "gate": "locator_non_regression",
+        "metric_name": "expected_locator_recall@10",
+        "passed": false,
+        "reason": "treatment regressed against qualified C-B0",
+        "scope": "overall",
+        "status": "failed"
+      }
+    ],
+    "schema_version": "code-c-b1-acceptance-v1"
+  },
+  "artifact_set_hash": "sha256:842ea67ec362773b0966b935e8bcda238d0044944e86b21e5f9250adf1c32c3c",
+  "artifacts": {
+    "attempt-audit.json": {
+      "bytes": 434,
+      "sha256": "sha256:ffebfd9502e4d8ff3a51dc2c16691b5c649b87374d686836362dac88c694d499"
+    },
+    "coverage.json": {
+      "bytes": 14678,
+      "sha256": "sha256:906f837eb0af53e27d006c724dd0f54ebde56749504548820813157774a6cfab"
+    },
+    "error-analysis.json": {
+      "bytes": 71764,
+      "sha256": "sha256:62eee1e4e0e1635aabc82c31cb8196a4e725c1fad21b523e036c53e92b2f772d"
+    },
+    "evaluation.sqlite3": {
+      "bytes": 8388608,
+      "sha256": "sha256:bcb0c9178b7bb7a54d78e1a255fbf93f13836c5a5a7a569d1e0f757b90f9d776"
+    },
+    "latency.json": {
+      "bytes": 7985,
+      "sha256": "sha256:29063de290593964f887e3a407c167deceaa6004cafdb1889c56290df8db3fc8"
+    },
+    "materialization.json": {
+      "bytes": 13297,
+      "sha256": "sha256:42691aefdad26c81c355a697af209a33c8592f2907677fc93c5a41870ee1cf77"
+    },
+    "metrics.json": {
+      "bytes": 1273808,
+      "sha256": "sha256:86179f5daf2fb5108abb5180c3ed0bab587ccd90b810714924cedf5b8eacfd21"
+    },
+    "slices.json": {
+      "bytes": 842151,
+      "sha256": "sha256:d6668105108d926770a18852be97dacc5b26c3789b6378d3fe4547968417b221"
+    },
+    "storage.json": {
+      "bytes": 1165,
+      "sha256": "sha256:e2923b8d6e63cca86a1f97d653f5bfb7cf9e13bbb8a40064338c6a8b195dc1c5"
+    }
+  },
+  "baseline": {
+    "artifact_directory": "5a92eafdff5d49e6aae8bb55fdc14061",
+    "artifact_set_hash": "sha256:9d9f3bc86a2e9e0419db54a85b89156c7593596a1903a940e2e37f8c1e33ab44",
+    "manifest_canonical_hash": "sha256:6ef5a2f1b3c82ed9007da41fd17d07ad8fd64fd0f12532b2751dc0dd510035ca",
+    "qualification_record_hash": "sha256:9ba8081fa67285e5e9d418703b53d1ffc42562f33e24de2028afeaaa223a034f",
+    "run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061"
+  },
+  "completed_at": "2026-07-27T09:27:15.039416+00:00",
+  "config": {
+    "baseline_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+    "capability_boundary": {
+      "available": [
+        "active-generation AST retrieval units",
+        "exact candidate retrieval",
+        "fielded sparse candidate retrieval",
+        "retrieval-unit identity",
+        "stable entity projection",
+        "source locator projection"
+      ],
+      "unavailable": [
+        {
+          "capability": "neural dense retrieval",
+          "reason": "C-B1 isolates AST Unit plus exact/sparse; C3 is outside this treatment."
+        },
+        {
+          "capability": "graph candidate expansion",
+          "reason": "C-B1 is graph-candidate-off; graph treatment belongs to C4."
+        },
+        {
+          "capability": "historical non-active symbol/tag retrieval",
+          "reason": "The released 17 ineligible cases remain outside the 33-case denominator."
+        },
+        {
+          "capability": "test/validation candidate retrieval",
+          "reason": "C6 validation retrieval is outside this treatment."
+        }
+      ]
+    },
+    "channel_budget": {
+      "context_token_budget": 4000,
+      "dense_candidates": 0,
+      "exact_candidates": 20,
+      "graph_candidates": 0,
+      "graph_edge_budget": 0,
+      "graph_node_budget": 0,
+      "history_candidates": 0,
+      "sparse_candidates": 40,
+      "test_candidates": 0,
+      "total_candidates": 50
+    },
+    "context": "snippet-v1",
+    "embedding": "disabled",
+    "graph_candidate": false,
+    "rag_code_unit_builder": "ast-v2",
+    "reranker": "off",
+    "retriever": {
+      "channels": [
+        "exact",
+        "sparse"
+      ],
+      "class": "CodeExactSparseRetriever",
+      "fusion": "deterministic-weighted-rrf-v1",
+      "index_family": "ast-v2",
+      "module": "evidence_rag.rag.sources.code.retrieval_v2",
+      "version": "code-exact-sparse-v1"
+    },
+    "schema_version": "code-c-b1-config-snapshot-v1",
+    "semantic_resolver": "off",
+    "sparse_index_version": "fts5-code-v2",
+    "top_k": 20,
+    "treatment": "C-B1 AST Unit + exact/sparse"
+  },
+  "config_fingerprint": "sha256:69757ada01d9eb661ef234bb20db87b02e3c7adf8a71caa3553c23e054223054",
+  "dataset": {
+    "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+    "eligible_cases": 33,
+    "id": "code-golden",
+    "ineligible_cases": 17,
+    "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+    "release_record_id": "code-golden-v2-release-001",
+    "total_cases": 50,
+    "version": "code-golden-v2"
+  },
+  "display_key": "CODE-EVAL-EF293BBE",
+  "execution_mode": "qualified",
+  "implementation": {
+    "evaluation_runner": "code-evaluation-v2.1",
+    "input_fingerprint": {
+      "cb0_qualified_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "cb1_treatment_input_hash": "sha256:10fe7f2dde94e13a369da2b6931f32676c951589e8cfd779ac277728e8e5bc9e",
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "implementation_input_hash": "sha256:bbdcc396f09ba072f7e1ddeed14ff5b0d18e3c431ad23819871fb0f5d525a9f2",
+      "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:d54cda74b114d615e94a60d9fc5512e8320d4b1da5ac58b20dccc6ea6bfbb240",
+      "workspace_status_hash": "sha256:c1e9831bb1a5c3e99484500c4996bc9f9b0454dc7e7a09cf0df957df8ba11976",
+      "worktree_list_hash": "sha256:f752ead7f0430a859108ac8788410a4332b4c14d2d23c14107566b552924688e"
+    },
+    "input_fingerprint_after": {
+      "cb0_qualified_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "cb1_treatment_input_hash": "sha256:10fe7f2dde94e13a369da2b6931f32676c951589e8cfd779ac277728e8e5bc9e",
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "implementation_input_hash": "sha256:bbdcc396f09ba072f7e1ddeed14ff5b0d18e3c431ad23819871fb0f5d525a9f2",
+      "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:d54cda74b114d615e94a60d9fc5512e8320d4b1da5ac58b20dccc6ea6bfbb240",
+      "workspace_status_hash": "sha256:c1e9831bb1a5c3e99484500c4996bc9f9b0454dc7e7a09cf0df957df8ba11976",
+      "worktree_list_hash": "sha256:f752ead7f0430a859108ac8788410a4332b4c14d2d23c14107566b552924688e"
+    },
+    "input_fingerprint_matched": true,
+    "runner": "code-c-b1-runner-v1"
+  },
+  "project_id": "project-code-golden-v2",
+  "run_id": "evaluation-run://project-code-golden-v2/ef293bbe574543e0a4224250b0dad0c9",
+  "schema_version": "code-c-b1-treatment-artifact-v1",
+  "security": {
+    "absolute_temporary_paths_included": false,
+    "credentials_included": false,
+    "portable_placeholders": [
+      "<redacted-temp-path>"
+    ],
+    "scanner_rule_ids": [
+      "portable-system-temp-roots-v1",
+      "high-confidence-credential-assignments-v1"
+    ],
+    "scanner_scope": "all SQLite TEXT columns and all artifact JSON files"
+  },
+  "snapshot": {
+    "case_membership_hash": "sha256:91a5ab7c4d61fbb4d6b587d77e06a264ca38372745897663fd2fee7e3c1d5f74",
+    "comparison_fingerprint": "sha256:2e87a0db43f5e8fa4cb85d0e4d68c3dade8ecf47158c78762c07a23abeb39edd",
+    "observed_index_generations": [
+      "gen-11daec0f-9cd7-48ef-8652-cbf88b3b0785",
+      "gen-2c3a87e3-d17d-45f0-aaed-cc0805cedc6b",
+      "gen-82350e49-1c4c-4730-9785-5a9d8f8bafdb"
+    ],
+    "observed_retriever": {
+      "fusion": [
+        "deterministic-weighted-rrf-v1"
+      ],
+      "graph_candidate_enabled": false,
+      "index_version": [
+        "code-exact-sparse-v1",
+        "code-exact-sparse-v1:sparse-set-488807dc674593c4"
+      ],
+      "retriever_version": [
+        "code-exact-sparse-v1"
+      ],
+      "unit_builder_version": [
+        "ast-v2"
+      ]
+    },
+    "schema_version": 191,
+    "snapshot_id": "sha256:14a04187514fe9150b9e5d0151ba84e5306265e76e8020d36b5e4fe2af830741"
+  },
+  "started_at": "2026-07-27T09:27:13.360390+00:00",
+  "status": "completed",
+  "treatment_qualified": false
+}

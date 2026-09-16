@@ -1,0 +1,312 @@
+{
+  "cases": [
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-001",
+      "exact_candidates": null,
+      "latency_ms": 7.607584,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 17,
+      "case_id": "code-golden-v2-002",
+      "exact_candidates": 6,
+      "latency_ms": 27.61275,
+      "sparse_candidates": 17
+    },
+    {
+      "candidate_count": 12,
+      "case_id": "code-golden-v2-003",
+      "exact_candidates": null,
+      "latency_ms": 11.5005,
+      "sparse_candidates": 12
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-004",
+      "exact_candidates": null,
+      "latency_ms": 45.3315,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-005",
+      "exact_candidates": 3,
+      "latency_ms": 55.719042,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 10,
+      "case_id": "code-golden-v2-006",
+      "exact_candidates": 10,
+      "latency_ms": 28.122792,
+      "sparse_candidates": 10
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-007",
+      "exact_candidates": null,
+      "latency_ms": 23.95225,
+      "sparse_candidates": 39
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-008",
+      "exact_candidates": null,
+      "latency_ms": 6.374958,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-009",
+      "exact_candidates": null,
+      "latency_ms": 20.933542,
+      "sparse_candidates": 28
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-010",
+      "exact_candidates": null,
+      "latency_ms": 18.181084,
+      "sparse_candidates": 31
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-011",
+      "exact_candidates": 20,
+      "latency_ms": 131.282291,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-012",
+      "exact_candidates": null,
+      "latency_ms": 43.039125,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-013",
+      "exact_candidates": null,
+      "latency_ms": 1.579,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-014",
+      "exact_candidates": null,
+      "latency_ms": 4.285667,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 12,
+      "case_id": "code-golden-v2-015",
+      "exact_candidates": 2,
+      "latency_ms": 22.7785,
+      "sparse_candidates": 12
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-016",
+      "exact_candidates": null,
+      "latency_ms": 5.834375,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 17,
+      "case_id": "code-golden-v2-017",
+      "exact_candidates": 15,
+      "latency_ms": 33.558834,
+      "sparse_candidates": 17
+    },
+    {
+      "candidate_count": 12,
+      "case_id": "code-golden-v2-018",
+      "exact_candidates": null,
+      "latency_ms": 9.217791,
+      "sparse_candidates": 12
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-019",
+      "exact_candidates": null,
+      "latency_ms": 1.267042,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-021",
+      "exact_candidates": 10,
+      "latency_ms": 37.381416,
+      "sparse_candidates": 35
+    },
+    {
+      "candidate_count": 16,
+      "case_id": "code-golden-v2-022",
+      "exact_candidates": null,
+      "latency_ms": 12.179625,
+      "sparse_candidates": 16
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-023",
+      "exact_candidates": 10,
+      "latency_ms": 27.392667,
+      "sparse_candidates": 28
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-025",
+      "exact_candidates": null,
+      "latency_ms": 1.603375,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-026",
+      "exact_candidates": 20,
+      "latency_ms": 83.743208,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 9,
+      "case_id": "code-golden-v2-027",
+      "exact_candidates": null,
+      "latency_ms": 10.759209,
+      "sparse_candidates": 9
+    },
+    {
+      "candidate_count": 10,
+      "case_id": "code-golden-v2-028",
+      "exact_candidates": 10,
+      "latency_ms": 18.447334,
+      "sparse_candidates": 10
+    },
+    {
+      "candidate_count": 18,
+      "case_id": "code-golden-v2-029",
+      "exact_candidates": 13,
+      "latency_ms": 28.703125,
+      "sparse_candidates": 18
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-030",
+      "exact_candidates": null,
+      "latency_ms": 7.096208,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-031",
+      "exact_candidates": 6,
+      "latency_ms": 28.475041,
+      "sparse_candidates": 28
+    },
+    {
+      "candidate_count": 5,
+      "case_id": "code-golden-v2-032",
+      "exact_candidates": null,
+      "latency_ms": 8.348875,
+      "sparse_candidates": 5
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-033",
+      "exact_candidates": 20,
+      "latency_ms": 89.941125,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-034",
+      "exact_candidates": null,
+      "latency_ms": 1.304958,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-035",
+      "exact_candidates": null,
+      "latency_ms": 14.368708,
+      "sparse_candidates": null
+    }
+  ],
+  "retrieval_p95": {
+    "baseline": {
+      "available_cases": 33,
+      "denominator": 1.0,
+      "eligible_cases": 33,
+      "membership_case_count": 33,
+      "metric_name": "latency_p95_ms",
+      "numerator": 15.04,
+      "reason": null,
+      "status": "available",
+      "unavailable_cases": 0,
+      "value": 15.04
+    },
+    "delta": {
+      "direction": "lower",
+      "directional_delta": -71.18237479999999,
+      "status": "available",
+      "treatment_minus_baseline": 71.18237479999999
+    },
+    "membership": {
+      "canonical_case_ids": [
+        "code-golden-v2-001",
+        "code-golden-v2-002",
+        "code-golden-v2-003",
+        "code-golden-v2-004",
+        "code-golden-v2-005",
+        "code-golden-v2-006",
+        "code-golden-v2-007",
+        "code-golden-v2-008",
+        "code-golden-v2-009",
+        "code-golden-v2-010",
+        "code-golden-v2-011",
+        "code-golden-v2-012",
+        "code-golden-v2-013",
+        "code-golden-v2-014",
+        "code-golden-v2-015",
+        "code-golden-v2-016",
+        "code-golden-v2-017",
+        "code-golden-v2-018",
+        "code-golden-v2-019",
+        "code-golden-v2-021",
+        "code-golden-v2-022",
+        "code-golden-v2-023",
+        "code-golden-v2-025",
+        "code-golden-v2-026",
+        "code-golden-v2-027",
+        "code-golden-v2-028",
+        "code-golden-v2-029",
+        "code-golden-v2-030",
+        "code-golden-v2-031",
+        "code-golden-v2-032",
+        "code-golden-v2-033",
+        "code-golden-v2-034",
+        "code-golden-v2-035"
+      ],
+      "case_count": 33,
+      "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+    },
+    "metric_denominator_equal": true,
+    "metric_name": "latency_p95_ms",
+    "same_case_membership": true,
+    "scope": "overall",
+    "treatment": {
+      "available_cases": 33,
+      "denominator": 1.0,
+      "eligible_cases": 33,
+      "membership_case_count": 33,
+      "metric_name": "latency_p95_ms",
+      "numerator": 86.22237479999998,
+      "reason": null,
+      "status": "available",
+      "unavailable_cases": 0,
+      "value": 86.22237479999998
+    }
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+  "schema_version": "code-c-b1-latency-v1"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "repo://local/rag-sample",
+    "project_id": "project-rag",
+    "name": "rag",
+    "default_branch": "main",
+    "head_commit": "0123456789abcdef0123456789abcdef01234567",
+    "status": "ready",
+    "active_generation_id": "gen-native-contract-v1"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "commit": "3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f",
+  "selector": "tests/pricing_cases.py::test_gold_customer_discount",
+  "status": "failed",
+  "exit_code": 1,
+  "observed": true,
+  "stack_artifact": "repository/stacks/checkout_failure.txt"
+}

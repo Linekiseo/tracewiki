@@ -1,0 +1,282 @@
+{
+  "dataset": {
+    "id": "code-golden",
+    "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+    "version": "code-golden-v2"
+  },
+  "eligible_cases": 33,
+  "eligible_distribution": {
+    "language": {
+      "en": 27,
+      "zh": 6
+    },
+    "query_style": {
+      "identifier_heavy": 9,
+      "mixed": 2,
+      "natural_language": 22
+    },
+    "task": {
+      "bug_localization": 6,
+      "call_reference_path": 6,
+      "exact_location": 7,
+      "impact_analysis": 7,
+      "implementation": 7
+    }
+  },
+  "enabled_case_names": [
+    "code-golden-v2-001",
+    "code-golden-v2-002",
+    "code-golden-v2-003",
+    "code-golden-v2-004",
+    "code-golden-v2-005",
+    "code-golden-v2-006",
+    "code-golden-v2-007",
+    "code-golden-v2-008",
+    "code-golden-v2-009",
+    "code-golden-v2-010",
+    "code-golden-v2-011",
+    "code-golden-v2-012",
+    "code-golden-v2-013",
+    "code-golden-v2-014",
+    "code-golden-v2-015",
+    "code-golden-v2-016",
+    "code-golden-v2-017",
+    "code-golden-v2-018",
+    "code-golden-v2-019",
+    "code-golden-v2-021",
+    "code-golden-v2-022",
+    "code-golden-v2-023",
+    "code-golden-v2-025",
+    "code-golden-v2-026",
+    "code-golden-v2-027",
+    "code-golden-v2-028",
+    "code-golden-v2-029",
+    "code-golden-v2-030",
+    "code-golden-v2-031",
+    "code-golden-v2-032",
+    "code-golden-v2-033",
+    "code-golden-v2-034",
+    "code-golden-v2-035"
+  ],
+  "ineligible": [
+    {
+      "case_id": "code-golden-v2-020",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "call_reference_path",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-024",
+      "reason": "C0-01 ingestion does not consume repository validation artifacts and TestResult IDs are generated at record time; the materializer executes the stable target, but C0-03 must keep this case out of treatment denominators for now.",
+      "smoke": true,
+      "source_class": "historical_error",
+      "task": "bug_localization",
+      "validation_targets": [
+        {
+          "target_id": "validation://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/historical-dirty-failing",
+          "treatment_status": "unavailable",
+          "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+        }
+      ]
+    },
+    {
+      "case_id": "code-golden-v2-036",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "change_context",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-037",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "change_context",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-038",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "change_context",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-039",
+      "reason": "C0-01 ingestion does not consume repository validation artifacts and TestResult IDs are generated at record time; the materializer executes the stable target, but C0-03 must keep this case out of treatment denominators for now.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "change_context",
+      "validation_targets": [
+        {
+          "target_id": "validation://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/historical-release-failing",
+          "treatment_status": "unavailable",
+          "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+        },
+        {
+          "target_id": "validation://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4/historical-main-passing",
+          "treatment_status": "unavailable",
+          "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+        }
+      ]
+    },
+    {
+      "case_id": "code-golden-v2-040",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "change_context",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-041",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": true,
+      "source_class": "historical_error",
+      "task": "historical_version",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-042",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "historical_version",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-043",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "historical_version",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-044",
+      "reason": "The Git tag is real and verified by the materializer, but C0-01 CodeHistoryService does not index tags as resolvable refs.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "historical_version",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-045",
+      "reason": "C0-01 stores only the active CodeSymbol generation; the validator verifies this historical target through CodeHistoryService.read_file, but C0-03 must not put it in a retrieval-treatment denominator until historical symbol retrieval exists.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "historical_version",
+      "validation_targets": []
+    },
+    {
+      "case_id": "code-golden-v2-046",
+      "reason": "C0-01 ingestion does not consume repository validation artifacts and TestResult IDs are generated at record time; the materializer executes the stable target, but C0-03 must keep this case out of treatment denominators for now.",
+      "smoke": true,
+      "source_class": "historical_error",
+      "task": "test_validation",
+      "validation_targets": [
+        {
+          "target_id": "validation://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/historical-release-failing",
+          "treatment_status": "unavailable",
+          "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+        }
+      ]
+    },
+    {
+      "case_id": "code-golden-v2-047",
+      "reason": "C0-01 ingestion does not consume repository validation artifacts and TestResult IDs are generated at record time; the materializer executes the stable target, but C0-03 must keep this case out of treatment denominators for now.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "test_validation",
+      "validation_targets": [
+        {
+          "target_id": "validation://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4/historical-main-passing",
+          "treatment_status": "unavailable",
+          "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+        }
+      ]
+    },
+    {
+      "case_id": "code-golden-v2-048",
+      "reason": "C0-01 ingestion does not consume repository validation artifacts and TestResult IDs are generated at record time; the materializer executes the stable target, but C0-03 must keep this case out of treatment denominators for now.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "test_validation",
+      "validation_targets": [
+        {
+          "target_id": "validation://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/historical-dirty-failing",
+          "treatment_status": "unavailable",
+          "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+        }
+      ]
+    },
+    {
+      "case_id": "code-golden-v2-049",
+      "reason": "C0-01 ingestion does not consume repository validation artifacts and TestResult IDs are generated at record time; the materializer executes the stable target, but C0-03 must keep this case out of treatment denominators for now.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "test_validation",
+      "validation_targets": [
+        {
+          "target_id": "validation://fixtures.invalid/code-golden/historical-error@5e14f7af3812336eee75ce57ae9ba48134d64576/historical-release-failing",
+          "treatment_status": "unavailable",
+          "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+        },
+        {
+          "target_id": "validation://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4/historical-main-passing",
+          "treatment_status": "unavailable",
+          "unavailable_reason": "C0-01 TestResult IDs are generated at record time and ingestion does not consume repository validation artifacts; the materializer executes and verifies this stable validation target."
+        }
+      ]
+    },
+    {
+      "case_id": "code-golden-v2-050",
+      "reason": "C0-01 ingestion does not consume repository validation artifacts and TestResult IDs are generated at record time; the materializer executes the stable target, but C0-03 must keep this case out of treatment denominators for now.",
+      "smoke": false,
+      "source_class": "historical_error",
+      "task": "test_validation",
+      "validation_targets": []
+    }
+  ],
+  "ineligible_cases": 17,
+  "result_count": 33,
+  "rich_path_inventory": {
+    "catalog_available": 5,
+    "catalog_unavailable": 1,
+    "eligible_cases_with_rich_paths": 12
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/d16b4602efed4458b06ac99c5de4bcd3",
+  "schema_version": "code-c0-03-coverage-v1",
+  "total_cases": 50,
+  "unavailable_capabilities": [
+    {
+      "affected_eligible_cases": 33,
+      "capability": "versioned retrieval-unit identity",
+      "reason": "Code Golden v2 has no C2 retrieval-unit annotations.",
+      "status": "unavailable"
+    },
+    {
+      "affected_positive_eligible_cases": 29,
+      "capability": "paired graph-only recovery",
+      "not_applicable_cases": 4,
+      "reason": "C0-03 is an unpaired graph-off baseline.",
+      "status": "unavailable"
+    },
+    {
+      "affected_ineligible_cases": 7,
+      "capability": "stable validation artifact retrieval",
+      "reason": "Validation observations are materialized but not indexed as TestResult targets.",
+      "status": "unavailable"
+    },
+    {
+      "affected_ineligible_cases": 10,
+      "capability": "historical non-active CodeSymbol retrieval and tag resolution",
+      "reason": "C0-01 only retrieves the active generation and does not resolve Git tags.",
+      "status": "unavailable"
+    }
+  ]
+}

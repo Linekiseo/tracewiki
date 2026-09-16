@@ -1,0 +1,38 @@
+{
+  "question": "说明查询服务如何组织可核验证据。",
+  "scope": {
+    "project_id": "project-rag",
+    "repository_ids": [],
+    "commit": null,
+    "languages": [],
+    "entity_types": [],
+    "branch": null,
+    "experiment_ids": [],
+    "document_ids": [],
+    "thread_ids": [],
+    "date_from": null,
+    "date_to": null,
+    "source_types": [
+      "code",
+      "codex"
+    ]
+  },
+  "mode": "evidence",
+  "max_evidence": 10,
+  "intent": "current_implementation",
+  "as_of": null,
+  "include": [
+    "code",
+    "codex"
+  ],
+  "max_hops": 2,
+  "conversation_id": "native-contract-conversation",
+  "client_turn_id": "native-contract-turn-1",
+  "parent_turn_id": null,
+  "context_revision": 0,
+  "conversation_snapshot": null,
+  "clarification_policy": "never",
+  "deadline_ms": 15000,
+  "max_context_tokens": 8000,
+  "answer_format": "evidence_only"
+}

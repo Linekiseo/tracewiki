@@ -1,0 +1,844 @@
+{
+  "arms": {
+    "graph_off": {
+      "accepted_path_count": 0,
+      "accepted_path_lengths": [],
+      "expanded_edges": 0,
+      "expanded_nodes": 0,
+      "metrics": {
+        "accepted_path_direction_accuracy": {
+          "authoritative_source": "production paths joined to released directed path truth",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted path edge had applicable released direction truth",
+          "value": null
+        },
+        "accepted_path_length": {
+          "authoritative_source": "production GraphTraversalTrace.paths",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted graph paths",
+          "value": null
+        },
+        "accepted_path_type_accuracy": {
+          "authoritative_source": "production paths joined to released typed path truth",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted path edge had applicable released path truth",
+          "value": null
+        },
+        "graph_expanded_edges": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_expanded_nodes": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_harmful_candidate_rate@10": {
+          "authoritative_source": "Golden-v2 harmful annotations on graph-attributed candidates",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no graph-attributed candidate had applicable harmful truth",
+          "value": null
+        },
+        "graph_latency_ms_p95": {
+          "authoritative_source": "production GraphTraversalTrace.latency_ms",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "membership_case_count": 33,
+          "sample_count": 0,
+          "status": "unavailable",
+          "unavailable_reason": "no production timing samples",
+          "value": null
+        },
+        "graph_noise_rate@10": {
+          "authoritative_source": "Golden-v2 graph-exclusive candidate judgments",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no graph-exclusive candidate entered the top 10",
+          "value": null
+        },
+        "graph_only_recovery@10": {
+          "authoritative_source": "evaluation_metric_values",
+          "available_cases": 0,
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "eligible_cases": 29,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_cases": 29,
+          "unavailable_reason": "metric unavailable for every eligible case in this slice",
+          "value": null
+        },
+        "graph_pruned_acl": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_budget": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_confidence": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_cycle": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_deadline": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_direction": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_type": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_version": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        }
+      },
+      "pruned_by_policy": {
+        "acl": 0,
+        "budget": 0,
+        "confidence": 0,
+        "cycle": 0,
+        "deadline": 0,
+        "direction": 0,
+        "type": 0,
+        "version": 0
+      },
+      "rejection_counts": {},
+      "rerank_fallback_count": 0,
+      "run_id": "evaluation-run://project-code-golden-v2/66489fccc58d48fe959eec96ea086e5e",
+      "trace_count": 0,
+      "traversal_enabled": false
+    },
+    "graph_post_only": {
+      "accepted_path_count": 0,
+      "accepted_path_lengths": [],
+      "expanded_edges": 4101,
+      "expanded_nodes": 719,
+      "metrics": {
+        "accepted_path_direction_accuracy": {
+          "authoritative_source": "production paths joined to released directed path truth",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted path edge had applicable released direction truth",
+          "value": null
+        },
+        "accepted_path_length": {
+          "authoritative_source": "production GraphTraversalTrace.paths",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted graph paths",
+          "value": null
+        },
+        "accepted_path_type_accuracy": {
+          "authoritative_source": "production paths joined to released typed path truth",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted path edge had applicable released path truth",
+          "value": null
+        },
+        "graph_expanded_edges": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 4101.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 4101.0
+        },
+        "graph_expanded_nodes": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 719.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 719.0
+        },
+        "graph_harmful_candidate_rate@10": {
+          "authoritative_source": "Golden-v2 harmful annotations on graph-attributed candidates",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no graph-attributed candidate had applicable harmful truth",
+          "value": null
+        },
+        "graph_latency_ms_p95": {
+          "authoritative_source": "production GraphTraversalTrace.latency_ms",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "membership_case_count": 33,
+          "sample_count": 27,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 119.64995014714077
+        },
+        "graph_noise_rate@10": {
+          "authoritative_source": "Golden-v2 graph-exclusive candidate judgments",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no graph-exclusive candidate entered the top 10",
+          "value": null
+        },
+        "graph_only_recovery@10": {
+          "authoritative_source": "evaluation_metric_values",
+          "available_cases": 0,
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "eligible_cases": 29,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_cases": 29,
+          "unavailable_reason": "metric unavailable for every eligible case in this slice",
+          "value": null
+        },
+        "graph_pruned_acl": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_budget": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 1095.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 1095.0
+        },
+        "graph_pruned_confidence": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_cycle": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 1001.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 1001.0
+        },
+        "graph_pruned_deadline": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_direction": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_type": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_version": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        }
+      },
+      "pruned_by_policy": {
+        "acl": 0,
+        "budget": 1095,
+        "confidence": 0,
+        "cycle": 1001,
+        "deadline": 0,
+        "direction": 0,
+        "type": 0,
+        "version": 0
+      },
+      "rejection_counts": {
+        "beam_duplicate_terminal": 700,
+        "beam_width": 1095,
+        "cycle": 1001
+      },
+      "rerank_fallback_count": 0,
+      "run_id": "evaluation-run://project-code-golden-v2/982cfad6b2084ef693857a21b8393212",
+      "trace_count": 27,
+      "traversal_enabled": true
+    },
+    "graph_reranker": {
+      "accepted_path_count": 0,
+      "accepted_path_lengths": [],
+      "expanded_edges": 4101,
+      "expanded_nodes": 719,
+      "metrics": {
+        "accepted_path_direction_accuracy": {
+          "authoritative_source": "production paths joined to released directed path truth",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted path edge had applicable released direction truth",
+          "value": null
+        },
+        "accepted_path_length": {
+          "authoritative_source": "production GraphTraversalTrace.paths",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted graph paths",
+          "value": null
+        },
+        "accepted_path_type_accuracy": {
+          "authoritative_source": "production paths joined to released typed path truth",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted path edge had applicable released path truth",
+          "value": null
+        },
+        "graph_expanded_edges": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 4101.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 4101.0
+        },
+        "graph_expanded_nodes": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 719.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 719.0
+        },
+        "graph_harmful_candidate_rate@10": {
+          "authoritative_source": "Golden-v2 harmful annotations on graph-attributed candidates",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no graph-attributed candidate had applicable harmful truth",
+          "value": null
+        },
+        "graph_latency_ms_p95": {
+          "authoritative_source": "production GraphTraversalTrace.latency_ms",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "membership_case_count": 33,
+          "sample_count": 27,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 124.44382128305733
+        },
+        "graph_noise_rate@10": {
+          "authoritative_source": "Golden-v2 graph-exclusive candidate judgments",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no graph-exclusive candidate entered the top 10",
+          "value": null
+        },
+        "graph_only_recovery@10": {
+          "authoritative_source": "evaluation_metric_values",
+          "available_cases": 33,
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 52.0,
+          "eligible_cases": 33,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_cases": 0,
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_acl": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_budget": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 1095.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 1095.0
+        },
+        "graph_pruned_confidence": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_cycle": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 1001.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 1001.0
+        },
+        "graph_pruned_deadline": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_direction": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_type": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_version": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        }
+      },
+      "pruned_by_policy": {
+        "acl": 0,
+        "budget": 1095,
+        "confidence": 0,
+        "cycle": 1001,
+        "deadline": 0,
+        "direction": 0,
+        "type": 0,
+        "version": 0
+      },
+      "rejection_counts": {
+        "beam_duplicate_terminal": 700,
+        "beam_width": 1095,
+        "cycle": 1001
+      },
+      "rerank_fallback_count": 0,
+      "run_id": "evaluation-run://project-code-golden-v2/92f8d8e190f449bab9ba253227473419",
+      "trace_count": 27,
+      "traversal_enabled": true
+    },
+    "typed_graph": {
+      "accepted_path_count": 0,
+      "accepted_path_lengths": [],
+      "expanded_edges": 4101,
+      "expanded_nodes": 719,
+      "metrics": {
+        "accepted_path_direction_accuracy": {
+          "authoritative_source": "production paths joined to released directed path truth",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted path edge had applicable released direction truth",
+          "value": null
+        },
+        "accepted_path_length": {
+          "authoritative_source": "production GraphTraversalTrace.paths",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted graph paths",
+          "value": null
+        },
+        "accepted_path_type_accuracy": {
+          "authoritative_source": "production paths joined to released typed path truth",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no accepted path edge had applicable released path truth",
+          "value": null
+        },
+        "graph_expanded_edges": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 4101.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 4101.0
+        },
+        "graph_expanded_nodes": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 719.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 719.0
+        },
+        "graph_harmful_candidate_rate@10": {
+          "authoritative_source": "Golden-v2 harmful annotations on graph-attributed candidates",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no graph-attributed candidate had applicable harmful truth",
+          "value": null
+        },
+        "graph_latency_ms_p95": {
+          "authoritative_source": "production GraphTraversalTrace.latency_ms",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "membership_case_count": 33,
+          "sample_count": 27,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 121.7089374200441
+        },
+        "graph_noise_rate@10": {
+          "authoritative_source": "Golden-v2 graph-exclusive candidate judgments",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 0.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "unavailable",
+          "unavailable_reason": "no graph-exclusive candidate entered the top 10",
+          "value": null
+        },
+        "graph_only_recovery@10": {
+          "authoritative_source": "evaluation_metric_values",
+          "available_cases": 33,
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 52.0,
+          "eligible_cases": 33,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_cases": 0,
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_acl": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_budget": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 1095.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 1095.0
+        },
+        "graph_pruned_confidence": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_cycle": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 1001.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 1001.0
+        },
+        "graph_pruned_deadline": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_direction": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_type": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        },
+        "graph_pruned_version": {
+          "authoritative_source": "production GraphTraversalTrace",
+          "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+          "denominator": 27.0,
+          "membership_case_count": 33,
+          "numerator": 0.0,
+          "status": "available",
+          "unavailable_reason": null,
+          "value": 0.0
+        }
+      },
+      "pruned_by_policy": {
+        "acl": 0,
+        "budget": 1095,
+        "confidence": 0,
+        "cycle": 1001,
+        "deadline": 0,
+        "direction": 0,
+        "type": 0,
+        "version": 0
+      },
+      "rejection_counts": {
+        "beam_duplicate_terminal": 700,
+        "beam_width": 1095,
+        "cycle": 1001
+      },
+      "rerank_fallback_count": 0,
+      "run_id": "evaluation-run://project-code-golden-v2/211777f123e14900a9af9d16015d4e3d",
+      "trace_count": 27,
+      "traversal_enabled": true
+    }
+  },
+  "graph_policy": {
+    "acl_policy": "authorize-both-edge-endpoints-and-hidden-middle-nodes-v1",
+    "beam_width": 20,
+    "cycle_policy": "path-local-entity-id-v1",
+    "edge_budget": 400,
+    "edge_type_policy": "registered-task-whitelist-v1",
+    "graph_candidates": 30,
+    "hop_decay": 0.72,
+    "max_hops": 3,
+    "min_confidence": 0.0,
+    "node_budget": 200,
+    "seed_candidates": 10,
+    "version_policy": "exact-or-explicit-transition-v1"
+  },
+  "publication_type_filtering": [
+    {
+      "excluded_unregistered_edge_types": {
+        "HAS_COMMIT": 1
+      },
+      "generation_id": "gen-219ab788-352d-42cd-b2c9-b2648ea6d3c4",
+      "registered_edge_count": 32,
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "total_edge_count": 33
+    },
+    {
+      "excluded_unregistered_edge_types": {
+        "HAS_COMMIT": 1
+      },
+      "generation_id": "gen-410d281b-53d3-44a3-903c-beed05170ec3",
+      "registered_edge_count": 144,
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "total_edge_count": 145
+    },
+    {
+      "excluded_unregistered_edge_types": {
+        "HAS_COMMIT": 1
+      },
+      "generation_id": "gen-63923f99-f05d-4125-ac76-80cfd0eb97ab",
+      "registered_edge_count": 10,
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "total_edge_count": 11
+    }
+  ],
+  "schema_version": "code-c-b3-graph-analysis-v1",
+  "trace_semantics": {
+    "cycle_budget_deadline": "production traversal trace counters and booleans",
+    "type_direction_version_acl_confidence": "SQLite adjacency predicates filter these before traversal; trace counts record any retriever-level rejection that remains"
+  }
+}

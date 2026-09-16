@@ -1,0 +1,158 @@
+{
+  "contract_version": "native-desktop-api-v1",
+  "backend": {
+    "openapi_version": "3.1.0",
+    "title": "多源研发证据 RAG",
+    "api_version": "0.1.0",
+    "selected_openapi_sha256": "sha256:f801bf1ac07af6356d9562b4753a8d1200543da609a16db7fda0a51826f9f385"
+  },
+  "compatibility": {
+    "unknown_response_fields": "ignore",
+    "missing_required_fields": "reject",
+    "unknown_enum_values": "surface_as_unsupported",
+    "credentials_in_responses": "forbidden",
+    "absolute_host_paths_in_responses": "forbidden"
+  },
+  "schema_sha256": {
+    "QueryRequest": "sha256:b752ba0a91b365be13ecf5b08e6ae704fbe4c1ce6a624238205c2f707bb70ce8",
+    "SearchScope": "sha256:8a00b908db239e43438a7a39af21c2e7645ab126ac02d4d0dec5a99e9e0f0b43",
+    "ConversationSnapshot": "sha256:1ac695f0316a3f93fe897d67e43f53b61fa06247f10188c3325003c64a4da7b4",
+    "LLMProviderProjectRequest": "sha256:bd9ea1b57974c1279885ac47e02bcd8f85a8cb463d43febcffe605ba39683bf4",
+    "HTTPValidationError": "sha256:7373c21f1389312367e27e440140ba11d587693c56d8aa27249b36d3f58c10c6",
+    "ValidationError": "sha256:ca285d0c0e64c42844efd2e860edb239e77cc49d87f065c5ccb7d2f55331b862"
+  },
+  "operations": [
+    {
+      "id": "project.list",
+      "method": "GET",
+      "path": "/v1/projects",
+      "operation_id": "list_projects_v1_projects_get",
+      "openapi_sha256": "sha256:87945fed81ebc5d4cfc8c1e0ecce824148c5e5602386227932239bdb4700716a",
+      "success_status": 200,
+      "fixture": "fixtures/project-list.response.json",
+      "required_response_fields": ["id", "name", "acl_ref", "status", "classification"]
+    },
+    {
+      "id": "repository.list",
+      "method": "GET",
+      "path": "/v1/repositories",
+      "operation_id": "repositories_v1_repositories_get",
+      "openapi_sha256": "sha256:e53f9beefee205151ed92053706be401ba0482f6d39c69b33fde934f92bbfc66",
+      "success_status": 200,
+      "fixture": "fixtures/repository-list.response.json",
+      "required_response_fields": ["id", "project_id", "name", "default_branch", "head_commit", "status", "active_generation_id"]
+    },
+    {
+      "id": "provider.status",
+      "method": "GET",
+      "path": "/v1/ai/provider",
+      "operation_id": "llm_provider_status_v1_ai_provider_get",
+      "openapi_sha256": "sha256:4a2c053c28a1b7e3b54c02d92864c2201019b7da5d8ff81f950bc527b21c9165",
+      "success_status": 200,
+      "fixture": "fixtures/provider-public-status.response.json",
+      "required_response_fields": ["contract_version", "project_id", "provider", "configured", "api_key_present", "secret_storage", "capabilities"]
+    },
+    {
+      "id": "provider.test",
+      "method": "POST",
+      "path": "/v1/ai/provider/test",
+      "operation_id": "test_llm_provider_v1_ai_provider_test_post",
+      "openapi_sha256": "sha256:ad569560219d43cdfae807a96a5c7d1da71d106bbdb08b42da30bc37cdea09cd",
+      "request_schema": "LLMProviderProjectRequest",
+      "success_status": 200,
+      "fixture": "fixtures/provider-test.response.json",
+      "required_response_fields": ["contract_version", "project_id", "provider", "configured", "api_key_present", "health", "tested"]
+    },
+    {
+      "id": "query.execute",
+      "method": "POST",
+      "path": "/v1/query",
+      "operation_id": "query_v1_query_post",
+      "openapi_sha256": "sha256:6caa86b1f207bb5b41007e481773d1735201a7dc281dc34a70ed3ea9aede1e5e",
+      "request_schema": "QueryRequest",
+      "request_fixture": "fixtures/query.request.json",
+      "success_status": 200,
+      "fixture": "fixtures/query.response.json",
+      "required_response_fields": ["query_id", "resolved_scope", "answer", "evidence_pack", "trace_id", "interaction_state", "answer_mode", "source_status", "query_understanding", "llm_provider", "interaction"]
+    },
+    {
+      "id": "query.preview",
+      "method": "POST",
+      "path": "/v1/query/preview",
+      "operation_id": "query_preview_v1_query_preview_post",
+      "openapi_sha256": "sha256:dc2a2f773b96dc0d72d32cf20ca0fef1938561cdf9b758ca69f6d269aaa2dae3",
+      "request_schema": "QueryRequest",
+      "success_status": 200,
+      "required_response_fields": ["contract_version", "project_id", "resolved_scope", "intent", "query_understanding", "source_waves", "required_roles", "budgets", "generation", "plan_digest", "retrieval_performed"]
+    },
+    {
+      "id": "query.history",
+      "method": "GET",
+      "path": "/v1/query/history",
+      "operation_id": "query_history_v1_query_history_get",
+      "openapi_sha256": "sha256:e700fed5a15bb0e6afd71ce7d77990df28395de4cd428c1f24d13e4cbba27677",
+      "success_status": 200,
+      "fixture": "fixtures/query-history.response.json",
+      "pagination": {"kind": "bounded_limit", "limit_default": 100, "limit_min": 1, "limit_max": 500},
+      "required_response_fields": ["contract_version", "project_id", "items"]
+    },
+    {
+      "id": "wiki.pages",
+      "method": "GET",
+      "path": "/v1/wiki/pages",
+      "operation_id": "wiki_pages_v1_wiki_pages_get",
+      "openapi_sha256": "sha256:69fa4cc7f39d5d3bebed1b75771a2da66fce1a9a12c0e6b31111692ab2e49ed1",
+      "success_status": 200,
+      "fixture": "fixtures/wiki-pages.response.json",
+      "pagination": {"kind": "offset", "offset_default": 0, "offset_min": 0, "limit_default": 50, "limit_min": 1, "limit_max": 200, "next_field": "next_offset"},
+      "required_response_fields": ["project_id", "generation_id", "total", "offset", "limit", "next_offset", "pages"]
+    },
+    {
+      "id": "wiki.detail",
+      "method": "GET",
+      "path": "/v1/wiki/read",
+      "operation_id": "wiki_read_v1_wiki_read_get",
+      "openapi_sha256": "sha256:8d26bc223355d7d8becd409ef65879af1b428fc632892a6995f9075a45edba6a",
+      "success_status": 200,
+      "fixture": "fixtures/wiki-detail.response.json",
+      "required_response_fields": ["fragment_id", "logical_path", "page_type", "title", "summary", "scope", "source_refs", "facts", "links", "content_sha256"]
+    },
+    {
+      "id": "agent.status",
+      "method": "GET",
+      "path": "/v1/codex-bridge/status",
+      "operation_id": "bridge_status_v1_codex_bridge_status_get",
+      "openapi_sha256": "sha256:b353e0c5e7d030bb2eb7362a6bb8611028639d3c335bd6becc037a21539746c3",
+      "success_status": 200,
+      "fixture": "fixtures/agent-status.response.json",
+      "required_response_fields": ["mcp", "plugin", "codex_cli", "permissions", "project_id", "availability", "reason", "sync"]
+    },
+    {
+      "id": "agent.list",
+      "method": "GET",
+      "path": "/v1/codex-bridge/agents",
+      "operation_id": "list_agents_v1_codex_bridge_agents_get",
+      "openapi_sha256": "sha256:21bd452b3b119a0bbbf38bad31ff7303758a1734d0980dea4cc282b595a823ac",
+      "success_status": 200,
+      "fixture": "fixtures/agent-list.response.json",
+      "required_response_fields": ["id", "name", "connector", "availability", "reason", "capabilities", "scope", "sync"]
+    },
+    {
+      "id": "agent.audit",
+      "method": "GET",
+      "path": "/v1/codex-bridge/agents/audit",
+      "operation_id": "agent_audit_v1_codex_bridge_agents_audit_get",
+      "openapi_sha256": "sha256:d25183ee1cbd423f6730ff9cfb582b4493356ef6745e4770b72b3b2c17240483",
+      "success_status": 200,
+      "fixture": "fixtures/agent-audit.response.json",
+      "pagination": {"kind": "bounded_limit", "limit_default": 100, "limit_min": 1, "limit_max": 500},
+      "required_response_fields": ["project_id", "client_id", "items"]
+    }
+  ],
+  "errors": {
+    "fixture": "fixtures/errors.response.json",
+    "statuses": [404, 422, 502],
+    "public_provider_failure": "llm_provider_test_failed",
+    "public_query_provider_failure": "answer_provider_failed"
+  }
+}

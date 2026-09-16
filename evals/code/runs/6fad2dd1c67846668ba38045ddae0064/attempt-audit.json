@@ -1,0 +1,13 @@
+{
+  "audit_control_is_qualified_baseline": false,
+  "audit_control_run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+  "c3_02_gate_approved": true,
+  "completed_at": "2026-07-27T12:32:04.748055+00:00",
+  "execution_mode": "qualified",
+  "qualified_baseline_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+  "run_id": "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064",
+  "schema_version": "code-c-b2-attempt-audit-v1",
+  "started_at": "2026-07-27T12:31:58.832697+00:00",
+  "status": "completed",
+  "treatment_qualified": false
+}

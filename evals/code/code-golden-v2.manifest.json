@@ -1,0 +1,197 @@
+{
+  "schema_version": "code-golden-manifest-v2",
+  "dataset_id": "code-golden",
+  "dataset_version": "code-golden-v2",
+  "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+  "status": "annotated",
+  "immutable": true,
+  "supersedes": {
+    "dataset_version": "code-golden-v1",
+    "reason": "v2 replaces logical fixture identities with reproducible Git objects, removes Unit treatment labels, and adds release and reviewer provenance without mutating v1"
+  },
+  "revision_policy": "After release, any byte-level or semantic change requires a new dataset_version and a new append-only release record. A same-version package hash mismatch is a hard validation failure.",
+  "canonical_package": {
+    "algorithm": "code-golden-canonical-package-v2",
+    "digest": "sha256 over canonical UTF-8 JSON with sorted keys and compact separators",
+    "manifest_normalization": "Before hashing the manifest component, replace package_hash with sha256:SELF; every other manifest field remains covered.",
+    "components": [
+      "evals/code/code-golden-v2.manifest.json",
+      "evals/code/code-golden-v2.cases.yaml",
+      "evals/code/annotation-contract-v2.schema.json",
+      "evals/code/code-golden-v2.unit-annotations.pending.yaml",
+      "tests/fixtures/code_golden/v2/** excluding generated caches"
+    ],
+    "release_registry": "evals/code/code-golden-releases.jsonl",
+    "same_version_drift_policy": "fail_closed"
+  },
+  "files": {
+    "cases": "evals/code/code-golden-v2.cases.yaml",
+    "annotation_contract": "evals/code/annotation-contract-v2.schema.json",
+    "unit_annotation_pending_layer": "evals/code/code-golden-v2.unit-annotations.pending.yaml",
+    "source_manifest": "tests/fixtures/code_golden/v2/source-manifest.json",
+    "materializer": "tests/fixtures/code_golden/v2/materializer.py",
+    "release_registry": "evals/code/code-golden-releases.jsonl",
+    "review_provenance": "evals/code/code-golden-v2.provenance.jsonl"
+  },
+  "counts": {
+    "cases": 50,
+    "smoke_cases": 15,
+    "eligible_treatment_cases": 33,
+    "machine_ineligible_cases": 17,
+    "delayed_reviewed_cases": 15,
+    "hard_negative_judgments": 25,
+    "source_classes": 3
+  },
+  "task_distribution": {
+    "exact_location": 7,
+    "implementation": 7,
+    "call_reference_path": 7,
+    "bug_localization": 7,
+    "impact_analysis": 7,
+    "change_context": 5,
+    "historical_version": 5,
+    "test_validation": 5
+  },
+  "source_distribution": {
+    "current_project_snapshot": 6,
+    "controlled_multilingual": 23,
+    "historical_error": 21
+  },
+  "required_slices": [
+    "chinese",
+    "english",
+    "natural_language_to_code",
+    "identifier_heavy",
+    "low_lexical_overlap",
+    "same_name_hard_negative",
+    "wrong_version",
+    "generated_vendor",
+    "unanswerable",
+    "acl_forbidden",
+    "dirty_current",
+    "graph_required",
+    "graph_harmful"
+  ],
+  "slice_counts": {
+    "acl_forbidden": 2,
+    "chinese": 10,
+    "dirty_current": 9,
+    "english": 40,
+    "generated_vendor": 2,
+    "graph_harmful": 5,
+    "graph_required": 17,
+    "identifier_heavy": 12,
+    "low_lexical_overlap": 8,
+    "natural_language_to_code": 15,
+    "same_name_hard_negative": 4,
+    "unanswerable": 8,
+    "wrong_version": 15
+  },
+  "smoke_case_ids": [
+    "code-golden-v2-001",
+    "code-golden-v2-002",
+    "code-golden-v2-003",
+    "code-golden-v2-004",
+    "code-golden-v2-008",
+    "code-golden-v2-009",
+    "code-golden-v2-010",
+    "code-golden-v2-013",
+    "code-golden-v2-015",
+    "code-golden-v2-016",
+    "code-golden-v2-018",
+    "code-golden-v2-024",
+    "code-golden-v2-029",
+    "code-golden-v2-041",
+    "code-golden-v2-046"
+  ],
+  "source_contract": {
+    "classes": [
+      "current_project_snapshot",
+      "controlled_multilingual",
+      "historical_error"
+    ],
+    "resolver": "RepositoryResolver",
+    "ingestion": "IngestionService",
+    "materialization_root": "caller-provided empty temporary directory",
+    "network_required": false,
+    "real_git_minimum": {
+      "historical_commits": 3,
+      "branch": "release-v1",
+      "tag": "v1.0.0",
+      "dirty_ref": true,
+      "validation_statuses": [
+        "passed",
+        "failed"
+      ]
+    }
+  },
+  "annotation_policy": {
+    "baseline_identity": "stable repository/ref/entity/path/span only",
+    "unit_annotations": "forbidden in baseline and candidate judgments",
+    "unit_pending_layer_status": "pending_c2",
+    "minimum_delayed_review_fraction": 0.2,
+    "review_records_must_bind_package_hash": true,
+    "unavailable_targets": "must carry a non-empty machine capability reason and are excluded from treatment denominators"
+  },
+  "c0_01_integration": {
+    "CodeEvaluationCaseProfile.dataset_id": "manifest.dataset_id",
+    "CodeEvaluationCaseProfile.dataset_version": "manifest.dataset_version",
+    "CodeEvaluationCaseProfile.dataset_package_hash": "manifest.package_hash",
+    "CodeEvaluationCaseProfile.expected_unit_ids": "always [] for v2",
+    "CodeEvaluationCaseProfile.expected_locators": "expand expected_target_keys through source_manifest.entities and preserve ref/path/span",
+    "CodeEvaluationCaseProfile.required_paths": "expand required_path_keys through source_manifest.paths preserving nodes, typed edges, and direction",
+    "CodeEvaluationCaseProfile.required_edge_types": "derive exactly from the expanded rich paths",
+    "EvaluationCaseCreate.expected_entity_ids": "expand expected_target_keys to stable entity_id values",
+    "EvaluationCaseCreate.expected_paths": "legacy node-only projection of the same expanded rich paths",
+    "EvaluationCandidateJudgment.entity_id": "expand candidate_judgments.target_key through source_manifest.entities",
+    "EvaluationCandidateJudgment.retrieval_unit_id": "always null for v2",
+    "CodeEvaluationRunRequest.dataset_id": "manifest.dataset_id",
+    "CodeEvaluationRunRequest.dataset_version": "manifest.dataset_version",
+    "CodeEvaluationRunRequest.package_hash": "manifest.package_hash"
+  },
+  "c0_03_loader_contract": {
+    "verify_release_before_load": true,
+    "reject_same_version_digest_drift": true,
+    "expand_catalog_keys": true,
+    "skip_ineligible_treatments": true,
+    "preserve_ineligible_cases_for_coverage_reporting": true,
+    "inject_dataset_identity_into_case_profile": true,
+    "bind_identical_package_hash_to_run_request": true,
+    "do_not_load_pending_unit_layer": true
+  },
+  "machine_enforced_unavailable": [
+    {
+      "capability": "historical CodeSymbol retrieval from a non-active generation",
+      "affected_tasks": [
+        "change_context",
+        "historical_version"
+      ],
+      "guard": "case.treatment_eligibility.status == ineligible"
+    },
+    {
+      "capability": "tag resolution through CodeHistoryService",
+      "affected_case_ids": [
+        "code-golden-v2-044"
+      ],
+      "guard": "source_manifest.refs.history_release_tag.resolver_status == unavailable"
+    },
+    {
+      "capability": "stable validation artifact ingestion",
+      "affected_task": "test_validation",
+      "guard": "case.treatment_eligibility.status == ineligible"
+    },
+    {
+      "capability": "versioned retrieval-unit construction",
+      "affected_layer": "code-golden-v2-unit-annotations-pending",
+      "guard": "builder_version is null and annotations is empty"
+    }
+  ],
+  "leakage_policy": {
+    "annotation_metadata_inside_ingest_roots": "forbidden",
+    "readme_inside_generated_fixture_ingest_roots": "forbidden",
+    "scanner": "test_code_golden_v2_leakage_scanner_rejects_metadata",
+    "fixture_roots_contain_code_and executable validation source only": true
+  },
+  "baseline_status": "not_run",
+  "baseline_statement": "No C0-03 baseline or treatment result is included or claimed by Code Golden v2."
+}

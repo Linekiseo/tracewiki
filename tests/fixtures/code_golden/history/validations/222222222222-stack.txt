@@ -1,0 +1,4 @@
+FAILED tests/pricing_cases.py::test_round_total
+E assert round_total(10.5) == 10
+E assert 10 == 11
+src/checkout/totals.py:2: AssertionError

@@ -1,0 +1,3482 @@
+{
+  "aggregate": {
+    "merged_policy": {
+      "case_count": 30,
+      "classification": "non_quality_structural_counts",
+      "conflict_count": 0,
+      "conflict_rate": 0.0,
+      "diagnostic_count": 0,
+      "eligible_input_count": 42,
+      "ingest_latency_ms_p95": 0.404458,
+      "ingest_time_ms": 8.728286,
+      "legal_edge_count": 42,
+      "matched_expected_entity_count": 42,
+      "output_set_hash": "sha256:f08359f2b888391b41ef3b10b25b2bb42be0e2512bff03e063a1c92d9b6b8de7",
+      "peak_memory_bytes": 18984,
+      "provenance_counts": {
+        "multi_provenance_edge_count": 42,
+        "provenance_record_count": 84,
+        "scip_edge_count": 42,
+        "tree_sitter_edge_count": 42
+      },
+      "provenance_merge_rate": 1.0,
+      "relation_counts": {
+        "REFERENCES": 42
+      },
+      "result_set_hash": "sha256:e7e9f367a027add409623ca4534c13a7f197ecfc635ef4830bb929a2f0690042",
+      "status_counts": {
+        "complete": 30
+      },
+      "structural_target_coverage": 1.0,
+      "treatment_latency_ms_p95": 3.228958,
+      "treatment_time_ms": 51.419285,
+      "unresolved_after": 0,
+      "unresolved_before": 0,
+      "unresolved_case_count": 30
+    },
+    "scip_semantic": {
+      "case_count": 30,
+      "classification": "non_quality_structural_counts",
+      "conflict_count": 0,
+      "conflict_rate": 0.0,
+      "diagnostic_count": 0,
+      "eligible_input_count": 42,
+      "ingest_latency_ms_p95": 0.354666,
+      "ingest_time_ms": 8.565834,
+      "legal_edge_count": 42,
+      "matched_expected_entity_count": 42,
+      "output_set_hash": "sha256:2f079b38024ce0b6db884c4c75d76b8f0fbf19440294dbb81ec2c957b71352b7",
+      "peak_memory_bytes": 19170,
+      "provenance_counts": {
+        "multi_provenance_edge_count": 0,
+        "provenance_record_count": 42,
+        "scip_edge_count": 42,
+        "tree_sitter_edge_count": 0
+      },
+      "provenance_merge_rate": 0.0,
+      "relation_counts": {
+        "REFERENCES": 42
+      },
+      "result_set_hash": "sha256:0f395a15ed681e0b1559d5abad73b4e615aa41ebed87333a67519b16fb93c461",
+      "status_counts": {
+        "complete": 30
+      },
+      "structural_target_coverage": 1.0,
+      "treatment_latency_ms_p95": 2.358417,
+      "treatment_time_ms": 37.597418,
+      "unresolved_after": 0,
+      "unresolved_before": 0,
+      "unresolved_case_count": 30
+    },
+    "tree_sitter_conservative": {
+      "case_count": 30,
+      "classification": "non_quality_structural_counts",
+      "conflict_count": 0,
+      "conflict_rate": 0.0,
+      "diagnostic_count": 30,
+      "eligible_input_count": 42,
+      "ingest_latency_ms_p95": 0.329917,
+      "ingest_time_ms": 8.360877,
+      "legal_edge_count": 42,
+      "matched_expected_entity_count": 42,
+      "output_set_hash": "sha256:390e84b4a426662efa49b7a0525b0e6787d4748c277448d427a2ea23edfb386c",
+      "peak_memory_bytes": 13766,
+      "provenance_counts": {
+        "multi_provenance_edge_count": 0,
+        "provenance_record_count": 42,
+        "scip_edge_count": 0,
+        "tree_sitter_edge_count": 42
+      },
+      "provenance_merge_rate": 0.0,
+      "relation_counts": {
+        "REFERENCES": 42
+      },
+      "result_set_hash": "sha256:bb4b66b09f6ff1d034d2def098b36c46e4300950e3a1f10b5b3b65bb46a98807",
+      "status_counts": {
+        "partial": 30
+      },
+      "structural_target_coverage": 1.0,
+      "treatment_latency_ms_p95": 0.960875,
+      "treatment_time_ms": 17.249501,
+      "unresolved_after": null,
+      "unresolved_before": null,
+      "unresolved_case_count": 0
+    }
+  },
+  "artifact_id": "a22b322a141741ae9a710aa347fbf032",
+  "cases": [
+    {
+      "case_id": "code-golden-v2-001",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:56b03af7b5231f177d7b903757f7744a",
+      "input_fixture_digest": "sha256:3e4ef696978ce153cb73a2ee6a82647a5eedb62ad5322b43f259e849241782c0",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:26a162814f7edbb1a3fd3ee1a18c422061d003555299239e58be21829673e220"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.23575,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:01a5e1bf4ec31132e1496b523c7825e8d21bfdb4a009f8385f988c4b13133f86",
+          "peak_memory_bytes": 7983,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:7375767e9bc77773eaed27d1fc3c34d06fce6bec0c87a0a729cc4623906fc07a",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.319,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:26a162814f7edbb1a3fd3ee1a18c422061d003555299239e58be21829673e220"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.265542,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:a855cee817bf895a51e57a581717bab26a7c7607b6fb537dbacdbf976a9e2227",
+          "peak_memory_bytes": 19170,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:6dd071ea7eb4f2cf22c3692103e0ed38ad592938c26893c1c9fe9bedd3ba0645",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.066542,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:26a162814f7edbb1a3fd3ee1a18c422061d003555299239e58be21829673e220"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.268792,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:04cc94ed743e583a0b7f8e0f402dabed0463c93579709e392b525cb2e6c4b4bf",
+          "peak_memory_bytes": 6296,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:af5d4da03de890f3a5879f0292595bd7b86c51fe9437e0be2c2185fd41965cbd",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.500667,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-002",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:9858299510ccbfe03b74daefa26e5f6f",
+      "input_fixture_digest": "sha256:16ccaaea60a0422d5c3c1ca731989eaa2d5e56bd63c1749f95ef709992398254",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:a49213b03804d1cc768ec8763a5e8e32d72690f61ae1504bc24f48f822847906"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.245792,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:2d81f1252786240d2bcd03a13a71b3962fa67f3c6677c9d2e9684f823eaaa95e",
+          "peak_memory_bytes": 7895,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:812c722f196f2d0fc4fc78853a2c99f9ae209d49fc45018489302c9003ccc09a",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.304083,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:a49213b03804d1cc768ec8763a5e8e32d72690f61ae1504bc24f48f822847906"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.243042,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:d5dd539693cf80cf040dca8bf898beba9589f2b6574b0f55463d326d90eb9338",
+          "peak_memory_bytes": 6790,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:8dbc2a4390ff65ef1546acbe580b33797cd9465349a2a10389b8b7f43ea4c10f",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.009875,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:a49213b03804d1cc768ec8763a5e8e32d72690f61ae1504bc24f48f822847906"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.231125,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:211fd24ea9f05f7e197aa1284f540358df109e04a08c1f2b3905e740c4d545ed",
+          "peak_memory_bytes": 6248,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:c06d2cc4c7d86434651b7b9a6f679afcc7832b460b6db90478b03d142884eb68",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.458334,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-003",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:ac866905646364900a52c3ad82f11f31",
+      "input_fixture_digest": "sha256:2251ec15c5779e01b5f15b4c90e5901c69c63b505fdb516aaff425028fdc0890",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:b5667e7e3c4884f554d4667de50acba84e1f367e8e35649972445c4fe0c2c50c"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.253083,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:0e8e055e0ed76e6c4da9c909807acc3521c754052f406247d6af515f342290cf",
+          "peak_memory_bytes": 7993,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:9d88cba2f76d7470d1b7482bbfef216a3ad3d7903cf284e3404699957defefee",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.315791,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:b5667e7e3c4884f554d4667de50acba84e1f367e8e35649972445c4fe0c2c50c"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.249375,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:8ad47a119913e9b334beec5f18fc21172ee539ce4fbc86ad135d0e13d9f649c3",
+          "peak_memory_bytes": 6864,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:01f77109c675cfe3cb4fb17d6a8c8b03de02e9a0710e08e4ade8c7f97f39af63",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.983417,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:b5667e7e3c4884f554d4667de50acba84e1f367e8e35649972445c4fe0c2c50c"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.254625,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:3bce0243496c80ac701548f5f633e53ffca84e45be35be597954b84925017805",
+          "peak_memory_bytes": 6304,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:ca5432ede1b1d5d64165b31d4dc6f9135a8c7aa1ed3629c561d3bab81091d8ab",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.477083,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-004",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:53a5c58299f2f785107bf971f2749ed6",
+      "input_fixture_digest": "sha256:29320a2d2a31f77161935c2edbf3656a5793579683231a821ea2eaa1a6745b20",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:0710aaebfd680390d759d04864e1bd85d72b5393ba9a49566a65810e6f3c54fc"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.24975,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:8ea598608235716778ca31bf05f60673a16547d731b0a2269e3ab6a2475b4aae",
+          "peak_memory_bytes": 8144,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:c973f0d7f22b184babf5b292104286d6c4b50372b8ba643cc39bdbcef3ab1fe9",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.328375,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:0710aaebfd680390d759d04864e1bd85d72b5393ba9a49566a65810e6f3c54fc"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.231084,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:6f883637e75dd6d723b757bc704b3eb1355626d501de2d2c83375100a27267c2",
+          "peak_memory_bytes": 9183,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:527f192e154b3862e7428880e92b5fd0930fc9d15f9131f73fe7bce4b074a981",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.995333,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:0710aaebfd680390d759d04864e1bd85d72b5393ba9a49566a65810e6f3c54fc"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.24475,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:b86fcfc34f4f5ccbdd9d82b546ef5ce7df187e45eea51b15e6e150a52ab99619",
+          "peak_memory_bytes": 6388,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:5ccb308deefcfe32f36369bce91b0194a1a917ed7a7bb4ff9da3463a3ab35e88",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.466667,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-005",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:49eb3ebfd320bf6126cd8a42bcf01636",
+      "input_fixture_digest": "sha256:c7b77906e20f80aa1bc1753477f9616febe32619f07031fbf6a551799da378f8",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:4f00daf2dc0ccfcdfe89a3a5c2c8812ac19f0fcb66bbaadc346efab90a300e64"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.24175,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:92d78714306c99de3775347c01bf2a518a80cbd5e7afb8ec542c625ad841534c",
+          "peak_memory_bytes": 8392,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:846fda4b80592bee1095e1d81767b2f38668df465edd262360aa855e15ae91c3",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.315,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:4f00daf2dc0ccfcdfe89a3a5c2c8812ac19f0fcb66bbaadc346efab90a300e64"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.254666,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:25d951abcf17b79635e8b62c0398a8171e794341a3b23bd5249a13555316454e",
+          "peak_memory_bytes": 6975,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:01c377b7f6d52187d48724e93a1a5c59e2da2a5ab6491443f0f6c2efaebda13d",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.996791,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:4f00daf2dc0ccfcdfe89a3a5c2c8812ac19f0fcb66bbaadc346efab90a300e64"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.245375,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:36d002e9c61c4f3e98087b4cfaeddbc2c4a8cd082abc034bd260eee8aa043009",
+          "peak_memory_bytes": 6386,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:d856e07234c52f30d5e1802b9ac3d20526ec5ec5bcd0d40f1a3ec01368369e0b",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.473042,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-006",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:567d245ed78e7606920494afe0146bb0",
+      "input_fixture_digest": "sha256:79dc29c7a97c8a9bb1a29b129cc5da669290017d66a41a83fb21c9760ac3143c",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:e1728ee4d608683bf1dab46d151dc6415b6bc2ff6c45281e3b910cc3a1ccfd98"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.2535,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:bc7bbd12c9d1e4fb4736d31941a2d81a3a555ae7d258177974049b146125274b",
+          "peak_memory_bytes": 8213,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:9f861810267642270bd37b84030ff3069dff74b4897213154eaf3a82a3c3d065",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.324708,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:e1728ee4d608683bf1dab46d151dc6415b6bc2ff6c45281e3b910cc3a1ccfd98"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.236625,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:244ce49bdf7f7b2655ca501bccc5f93e7a0b58e501ca31e762cb2004e75fe263",
+          "peak_memory_bytes": 7096,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:b0b086321523f0e988dca41107e8d4ac8eb4a3e3fc4c99e42b9eb6341fdda82c",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.94925,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:e1728ee4d608683bf1dab46d151dc6415b6bc2ff6c45281e3b910cc3a1ccfd98"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.267875,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:b0c071b8f247e9e95218f4941d8dc20d6c17ba32a884b99890c2330a6155ca34",
+          "peak_memory_bytes": 6408,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:112ebed6bc9edd2113852c1ff22c862207ccfc7d91756fae933b37aac1662b9c",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.451,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-008",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:387e9e8fd4562274f9fa66eeb8eab1b1",
+      "input_fixture_digest": "sha256:fa4572dd0db6a508552968b4fb25f6c9069e85dff1d3e1ed6a53aad7aea1c14d",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:ea08f72197abdaeadd118ce31b64b775a9320bf62124deef95d347bab58b8408"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.256416,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:21d0f478e4e1d073895405bc1fd2a8d6ebe6a8e2d970307d8e9c79223719c777",
+          "peak_memory_bytes": 8234,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:286f9ca18e16aa77a2c507b6b04d98d73440a7526693a76dd920e203635b5dc8",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.298958,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:ea08f72197abdaeadd118ce31b64b775a9320bf62124deef95d347bab58b8408"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.261833,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:06a755cdcb484351638bd4139702420952b4662313225ba3563f7e1122780744",
+          "peak_memory_bytes": 7111,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:cfd4704d5640528cc4b596fc7aa625547f4eb046857a38f4e045001031e044df",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.969834,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:ea08f72197abdaeadd118ce31b64b775a9320bf62124deef95d347bab58b8408"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.254625,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:ea28903e49e10cafa94fa0075f15be876cf35b98570a463976968f8a3513323a",
+          "peak_memory_bytes": 6420,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:7be5686a7514f72a5132f2d9d10f43a20de95469dca5f762087c5fa22dbe5dcc",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.4585,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-009",
+      "expected_input_count": 3,
+      "generation_id": "generation:cb4:c3a09a0bcd49e6c0fd59113878d2af78",
+      "input_fixture_digest": "sha256:07d3510d9b8fd9bd6282a9c9ceb47682fe4381172f0d434b4aae7b10833bdd9a",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 3,
+          "edge_ids": [
+            "code-edge-v1:f5e748d9ac0e425aa3ff8dda4432b2a774d6020f246721cce94d93b6930158fc",
+            "code-edge-v1:c9977c30ac4fbe28d03109717c71448b682169dcf916b9e39bcfe5404ae82eb4",
+            "code-edge-v1:a28ee8ca571892a8dbdf64fb8aa110c12d7def254a0fa0af3e1559534ed4264e"
+          ],
+          "eligible_input_count": 3,
+          "ingest_latency_ms": 0.324375,
+          "matched_expected_entity_count": 3,
+          "output_digest": "sha256:44a38226b6e575c5d76e7c6b37821270384cca000264812a7149331d642102a2",
+          "peak_memory_bytes": 18905,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 3,
+            "provenance_record_count": 6,
+            "scip_edge_count": 3,
+            "tree_sitter_edge_count": 3
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 3
+          },
+          "result_hash": "sha256:e7793f54235b297c1f56f414364428298f05f5095d136fda2b8c9fe3098e6166",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 3.228958,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 3,
+          "edge_ids": [
+            "code-edge-v1:f5e748d9ac0e425aa3ff8dda4432b2a774d6020f246721cce94d93b6930158fc",
+            "code-edge-v1:c9977c30ac4fbe28d03109717c71448b682169dcf916b9e39bcfe5404ae82eb4",
+            "code-edge-v1:a28ee8ca571892a8dbdf64fb8aa110c12d7def254a0fa0af3e1559534ed4264e"
+          ],
+          "eligible_input_count": 3,
+          "ingest_latency_ms": 0.313667,
+          "matched_expected_entity_count": 3,
+          "output_digest": "sha256:1559eed1e7a2cda088e1f6b5c0393d5cdcb3b98160f54be737d0e5a8ce25ea97",
+          "peak_memory_bytes": 15808,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 3,
+            "scip_edge_count": 3,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 3
+          },
+          "result_hash": "sha256:74d01846209c10d9279dd59084c910a51164cfc13788433dbcd7fb5124d8fd73",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.400417,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 3,
+          "edge_ids": [
+            "code-edge-v1:f5e748d9ac0e425aa3ff8dda4432b2a774d6020f246721cce94d93b6930158fc",
+            "code-edge-v1:c9977c30ac4fbe28d03109717c71448b682169dcf916b9e39bcfe5404ae82eb4",
+            "code-edge-v1:a28ee8ca571892a8dbdf64fb8aa110c12d7def254a0fa0af3e1559534ed4264e"
+          ],
+          "eligible_input_count": 3,
+          "ingest_latency_ms": 0.314291,
+          "matched_expected_entity_count": 3,
+          "output_digest": "sha256:057e59b3c73cde5bddf0682c40fd6b9cdde6664a94c13786ccd547f8d8f641a8",
+          "peak_memory_bytes": 13668,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 3,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 3
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 3
+          },
+          "result_hash": "sha256:1d7ad2d341e18bfaa8657ed42599762ed55031c383143d23348c8087c5595589",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.017375,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-011",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:5c540a768e2dd49a95a6f9d5e67ca46f",
+      "input_fixture_digest": "sha256:9ae52e6dfdfac94646da2297409d4e05f6503015c0b9baf60c60b74db0af4bfe",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:f2d7cb4062804cd6d9b5d554ff30de99f6cb17ebfb59dbdb019a415c706bbfa5"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.288333,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:23ffeee3773e017546b608b155863c45ae137d512ce4df200d037966020922be",
+          "peak_memory_bytes": 8182,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:887dde489104fa69c9e5f30672a227b5869b7d26dcb30e61fb7255cd49d6761b",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.369458,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:f2d7cb4062804cd6d9b5d554ff30de99f6cb17ebfb59dbdb019a415c706bbfa5"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.279834,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:8ba6f4a22c1a9310fd58956862ad224cd292263b745702485b3c4806eea4c9e0",
+          "peak_memory_bytes": 7007,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:a080b5335db99370e851a1b381690793d91100ee0909e9587c3b25fc1299902d",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.022,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:f2d7cb4062804cd6d9b5d554ff30de99f6cb17ebfb59dbdb019a415c706bbfa5"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.279292,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:9a4e88bc59be27f63998320d47a24371ca33ecd43470780f2b63c88d45f4b5ac",
+          "peak_memory_bytes": 6416,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:b2df4264dd438ceb8987b6ee96c699db53c584ac7a0cbdd9364e0cecaff2be70",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.47175,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-012",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:1bdfbaf842f3883fcd1c736d63902188",
+      "input_fixture_digest": "sha256:eb95d8a780d20fcf158152b73a746d0ed1e2a3030e110ac0d6e001498da2e73a",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:1f4ef32f0790bcc2fbc40be0b75f8962b960ed01d50d70a59ea5e2c23f81f527"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.278541,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:1d5b5dc3a3f34defc340960d413ab5efad650c382df90e79911d0ba4ab2de7d3",
+          "peak_memory_bytes": 8637,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:31e56bd443fb7e1a0675141e7a3de99583afb78b3fafda5f5229d21ba237a84f",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.396416,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:1f4ef32f0790bcc2fbc40be0b75f8962b960ed01d50d70a59ea5e2c23f81f527"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.261833,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:1428a8c5cd2db7daff5e7bfa387a2d0050031adbb8cfedfb6a1c89a550426bbc",
+          "peak_memory_bytes": 7288,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:d6ec5b63cd35444202f64c8081ebd39dd6dd2b9b6fa659cdb4b3620587940825",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.081209,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:1f4ef32f0790bcc2fbc40be0b75f8962b960ed01d50d70a59ea5e2c23f81f527"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.293041,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:9dcb7b2b032e5c8beea18e2f20193d178aca2a14db815feb71d3fa37591d7ead",
+          "peak_memory_bytes": 6528,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:3b4d22d2aa4faebe4a09f7f3e7d94de8cea2cd62077fb9fb3cd1d9d5bc8b444d",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.497709,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-013",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:5313ec47e5b75025d0ae7a8dbb0b3be8",
+      "input_fixture_digest": "sha256:df7f1e330081c4656fd1d76915468d86e7bb21a8150aacf6a45418d5d674bfc0",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:9fb01bb1832bd31fc42c9d66466f5eeefb41d2e5d7d7c204183659e74a34529c"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.258583,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:45d5951bd01b1de3b0f50bef5094a9908d3d1990036639c7bb476e31dc862d6a",
+          "peak_memory_bytes": 8436,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:2cf359cee8d535877746acae4273394d62dd1390bb20e2c13d1436e295c48d17",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.383166,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:9fb01bb1832bd31fc42c9d66466f5eeefb41d2e5d7d7c204183659e74a34529c"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.264833,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:6022946d4bda9003f2f5796d3cfc1bce3138707d2d90af54b4185100a35bee7c",
+          "peak_memory_bytes": 7381,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:f506a30574be6ae1d15fb2d30125191c7e8134627a32a8d5c6ac4e147fe9814a",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.0515,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:9fb01bb1832bd31fc42c9d66466f5eeefb41d2e5d7d7c204183659e74a34529c"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.251792,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:32cd913d8fe36a93f66a5ccb8434de1cdab7d8c42e29b32d55910eb967e21110",
+          "peak_memory_bytes": 6532,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:7d3567939f9d6f0247022c273073669934b12a9e7fb674df1ef307f5925a547d",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.454208,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-014",
+      "expected_input_count": 0,
+      "generation_id": "generation:cb4:b36c72c69ff551ce985b68c3eaecf490",
+      "input_fixture_digest": "sha256:b42570f969b83dd4e568dfabe359e76d68ed323178d306abdb68047e2382a52e",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.191625,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 2556,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:3714578c94ddb36ae306b0914cb873b749ca1627e78c79a5ef2028d02a38d8e7",
+          "semantic_ready": false,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.162916,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.213916,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 2492,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:3714578c94ddb36ae306b0914cb873b749ca1627e78c79a5ef2028d02a38d8e7",
+          "semantic_ready": false,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.167416,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.200042,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 3051,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:02486ba8fb3398f7dfc5f6d4729b950c42ced488a7a4e54d66aa3bc9914ca10d",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.188542,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-015",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:02e2fed39bf2301f4bf6cdae35af7bdb",
+      "input_fixture_digest": "sha256:0afdd63d4c84fb4c5709d1cef5d3e4ea6d74b273b55f965022655df09278c989",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:391f583fe59ee49d5e5661bda0f3b652fc8e35484a3e9c1ff4cffbd23c78948f",
+            "code-edge-v1:499f462801f28490aee6da955b6e6fe169d89c4803e7d42324c15010cbb36933"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.312292,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:be4418e3f75bcca71fad4ed711f8ec252aa08b5e9906891a4e5bf8533d3facef",
+          "peak_memory_bytes": 13283,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:45d64f2fed8586b215a8ffa9a7a444d1f365f82fed5cf85c94a0e07c9b82ae3f",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.305,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:391f583fe59ee49d5e5661bda0f3b652fc8e35484a3e9c1ff4cffbd23c78948f",
+            "code-edge-v1:499f462801f28490aee6da955b6e6fe169d89c4803e7d42324c15010cbb36933"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.300625,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:bb7933cc713cd4c6be908ac8aa0c5969dffa8a278156e7cbaf8942791f152756",
+          "peak_memory_bytes": 11469,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:dbf0665047d4fa6b5a872c198259c3ec0b57c658623c10a45c5a38d0218fae5e",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.602042,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:391f583fe59ee49d5e5661bda0f3b652fc8e35484a3e9c1ff4cffbd23c78948f",
+            "code-edge-v1:499f462801f28490aee6da955b6e6fe169d89c4803e7d42324c15010cbb36933"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.297583,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:c420d61d3ce56f6a5049fbedc88157f9bec7b249f5cb4940802e1d903bb10bc2",
+          "peak_memory_bytes": 10048,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:d4f6f23d53dc8f6c9ee0fbe943841cd8fa2058441a2a7d3dd851c08be25a3797",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.741708,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-016",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:cad985a6295bf4dd40aa6e1dc71ea034",
+      "input_fixture_digest": "sha256:e2031eddfba35cff0c7d1137a15480b2f1524a17a36ff7fb0f5ec9b66aedfc31",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:56b2f8940c2a35fae2e4df2ee62299cace5a9d7f6c4fe23af4bf85f8fe933866",
+            "code-edge-v1:dbc005b7a2ece851d46a12d8b862051b539b0a9179de358306b2cdc52e50e15e"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.303083,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:c11d9fe07cd58a57640acf512ecda116f8ac6dc618dddbf19a3a195f8eb44d44",
+          "peak_memory_bytes": 13212,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:23e1daac697bb52303b254e0d3e8259cb246a384223fcc9981c826afc99916a9",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.17525,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:56b2f8940c2a35fae2e4df2ee62299cace5a9d7f6c4fe23af4bf85f8fe933866",
+            "code-edge-v1:dbc005b7a2ece851d46a12d8b862051b539b0a9179de358306b2cdc52e50e15e"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.283292,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:5ba54b445c2ecbd7af1860cb924b35a40139b56e7d85e8e1c01f754681d14e77",
+          "peak_memory_bytes": 11020,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:5fd294922e1007a9bb88120daaf56d06f7d8954af660d8ea5285c3d006141b98",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.56475,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:56b2f8940c2a35fae2e4df2ee62299cace5a9d7f6c4fe23af4bf85f8fe933866",
+            "code-edge-v1:dbc005b7a2ece851d46a12d8b862051b539b0a9179de358306b2cdc52e50e15e"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.274208,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:961a4bbbb514fc0d1bdef61f97ebc6b0b0393f278554535b633525b007e99cde",
+          "peak_memory_bytes": 10036,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:5ddda9a16b6578ab5406b61f031614a24fb5b1427fdca31ac294b9d07bfc91ec",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.705417,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-017",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:3dbccc02d21056e072f35e9fb00fa162",
+      "input_fixture_digest": "sha256:011b855e2b859e17d5016c318abe3fe7775f3357d6ee05e76223dab142518dcc",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:094f8672fa362d30dc161dd8ebe1a033191d5cc88a6aa3e3faddcca2de80b44f",
+            "code-edge-v1:92c3baca048e24e7e0f5c07598eab8eab93561e3f1cd10f8064a2c40af67d2ca"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.297458,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:19c7c242d95b4a48abdd3a0e5878d312c6de4eac7f00c5931c4179f9e18f796f",
+          "peak_memory_bytes": 13564,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:c473b17acff66283f2f20eb36561d9eab5d5fee571e6c5e58fd6f8ef876f104a",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.469125,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:094f8672fa362d30dc161dd8ebe1a033191d5cc88a6aa3e3faddcca2de80b44f",
+            "code-edge-v1:92c3baca048e24e7e0f5c07598eab8eab93561e3f1cd10f8064a2c40af67d2ca"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.283166,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:172cd0e48179fad70fd06237759eb97d36a8fe60345b05ebd4bad88f2bf9aab5",
+          "peak_memory_bytes": 11390,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:5238eab250cbaa2f20ee4ac95ad830d0ae43769896be57696813370db92d1aa0",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.716292,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:094f8672fa362d30dc161dd8ebe1a033191d5cc88a6aa3e3faddcca2de80b44f",
+            "code-edge-v1:92c3baca048e24e7e0f5c07598eab8eab93561e3f1cd10f8064a2c40af67d2ca"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.301958,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:1f8e84afaff9e4771601f4d328f4d400731a593483e9d972431e89a21ce6ff5e",
+          "peak_memory_bytes": 9992,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:b172bf96d6e7378d4030395060c61c7443be23ee965cf7ce3949bc7379898557",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.691916,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-018",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:580ff20b7977d899b4154b481b031978",
+      "input_fixture_digest": "sha256:ff239f6d1887f898450b91f784b9f654713f9250925d40a1bbec20dfa3382079",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:dd79f7685f3f8d923443d64db6818f61aa3e14044e2e302789023ecb2988793b",
+            "code-edge-v1:2cee2dc03c9d69d438dd63ff7b9007a805296c4028ccb95fe54d9b6a890a28ef"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.349791,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:20c4d7c9f281bdba1a4cea4cc67a14318ad72e0e25d9635c904ceb3a9dd6cd7c",
+          "peak_memory_bytes": 13684,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:4fc156951400577aedff998dcdd849ed09c09169cbd6618f11e3cc6b7c9cf554",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.45175,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:dd79f7685f3f8d923443d64db6818f61aa3e14044e2e302789023ecb2988793b",
+            "code-edge-v1:2cee2dc03c9d69d438dd63ff7b9007a805296c4028ccb95fe54d9b6a890a28ef"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.402833,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:05e59c8c99ec3d73b0916e0bfc2a3ca9f1c5096cd3e27b324dabbb7ef58d7aa2",
+          "peak_memory_bytes": 11470,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:23634822b5239698d46f373c11799225119a03e20253e97e6ba878ede5719490",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.824,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:dd79f7685f3f8d923443d64db6818f61aa3e14044e2e302789023ecb2988793b",
+            "code-edge-v1:2cee2dc03c9d69d438dd63ff7b9007a805296c4028ccb95fe54d9b6a890a28ef"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.322291,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:5c432540077170faaf918d55a977efae1e1a75f675668f6e08b1eedd2d9e6d6d",
+          "peak_memory_bytes": 10078,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:3a57e2a339fb9e6079475eb29b619a2e4532dca6f1b933a1b1f7f5c74057e83d",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.748459,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-019",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:4e3256b46591947acb60c5c22004701c",
+      "input_fixture_digest": "sha256:8b31ad9b121ffa9a74bcd355757ac6ebbb864222666d081e0456ef4c3e619bad",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:2b5bab2685275e901778165c595c2251d59cbd56661b89c1901baa2801b132b3",
+            "code-edge-v1:135d03fb8e3bb84b1d2bc4c9f0d37b0586496e9976556e8a8c9788a6c7cb3c0e"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.361417,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:873523c3bcc68feec2b10abf4fa978241ba5d9101982c03e60d8e270616f10c5",
+          "peak_memory_bytes": 13604,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:949a27cb4c1c5f0b3a3e23811401f8607cd68dad926eb1193f6a5bab7ca56119",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.305958,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:2b5bab2685275e901778165c595c2251d59cbd56661b89c1901baa2801b132b3",
+            "code-edge-v1:135d03fb8e3bb84b1d2bc4c9f0d37b0586496e9976556e8a8c9788a6c7cb3c0e"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.329709,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:5b361543854bd43c139f3e91c0fcc6b342090b5c27c311a055bb6ff13b464f32",
+          "peak_memory_bytes": 11368,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:e46d484406d38032b9ad526d07c08d1d097b45329842e1022639d96124b6cef5",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.687375,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:2b5bab2685275e901778165c595c2251d59cbd56661b89c1901baa2801b132b3",
+            "code-edge-v1:135d03fb8e3bb84b1d2bc4c9f0d37b0586496e9976556e8a8c9788a6c7cb3c0e"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.303959,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:bc596015ffb9a9e8f5077d5da8ecd71e3e5d672140bd3878d0fb216deca00246",
+          "peak_memory_bytes": 10268,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:d39df64f45b7573581b916bbb963ac8d5d578ce92a80d949a7f5079b31f9f396",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.717667,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-021",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:017905df97f8b2688a5afdfd9c676cf8",
+      "input_fixture_digest": "sha256:60b9421eb76ee82403e0ab9e5b145b8b41b71169cdd740dfd1e5a93615c1bf75",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:16546513054a958cfce537485edfbc3501ad4ebc9360a2bca2ab4f0fd596486e"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.286958,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:c7fc126e9cc38c6dc5e60f8569711b27f563bdc9218863941bf7ca488540edc9",
+          "peak_memory_bytes": 8085,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:9e47a5dec77c8c48ce52831ccd73c675835d41480f0ebbff04ca7105d82e1169",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.30225,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:16546513054a958cfce537485edfbc3501ad4ebc9360a2bca2ab4f0fd596486e"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.26875,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:c9afd9b475f345faf9b2262954539abba8443c9d31bf032b4dc1faa1ee1d9af4",
+          "peak_memory_bytes": 6840,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:6344437460fafa4478327209e0cbe563ce7ccd7073699d532b6ac060703e1a4b",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.963042,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:16546513054a958cfce537485edfbc3501ad4ebc9360a2bca2ab4f0fd596486e"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.274292,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:6d9acfe2ea470bad7eea0ea51e261ac5bb11f3d8ededa8b2af6ddd432ef04608",
+          "peak_memory_bytes": 6344,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:5adf2df42761765cc1cf6b19effefe1b44cbfc1de5942fbb85c0fcc9e8370ef0",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.461042,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-022",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:82351969cb84bbb06d95489e56a2d5de",
+      "input_fixture_digest": "sha256:fd877c12fceb2345f447a9c2f10931e267bc01aceb1098ea31fc5514b84508e8",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:69e86aff3df698e475976ba7992d9474282e74592393197199e5f0b958389436",
+            "code-edge-v1:bee949c8a4eb85e3625e868f3c7356c0bbf9955e7a289020c313c6d682656397"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.338958,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:380722023db8facebc4f605173d1ffee93f16976830a4eb6da152df9da15eae9",
+          "peak_memory_bytes": 13212,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:4bb1a3762e02351421723e3a20ad2879c60c7e3f7f17936b60597f416e1c01e2",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.274083,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:69e86aff3df698e475976ba7992d9474282e74592393197199e5f0b958389436",
+            "code-edge-v1:bee949c8a4eb85e3625e868f3c7356c0bbf9955e7a289020c313c6d682656397"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.326167,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:9f451f9a2d8f42dcf9ce57c1b97ef5882bfdbb1ee4cc18048d683ab70f64e9d3",
+          "peak_memory_bytes": 11276,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:313ff7b166c63af859468c41a176dcb8bd3b4a6d9a84e108cb66c34406a9445b",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.587416,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:69e86aff3df698e475976ba7992d9474282e74592393197199e5f0b958389436",
+            "code-edge-v1:bee949c8a4eb85e3625e868f3c7356c0bbf9955e7a289020c313c6d682656397"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.31575,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:c215c5212f8bf1b58acafaaf525d175cc2dcb7ee95675eb4f9d2ea3521f2f691",
+          "peak_memory_bytes": 10036,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:a3dfb99e8231d44f584ad608b231ffb6d754874890b51fd3d78af0bf53f08fda",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.769042,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-023",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:646b6e92ff8d57d95677b193c50336c4",
+      "input_fixture_digest": "sha256:0dbe2bbfd3096ad96ecb7d86c9c9a17b6c8e6fdbfde2b3325632c5223c99c021",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:b4c55d36f389b7636fbebf9b7f6f80a1286e6b9f7cc3a1f473221e69ae720d0b"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.296583,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:6d87c5a4926e5f7e09a21b8cb403183438bc2b0ac77afefef6b87ab5dc930ee0",
+          "peak_memory_bytes": 8085,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:cc59538cb3fa0421221504b711c599c4acb2bc8228b10c3214761bb8a0e42a82",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.274583,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:b4c55d36f389b7636fbebf9b7f6f80a1286e6b9f7cc3a1f473221e69ae720d0b"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.316292,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:d1e6273dcc60fe151b605c9d5085795ed20cfaf7f35e551d2c6386c4a8bcf031",
+          "peak_memory_bytes": 6840,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:2eba44507078fe5eec4fae16201968af1b5b669811ac5324c0a384e63bafa186",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.983083,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:b4c55d36f389b7636fbebf9b7f6f80a1286e6b9f7cc3a1f473221e69ae720d0b"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.341375,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:a236d9f774b4b2028f6ff2e015bcafd50f7adf671fa52e7ada2b749a9fb267c5",
+          "peak_memory_bytes": 6344,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:225bc8a2f97fc587bc3645f8a0c1fc678a2466961373781bb915461a936debca",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.491542,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-025",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:784df1cfa21446adab07040ceeb7ac39",
+      "input_fixture_digest": "sha256:c58820b0bc2bbfade8d0a3999b83a62db50ef26844f33bd3a32e9724f61ca31d",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:9a3b5186a92865f7f59b36f516a51b21883fa99064fe8b9c6bd4dfb4dc596322"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.286,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:e42d07c6feeee4cfd436054e8ce44e5e49d1b8034af023d8d5f1216ca12456b4",
+          "peak_memory_bytes": 8436,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:fd63d2fe3154213a6a1476120d3708700169fe7cf6df2544c8119e86abe89d9a",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.342542,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:9a3b5186a92865f7f59b36f516a51b21883fa99064fe8b9c6bd4dfb4dc596322"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.306417,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:2f8ff60afb697f7db28d661ab3a8788ffc21b17bc8ebf150817575a2b52d3693",
+          "peak_memory_bytes": 7293,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:61b5c38ee99ae8aa8f6633afec6f0cbd2016a12bf4c3127ce2aeb1e3e5e00b4d",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.023292,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:9a3b5186a92865f7f59b36f516a51b21883fa99064fe8b9c6bd4dfb4dc596322"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.291959,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:2da5200718313fae7f06a23209c1cd68ed5772ab5762f47250f0a109936ff15f",
+          "peak_memory_bytes": 6532,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:32fdf9a58ac3f2f4d5672a96bef4b81dd5fb1a9e3006d83aa4e13cf1ee69dde3",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.466583,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-026",
+      "expected_input_count": 1,
+      "generation_id": "generation:cb4:a5f0c90dfb7f217b814102570efa2320",
+      "input_fixture_digest": "sha256:78a6d658a9921e5812ab34822eabebc05b44cd14059d51ca500dd5f0133c6dd4",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:99233b12eb8ef6f90464f4ac72f47ab71467fed98e9cd598069378933b559bc8"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.298958,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:c113737dbb30aa126e492372dbd679413c24fae99a9eff6fb7d415e9b5ab8d89",
+          "peak_memory_bytes": 8392,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 1,
+            "provenance_record_count": 2,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:1c7f03b1a9ae5fb01ff00c6acd738b54ec1ae035a2f2f3ed7a9e9d6fe0447dcb",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.325542,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:99233b12eb8ef6f90464f4ac72f47ab71467fed98e9cd598069378933b559bc8"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.338458,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:bc9ed44ee13eb2d934fc3135af637c6fc35c9b730784bbdb5a6515543283417f",
+          "peak_memory_bytes": 7231,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 1,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:94cf3ba752481f675ad51f4e83e04ce72abbc1aaa86a1ec49a450d7128537dcd",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.0015,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 1,
+          "edge_ids": [
+            "code-edge-v1:99233b12eb8ef6f90464f4ac72f47ab71467fed98e9cd598069378933b559bc8"
+          ],
+          "eligible_input_count": 1,
+          "ingest_latency_ms": 0.299084,
+          "matched_expected_entity_count": 1,
+          "output_digest": "sha256:4d48a252ad5164b36fe5785b8bc489691c7175585ecdffe02e88248577cbb484",
+          "peak_memory_bytes": 6514,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 1,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 1
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 1
+          },
+          "result_hash": "sha256:331f08015eaac3c52a6894ae724f8d685c8e08a923c6136ba41c248f975eb5f9",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.468708,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-028",
+      "expected_input_count": 0,
+      "generation_id": "generation:cb4:8161134106a0c6ffab41c4f6ea68d3fb",
+      "input_fixture_digest": "sha256:128451d579c7681d62df83c0528dcd0ecbc278d577ef8cf11616dea100f3a599",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.200041,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 2556,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:3714578c94ddb36ae306b0914cb873b749ca1627e78c79a5ef2028d02a38d8e7",
+          "semantic_ready": false,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.165625,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.1985,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 2492,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:3714578c94ddb36ae306b0914cb873b749ca1627e78c79a5ef2028d02a38d8e7",
+          "semantic_ready": false,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.167125,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.211292,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 3051,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:02486ba8fb3398f7dfc5f6d4729b950c42ced488a7a4e54d66aa3bc9914ca10d",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.19875,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-029",
+      "expected_input_count": 3,
+      "generation_id": "generation:cb4:8aba1d0b9e60c0e3b40ee8162978ff72",
+      "input_fixture_digest": "sha256:d276c0dd87c53ab7d4921c2526bb769f0a59532a38398e4d3129086a089569cf",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 3,
+          "edge_ids": [
+            "code-edge-v1:0ef9ea413dc7714b17a731ffcc810ca8a0415f6838efe104e5800ce6347e3fe6",
+            "code-edge-v1:5e001f5666025af1cffb20a44225391226ba8164e0016ef4f9ab7cbfd8b47254",
+            "code-edge-v1:04184ef45fbee5bb7fa3b4b0b9c898ad92a3276a4105890b3739f17d2021203a"
+          ],
+          "eligible_input_count": 3,
+          "ingest_latency_ms": 0.404458,
+          "matched_expected_entity_count": 3,
+          "output_digest": "sha256:954c078a7e037fbaeabe3b81d6df49e5a10ca70418ee31810191c9386dfcbe8c",
+          "peak_memory_bytes": 18984,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 3,
+            "provenance_record_count": 6,
+            "scip_edge_count": 3,
+            "tree_sitter_edge_count": 3
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 3
+          },
+          "result_hash": "sha256:db3df542c6f4517554e5387985504d928ea9b36d246db0cd17ad657c67c6365b",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 3.427708,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 3,
+          "edge_ids": [
+            "code-edge-v1:0ef9ea413dc7714b17a731ffcc810ca8a0415f6838efe104e5800ce6347e3fe6",
+            "code-edge-v1:5e001f5666025af1cffb20a44225391226ba8164e0016ef4f9ab7cbfd8b47254",
+            "code-edge-v1:04184ef45fbee5bb7fa3b4b0b9c898ad92a3276a4105890b3739f17d2021203a"
+          ],
+          "eligible_input_count": 3,
+          "ingest_latency_ms": 0.354625,
+          "matched_expected_entity_count": 3,
+          "output_digest": "sha256:7ef76f81dbb3e7564bfe286717914ac9d1f4f84f192a762923e49c745620aadc",
+          "peak_memory_bytes": 16081,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 3,
+            "scip_edge_count": 3,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 3
+          },
+          "result_hash": "sha256:c1995114d24a99bfaa3e2b32ffa6ff31b5bbe1b68244b11a408750e88f7fd751",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.358417,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 3,
+          "edge_ids": [
+            "code-edge-v1:0ef9ea413dc7714b17a731ffcc810ca8a0415f6838efe104e5800ce6347e3fe6",
+            "code-edge-v1:5e001f5666025af1cffb20a44225391226ba8164e0016ef4f9ab7cbfd8b47254",
+            "code-edge-v1:04184ef45fbee5bb7fa3b4b0b9c898ad92a3276a4105890b3739f17d2021203a"
+          ],
+          "eligible_input_count": 3,
+          "ingest_latency_ms": 0.329917,
+          "matched_expected_entity_count": 3,
+          "output_digest": "sha256:bf71c1943e4bdf64eec73980fe71acd17ee999ce712a8cfe48173923c4b5f987",
+          "peak_memory_bytes": 13766,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 3,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 3
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 3
+          },
+          "result_hash": "sha256:4c292a40db5714af6847954d4d31811c08fd00d1919613cf5a7de4ad54d73c62",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.960875,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-030",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:aeeb772ac2c233cb0ff49ddacc84d7de",
+      "input_fixture_digest": "sha256:d073cfe73d22c85ca242868c9dc1212d0de13f0540e76b39230645b63c3a5304",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:236d8ee30906caf258b7fc1f0f1c233b744795d542c640b20dc2c3aa82cbd91c",
+            "code-edge-v1:fcabfb59352bdf6d7a6313634846666366a5370092c8214fb8da208047da8f41"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.37125,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:89707070c9c5fb183218a695e2d75e4b19d51f6a197365396662d11325dd2c6e",
+          "peak_memory_bytes": 13212,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:66a4396dc3fb242c2b30f3b2be7490a0ffe7a15cee490408bc5901874e941a8c",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.204083,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:236d8ee30906caf258b7fc1f0f1c233b744795d542c640b20dc2c3aa82cbd91c",
+            "code-edge-v1:fcabfb59352bdf6d7a6313634846666366a5370092c8214fb8da208047da8f41"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.354666,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:18d383145ae7aeb9f1c103fe160768d5714e54bf9f7bb31dcd23b3445463cbba",
+          "peak_memory_bytes": 11020,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:6052bb427a9de338efcab0ae2b652549ae121deb402dfa44bd9933a00d5d48fd",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.5825,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:236d8ee30906caf258b7fc1f0f1c233b744795d542c640b20dc2c3aa82cbd91c",
+            "code-edge-v1:fcabfb59352bdf6d7a6313634846666366a5370092c8214fb8da208047da8f41"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.307875,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:8517a0d1463bed8920acf216240ddfdb5c1277e5f1e7d1fa5da8e145d9816b30",
+          "peak_memory_bytes": 9972,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:00f6611455fb9af0a34dc5d573edf6189a3b3494e018f243f41d8f719d37f6f2",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.714,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-031",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:00ecaaf6541c969d9286e8fdf08f2f32",
+      "input_fixture_digest": "sha256:6a44ee5609ea367000c2674f615bb7cc76899332f9a5effe9cd3669b9f292322",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:149ccb5a918e5dff39e8aed9cd78273fb3a381d65b9cf7147315c4ac347ba1a1",
+            "code-edge-v1:2b7b0c98275654a7e051212a8b4e150bec31d0097bb64cdf102736d503638f91"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.263708,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:6a9ef897f9152f2424e6e429c10f6e7d7d2179546c7fba6405d2b701b122f96b",
+          "peak_memory_bytes": 13564,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:af7138c222881b7745796340640c2e3b548b9ea843dcc1153741ec8bb86bff09",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.346666,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:149ccb5a918e5dff39e8aed9cd78273fb3a381d65b9cf7147315c4ac347ba1a1",
+            "code-edge-v1:2b7b0c98275654a7e051212a8b4e150bec31d0097bb64cdf102736d503638f91"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.278417,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:117bbc23439dede244ec7127fbb4f477cf38de59c54c21539b41f02adf4300db",
+          "peak_memory_bytes": 11390,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:ff03e9674161500b4540a03fcc4e518a839bb569678ce6fca7d1d2aa653181da",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.723333,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:149ccb5a918e5dff39e8aed9cd78273fb3a381d65b9cf7147315c4ac347ba1a1",
+            "code-edge-v1:2b7b0c98275654a7e051212a8b4e150bec31d0097bb64cdf102736d503638f91"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.265042,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:394dc819b994d87a4d1054a227d1dc0255017cff9efa309c1445d50ebfaae8d3",
+          "peak_memory_bytes": 9992,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:b7a4c1fb631029d25bb46137ec14ef548d7fb1bad11c4919ac38c9caf08daf5d",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.698625,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-032",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:1bc3f63f111f84b55eed39b03cb08587",
+      "input_fixture_digest": "sha256:6119b9525808aead070429970388e8a63f35a8a405467a5a61826bf2ddf831d4",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:43bfe94615b9d2fafaab66060d1abfe3cb013d81327109c1077b9c0cb4d52d90",
+            "code-edge-v1:c93e28f7017b041b776c453da2cbb49cd7c24ccbb85549c5a7dc97a15db31f42"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.336417,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:5c57197b4c083f8b8bef54b0de85682a606d0def954972c7ac976c4bf94efbb8",
+          "peak_memory_bytes": 13227,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:55d16e711150e000e6a4616d57c8d5475529ede5a118d69751bb2d90db26f026",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.245208,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:43bfe94615b9d2fafaab66060d1abfe3cb013d81327109c1077b9c0cb4d52d90",
+            "code-edge-v1:c93e28f7017b041b776c453da2cbb49cd7c24ccbb85549c5a7dc97a15db31f42"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.285833,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:6c83d5f179c6bcb83fa720b45593915f7f5ca6708aaf61635508b465dbb0936a",
+          "peak_memory_bytes": 11029,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:9da6f61e008a8749d523b88345fa92d0f2b6c0be1b0c0af9d5cec42ec476e9ee",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.533667,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:43bfe94615b9d2fafaab66060d1abfe3cb013d81327109c1077b9c0cb4d52d90",
+            "code-edge-v1:c93e28f7017b041b776c453da2cbb49cd7c24ccbb85549c5a7dc97a15db31f42"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.2795,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:7be79e2150a699479258e3289a5fdf11d36c62dde4ec6e6bd161c53bc55bcf4e",
+          "peak_memory_bytes": 10048,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:f579ce9f449f70bf6ea15efc09e1724ae2da79bbac003b96d7a55319e57a5eb1",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.738583,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-033",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:e5ef2034acf41442f99aff3e20eb4302",
+      "input_fixture_digest": "sha256:612403b4609c25991ce956759b90237b9dd3ab9827aaf46ceb50af48be2bd9ab",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:1385265e201e861160c47853481a617c0b4e88affafb928279b4f82580676af2",
+            "code-edge-v1:0c20c93509feee8147c5faf1b441599733467921b3919bff4cf16090dd3cdbee"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.416375,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:0b1f28b3a84b4652180a23dc4731256f80a4db401f207c18fb610a70d17040c7",
+          "peak_memory_bytes": 13598,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:ff1535f5aa7070af8efcdec8dfa838f4b49f498c8690580d27e397ac032bf310",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.407,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:1385265e201e861160c47853481a617c0b4e88affafb928279b4f82580676af2",
+            "code-edge-v1:0c20c93509feee8147c5faf1b441599733467921b3919bff4cf16090dd3cdbee"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.317584,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:7b788b8a2a1228d6bc408930280adb5b716fcbc396c6dcdf5e6fa09d91a11e2d",
+          "peak_memory_bytes": 11302,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:376b168fe2df91cd01bea9ee3e26fdb9c8af1f656a33ac2bdaba88e84a1743cb",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.636084,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:1385265e201e861160c47853481a617c0b4e88affafb928279b4f82580676af2",
+            "code-edge-v1:0c20c93509feee8147c5faf1b441599733467921b3919bff4cf16090dd3cdbee"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.31925,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:9be3668903c7a0cec6ea38d200ad2e788e358ba4e954bee2272be7a87d45f2ad",
+          "peak_memory_bytes": 10284,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:d5b5eb66db1ff5f0806c5f2f4e2b558b65fbdaf919378525a19180618f7606fc",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.767583,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-034",
+      "expected_input_count": 2,
+      "generation_id": "generation:cb4:760de46c2400d75ecb59cd17c81d286b",
+      "input_fixture_digest": "sha256:a9dbac1aa74a26c15502539d438b5bfe24f12eedc107020cc96cd81e775aae56",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:09956746a5f875c226a101eacacd2bd3aaf00c7caa331aa892a43ae0f765a805",
+            "code-edge-v1:0e78477901a7e7572248e24a0e6c5e6f5865f9eed8d6d9682e9a4106815fbef2"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.311791,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:ae9a6b597e0ea3b05dfa8ee2c115fb20ac05cab251c1e7bdeba81d330426b5c7",
+          "peak_memory_bytes": 13604,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 2,
+            "provenance_record_count": 4,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:c348e10f8fde3977a5507418ab41cd318c54dc55416d3478852366b28f5d849d",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 2.45925,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:09956746a5f875c226a101eacacd2bd3aaf00c7caa331aa892a43ae0f765a805",
+            "code-edge-v1:0e78477901a7e7572248e24a0e6c5e6f5865f9eed8d6d9682e9a4106815fbef2"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.324875,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:4acceccbac8d35881d70cd01ff0eb601a23cf03c45994dc4101e7e8277b68654",
+          "peak_memory_bytes": 11368,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 2,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:23672d8a97ce7e80edaa81d5bd1c0dc609fa42964edcf84d3ff48369f633d2be",
+          "semantic_ready": true,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 1.75325,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 2,
+          "edge_ids": [
+            "code-edge-v1:09956746a5f875c226a101eacacd2bd3aaf00c7caa331aa892a43ae0f765a805",
+            "code-edge-v1:0e78477901a7e7572248e24a0e6c5e6f5865f9eed8d6d9682e9a4106815fbef2"
+          ],
+          "eligible_input_count": 2,
+          "ingest_latency_ms": 0.304375,
+          "matched_expected_entity_count": 2,
+          "output_digest": "sha256:d4f69451d99af7b6d3746fe0dcac9bfd5411387fd7520dab170270af4ed001bc",
+          "peak_memory_bytes": 10268,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 2,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 2
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {
+            "REFERENCES": 2
+          },
+          "result_hash": "sha256:ff48c6c40fd43d1273343e5152b4cd175cb8554a661d1a6e0ed891ae5fb3cf64",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.785166,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    },
+    {
+      "case_id": "code-golden-v2-035",
+      "expected_input_count": 0,
+      "generation_id": "generation:cb4:3f883a1907834e8932f7b403c0537cd1",
+      "input_fixture_digest": "sha256:635ee50cf7f253414e4d93f7e3ecd4c62c471f8bf09f783d466ade9060958501",
+      "treatments": {
+        "merged_policy": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.21525,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 2492,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:3714578c94ddb36ae306b0914cb873b749ca1627e78c79a5ef2028d02a38d8e7",
+          "semantic_ready": false,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.190833,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "scip_semantic": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 0,
+          "diagnostic_counts": {},
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.219375,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 2492,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:3714578c94ddb36ae306b0914cb873b749ca1627e78c79a5ef2028d02a38d8e7",
+          "semantic_ready": false,
+          "status": "complete",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.196666,
+          "unresolved_after": 0,
+          "unresolved_before": 0
+        },
+        "tree_sitter_conservative": {
+          "conflict_count": 0,
+          "conflict_ids": [],
+          "diagnostic_count": 1,
+          "diagnostic_counts": {
+            "scip_unavailable": 1
+          },
+          "edge_count": 0,
+          "edge_ids": [],
+          "eligible_input_count": 0,
+          "ingest_latency_ms": 0.215542,
+          "matched_expected_entity_count": 0,
+          "output_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "peak_memory_bytes": 2987,
+          "provenance_counts": {
+            "multi_provenance_edge_count": 0,
+            "provenance_record_count": 0,
+            "scip_edge_count": 0,
+            "tree_sitter_edge_count": 0
+          },
+          "quality_status": "unavailable",
+          "quality_values_created": false,
+          "relation_counts": {},
+          "result_hash": "sha256:02486ba8fb3398f7dfc5f6d4729b950c42ced488a7a4e54d66aa3bc9914ca10d",
+          "semantic_ready": false,
+          "status": "partial",
+          "support_status": "supported",
+          "treatment_latency_ms": 0.208958,
+          "unresolved_after": null,
+          "unresolved_before": null
+        }
+      }
+    }
+  ],
+  "executed_at_utc": "2026-07-28T07:18:14+00:00",
+  "language_scope": {
+    "javascript": {
+      "case_ids": [
+        "code-golden-v2-027"
+      ],
+      "reason": "C-B4 production semantic treatment is Python-only",
+      "status": "unavailable"
+    },
+    "python": {
+      "case_count": 30,
+      "status": "executed"
+    },
+    "typescript": {
+      "case_ids": [
+        "code-golden-v2-007",
+        "code-golden-v2-010"
+      ],
+      "reason": "scip-typescript production treatment is unavailable",
+      "status": "unavailable"
+    }
+  },
+  "pipeline_profile": "golden-python30-three-arm-production-v1",
+  "production_identity": {
+    "class": "SemanticEdgeTreatment",
+    "evaluation_entry_point": "evaluate_semantic_edges",
+    "functional_entry_point": "treat_python_semantic_edges",
+    "functions": {
+      "evaluate_semantic_edges": true,
+      "treat_python_semantic_edges": true
+    },
+    "identity_policy": "exact-type-only",
+    "implementation_module": "evidence_rag.rag.sources.code.semantic_edges_v1",
+    "import_mode": "delayed",
+    "interfaces": {
+      "SemanticEdgeScope": true,
+      "SemanticEdgeTreatmentResult": true,
+      "TreeSitterConservativeEdge": true
+    },
+    "method": "treat",
+    "module": "evidence_rag.rag.sources.code.semantic_edges_v1",
+    "public_module": "evidence_rag.rag.sources.code",
+    "status": "ready",
+    "version": "c5-python-semantic-edges-v1"
+  },
+  "production_output_attestation_ref": {
+    "attestation_hash": "sha256:23feb1ee5ecf3f59cb7aad63b487bae61321da0fc140d64ae27dfb43b8b9f064",
+    "case_count": 30,
+    "component_identity_hash": "sha256:80a9df8c8d84990362c9608110479a9c1715d2a431e1fbee196355fedfa68729",
+    "pipeline_profile": "golden-python30-tree-sitter-conservative-v1",
+    "schema_version": "code-c-b4-production-output-attestation-v1",
+    "total_output_count": 42
+  },
+  "python_case_ids": [
+    "code-golden-v2-001",
+    "code-golden-v2-002",
+    "code-golden-v2-003",
+    "code-golden-v2-004",
+    "code-golden-v2-005",
+    "code-golden-v2-006",
+    "code-golden-v2-008",
+    "code-golden-v2-009",
+    "code-golden-v2-011",
+    "code-golden-v2-012",
+    "code-golden-v2-013",
+    "code-golden-v2-014",
+    "code-golden-v2-015",
+    "code-golden-v2-016",
+    "code-golden-v2-017",
+    "code-golden-v2-018",
+    "code-golden-v2-019",
+    "code-golden-v2-021",
+    "code-golden-v2-022",
+    "code-golden-v2-023",
+    "code-golden-v2-025",
+    "code-golden-v2-026",
+    "code-golden-v2-028",
+    "code-golden-v2-029",
+    "code-golden-v2-030",
+    "code-golden-v2-031",
+    "code-golden-v2-032",
+    "code-golden-v2-033",
+    "code-golden-v2-034",
+    "code-golden-v2-035"
+  ],
+  "python_case_membership_hash": "sha256:a42a607f37d10c6f92c7ceffd84cd8dad4a7bf20dd38197275d940d1d971a3f5",
+  "run_id": "evaluation-run://project-code-golden-v2/a22b322a141741ae9a710aa347fbf032",
+  "same_input_profile_generation": true,
+  "schema_version": "code-c-b4-treatments-v1",
+  "treatment_order": [
+    "tree_sitter_conservative",
+    "scip_semantic",
+    "merged_policy"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "authority_sha256": "sha256:9240346e72d969e5eac294053a2173b88efaa0a1ef40fc057ad5053a5f09d166",
+  "case_count": 120,
+  "dataset_id": "agent-native-wiki-golden-v1",
+  "dataset_version": "v1",
+  "eligible_denominators": {
+    "acl_safety": 120,
+    "correct_refusal": 10,
+    "full_evidence": 110,
+    "obligation_completion": 110,
+    "path_recall": 110,
+    "premature_stop_avoidance": 110,
+    "raw_citation_binding": 110,
+    "unsupported_claim_safety": 120
+  },
+  "package_sha256": "sha256:fb53aaed5318b4372354972a4a75b386689de2b0629446c13b3220436ffc874b",
+  "slice_counts": {
+    "acl_security": 10,
+    "bridge_2hop": 20,
+    "compare_causal": 15,
+    "exploratory": 10,
+    "global_aggregate": 10,
+    "high_fan_in": 15,
+    "incremental_contradiction": 5,
+    "local_raw_detail": 15,
+    "temporal_stale": 10,
+    "unanswerable": 10
+  }
+}

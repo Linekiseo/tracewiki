@@ -1,0 +1,9 @@
+{
+  "attempt_id": "attempt-20260726T201405Z-e47d29e3",
+  "baseline_qualified": true,
+  "completed_at": "2026-07-26T20:14:11.134626+00:00",
+  "run_id": "evaluation-run://project-code-golden-v2/3c63ce5394b643419bab7784c9c6c1b6",
+  "schema_version": "code-c0-03-attempt-audit-v1",
+  "started_at": "2026-07-26T20:14:05.567462+00:00",
+  "status": "completed"
+}

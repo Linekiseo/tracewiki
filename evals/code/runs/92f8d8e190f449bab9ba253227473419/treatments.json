@@ -1,0 +1,219 @@
+{
+  "arms": {
+    "graph_off": {
+      "case_count": 33,
+      "graph_candidate_enabled": false,
+      "graph_enters_candidates": false,
+      "graph_enters_context_only": false,
+      "graph_traversal": false,
+      "label": "graph off",
+      "paired_graph_off": null,
+      "paired_graph_off_run_id": null,
+      "reranker": false,
+      "run_id": "evaluation-run://project-code-golden-v2/66489fccc58d48fe959eec96ea086e5e"
+    },
+    "graph_post_only": {
+      "case_count": 33,
+      "graph_candidate_enabled": false,
+      "graph_enters_candidates": false,
+      "graph_enters_context_only": true,
+      "graph_traversal": true,
+      "label": "graph post-only",
+      "paired_graph_off": "graph_off",
+      "paired_graph_off_run_id": null,
+      "reranker": false,
+      "run_id": "evaluation-run://project-code-golden-v2/982cfad6b2084ef693857a21b8393212"
+    },
+    "graph_reranker": {
+      "case_count": 33,
+      "graph_candidate_enabled": true,
+      "graph_enters_candidates": true,
+      "graph_enters_context_only": false,
+      "graph_traversal": true,
+      "label": "graph + reranker",
+      "paired_graph_off": "graph_off",
+      "paired_graph_off_run_id": "evaluation-run://project-code-golden-v2/66489fccc58d48fe959eec96ea086e5e",
+      "reranker": true,
+      "run_id": "evaluation-run://project-code-golden-v2/92f8d8e190f449bab9ba253227473419"
+    },
+    "typed_graph": {
+      "case_count": 33,
+      "graph_candidate_enabled": true,
+      "graph_enters_candidates": true,
+      "graph_enters_context_only": false,
+      "graph_traversal": true,
+      "label": "typed graph",
+      "paired_graph_off": "graph_off",
+      "paired_graph_off_run_id": "evaluation-run://project-code-golden-v2/66489fccc58d48fe959eec96ea086e5e",
+      "reranker": false,
+      "run_id": "evaluation-run://project-code-golden-v2/211777f123e14900a9af9d16015d4e3d"
+    }
+  },
+  "order": [
+    "graph_off",
+    "graph_post_only",
+    "typed_graph",
+    "graph_reranker"
+  ],
+  "production_identity": {
+    "dense_publisher": {
+      "class": "CodeDenseProfilePublisher",
+      "module": "evidence_rag.rag.sources.code.dense_v2",
+      "version": "code-dense-publication-v1"
+    },
+    "graph": {
+      "class": "CodeTypedGraphRetriever",
+      "implementation_module": "evidence_rag.rag.sources.code.graph_retrieval_v2",
+      "public_module": "evidence_rag.rag.sources.code",
+      "retriever_version": "code-typed-graph-retriever-v1"
+    },
+    "hybrid": {
+      "channels": [
+        "exact",
+        "sparse",
+        "dense"
+      ],
+      "class": "CodeHybridV2Retriever",
+      "fusion": "deterministic-weighted-rrf-v2",
+      "index_family": "ast-v2",
+      "module": "evidence_rag.rag.sources.code.dense_v2",
+      "version": "code-hybrid-v2"
+    },
+    "reranker": {
+      "class": "CodeRerankedRetriever",
+      "fallback_policy": "preserve-hybrid-order-v1",
+      "module": "evidence_rag.rag.sources.code.rerank_v2",
+      "policy": "deterministic-rules-v1",
+      "version": "code-deterministic-reranker-v1"
+    }
+  },
+  "schema_version": "code-c-b3-treatments-v1",
+  "shared_input": {
+    "ast_builder": "ast-v2",
+    "case_ids": [
+      "code-golden-v2-001",
+      "code-golden-v2-002",
+      "code-golden-v2-003",
+      "code-golden-v2-004",
+      "code-golden-v2-005",
+      "code-golden-v2-006",
+      "code-golden-v2-007",
+      "code-golden-v2-008",
+      "code-golden-v2-009",
+      "code-golden-v2-010",
+      "code-golden-v2-011",
+      "code-golden-v2-012",
+      "code-golden-v2-013",
+      "code-golden-v2-014",
+      "code-golden-v2-015",
+      "code-golden-v2-016",
+      "code-golden-v2-017",
+      "code-golden-v2-018",
+      "code-golden-v2-019",
+      "code-golden-v2-021",
+      "code-golden-v2-022",
+      "code-golden-v2-023",
+      "code-golden-v2-025",
+      "code-golden-v2-026",
+      "code-golden-v2-027",
+      "code-golden-v2-028",
+      "code-golden-v2-029",
+      "code-golden-v2-030",
+      "code-golden-v2-031",
+      "code-golden-v2-032",
+      "code-golden-v2-033",
+      "code-golden-v2-034",
+      "code-golden-v2-035"
+    ],
+    "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+    "dataset_package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+    "dense_publisher": {
+      "class": "CodeDenseProfilePublisher",
+      "module": "evidence_rag.rag.sources.code.dense_v2",
+      "version": "code-dense-publication-v1"
+    },
+    "downloads_performed": false,
+    "graph": {
+      "class": "CodeTypedGraphRetriever",
+      "implementation_module": "evidence_rag.rag.sources.code.graph_retrieval_v2",
+      "public_module": "evidence_rag.rag.sources.code",
+      "retriever_version": "code-typed-graph-retriever-v1"
+    },
+    "graph_policy": {
+      "acl_policy": "authorize-both-edge-endpoints-and-hidden-middle-nodes-v1",
+      "beam_width": 20,
+      "cycle_policy": "path-local-entity-id-v1",
+      "edge_budget": 400,
+      "edge_type_policy": "registered-task-whitelist-v1",
+      "graph_candidates": 30,
+      "hop_decay": 0.72,
+      "max_hops": 3,
+      "min_confidence": 0.0,
+      "node_budget": 200,
+      "seed_candidates": 10,
+      "version_policy": "exact-or-explicit-transition-v1"
+    },
+    "graph_publications": [
+      {
+        "edge_count": 33,
+        "entity_count": 25,
+        "excluded_unregistered_edge_types": {
+          "HAS_COMMIT": 1
+        },
+        "generation_id": "gen-219ab788-352d-42cd-b2c9-b2648ea6d3c4",
+        "graph_version": "code-ast-v2-typed-graph-publication-v1",
+        "ready": true,
+        "registered_edge_count": 32,
+        "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+        "stable_version": "85e41dc96462ddfa897483d17388d2be5f9d5fff"
+      },
+      {
+        "edge_count": 145,
+        "entity_count": 58,
+        "excluded_unregistered_edge_types": {
+          "HAS_COMMIT": 1
+        },
+        "generation_id": "gen-410d281b-53d3-44a3-903c-beed05170ec3",
+        "graph_version": "code-ast-v2-typed-graph-publication-v1",
+        "ready": true,
+        "registered_edge_count": 144,
+        "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+        "stable_version": "bc3326edc761e3bdb42ed78726a21f314ab44974"
+      },
+      {
+        "edge_count": 11,
+        "entity_count": 9,
+        "excluded_unregistered_edge_types": {
+          "HAS_COMMIT": 1
+        },
+        "generation_id": "gen-63923f99-f05d-4125-ac76-80cfd0eb97ab",
+        "graph_version": "code-ast-v2-typed-graph-publication-v1",
+        "ready": true,
+        "registered_edge_count": 10,
+        "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+        "stable_version": "6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809"
+      }
+    ],
+    "hybrid": {
+      "channels": [
+        "exact",
+        "sparse",
+        "dense"
+      ],
+      "class": "CodeHybridV2Retriever",
+      "fusion": "deterministic-weighted-rrf-v2",
+      "index_family": "ast-v2",
+      "module": "evidence_rag.rag.sources.code.dense_v2",
+      "version": "code-hybrid-v2"
+    },
+    "network_used": false,
+    "reranker": {
+      "class": "CodeRerankedRetriever",
+      "fallback_policy": "preserve-hybrid-order-v1",
+      "module": "evidence_rag.rag.sources.code.rerank_v2",
+      "policy": "deterministic-rules-v1",
+      "version": "code-deterministic-reranker-v1"
+    }
+  },
+  "shared_input_fingerprint": "sha256:2e7527422c952cb1ff944f1a534e64f41c7171517e03f4fd5266c7f7623580e5"
+}

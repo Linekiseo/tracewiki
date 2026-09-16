@@ -1,0 +1,25 @@
+{
+  "acceptance_decision": "not-qualified",
+  "c4_02_gate_approved": true,
+  "completed_at": "2026-07-27T16:23:03.475435+00:00",
+  "downloads_performed": false,
+  "execution_mode": "qualified",
+  "gate_authorization": {
+    "decision": "C-B3 PRODUCTION EXECUTION AUTHORIZED",
+    "report": "docs/rag-optimization/development/reviews/05_CODE_C4_GATE_REVIEW.md",
+    "report_sha256": "sha256:7a9626337458bbe269dea1ab308c971d9d5491475402552e7a43160b894e51d0",
+    "status": "authorized"
+  },
+  "network_used": false,
+  "primary_run_id": "evaluation-run://project-code-golden-v2/92f8d8e190f449bab9ba253227473419",
+  "run_ids": {
+    "graph_off": "evaluation-run://project-code-golden-v2/66489fccc58d48fe959eec96ea086e5e",
+    "graph_post_only": "evaluation-run://project-code-golden-v2/982cfad6b2084ef693857a21b8393212",
+    "graph_reranker": "evaluation-run://project-code-golden-v2/92f8d8e190f449bab9ba253227473419",
+    "typed_graph": "evaluation-run://project-code-golden-v2/211777f123e14900a9af9d16015d4e3d"
+  },
+  "schema_version": "code-c-b3-attempt-audit-v1",
+  "started_at": "2026-07-27T16:22:33.168492+00:00",
+  "status": "completed",
+  "treatment_qualified": false
+}

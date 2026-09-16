@@ -1,0 +1,291 @@
+/* TraceWiki desktop UI contract: compact navigation, bounded content and calm density. */
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+.app-shell {
+  grid-template-columns: 58px 220px minmax(0, 1fr);
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.icon-rail {
+  width: 58px;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  margin: 12px 0 16px;
+  overflow: hidden;
+  border-radius: 11px;
+  background: transparent;
+  box-shadow: 0 7px 18px rgba(3, 10, 24, 0.28);
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.icon-rail__item {
+  min-height: 49px;
+}
+
+.icon-rail__item span {
+  font-size: 10px;
+}
+
+.icon-rail__item--context {
+  display: none;
+}
+
+.project-rail {
+  left: 58px;
+  width: 220px;
+}
+
+.project-rail__scroll {
+  padding: 10px 9px;
+  scrollbar-gutter: stable;
+}
+
+.rail-section {
+  margin-top: 14px;
+}
+
+.rail-section:first-child {
+  margin-top: 0;
+}
+
+.rail-link {
+  min-height: 36px;
+  padding-inline: 10px;
+}
+
+.project-rail__footer {
+  padding: 8px;
+}
+
+.system-health {
+  margin: 0;
+  padding: 8px;
+}
+
+.app-stage {
+  grid-column: 3;
+  min-width: 0;
+  min-height: 0;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: 58px minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.topbar {
+  position: relative;
+  height: 58px;
+  grid-template-columns: minmax(170px, auto) minmax(240px, 620px) auto;
+  gap: 12px;
+  padding: 0 14px;
+}
+
+.topbar__actions {
+  min-width: 0;
+  align-items: center;
+}
+
+.global-search,
+.topbar-project,
+.project-context,
+.topbar__actions,
+.app-content,
+.app-content > * {
+  min-width: 0;
+}
+
+.global-search span,
+.desktop-health-pill,
+.topbar__actions .button--primary {
+  white-space: nowrap;
+}
+
+.global-search span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-content {
+  min-height: 0;
+  height: 100%;
+  max-width: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.app-content :is(section, article, header, footer, nav, div, dl, ol, ul) {
+  min-width: 0;
+}
+
+.app-content :is(p, li, dd, code, pre, strong, small, em) {
+  overflow-wrap: anywhere;
+}
+
+.app-content pre,
+.app-content table {
+  max-width: 100%;
+}
+
+.dialog-layer,
+.credential-layer {
+  padding: 20px;
+}
+
+.dialog,
+.credential-dialog {
+  width: min(760px, calc(100vw - 40px));
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.query-audit-disclosure {
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.trusted-result {
+  display: flex;
+  flex-direction: column;
+}
+
+.trusted-result > * {
+  order: 10;
+}
+
+.trusted-result > .trusted-result__status {
+  order: 0;
+}
+
+.trusted-result > :is(.trusted-answer, .clarification-card) {
+  order: 1;
+}
+
+.trusted-result > .query-audit-disclosure {
+  order: 30;
+}
+
+.query-audit-disclosure > summary {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  color: var(--text-2);
+  background: var(--surface-muted);
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+}
+
+.query-audit-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.query-audit-disclosure > summary svg {
+  transition: transform 160ms ease;
+}
+
+.query-audit-disclosure[open] > summary svg {
+  transform: rotate(180deg);
+}
+
+.query-audit-disclosure > :not(summary) {
+  margin-inline: 14px;
+}
+
+.query-audit-disclosure > :last-child {
+  margin-bottom: 14px;
+}
+
+.query-audit-disclosure .query-intelligence {
+  margin-top: 14px;
+}
+
+.query-audit-disclosure .query-metadata-grid {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 1380px) {
+  .topbar {
+    grid-template-columns: minmax(160px, auto) minmax(210px, 1fr) auto;
+  }
+
+  .project-context__separator,
+  .project-context__module,
+  .desktop-health-pill {
+    display: none;
+  }
+}
+
+@media (max-width: 1220px) {
+  .app-shell,
+  .app-shell--rail-collapsed {
+    grid-template-columns: 58px 54px minmax(0, 1fr);
+  }
+
+  .project-rail,
+  .app-shell--rail-collapsed .project-rail {
+    left: 58px;
+    width: 54px;
+  }
+
+  .icon-rail__item--context {
+    display: flex;
+  }
+
+  .topbar__actions .button--primary {
+    max-width: 42px;
+    padding-inline: 11px;
+    overflow: hidden;
+    font-size: 0;
+  }
+
+  .topbar__actions .button--primary svg {
+    margin: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .global-search {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .query-audit-disclosure > summary svg {
+    transition: none;
+  }
+}

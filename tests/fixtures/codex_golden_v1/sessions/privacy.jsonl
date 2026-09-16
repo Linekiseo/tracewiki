@@ -1,0 +1,7 @@
+{"cwd":"${PROJECT_ROOT}","thread_id":"codex-golden-privacy","timestamp":"2026-07-06T13:00:00Z","type":"thread.started"}
+{"timestamp":"2026-07-06T13:00:01Z","turn_id":"privacy-turn","type":"turn.started"}
+{"item":{"id":"privacy-goal","message":"Audit credential handling without exposing credential values or private reasoning.","type":"user_message"},"timestamp":"2026-07-06T13:00:02Z","type":"item.completed"}
+{"item":{"id":"privacy-reasoning","summary":"private reasoning is deliberately ineligible evidence","type":"reasoning"},"timestamp":"2026-07-06T13:00:03Z","type":"item.completed"}
+{"item":{"aggregated_output":"src/security.py:12:def redact_values","command":"rg -n redact_values src/security.py","exit_code":0,"id":"privacy-read","type":"command_execution"},"timestamp":"2026-07-06T13:00:04Z","type":"item.completed"}
+{"item":{"id":"privacy-outcome","text":"Only the redaction behavior is reportable; credential values and reasoning are excluded.","type":"agent_message"},"timestamp":"2026-07-06T13:00:05Z","type":"item.completed"}
+{"timestamp":"2026-07-06T13:00:06Z","turn_id":"privacy-turn","type":"turn.completed"}

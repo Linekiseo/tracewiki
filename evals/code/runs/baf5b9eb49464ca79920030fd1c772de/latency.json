@@ -1,0 +1,561 @@
+{
+  "cases": [
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-001",
+      "fallback_status": "not_used",
+      "latency_ms": 87.88974990602583,
+      "rerank_latency_ms": 87.88974990602583,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-002",
+      "fallback_status": "not_used",
+      "latency_ms": 99.98995892237872,
+      "rerank_latency_ms": 99.98995892237872,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-003",
+      "fallback_status": "not_used",
+      "latency_ms": 91.01024991832674,
+      "rerank_latency_ms": 91.01024991832674,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-004",
+      "fallback_status": "not_used",
+      "latency_ms": 610.8468750026077,
+      "rerank_latency_ms": 610.8468750026077,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-005",
+      "fallback_status": "not_used",
+      "latency_ms": 653.6620839033276,
+      "rerank_latency_ms": 653.6620839033276,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-006",
+      "fallback_status": "not_used",
+      "latency_ms": 110.99195899441838,
+      "rerank_latency_ms": 110.99195899441838,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-007",
+      "fallback_status": "not_used",
+      "latency_ms": 110.39183405227959,
+      "rerank_latency_ms": 110.39183405227959,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-008",
+      "fallback_status": "not_used",
+      "latency_ms": 93.61450001597404,
+      "rerank_latency_ms": 93.61450001597404,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-009",
+      "fallback_status": "not_used",
+      "latency_ms": 101.78862500470132,
+      "rerank_latency_ms": 101.78862500470132,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-010",
+      "fallback_status": "not_used",
+      "latency_ms": 109.99395803082734,
+      "rerank_latency_ms": 109.99395803082734,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-011",
+      "fallback_status": "not_used",
+      "latency_ms": 759.8035830305889,
+      "rerank_latency_ms": 759.8035830305889,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-012",
+      "fallback_status": "not_used",
+      "latency_ms": 623.3788339886814,
+      "rerank_latency_ms": 623.3788339886814,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-013",
+      "fallback_status": "not_used",
+      "latency_ms": 3.049249993637204,
+      "rerank_latency_ms": 3.049249993637204,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-014",
+      "fallback_status": "not_used",
+      "latency_ms": 8.78987496253103,
+      "rerank_latency_ms": 8.78987496253103,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 16,
+      "case_id": "code-golden-v2-015",
+      "fallback_status": "not_used",
+      "latency_ms": 99.91858305875212,
+      "rerank_latency_ms": 99.91858305875212,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-016",
+      "fallback_status": "not_used",
+      "latency_ms": 92.22666604910046,
+      "rerank_latency_ms": 92.22666604910046,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-017",
+      "fallback_status": "not_used",
+      "latency_ms": 123.29141702502966,
+      "rerank_latency_ms": 123.29141702502966,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-018",
+      "fallback_status": "not_used",
+      "latency_ms": 93.86104193981737,
+      "rerank_latency_ms": 93.86104193981737,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-019",
+      "fallback_status": "not_used",
+      "latency_ms": 3.2598329707980156,
+      "rerank_latency_ms": 3.2598329707980156,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-021",
+      "fallback_status": "not_used",
+      "latency_ms": 127.1615830482915,
+      "rerank_latency_ms": 127.1615830482915,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-022",
+      "fallback_status": "not_used",
+      "latency_ms": 97.18691604211926,
+      "rerank_latency_ms": 97.18691604211926,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-023",
+      "fallback_status": "not_used",
+      "latency_ms": 120.1654999749735,
+      "rerank_latency_ms": 120.1654999749735,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-025",
+      "fallback_status": "not_used",
+      "latency_ms": 3.2745839562267065,
+      "rerank_latency_ms": 3.2745839562267065,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-026",
+      "fallback_status": "not_used",
+      "latency_ms": 695.4890829510987,
+      "rerank_latency_ms": 695.4890829510987,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 15,
+      "case_id": "code-golden-v2-027",
+      "fallback_status": "not_used",
+      "latency_ms": 92.97158301342279,
+      "rerank_latency_ms": 92.97158301342279,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 17,
+      "case_id": "code-golden-v2-028",
+      "fallback_status": "not_used",
+      "latency_ms": 102.88437502458692,
+      "rerank_latency_ms": 102.88437502458692,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-029",
+      "fallback_status": "not_used",
+      "latency_ms": 112.10387491155416,
+      "rerank_latency_ms": 112.10387491155416,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-030",
+      "fallback_status": "not_used",
+      "latency_ms": 90.95645800698549,
+      "rerank_latency_ms": 90.95645800698549,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-031",
+      "fallback_status": "not_used",
+      "latency_ms": 117.63066693674773,
+      "rerank_latency_ms": 117.63066693674773,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-032",
+      "fallback_status": "not_used",
+      "latency_ms": 107.55208402406424,
+      "rerank_latency_ms": 107.55208402406424,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-033",
+      "fallback_status": "not_used",
+      "latency_ms": 692.414875025861,
+      "rerank_latency_ms": 692.414875025861,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-034",
+      "fallback_status": "not_used",
+      "latency_ms": 3.504415974020958,
+      "rerank_latency_ms": 3.504415974020958,
+      "rerank_outcome": "complete"
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-035",
+      "fallback_status": "not_used",
+      "latency_ms": 22.45775004848838,
+      "rerank_latency_ms": 22.45775004848838,
+      "rerank_outcome": "complete"
+    }
+  ],
+  "compute": {
+    "cpu_logical_count": {
+      "status": "available",
+      "value": 14
+    },
+    "gpu": {
+      "reason": "local-hash C-B2 does not use or probe a GPU",
+      "status": "unavailable"
+    },
+    "machine": "arm64",
+    "physical_memory_bytes": {
+      "source": "os.sysconf",
+      "status": "available",
+      "value": 25769803776
+    },
+    "process_peak_rss_bytes": {
+      "source": "resource.getrusage(RUSAGE_SELF).ru_maxrss",
+      "status": "available",
+      "value": 240173056
+    },
+    "python_implementation": "CPython",
+    "system": "Darwin"
+  },
+  "dense_index": {
+    "p95_ms": {
+      "sample_count": 3,
+      "status": "available",
+      "value": 572.8496791999999
+    },
+    "total_ms": 743.370458
+  },
+  "ingest": {
+    "p95_ms": {
+      "sample_count": 3,
+      "status": "available",
+      "value": 670.6042338999999
+    },
+    "total_ms": 1857.609625
+  },
+  "query_p95": {
+    "cb0_qualified_baseline": {
+      "baseline": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 15.04,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 15.04
+      },
+      "delta": {
+        "direction": "lower",
+        "directional_delta": -678.6045581959561,
+        "status": "available",
+        "treatment_minus_baseline": 678.6045581959561
+      },
+      "membership": {
+        "canonical_case_ids": [
+          "code-golden-v2-001",
+          "code-golden-v2-002",
+          "code-golden-v2-003",
+          "code-golden-v2-004",
+          "code-golden-v2-005",
+          "code-golden-v2-006",
+          "code-golden-v2-007",
+          "code-golden-v2-008",
+          "code-golden-v2-009",
+          "code-golden-v2-010",
+          "code-golden-v2-011",
+          "code-golden-v2-012",
+          "code-golden-v2-013",
+          "code-golden-v2-014",
+          "code-golden-v2-015",
+          "code-golden-v2-016",
+          "code-golden-v2-017",
+          "code-golden-v2-018",
+          "code-golden-v2-019",
+          "code-golden-v2-021",
+          "code-golden-v2-022",
+          "code-golden-v2-023",
+          "code-golden-v2-025",
+          "code-golden-v2-026",
+          "code-golden-v2-027",
+          "code-golden-v2-028",
+          "code-golden-v2-029",
+          "code-golden-v2-030",
+          "code-golden-v2-031",
+          "code-golden-v2-032",
+          "code-golden-v2-033",
+          "code-golden-v2-034",
+          "code-golden-v2-035"
+        ],
+        "case_count": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+      },
+      "metric_denominator_equal": true,
+      "metric_name": "latency_p95_ms",
+      "same_case_membership": true,
+      "scope": "overall",
+      "treatment": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 693.644558195956,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 693.644558195956
+      }
+    },
+    "cb1_not_qualified_audit": {
+      "baseline": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 86.22237479999998,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 86.22237479999998
+      },
+      "delta": {
+        "direction": "lower",
+        "directional_delta": -607.422183395956,
+        "status": "available",
+        "treatment_minus_baseline": 607.422183395956
+      },
+      "membership": {
+        "canonical_case_ids": [
+          "code-golden-v2-001",
+          "code-golden-v2-002",
+          "code-golden-v2-003",
+          "code-golden-v2-004",
+          "code-golden-v2-005",
+          "code-golden-v2-006",
+          "code-golden-v2-007",
+          "code-golden-v2-008",
+          "code-golden-v2-009",
+          "code-golden-v2-010",
+          "code-golden-v2-011",
+          "code-golden-v2-012",
+          "code-golden-v2-013",
+          "code-golden-v2-014",
+          "code-golden-v2-015",
+          "code-golden-v2-016",
+          "code-golden-v2-017",
+          "code-golden-v2-018",
+          "code-golden-v2-019",
+          "code-golden-v2-021",
+          "code-golden-v2-022",
+          "code-golden-v2-023",
+          "code-golden-v2-025",
+          "code-golden-v2-026",
+          "code-golden-v2-027",
+          "code-golden-v2-028",
+          "code-golden-v2-029",
+          "code-golden-v2-030",
+          "code-golden-v2-031",
+          "code-golden-v2-032",
+          "code-golden-v2-033",
+          "code-golden-v2-034",
+          "code-golden-v2-035"
+        ],
+        "case_count": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+      },
+      "metric_denominator_equal": true,
+      "metric_name": "latency_p95_ms",
+      "same_case_membership": true,
+      "scope": "overall",
+      "treatment": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 693.644558195956,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 693.644558195956
+      }
+    },
+    "cb2_not_qualified_audit": {
+      "baseline": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 550.13,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 550.13
+      },
+      "delta": {
+        "direction": "lower",
+        "directional_delta": -143.51455819595606,
+        "status": "available",
+        "treatment_minus_baseline": 143.51455819595606
+      },
+      "membership": {
+        "canonical_case_ids": [
+          "code-golden-v2-001",
+          "code-golden-v2-002",
+          "code-golden-v2-003",
+          "code-golden-v2-004",
+          "code-golden-v2-005",
+          "code-golden-v2-006",
+          "code-golden-v2-007",
+          "code-golden-v2-008",
+          "code-golden-v2-009",
+          "code-golden-v2-010",
+          "code-golden-v2-011",
+          "code-golden-v2-012",
+          "code-golden-v2-013",
+          "code-golden-v2-014",
+          "code-golden-v2-015",
+          "code-golden-v2-016",
+          "code-golden-v2-017",
+          "code-golden-v2-018",
+          "code-golden-v2-019",
+          "code-golden-v2-021",
+          "code-golden-v2-022",
+          "code-golden-v2-023",
+          "code-golden-v2-025",
+          "code-golden-v2-026",
+          "code-golden-v2-027",
+          "code-golden-v2-028",
+          "code-golden-v2-029",
+          "code-golden-v2-030",
+          "code-golden-v2-031",
+          "code-golden-v2-032",
+          "code-golden-v2-033",
+          "code-golden-v2-034",
+          "code-golden-v2-035"
+        ],
+        "case_count": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+      },
+      "metric_denominator_equal": true,
+      "metric_name": "latency_p95_ms",
+      "same_case_membership": true,
+      "scope": "overall",
+      "treatment": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 693.644558195956,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 693.644558195956
+      }
+    }
+  },
+  "rerank_timeout": {
+    "all_timeout_fallbacks_valid": true,
+    "fallback_rate": {
+      "denominator": 33,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "fallback_reasons": {},
+    "fallback_valid_count": 0,
+    "invalid_timeout_fallback_count": 0,
+    "policy": "preserve-hybrid-order-v1",
+    "timeout_budget_ms": 100,
+    "timeout_count": 0,
+    "timeout_fallback_rate": {
+      "denominator": 33,
+      "numerator": 0,
+      "value": 0.0
+    },
+    "timeout_p95_ms": {
+      "reason": "no timing samples",
+      "sample_count": 0,
+      "status": "unavailable",
+      "value": null
+    }
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/baf5b9eb49464ca79920030fd1c772de",
+  "schema_version": "code-c-b5-latency-v1"
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "project-rag",
+    "name": "多源协同 RAG",
+    "description": "代码、Codex 会话、实验与科研文档的统一证据工作台。",
+    "owner": "RAG Core",
+    "acl_ref": "project:project-rag",
+    "classification": "internal",
+    "status": "active",
+    "created_at": "2026-08-04T00:00:00+00:00",
+    "updated_at": "2026-08-04T00:00:00+00:00",
+    "topic_count": 0,
+    "active_iteration_count": 0,
+    "active_work_item_count": 0,
+    "current_topic": null,
+    "repositories": 0,
+    "sessions": 0,
+    "experiments": 0,
+    "documents": 0,
+    "pending_reviews": 0,
+    "last_activity_at": null,
+    "settings": {}
+  }
+]

@@ -1,0 +1,1515 @@
+dataset_version: code-golden-v1
+
+refs:
+  current: &current_ref "3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f"
+  c1: &c1_ref "1111111111111111111111111111111111111111"
+  c2: &c2_ref "2222222222222222222222222222222222222222"
+  c3: &c3_ref "3333333333333333333333333333333333333333"
+
+acls:
+  team: &team_acl "acl://code-golden/team"
+  fraud: &fraud_acl "acl://code-golden/fraud-team"
+
+entity_ids:
+  repository: &repository "repo://fixture/code-golden-shop"
+  commit_c1: &commit_c1 "git://fixture/code-golden-shop/commit/1111111111111111111111111111111111111111"
+  commit_c2: &commit_c2 "git://fixture/code-golden-shop/commit/2222222222222222222222222222222222222222"
+  commit_c3: &commit_c3 "git://fixture/code-golden-shop/commit/3333333333333333333333333333333333333333"
+  commit_dirty: &commit_dirty "git://fixture/code-golden-shop/commit/3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f"
+  pricing_file: &pricing_file "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/pricing.py"
+  web_checkout_file: &web_checkout_file "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/web/checkout.ts"
+  generated_file: &generated_file "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/generated/client.ts"
+  vendor_file: &vendor_file "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/vendor/payment_sdk.js"
+  private_file: &private_file "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/private/fraud_rules.py"
+  pricing_total: &pricing_total "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/pricing.py#symbol=calculate_total"
+  validate_currency: &validate_currency "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/pricing.py#symbol=validate_currency"
+  receipt_formatter: &receipt_formatter "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/pricing.py#symbol=build_receipt_formatter"
+  receipt_line: &receipt_line "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/pricing.py#symbol=build_receipt_formatter.format_line"
+  checkout_service: &checkout_service "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/pricing.py#symbol=CheckoutService"
+  checkout_submit: &checkout_submit "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/pricing.py#symbol=CheckoutService.submit_order"
+  audit_format: &audit_format "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/pricing.py#symbol=AuditFormatter.format"
+  loyalty_discount: &loyalty_discount "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/discounts.py#symbol=loyalty_discount"
+  tax_policy: &tax_policy "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/tax.py#symbol=TaxPolicy"
+  tax_rate: &tax_rate "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/tax.py#symbol=TaxPolicy.rate_for"
+  compute_tax: &compute_tax "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/checkout/tax.py#symbol=compute_tax"
+  normalize_amount: &normalize_amount "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/payments/gateway.py#symbol=normalize_amount"
+  charge_int_overload: &charge_int_overload "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/payments/gateway.py#symbol=PaymentGateway.charge~cb86c575e5d2"
+  charge_float_overload: &charge_float_overload "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/payments/gateway.py#symbol=PaymentGateway.charge~807bb1fdc372"
+  charge_impl: &charge_impl "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/payments/gateway.py#symbol=PaymentGateway.charge~a4b2779893cc"
+  admin_charge: &admin_charge "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/payments/admin.py#symbol=PaymentGateway.charge"
+  admin_submit: &admin_submit "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/payments/admin.py#symbol=submit_order"
+  web_submit: &web_submit "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/web/checkout.ts#symbol=submitOrder"
+  web_process: &web_process "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/web/checkout.ts#symbol=CheckoutController.process"
+  web_format: &web_format "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/web/money.ts#symbol=formatMoney"
+  web_admin_submit: &web_admin_submit "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/web/admin.ts#symbol=submitOrder"
+  generated_submit: &generated_submit "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/generated/client.ts#symbol=submitOrder"
+  vendor_charge: &vendor_charge "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/vendor/payment_sdk.js#symbol=charge"
+  fraud_score: &fraud_score "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/src/private/fraud_rules.py#symbol=score_fraud_risk"
+  test_gold: &test_gold "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/tests/pricing_cases.py#symbol=test_gold_customer_discount"
+  test_currency: &test_currency "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/tests/pricing_cases.py#symbol=test_rejects_unknown_currency"
+  test_total: &test_total "code://fixture/code-golden-shop@3333333333333333333333333333333333333333+dirty.5e1c0d3a7b9f/tests/pricing_cases.py#symbol=test_total_with_tax"
+  hist_c1_round: &hist_c1_round "code://fixture/code-golden-shop@1111111111111111111111111111111111111111/src/checkout/legacy_total.py#symbol=legacy_round_total"
+  hist_c1_total: &hist_c1_total "code://fixture/code-golden-shop@1111111111111111111111111111111111111111/src/checkout/legacy_total.py#symbol=calculate_total"
+  hist_c2_round: &hist_c2_round "code://fixture/code-golden-shop@2222222222222222222222222222222222222222/src/checkout/totals.py#symbol=round_total"
+  hist_c2_total: &hist_c2_total "code://fixture/code-golden-shop@2222222222222222222222222222222222222222/src/checkout/totals.py#symbol=calculate_total"
+  hist_c3_total: &hist_c3_total "code://fixture/code-golden-shop@3333333333333333333333333333333333333333/src/checkout/pricing.py#symbol=calculate_total"
+  diff_c2: &diff_c2 "diff://fixture/code-golden-shop/222222222222"
+  diff_c3: &diff_c3 "diff://fixture/code-golden-shop/333333333333"
+  validation_c2_fail: &validation_c2_fail "test-result://project-code-golden/222222222222-failing"
+  validation_c3_pass: &validation_c3_pass "test-result://project-code-golden/333333333333-passing"
+  validation_dirty_fail: &validation_dirty_fail "test-result://project-code-golden/dirty-failing"
+
+unit_ids:
+  pricing_total: &u_pricing_total "unit://sha256:5d7cd4f91c17fc7008c665084c9655642872795a0cadfab2278e793dd27d0a63"
+  validate_currency: &u_validate_currency "unit://sha256:07fdc7170f07a15748cb6f2ee57501fa603f8e3e0511f0c7290918702ff3d131"
+  receipt_formatter: &u_receipt_formatter "unit://sha256:a6e1e1905a07ab7e0697fc81a347c06a751b96974e95bfa7f1d2d31733bfe10e"
+  receipt_line: &u_receipt_line "unit://sha256:58630b564f4bd76de59ac5f52ff4530533b06f034d7ec2f397e59ea8b0798fe8"
+  checkout_service: &u_checkout_service "unit://sha256:e314e01c93752e0f0546a8d19f0ff21a35af33f007a9ddcda46431d6813b6f3e"
+  checkout_submit: &u_checkout_submit "unit://sha256:1e9e83a1bb2c010f9aad2e16744810a4e38a8576d98d813bd225e4a24adfe679"
+  audit_format: &u_audit_format "unit://sha256:0693b3bbd4fbee03ae9f9c1ba2ff9c0dd6cf2d748cfcfc4b9c9ef13081fe50b6"
+  loyalty_discount: &u_loyalty_discount "unit://sha256:ccedf4b777fac465ff6dd11e3c1a8daff819884e55571d021739e9379018a0ce"
+  tax_policy: &u_tax_policy "unit://sha256:221d1358019c051381faa1571da7dc8041b05159d7ff4086cd38c655f35fafd7"
+  tax_rate: &u_tax_rate "unit://sha256:50b12b2b79537e9dd1422b7ea91fc62cddc8eb41a74076692837a6f54b343c51"
+  compute_tax: &u_compute_tax "unit://sha256:7d3a382b548c8f3131a725664b7aa9ecd0c010a527d319c57dc33d5bb6bc6ed7"
+  normalize_amount: &u_normalize_amount "unit://sha256:aef3220d179a3da04aa115c6287ef48c6f3c6f08688c7c4b95b26027d286d83b"
+  charge_int: &u_charge_int "unit://sha256:bee6b5091296bfc7a72a09b930e734585c0ca8049492d3477790c77caa77a8c8"
+  charge_float: &u_charge_float "unit://sha256:87f5292c4509023d0ad35b5c0e6ff1196dad56c71abdd4914f8fadbbdc5a06ab"
+  charge_impl: &u_charge_impl "unit://sha256:ee282443b18501cfd99598ea0f93b7ccfeb8f382fd8aef6b6ac593843d08e8c8"
+  admin_charge: &u_admin_charge "unit://sha256:fcdd6e01a38a7be9443a15e21b19f03004a89aac75d47c051c7a0faa15b4576f"
+  admin_submit: &u_admin_submit "unit://sha256:fc6a29c93db1a3547497bd48035698618163125fef342c30181307024cfa5125"
+  web_submit: &u_web_submit "unit://sha256:4f0d40f6e090bffb0aff67395a43665365e80a43c6a4d530236d8754a0b9e17e"
+  web_process: &u_web_process "unit://sha256:483119cf4646edceb9f6337ca035ea031df3f160d4a4675b0fad9b85c02c7919"
+  web_format: &u_web_format "unit://sha256:d65f628fa9e4604e224f99fa823292a73d1216d1d9fc736f3bd7da3857eaae11"
+  generated_submit: &u_generated_submit "unit://sha256:e0f4b2f9f232a30fc507d4f66ce68e00903ea71fa5329ecdb91a932629cb7d0b"
+  vendor_charge: &u_vendor_charge "unit://sha256:d6925c75748bc1788e83004b4e4d5ae2c28e36239fee43a12cc2851773550ca2"
+  fraud_score: &u_fraud_score "unit://sha256:f801ce6ed6d28b995b419a3315b5ad26625db254392d7881f2b24ec7f759f24f"
+  test_gold: &u_test_gold "unit://sha256:280eec7e56dbc45afb2984b3011bd467d835802a26df81554c9e83a2ac0463ee"
+  test_currency: &u_test_currency "unit://sha256:60c2414a083b34c32f8fa0832fb48c8b332da6d2c60cb731136b576c2100e0c9"
+  test_total: &u_test_total "unit://sha256:3080b17323bfe55374b392dace6f35299bc14c10afed7169b595b8bdc19e1a08"
+  hist_c1_round: &u_hist_c1_round "unit://sha256:e26b5b2fdcd9e575ec7862be7005280c24c2ac304a734d865acee33e127110db"
+  hist_c1_total: &u_hist_c1_total "unit://sha256:e8f6db245c87abdf58463730123661e9a5b691146141c4fcc75c271504cebb24"
+  hist_c2_round: &u_hist_c2_round "unit://sha256:9bb815e45b61fd622ff89b02a74fcdf335fefb1c01903a6b038d48265a964855"
+  hist_c2_total: &u_hist_c2_total "unit://sha256:ef1ed9f3b8eb6fdadb34b2757899a037a00facec4ec80b24b8d8fd595bf5eece"
+  hist_c3_total: &u_hist_c3_total "unit://sha256:ebfb49eea8747923c535e3e03c26aa622aabd9d0145adbbee1d7ad95b2e94cb6"
+  validation_c2_fail: &u_validation_c2_fail "unit://sha256:e9ecc89a7bcd017ef5b2f0e9df372a79faed30d55faa3995cd1ebe954a51af31"
+  validation_c3_pass: &u_validation_c3_pass "unit://sha256:025067a7b57003fb05b1df7e9340e3110c04b0239f1019cad7fabc480947a1f8"
+  validation_dirty_fail: &u_validation_dirty_fail "unit://sha256:44ad6573604b623197eba7054bb23f568f1c862de526c5bfdb2ca42342e4ad33"
+  pricing_file: &u_pricing_file "unit://sha256:83df26015556300bd0dc9021608c5aa99c7a4c4aaa41a9f17cc0c5c47f6e33cd"
+  web_checkout_file: &u_web_checkout_file "unit://sha256:b2c9b8d17717731d20c13ea3a8dd0dcc796487f57a2a8d4a8a450d88ded41180"
+
+locators:
+  pricing_file: &l_pricing_file {entity_id: *pricing_file, path: "src/checkout/pricing.py", start_line: 1, end_line: 52}
+  web_checkout_file: &l_web_checkout_file {entity_id: *web_checkout_file, path: "web/checkout.ts", start_line: 1, end_line: 17}
+  pricing_total: &l_pricing_total {entity_id: *pricing_total, path: "src/checkout/pricing.py", start_line: 9, end_line: 17}
+  validate_currency: &l_validate_currency {entity_id: *validate_currency, path: "src/checkout/pricing.py", start_line: 20, end_line: 21}
+  receipt_formatter: &l_receipt_formatter {entity_id: *receipt_formatter, path: "src/checkout/pricing.py", start_line: 24, end_line: 30}
+  receipt_line: &l_receipt_line {entity_id: *receipt_line, path: "src/checkout/pricing.py", start_line: 27, end_line: 28}
+  checkout_submit: &l_checkout_submit {entity_id: *checkout_submit, path: "src/checkout/pricing.py", start_line: 37, end_line: 47}
+  loyalty_discount: &l_loyalty_discount {entity_id: *loyalty_discount, path: "src/checkout/discounts.py", start_line: 4, end_line: 7}
+  tax_rate: &l_tax_rate {entity_id: *tax_rate, path: "src/checkout/tax.py", start_line: 7, end_line: 8}
+  compute_tax: &l_compute_tax {entity_id: *compute_tax, path: "src/checkout/tax.py", start_line: 11, end_line: 13}
+  charge_impl: &l_charge_impl {entity_id: *charge_impl, path: "src/payments/gateway.py", start_line: 17, end_line: 19}
+  admin_charge: &l_admin_charge {entity_id: *admin_charge, path: "src/payments/admin.py", start_line: 5, end_line: 6}
+  admin_submit: &l_admin_submit {entity_id: *admin_submit, path: "src/payments/admin.py", start_line: 9, end_line: 10}
+  web_submit: &l_web_submit {entity_id: *web_submit, path: "web/checkout.ts", start_line: 9, end_line: 11}
+  web_process: &l_web_process {entity_id: *web_process, path: "web/checkout.ts", start_line: 14, end_line: 16}
+  web_format: &l_web_format {entity_id: *web_format, path: "web/money.ts", start_line: 1, end_line: 3}
+  generated_submit: &l_generated_submit {entity_id: *generated_submit, path: "generated/client.ts", start_line: 2, end_line: 4}
+  vendor_charge: &l_vendor_charge {entity_id: *vendor_charge, path: "vendor/payment_sdk.js", start_line: 2, end_line: 4}
+  fraud_score: &l_fraud_score {entity_id: *fraud_score, path: "src/private/fraud_rules.py", start_line: 4, end_line: 5}
+  test_gold: &l_test_gold {entity_id: *test_gold, path: "tests/pricing_cases.py", start_line: 5, end_line: 6}
+  test_currency: &l_test_currency {entity_id: *test_currency, path: "tests/pricing_cases.py", start_line: 9, end_line: 16}
+  test_total: &l_test_total {entity_id: *test_total, path: "tests/pricing_cases.py", start_line: 19, end_line: 20}
+  hist_c1_round: &l_hist_c1_round {entity_id: *hist_c1_round, path: "src/checkout/legacy_total.py", start_line: 1, end_line: 2}
+  hist_c1_total: &l_hist_c1_total {entity_id: *hist_c1_total, path: "src/checkout/legacy_total.py", start_line: 5, end_line: 6}
+  hist_c2_round: &l_hist_c2_round {entity_id: *hist_c2_round, path: "src/checkout/totals.py", start_line: 1, end_line: 2}
+  hist_c2_total: &l_hist_c2_total {entity_id: *hist_c2_total, path: "src/checkout/totals.py", start_line: 5, end_line: 6}
+  hist_c3_total: &l_hist_c3_total {entity_id: *hist_c3_total, path: "src/checkout/pricing.py", start_line: 4, end_line: 5}
+  validation_c2: &l_validation_c2 {entity_id: *validation_c2_fail, path: "history/validations/222222222222-failing.json"}
+  validation_c3: &l_validation_c3 {entity_id: *validation_c3_pass, path: "history/validations/333333333333-passing.json"}
+  validation_dirty: &l_validation_dirty {entity_id: *validation_dirty_fail, path: "history/validations/dirty-failing.json"}
+
+paths:
+  submit_to_total: &p_submit_to_total
+    nodes: [*checkout_submit, *pricing_total]
+    edges:
+      - {source: *checkout_submit, edge_type: CALLS, target: *pricing_total, direction: outgoing}
+  submit_to_tax: &p_submit_to_tax
+    nodes: [*checkout_submit, *pricing_total, *compute_tax]
+    edges:
+      - {source: *checkout_submit, edge_type: CALLS, target: *pricing_total, direction: outgoing}
+      - {source: *pricing_total, edge_type: CALLS, target: *compute_tax, direction: outgoing}
+  submit_to_validation: &p_submit_to_validation
+    nodes: [*checkout_submit, *validate_currency]
+    edges:
+      - {source: *checkout_submit, edge_type: CALLS, target: *validate_currency, direction: outgoing}
+  total_to_discount: &p_total_to_discount
+    nodes: [*pricing_total, *loyalty_discount]
+    edges:
+      - {source: *pricing_total, edge_type: CALLS, target: *loyalty_discount, direction: outgoing}
+  total_to_tax: &p_total_to_tax
+    nodes: [*pricing_total, *compute_tax, *tax_rate]
+    edges:
+      - {source: *pricing_total, edge_type: CALLS, target: *compute_tax, direction: outgoing}
+      - {source: *compute_tax, edge_type: CALLS, target: *tax_rate, direction: outgoing}
+  submit_to_charge: &p_submit_to_charge
+    nodes: [*checkout_submit, *charge_impl, *normalize_amount]
+    edges:
+      - {source: *checkout_submit, edge_type: CALLS, target: *charge_impl, direction: outgoing}
+      - {source: *charge_impl, edge_type: CALLS, target: *normalize_amount, direction: outgoing}
+  web_flow: &p_web_flow
+    nodes: [*web_process, *web_submit, *web_format]
+    edges:
+      - {source: *web_process, edge_type: CALLS, target: *web_submit, direction: outgoing}
+      - {source: *web_submit, edge_type: CALLS, target: *web_format, direction: outgoing}
+  test_gold_to_total: &p_test_gold_to_total
+    nodes: [*test_gold, *pricing_total]
+    edges:
+      - {source: *test_gold, edge_type: TESTS, target: *pricing_total, direction: outgoing}
+  test_currency_to_submit: &p_test_currency_to_submit
+    nodes: [*test_currency, *checkout_submit]
+    edges:
+      - {source: *test_currency, edge_type: TESTS, target: *checkout_submit, direction: outgoing}
+  test_total_to_total: &p_test_total_to_total
+    nodes: [*test_total, *pricing_total]
+    edges:
+      - {source: *test_total, edge_type: TESTS, target: *pricing_total, direction: outgoing}
+  total_from_submit: &p_total_from_submit
+    nodes: [*pricing_total, *checkout_submit]
+    edges:
+      - {source: *checkout_submit, edge_type: CALLS, target: *pricing_total, direction: incoming}
+  total_from_test_gold: &p_total_from_test_gold
+    nodes: [*pricing_total, *test_gold]
+    edges:
+      - {source: *test_gold, edge_type: TESTS, target: *pricing_total, direction: incoming}
+  total_from_test_total: &p_total_from_test_total
+    nodes: [*pricing_total, *test_total]
+    edges:
+      - {source: *test_total, edge_type: TESTS, target: *pricing_total, direction: incoming}
+  tax_from_total_and_test: &p_tax_from_total_and_test
+    nodes: [*compute_tax, *pricing_total, *test_total]
+    edges:
+      - {source: *pricing_total, edge_type: CALLS, target: *compute_tax, direction: incoming}
+      - {source: *test_total, edge_type: TESTS, target: *pricing_total, direction: incoming}
+  rename_round: &p_rename_round
+    nodes: [*hist_c1_round, *hist_c2_round]
+    edges:
+      - {source: *hist_c1_round, edge_type: RENAMED_TO, target: *hist_c2_round, direction: outgoing}
+  move_total_c1_c3: &p_move_total_c1_c3
+    nodes: [*hist_c1_total, *hist_c2_total, *hist_c3_total]
+    edges:
+      - {source: *hist_c1_total, edge_type: MOVED_TO, target: *hist_c2_total, direction: outgoing}
+      - {source: *hist_c2_total, edge_type: MOVED_TO, target: *hist_c3_total, direction: outgoing}
+  c3_to_dirty: &p_c3_to_dirty
+    nodes: [*hist_c3_total, *pricing_total]
+    edges:
+      - {source: *hist_c3_total, edge_type: SAME_SYMBOL_AS, target: *pricing_total, direction: outgoing}
+  c2_failed: &p_c2_failed
+    nodes: [*hist_c2_round, *validation_c2_fail]
+    edges:
+      - {source: *hist_c2_round, edge_type: FAILED_VALIDATION, target: *validation_c2_fail, direction: outgoing}
+  c3_passed: &p_c3_passed
+    nodes: [*hist_c3_total, *validation_c3_pass]
+    edges:
+      - {source: *hist_c3_total, edge_type: VALIDATED_BY, target: *validation_c3_pass, direction: outgoing}
+  dirty_failed: &p_dirty_failed
+    nodes: [*pricing_total, *validation_dirty_fail]
+    edges:
+      - {source: *pricing_total, edge_type: FAILED_VALIDATION, target: *validation_dirty_fail, direction: outgoing}
+  diff_c2_round: &p_diff_c2_round
+    nodes: [*diff_c2, *hist_c2_round]
+    edges:
+      - {source: *diff_c2, edge_type: AFFECTS, target: *hist_c2_round, direction: outgoing}
+  diff_c3_total: &p_diff_c3_total
+    nodes: [*diff_c3, *hist_c3_total]
+    edges:
+      - {source: *diff_c3, edge_type: AFFECTS, target: *hist_c3_total, direction: outgoing}
+
+cases:
+  - case_id: code-golden-v1-001
+    dataset_version: code-golden-v1
+    task: exact_location
+    query: "Where is calculate_total defined in the current checkout implementation?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*pricing_total]
+    expected_unit_ids: [*u_pricing_total]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_pricing_total]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c3_total, *admin_submit]
+    candidate_judgments:
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 2, necessity_role: target, note: "Current dirty-worktree definition."}
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: -1, necessity_role: harmful, note: "Clean commit body is the wrong version."}
+      - {entity_id: *audit_format, retrieval_unit_id: *u_audit_format, relevance_grade: 0, necessity_role: background, note: "Same file but unrelated behavior."}
+    slices: [english, identifier_heavy, dirty_current, wrong_version]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}
+
+  - case_id: code-golden-v1-002
+    dataset_version: code-golden-v1
+    task: exact_location
+    query: "Open web/checkout.ts."
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {style: path, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*web_checkout_file]
+    expected_unit_ids: [*u_web_checkout_file]
+    expected_entity_types: [FileVersion]
+    expected_locators: [*l_web_checkout_file]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*generated_file]
+    candidate_judgments:
+      - {entity_id: *web_checkout_file, retrieval_unit_id: *u_web_checkout_file, relevance_grade: 2, necessity_role: target, note: "Exact requested path."}
+      - {entity_id: *generated_file, retrieval_unit_id: null, relevance_grade: -1, necessity_role: harmful, note: "Generated file has a similar symbol but is not the requested path."}
+    slices: [english, identifier_heavy, generated_vendor]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-003
+    dataset_version: code-golden-v1
+    task: exact_location
+    query: "当前下单入口 CheckoutService.submit_order 在哪里？"
+    query_language: zh-CN
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*checkout_submit]
+    expected_unit_ids: [*u_checkout_submit]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_checkout_submit]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*admin_submit, *web_submit]
+    candidate_judgments:
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: 2, necessity_role: target, note: "Qualified Python checkout entrypoint."}
+      - {entity_id: *admin_submit, retrieval_unit_id: *u_admin_submit, relevance_grade: -1, necessity_role: harmful, note: "Administrative same-name function."}
+    slices: [chinese, identifier_heavy, same_name_hard_negative]
+    smoke: true
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-004
+    dataset_version: code-golden-v1
+    task: exact_location
+    query: "PaymentGateway.charge concrete implementation (not overload stubs)"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: [*charge_impl]
+    expected_unit_ids: [*u_charge_impl]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_charge_impl]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, alternative, warning]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*charge_int_overload, *charge_float_overload, *admin_charge, *vendor_charge]
+    candidate_judgments:
+      - {entity_id: *charge_impl, retrieval_unit_id: *u_charge_impl, relevance_grade: 2, necessity_role: target, note: "Concrete overload implementation with a body."}
+      - {entity_id: *charge_int_overload, retrieval_unit_id: *u_charge_int, relevance_grade: 1, necessity_role: background, note: "Helpful signature but not the requested implementation."}
+      - {entity_id: *admin_charge, retrieval_unit_id: *u_admin_charge, relevance_grade: -1, necessity_role: harmful, note: "Same qualified name in the wrong module."}
+      - {entity_id: *vendor_charge, retrieval_unit_id: *u_vendor_charge, relevance_grade: -1, necessity_role: harmful, note: "Vendored SDK function is not the application implementation."}
+    slices: [english, identifier_heavy, same_name_hard_negative, generated_vendor, graph_harmful, overload]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: DG-001}
+
+  - case_id: code-golden-v1-005
+    dataset_version: code-golden-v1
+    task: exact_location
+    query: "Locate loyalty_discount in dirty manifest 5e1c0d3a7b9f."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: version_exact, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*loyalty_discount]
+    expected_unit_ids: [*u_loyalty_discount]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_loyalty_discount]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c3_total]
+    candidate_judgments:
+      - {entity_id: *loyalty_discount, retrieval_unit_id: *u_loyalty_discount, relevance_grade: 2, necessity_role: target, note: "Symbol exists only in the dirty current fixture."}
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: -1, necessity_role: harmful, note: "Clean ref does not contain the requested dirty-only symbol."}
+    slices: [english, identifier_heavy, dirty_current, wrong_version]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-006
+    dataset_version: code-golden-v1
+    task: exact_location
+    query: "Find the generated client's submitOrder function; I explicitly need the generated surface."
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {style: path, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*generated_submit]
+    expected_unit_ids: [*u_generated_submit]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_generated_submit]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, warning, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*web_submit, *web_admin_submit]
+    candidate_judgments:
+      - {entity_id: *generated_submit, retrieval_unit_id: *u_generated_submit, relevance_grade: 2, necessity_role: target, note: "Generated target is acceptable because the query is explicit."}
+      - {entity_id: *web_submit, retrieval_unit_id: *u_web_submit, relevance_grade: -1, necessity_role: harmful, note: "Hand-written checkout function is a same-name non-target."}
+    slices: [english, identifier_heavy, generated_vendor, same_name_hard_negative]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-007
+    dataset_version: code-golden-v1
+    task: exact_location
+    query: "Where is refund_order defined?"
+    query_language: en
+    code_languages: [python, typescript]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: []
+    expected_unit_ids: []
+    expected_entity_types: []
+    expected_locators: []
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [warning]
+    expected_ref: *current_ref
+    expected_answer_mode: missing_evidence
+    answerability: unanswerable
+    forbidden_entity_ids: [*checkout_submit, *admin_submit, *web_submit]
+    candidate_judgments:
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: -1, necessity_role: harmful, note: "A submit function must not be substituted for a nonexistent refund function."}
+    slices: [english, identifier_heavy, unanswerable, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-008
+    dataset_version: code-golden-v1
+    task: implementation
+    query: "金牌会员结账时，系统如何先减免再计算地区税？"
+    query_language: zh-CN
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*pricing_total, *loyalty_discount, *compute_tax]
+    expected_unit_ids: [*u_pricing_total, *u_loyalty_discount, *u_compute_tax]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_pricing_total, *l_loyalty_discount, *l_compute_tax]
+    required_paths: [*p_total_to_discount, *p_total_to_tax]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, dependency, callee, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c3_total, *admin_charge]
+    candidate_judgments:
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 2, necessity_role: target, note: "Orchestrates discount then tax."}
+      - {entity_id: *loyalty_discount, retrieval_unit_id: *u_loyalty_discount, relevance_grade: 1, necessity_role: dependency, note: "Defines the loyalty rebate."}
+      - {entity_id: *compute_tax, retrieval_unit_id: *u_compute_tax, relevance_grade: 1, necessity_role: dependency, note: "Defines regional tax calculation."}
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: -1, necessity_role: harmful, note: "Clean version omits the dirty discount behavior."}
+    slices: [chinese, natural_language_to_code, low_lexical_overlap, dirty_current, graph_required, wrong_version]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}
+
+  - case_id: code-golden-v1-009
+    dataset_version: code-golden-v1
+    task: implementation
+    query: "How are unknown tax regions handled?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*tax_rate]
+    expected_unit_ids: [*u_tax_rate]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_tax_rate]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*validate_currency]
+    candidate_judgments:
+      - {entity_id: *tax_rate, retrieval_unit_id: *u_tax_rate, relevance_grade: 2, necessity_role: target, note: "Unknown region falls back to a zero rate."}
+      - {entity_id: *validate_currency, retrieval_unit_id: *u_validate_currency, relevance_grade: -1, necessity_role: harmful, note: "Currency validation is unrelated to tax region fallback."}
+    slices: [english, natural_language_to_code, low_lexical_overlap]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-010
+    dataset_version: code-golden-v1
+    task: implementation
+    query: "前端把结账金额格式化为货币字符串的实现是什么？"
+    query_language: zh-CN
+    code_languages: [typescript]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*web_submit, *web_format]
+    expected_unit_ids: [*u_web_submit, *u_web_format]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_web_submit, *l_web_format]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, dependency, callee]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*generated_submit, *web_admin_submit]
+    candidate_judgments:
+      - {entity_id: *web_submit, retrieval_unit_id: *u_web_submit, relevance_grade: 2, necessity_role: target, note: "Checkout frontend entrypoint."}
+      - {entity_id: *web_format, retrieval_unit_id: *u_web_format, relevance_grade: 1, necessity_role: dependency, note: "Alias target performs Intl formatting."}
+      - {entity_id: *generated_submit, retrieval_unit_id: *u_generated_submit, relevance_grade: -1, necessity_role: harmful, note: "Generated JSON serializer does not format currency."}
+    slices: [chinese, natural_language_to_code, low_lexical_overlap, same_name_hard_negative, generated_vendor]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-011
+    dataset_version: code-golden-v1
+    task: implementation
+    query: "Explain how a floating amount becomes payment cents."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*charge_impl, *normalize_amount]
+    expected_unit_ids: [*u_charge_impl, *u_normalize_amount]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_charge_impl]
+    required_paths: [*p_submit_to_charge]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, dependency, callee]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*admin_charge, *vendor_charge]
+    candidate_judgments:
+      - {entity_id: *charge_impl, retrieval_unit_id: *u_charge_impl, relevance_grade: 2, necessity_role: target, note: "Concrete charge implementation chooses normalization for floats."}
+      - {entity_id: *normalize_amount, retrieval_unit_id: *u_normalize_amount, relevance_grade: 1, necessity_role: dependency, note: "Converts amount to cents."}
+      - {entity_id: *admin_charge, retrieval_unit_id: *u_admin_charge, relevance_grade: -1, necessity_role: harmful, note: "Administrative charge accepts cents directly."}
+    slices: [english, natural_language_to_code, low_lexical_overlap, graph_required, same_name_hard_negative]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-012
+    dataset_version: code-golden-v1
+    task: implementation
+    query: "Which nested closure builds receipt lines with a prefix?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*receipt_formatter, *receipt_line]
+    expected_unit_ids: [*u_receipt_formatter, *u_receipt_line]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_receipt_formatter, *l_receipt_line]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, dependency]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*audit_format]
+    candidate_judgments:
+      - {entity_id: *receipt_line, retrieval_unit_id: *u_receipt_line, relevance_grade: 2, necessity_role: target, note: "Nested formatter closure."}
+      - {entity_id: *receipt_formatter, retrieval_unit_id: *u_receipt_formatter, relevance_grade: 1, necessity_role: background, note: "Enclosing factory is useful context."}
+      - {entity_id: *audit_format, retrieval_unit_id: *u_audit_format, relevance_grade: -1, necessity_role: harmful, note: "Same method name but unrelated formatter."}
+    slices: [english, natural_language_to_code, nested_symbol, same_name_hard_negative]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-013
+    dataset_version: code-golden-v1
+    task: implementation
+    query: "What does the administrative submit_order return?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: [*admin_submit]
+    expected_unit_ids: [*u_admin_submit]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_admin_submit]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, warning]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*checkout_submit, *web_submit]
+    candidate_judgments:
+      - {entity_id: *admin_submit, retrieval_unit_id: *u_admin_submit, relevance_grade: 2, necessity_role: target, note: "Administrative function returns an admin-prefixed identifier."}
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: -1, necessity_role: harmful, note: "Checkout method has different semantics."}
+    slices: [english, identifier_heavy, same_name_hard_negative, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-014
+    dataset_version: code-golden-v1
+    task: implementation
+    query: "Show the private fraud scoring algorithm."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: []
+    expected_unit_ids: []
+    expected_entity_types: []
+    expected_locators: []
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [warning]
+    expected_ref: *current_ref
+    expected_answer_mode: refuse
+    answerability: forbidden
+    forbidden_entity_ids: [*private_file, *fraud_score]
+    candidate_judgments:
+      - {entity_id: *fraud_score, retrieval_unit_id: *u_fraud_score, relevance_grade: -1, necessity_role: forbidden, note: "Entity is outside the caller's ACL."}
+    slices: [english, natural_language_to_code, acl_forbidden, unanswerable, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-015
+    dataset_version: code-golden-v1
+    task: call_reference_path
+    query: "Trace CheckoutService.submit_order to the regional tax lookup."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*checkout_submit, *pricing_total, *compute_tax]
+    expected_unit_ids: [*u_checkout_submit, *u_pricing_total, *u_compute_tax]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_checkout_submit, *l_pricing_total, *l_compute_tax]
+    required_paths: [*p_submit_to_tax]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, callee, dependency, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*admin_charge, *hist_c3_total]
+    candidate_judgments:
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: 2, necessity_role: target, note: "Path source."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 2, necessity_role: callee, note: "Required middle node."}
+      - {entity_id: *compute_tax, retrieval_unit_id: *u_compute_tax, relevance_grade: 2, necessity_role: dependency, note: "Required path target."}
+      - {entity_id: *admin_charge, retrieval_unit_id: *u_admin_charge, relevance_grade: -1, necessity_role: harmful, note: "Same-name payment node is off-path."}
+    slices: [english, identifier_heavy, graph_required, dirty_current]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}
+
+  - case_id: code-golden-v1-016
+    dataset_version: code-golden-v1
+    task: call_reference_path
+    query: "结账总价函数调用了哪个会员减免实现？"
+    query_language: zh-CN
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*pricing_total, *loyalty_discount]
+    expected_unit_ids: [*u_pricing_total, *u_loyalty_discount]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_pricing_total, *l_loyalty_discount]
+    required_paths: [*p_total_to_discount]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, callee]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c3_total]
+    candidate_judgments:
+      - {entity_id: *loyalty_discount, retrieval_unit_id: *u_loyalty_discount, relevance_grade: 2, necessity_role: callee, note: "Dirty-only call target."}
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: -1, necessity_role: harmful, note: "Clean version cannot satisfy the dirty path."}
+    slices: [chinese, natural_language_to_code, low_lexical_overlap, graph_required, dirty_current, wrong_version]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-017
+    dataset_version: code-golden-v1
+    task: call_reference_path
+    query: "Follow CheckoutController.process through submitOrder to the money formatter."
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*web_process, *web_submit, *web_format]
+    expected_unit_ids: [*u_web_process, *u_web_submit, *u_web_format]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_web_process, *l_web_submit, *l_web_format]
+    required_paths: [*p_web_flow]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, callee, dependency]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*web_admin_submit, *generated_submit]
+    candidate_judgments:
+      - {entity_id: *web_process, retrieval_unit_id: *u_web_process, relevance_grade: 2, necessity_role: target, note: "Path source."}
+      - {entity_id: *web_submit, retrieval_unit_id: *u_web_submit, relevance_grade: 2, necessity_role: callee, note: "Required middle node."}
+      - {entity_id: *web_format, retrieval_unit_id: *u_web_format, relevance_grade: 2, necessity_role: dependency, note: "Alias target."}
+      - {entity_id: *generated_submit, retrieval_unit_id: *u_generated_submit, relevance_grade: -1, necessity_role: harmful, note: "Same-name generated node is not on the path."}
+    slices: [english, identifier_heavy, graph_required, same_name_hard_negative, generated_vendor]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-018
+    dataset_version: code-golden-v1
+    task: call_reference_path
+    query: "Which test directly exercises the gold-customer total calculation?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*test_gold, *pricing_total]
+    expected_unit_ids: [*u_test_gold, *u_pricing_total]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_test_gold, *l_pricing_total]
+    required_paths: [*p_test_gold_to_total]
+    required_edge_types: [TESTS]
+    expected_context_roles: [test, target]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*validation_c3_pass]
+    candidate_judgments:
+      - {entity_id: *test_gold, retrieval_unit_id: *u_test_gold, relevance_grade: 2, necessity_role: test, note: "Exact current test."}
+      - {entity_id: *validation_c3_pass, retrieval_unit_id: *u_validation_c3_pass, relevance_grade: -1, necessity_role: harmful, note: "Clean-commit validation predates the dirty gold case."}
+    slices: [english, natural_language_to_code, graph_required, test_validation, dirty_current, wrong_version]
+    smoke: true
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-019
+    dataset_version: code-golden-v1
+    task: call_reference_path
+    query: "In pricing.py, what definition does the calculate_tax import alias reference?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*compute_tax]
+    expected_unit_ids: [*u_compute_tax]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_compute_tax]
+    required_paths: [*p_total_to_tax]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, dependency]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*pricing_total, *hist_c3_total]
+    candidate_judgments:
+      - {entity_id: *compute_tax, retrieval_unit_id: *u_compute_tax, relevance_grade: 2, necessity_role: target, note: "Underlying alias definition."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 1, necessity_role: caller, note: "Alias consumer is useful but not the requested definition."}
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: -1, necessity_role: harmful, note: "Old caller is not the alias target."}
+    slices: [english, identifier_heavy, import_alias, graph_required]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-020
+    dataset_version: code-golden-v1
+    task: call_reference_path
+    query: "Does admin submit_order call the checkout tax calculator?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: [*admin_submit]
+    expected_unit_ids: [*u_admin_submit]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_admin_submit]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, warning]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*pricing_total, *compute_tax, *checkout_submit]
+    candidate_judgments:
+      - {entity_id: *admin_submit, retrieval_unit_id: *u_admin_submit, relevance_grade: 2, necessity_role: target, note: "Body shows no tax call."}
+      - {entity_id: *compute_tax, retrieval_unit_id: *u_compute_tax, relevance_grade: -1, necessity_role: harmful, note: "Graph expansion from a same-name function would invent a path."}
+    slices: [english, identifier_heavy, same_name_hard_negative, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-021
+    dataset_version: code-golden-v1
+    task: call_reference_path
+    query: "Which function calls refund_order before charging?"
+    query_language: en
+    code_languages: [python, typescript]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: []
+    expected_unit_ids: []
+    expected_entity_types: []
+    expected_locators: []
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [warning]
+    expected_ref: *current_ref
+    expected_answer_mode: missing_evidence
+    answerability: unanswerable
+    forbidden_entity_ids: [*checkout_submit, *charge_impl]
+    candidate_judgments:
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: -1, necessity_role: harmful, note: "Contains charging but no refund call."}
+    slices: [english, natural_language_to_code, unanswerable, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-022
+    dataset_version: code-golden-v1
+    task: bug_localization
+    query: "Traceback says pricing.py line 17 returned 96.30000000000001 instead of 96.3; where should I inspect?"
+    query_language: en
+    code_languages: [python, text]
+    query_profile: {style: stack_trace, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*pricing_total, *loyalty_discount, *compute_tax]
+    expected_unit_ids: [*u_pricing_total, *u_loyalty_discount, *u_compute_tax]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_pricing_total, *l_loyalty_discount, *l_compute_tax]
+    required_paths: [*p_total_to_discount, *p_total_to_tax]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, dependency, alternative, validation, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c3_total, *admin_charge]
+    candidate_judgments:
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 2, necessity_role: target, note: "Exact stack frame and arithmetic join point."}
+      - {entity_id: *loyalty_discount, retrieval_unit_id: *u_loyalty_discount, relevance_grade: 1, necessity_role: dependency, note: "Changes the taxable float."}
+      - {entity_id: *compute_tax, retrieval_unit_id: *u_compute_tax, relevance_grade: 1, necessity_role: dependency, note: "Contributes the floating tax result."}
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: -1, necessity_role: harmful, note: "Wrong body for the dirty stack trace."}
+    slices: [english, stack_trace, graph_required, dirty_current, wrong_version]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}
+
+  - case_id: code-golden-v1-023
+    dataset_version: code-golden-v1
+    task: bug_localization
+    query: "下单时报 unsupported currency: BTC，应该检查哪条调用链？"
+    query_language: zh-CN
+    code_languages: [python]
+    query_profile: {style: stack_trace, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*checkout_submit, *validate_currency]
+    expected_unit_ids: [*u_checkout_submit, *u_validate_currency]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_checkout_submit, *l_validate_currency]
+    required_paths: [*p_submit_to_validation]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, dependency, test, validation]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*admin_submit, *web_submit]
+    candidate_judgments:
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: 2, necessity_role: target, note: "Raises the reported error."}
+      - {entity_id: *validate_currency, retrieval_unit_id: *u_validate_currency, relevance_grade: 2, necessity_role: dependency, note: "Implements the rejected currency set."}
+      - {entity_id: *admin_submit, retrieval_unit_id: *u_admin_submit, relevance_grade: -1, necessity_role: harmful, note: "Same-name function does not validate currency."}
+    slices: [chinese, stack_trace, low_lexical_overlap, graph_required, same_name_hard_negative]
+    smoke: true
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-024
+    dataset_version: code-golden-v1
+    task: bug_localization
+    query: "The browser displays the wrong currency string after checkout. Find the likely frontend code."
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*web_submit, *web_format]
+    expected_unit_ids: [*u_web_submit, *u_web_format]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_web_submit, *l_web_format]
+    required_paths: [*p_web_flow]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, dependency, alternative]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*generated_submit, *admin_submit]
+    candidate_judgments:
+      - {entity_id: *web_format, retrieval_unit_id: *u_web_format, relevance_grade: 2, necessity_role: target, note: "Owns Intl currency formatting."}
+      - {entity_id: *web_submit, retrieval_unit_id: *u_web_submit, relevance_grade: 1, necessity_role: caller, note: "Passes the amount and currency."}
+      - {entity_id: *generated_submit, retrieval_unit_id: *u_generated_submit, relevance_grade: -1, necessity_role: harmful, note: "Generated serializer is a same-name distractor."}
+    slices: [english, natural_language_to_code, low_lexical_overlap, graph_required, generated_vendor]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-025
+    dataset_version: code-golden-v1
+    task: bug_localization
+    query: "Gold customers get the wrong total only in the dirty worktree."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*loyalty_discount, *pricing_total]
+    expected_unit_ids: [*u_loyalty_discount, *u_pricing_total]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_loyalty_discount, *l_pricing_total]
+    required_paths: [*p_total_to_discount]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, caller, test, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c3_total, *validation_c3_pass]
+    candidate_judgments:
+      - {entity_id: *loyalty_discount, retrieval_unit_id: *u_loyalty_discount, relevance_grade: 2, necessity_role: target, note: "Dirty-only behavior differentiates gold customers."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 1, necessity_role: caller, note: "Caller applies the returned discount."}
+      - {entity_id: *validation_c3_pass, retrieval_unit_id: *u_validation_c3_pass, relevance_grade: -1, necessity_role: harmful, note: "Clean validation does not cover the dirty worktree."}
+    slices: [english, natural_language_to_code, low_lexical_overlap, graph_required, dirty_current, wrong_version]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-026
+    dataset_version: code-golden-v1
+    task: bug_localization
+    query: "Checkout charged the wrong module's PaymentGateway.charge; identify the application implementation."
+    query_language: en
+    code_languages: [python, javascript]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: [*charge_impl]
+    expected_unit_ids: [*u_charge_impl]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_charge_impl]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, alternative, warning]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*admin_charge, *vendor_charge]
+    candidate_judgments:
+      - {entity_id: *charge_impl, retrieval_unit_id: *u_charge_impl, relevance_grade: 2, necessity_role: target, note: "Checkout imports the public gateway module."}
+      - {entity_id: *admin_charge, retrieval_unit_id: *u_admin_charge, relevance_grade: -1, necessity_role: harmful, note: "Exact same qualified name in admin module."}
+      - {entity_id: *vendor_charge, retrieval_unit_id: *u_vendor_charge, relevance_grade: -1, necessity_role: harmful, note: "Vendored function is not the application class method."}
+    slices: [english, identifier_heavy, same_name_hard_negative, graph_harmful, generated_vendor, overload]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: DG-001}
+
+  - case_id: code-golden-v1-027
+    dataset_version: code-golden-v1
+    task: bug_localization
+    query: "A failure mentions charge(amount, currency). Should I patch vendor/payment_sdk.js?"
+    query_language: en
+    code_languages: [python, javascript]
+    query_profile: {style: stack_trace, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: [*charge_impl]
+    expected_unit_ids: [*u_charge_impl]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_charge_impl]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, warning, alternative]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*vendor_charge, *generated_submit]
+    candidate_judgments:
+      - {entity_id: *charge_impl, retrieval_unit_id: *u_charge_impl, relevance_grade: 2, necessity_role: target, note: "Application implementation used by checkout."}
+      - {entity_id: *vendor_charge, retrieval_unit_id: *u_vendor_charge, relevance_grade: -1, necessity_role: harmful, note: "Vendored surface should not be edited for an application failure."}
+    slices: [english, stack_trace, generated_vendor, graph_harmful, same_name_hard_negative]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-028
+    dataset_version: code-golden-v1
+    task: bug_localization
+    query: "Fraud scoring incorrectly blocks account blocked-7; show the scoring branch."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: stack_trace, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: []
+    expected_unit_ids: []
+    expected_entity_types: []
+    expected_locators: []
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [warning]
+    expected_ref: *current_ref
+    expected_answer_mode: refuse
+    answerability: forbidden
+    forbidden_entity_ids: [*fraud_score, *private_file]
+    candidate_judgments:
+      - {entity_id: *fraud_score, retrieval_unit_id: *u_fraud_score, relevance_grade: -1, necessity_role: forbidden, note: "Relevant but unauthorized evidence must not be returned."}
+    slices: [english, stack_trace, acl_forbidden, unanswerable, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-029
+    dataset_version: code-golden-v1
+    task: impact_analysis
+    query: "If calculate_total changes, which checkout caller and tests are impacted?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*pricing_total, *checkout_submit, *test_gold, *test_total]
+    expected_unit_ids: [*u_pricing_total, *u_checkout_submit, *u_test_gold, *u_test_total]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_pricing_total, *l_checkout_submit, *l_test_gold, *l_test_total]
+    required_paths: [*p_total_from_submit, *p_total_from_test_gold, *p_total_from_test_total]
+    required_edge_types: [CALLS, TESTS]
+    expected_context_roles: [target, caller, test, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c3_total, *admin_submit]
+    candidate_judgments:
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 2, necessity_role: target, note: "Changed symbol."}
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: 2, necessity_role: caller, note: "Direct caller."}
+      - {entity_id: *test_gold, retrieval_unit_id: *u_test_gold, relevance_grade: 2, necessity_role: test, note: "Dirty discount test."}
+      - {entity_id: *test_total, retrieval_unit_id: *u_test_total, relevance_grade: 2, necessity_role: test, note: "Tax total test."}
+      - {entity_id: *admin_submit, retrieval_unit_id: *u_admin_submit, relevance_grade: -1, necessity_role: harmful, note: "Same-name admin function does not call calculate_total."}
+    slices: [english, identifier_heavy, graph_required, dirty_current, same_name_hard_negative, incoming_path]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}
+
+  - case_id: code-golden-v1-030
+    dataset_version: code-golden-v1
+    task: impact_analysis
+    query: "修改地区税计算会影响哪些上游总价逻辑？"
+    query_language: zh-CN
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*compute_tax, *pricing_total, *test_total]
+    expected_unit_ids: [*u_compute_tax, *u_pricing_total, *u_test_total]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_compute_tax, *l_pricing_total, *l_test_total]
+    required_paths: [*p_tax_from_total_and_test]
+    required_edge_types: [CALLS, TESTS]
+    expected_context_roles: [target, caller, test]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*validate_currency]
+    candidate_judgments:
+      - {entity_id: *compute_tax, retrieval_unit_id: *u_compute_tax, relevance_grade: 2, necessity_role: target, note: "Changed tax implementation."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 2, necessity_role: caller, note: "Direct caller."}
+      - {entity_id: *test_total, retrieval_unit_id: *u_test_total, relevance_grade: 1, necessity_role: test, note: "Covers total with tax."}
+      - {entity_id: *validate_currency, retrieval_unit_id: *u_validate_currency, relevance_grade: -1, necessity_role: harmful, note: "Currency allowlist is not tax behavior."}
+    slices: [chinese, natural_language_to_code, low_lexical_overlap, graph_required, incoming_path]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-031
+    dataset_version: code-golden-v1
+    task: impact_analysis
+    query: "What breaks if web submitOrder is renamed?"
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*web_submit, *web_process]
+    expected_unit_ids: [*u_web_submit, *u_web_process]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_web_submit, *l_web_process]
+    required_paths: [*p_web_flow]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, caller, test]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*web_admin_submit, *generated_submit]
+    candidate_judgments:
+      - {entity_id: *web_submit, retrieval_unit_id: *u_web_submit, relevance_grade: 2, necessity_role: target, note: "Renamed symbol."}
+      - {entity_id: *web_process, retrieval_unit_id: *u_web_process, relevance_grade: 2, necessity_role: caller, note: "Direct class-method caller."}
+      - {entity_id: *generated_submit, retrieval_unit_id: *u_generated_submit, relevance_grade: -1, necessity_role: harmful, note: "Generated same-name function is independent."}
+    slices: [english, identifier_heavy, graph_required, same_name_hard_negative, generated_vendor]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-032
+    dataset_version: code-golden-v1
+    task: impact_analysis
+    query: "Impact of changing PaymentGateway.charge float normalization."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*charge_impl, *normalize_amount, *checkout_submit]
+    expected_unit_ids: [*u_charge_impl, *u_normalize_amount, *u_checkout_submit]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_charge_impl, *l_checkout_submit]
+    required_paths: [*p_submit_to_charge]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, caller, dependency, alternative]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*admin_charge, *vendor_charge]
+    candidate_judgments:
+      - {entity_id: *charge_impl, retrieval_unit_id: *u_charge_impl, relevance_grade: 2, necessity_role: target, note: "Changed implementation."}
+      - {entity_id: *normalize_amount, retrieval_unit_id: *u_normalize_amount, relevance_grade: 2, necessity_role: dependency, note: "Float conversion dependency."}
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: 1, necessity_role: caller, note: "Application caller."}
+      - {entity_id: *admin_charge, retrieval_unit_id: *u_admin_charge, relevance_grade: -1, necessity_role: harmful, note: "Same-name method uses direct cents."}
+    slices: [english, identifier_heavy, graph_required, overload, same_name_hard_negative]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-033
+    dataset_version: code-golden-v1
+    task: impact_analysis
+    query: "Who depends on the new loyalty rebate in the uncommitted tree?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*loyalty_discount, *pricing_total, *test_gold]
+    expected_unit_ids: [*u_loyalty_discount, *u_pricing_total, *u_test_gold]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_loyalty_discount, *l_pricing_total, *l_test_gold]
+    required_paths: [*p_total_to_discount, *p_test_gold_to_total]
+    required_edge_types: [CALLS, TESTS]
+    expected_context_roles: [target, caller, test, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c3_total, *validation_c3_pass]
+    candidate_judgments:
+      - {entity_id: *loyalty_discount, retrieval_unit_id: *u_loyalty_discount, relevance_grade: 2, necessity_role: target, note: "New dirty-worktree dependency."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 2, necessity_role: caller, note: "Direct consumer."}
+      - {entity_id: *test_gold, retrieval_unit_id: *u_test_gold, relevance_grade: 1, necessity_role: test, note: "Dirty behavior test."}
+      - {entity_id: *validation_c3_pass, retrieval_unit_id: *u_validation_c3_pass, relevance_grade: -1, necessity_role: harmful, note: "Clean result does not validate dirty behavior."}
+    slices: [english, natural_language_to_code, low_lexical_overlap, graph_required, dirty_current, wrong_version]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-034
+    dataset_version: code-golden-v1
+    task: impact_analysis
+    query: "If I regenerate generated/client.ts submitOrder, what fixture entity is directly affected?"
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {style: path, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*generated_submit]
+    expected_unit_ids: [*u_generated_submit]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_generated_submit]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, warning, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*web_submit]
+    candidate_judgments:
+      - {entity_id: *generated_submit, retrieval_unit_id: *u_generated_submit, relevance_grade: 2, necessity_role: target, note: "Explicit generated target."}
+      - {entity_id: *web_submit, retrieval_unit_id: *u_web_submit, relevance_grade: -1, necessity_role: harmful, note: "Hand-written source has no declared dependency on the generated client."}
+    slices: [english, identifier_heavy, generated_vendor, same_name_hard_negative]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-035
+    dataset_version: code-golden-v1
+    task: impact_analysis
+    query: "What is impacted if format changes?"
+    query_language: en
+    code_languages: [python, typescript]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: []
+    expected_unit_ids: []
+    expected_entity_types: []
+    expected_locators: []
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [warning, alternative]
+    expected_ref: *current_ref
+    expected_answer_mode: clarify
+    answerability: ambiguous
+    forbidden_entity_ids: [*audit_format, *web_format, *receipt_line]
+    candidate_judgments:
+      - {entity_id: *audit_format, retrieval_unit_id: *u_audit_format, relevance_grade: -1, necessity_role: harmful, note: "One of several unrelated format symbols; query needs qualification."}
+      - {entity_id: *web_format, retrieval_unit_id: *u_web_format, relevance_grade: -1, necessity_role: harmful, note: "Another plausible but unselected same-name target."}
+    slices: [english, natural_language_to_code, unanswerable, same_name_hard_negative, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-036
+    dataset_version: code-golden-v1
+    task: change_context
+    query: "Prepare context to modify CheckoutService.submit_order safely."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*checkout_submit, *validate_currency, *pricing_total, *charge_impl, *test_currency]
+    expected_unit_ids: [*u_checkout_submit, *u_validate_currency, *u_pricing_total, *u_charge_impl, *u_test_currency]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_checkout_submit, *l_validate_currency, *l_pricing_total, *l_charge_impl, *l_test_currency]
+    required_paths: [*p_submit_to_validation, *p_submit_to_total, *p_submit_to_charge, *p_test_currency_to_submit]
+    required_edge_types: [CALLS, TESTS]
+    expected_context_roles: [target, dependency, callee, test, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*admin_submit, *vendor_charge]
+    candidate_judgments:
+      - {entity_id: *checkout_submit, retrieval_unit_id: *u_checkout_submit, relevance_grade: 2, necessity_role: target, note: "Editable target."}
+      - {entity_id: *validate_currency, retrieval_unit_id: *u_validate_currency, relevance_grade: 1, necessity_role: dependency, note: "Precondition."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: 1, necessity_role: callee, note: "Pricing dependency."}
+      - {entity_id: *charge_impl, retrieval_unit_id: *u_charge_impl, relevance_grade: 1, necessity_role: callee, note: "Payment dependency."}
+      - {entity_id: *test_currency, retrieval_unit_id: *u_test_currency, relevance_grade: 2, necessity_role: test, note: "Regression test."}
+      - {entity_id: *admin_submit, retrieval_unit_id: *u_admin_submit, relevance_grade: -1, necessity_role: harmful, note: "Same-name admin function is not change context."}
+    slices: [english, identifier_heavy, graph_required, same_name_hard_negative, dirty_current]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}
+
+  - case_id: code-golden-v1-037
+    dataset_version: code-golden-v1
+    task: change_context
+    query: "为新增新加坡地区税率准备修改上下文。"
+    query_language: zh-CN
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*tax_policy, *tax_rate, *compute_tax, *test_total]
+    expected_unit_ids: [*u_tax_policy, *u_tax_rate, *u_compute_tax, *u_test_total]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_tax_rate, *l_compute_tax, *l_test_total]
+    required_paths: [*p_total_to_tax, *p_test_total_to_total]
+    required_edge_types: [CALLS, TESTS]
+    expected_context_roles: [target, dependency, caller, test]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*validate_currency]
+    candidate_judgments:
+      - {entity_id: *tax_policy, retrieval_unit_id: *u_tax_policy, relevance_grade: 2, necessity_role: target, note: "Owns regional rate table."}
+      - {entity_id: *tax_rate, retrieval_unit_id: *u_tax_rate, relevance_grade: 1, necessity_role: dependency, note: "Reads the table."}
+      - {entity_id: *test_total, retrieval_unit_id: *u_test_total, relevance_grade: 1, necessity_role: test, note: "Nearby tax regression test."}
+      - {entity_id: *validate_currency, retrieval_unit_id: *u_validate_currency, relevance_grade: -1, necessity_role: harmful, note: "Currency list is not region tax configuration."}
+    slices: [chinese, natural_language_to_code, low_lexical_overlap, graph_required]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-038
+    dataset_version: code-golden-v1
+    task: change_context
+    query: "Prepare context to change the TypeScript checkout formatter call."
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*web_submit, *web_format, *web_process]
+    expected_unit_ids: [*u_web_submit, *u_web_format, *u_web_process]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_web_submit, *l_web_format, *l_web_process]
+    required_paths: [*p_web_flow]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, dependency, caller, test]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*generated_submit, *web_admin_submit]
+    candidate_judgments:
+      - {entity_id: *web_submit, retrieval_unit_id: *u_web_submit, relevance_grade: 2, necessity_role: target, note: "Editable alias call."}
+      - {entity_id: *web_format, retrieval_unit_id: *u_web_format, relevance_grade: 2, necessity_role: dependency, note: "Formatter definition."}
+      - {entity_id: *web_process, retrieval_unit_id: *u_web_process, relevance_grade: 1, necessity_role: caller, note: "Direct caller."}
+      - {entity_id: *generated_submit, retrieval_unit_id: *u_generated_submit, relevance_grade: -1, necessity_role: harmful, note: "Generated same-name surface is not editable context."}
+    slices: [english, natural_language_to_code, graph_required, generated_vendor, same_name_hard_negative]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-039
+    dataset_version: code-golden-v1
+    task: change_context
+    query: "I need to change checkout submitOrder, but generated files must not be edited."
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {style: identifier_heavy, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: [*web_submit, *web_process, *web_format]
+    expected_unit_ids: [*u_web_submit, *u_web_process, *u_web_format]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_web_submit, *l_web_process, *l_web_format]
+    required_paths: [*p_web_flow]
+    required_edge_types: [CALLS]
+    expected_context_roles: [target, caller, dependency, warning]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*generated_submit, *generated_file]
+    candidate_judgments:
+      - {entity_id: *web_submit, retrieval_unit_id: *u_web_submit, relevance_grade: 2, necessity_role: target, note: "Hand-written editable target."}
+      - {entity_id: *generated_submit, retrieval_unit_id: *u_generated_submit, relevance_grade: -1, necessity_role: harmful, note: "Explicit do-not-edit generated hard negative."}
+    slices: [english, identifier_heavy, generated_vendor, same_name_hard_negative, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-040
+    dataset_version: code-golden-v1
+    task: change_context
+    query: "Prepare an edit for src/private/fraud_rules.py as a normal team member."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: path, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: []
+    expected_unit_ids: []
+    expected_entity_types: []
+    expected_locators: []
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [warning]
+    expected_ref: *current_ref
+    expected_answer_mode: refuse
+    answerability: forbidden
+    forbidden_entity_ids: [*private_file, *fraud_score]
+    candidate_judgments:
+      - {entity_id: *fraud_score, retrieval_unit_id: *u_fraud_score, relevance_grade: -1, necessity_role: forbidden, note: "Unauthorized edit context must not be retrieved."}
+    slices: [english, identifier_heavy, acl_forbidden, unanswerable, graph_harmful]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-041
+    dataset_version: code-golden-v1
+    task: historical_version
+    query: "At commit 111111111111, where was legacy_round_total implemented?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: version_exact, repository_id: *repository, scope_ref: *c1_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*hist_c1_round]
+    expected_unit_ids: [*u_hist_c1_round]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_hist_c1_round]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, history, version]
+    expected_ref: *c1_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c2_round, *pricing_total]
+    candidate_judgments:
+      - {entity_id: *hist_c1_round, retrieval_unit_id: *u_hist_c1_round, relevance_grade: 2, necessity_role: target, note: "Exact historical body."}
+      - {entity_id: *hist_c2_round, retrieval_unit_id: *u_hist_c2_round, relevance_grade: -1, necessity_role: harmful, note: "Renamed successor at the wrong commit."}
+    slices: [english, identifier_heavy, wrong_version, historical]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}
+
+  - case_id: code-golden-v1-042
+    dataset_version: code-golden-v1
+    task: historical_version
+    query: "追踪 legacy_round_total 在 release-v1 中重命名并移动到哪里。"
+    query_language: zh-CN
+    code_languages: [python]
+    query_profile: {style: version_exact, repository_id: *repository, scope_ref: *c2_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*hist_c1_round, *hist_c2_round, *diff_c2]
+    expected_unit_ids: [*u_hist_c1_round, *u_hist_c2_round]
+    expected_entity_types: [CodeSymbol, DiffHunk]
+    expected_locators: [*l_hist_c1_round, *l_hist_c2_round]
+    required_paths: [*p_rename_round, *p_diff_c2_round]
+    required_edge_types: [RENAMED_TO, AFFECTS]
+    expected_context_roles: [target, history, version]
+    expected_ref: *c2_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*pricing_total, *hist_c3_total]
+    candidate_judgments:
+      - {entity_id: *hist_c2_round, retrieval_unit_id: *u_hist_c2_round, relevance_grade: 2, necessity_role: target, note: "Renamed target on release-v1."}
+      - {entity_id: *hist_c1_round, retrieval_unit_id: *u_hist_c1_round, relevance_grade: 1, necessity_role: history, note: "Rename source."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: -1, necessity_role: harmful, note: "Dirty current body is outside the requested lineage point."}
+    slices: [chinese, natural_language_to_code, graph_required, wrong_version, historical, rename_move]
+    smoke: true
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-043
+    dataset_version: code-golden-v1
+    task: historical_version
+    query: "Show calculate_total at clean commit 333333333333, before the dirty discount change."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: version_exact, repository_id: *repository, scope_ref: *c3_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*hist_c3_total]
+    expected_unit_ids: [*u_hist_c3_total]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_hist_c3_total]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, history, version]
+    expected_ref: *c3_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*pricing_total, *loyalty_discount]
+    candidate_judgments:
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: 2, necessity_role: target, note: "Clean historical implementation."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: -1, necessity_role: harmful, note: "Dirty current body has additional behavior."}
+    slices: [english, version_exact, wrong_version, historical, dirty_current]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-044
+    dataset_version: code-golden-v1
+    task: historical_version
+    query: "What was the last version containing round_total before it was deleted?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: natural_language, repository_id: *repository, scope_ref: *c3_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*hist_c2_round, *commit_c2, *diff_c3]
+    expected_unit_ids: [*u_hist_c2_round]
+    expected_entity_types: [CodeSymbol, Commit, DiffHunk]
+    expected_locators: [*l_hist_c2_round]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, history, version]
+    expected_ref: *c2_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*hist_c1_round, *pricing_total]
+    candidate_judgments:
+      - {entity_id: *hist_c2_round, retrieval_unit_id: *u_hist_c2_round, relevance_grade: 2, necessity_role: target, note: "Last snapshot containing round_total."}
+      - {entity_id: *hist_c1_round, retrieval_unit_id: *u_hist_c1_round, relevance_grade: 1, necessity_role: history, note: "Earlier lineage source."}
+      - {entity_id: *pricing_total, retrieval_unit_id: *u_pricing_total, relevance_grade: -1, necessity_role: harmful, note: "Current function is not the deleted symbol."}
+    slices: [english, natural_language_to_code, low_lexical_overlap, historical, wrong_version, deleted_symbol]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-045
+    dataset_version: code-golden-v1
+    task: historical_version
+    query: "Resolve tag v1.0.0 and show its round_total implementation."
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: version_exact, repository_id: *repository, scope_ref: *c2_ref, acl_refs: [*team_acl], graph_requirement: none}
+    expected_entity_ids: [*commit_c2, *hist_c2_round]
+    expected_unit_ids: [*u_hist_c2_round]
+    expected_entity_types: [Commit, CodeSymbol]
+    expected_locators: [*l_hist_c2_round]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, history, version]
+    expected_ref: *c2_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*commit_c3, *hist_c3_total]
+    candidate_judgments:
+      - {entity_id: *hist_c2_round, retrieval_unit_id: *u_hist_c2_round, relevance_grade: 2, necessity_role: target, note: "Tag resolves to the C2 snapshot."}
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: -1, necessity_role: harmful, note: "Main branch successor is the wrong ref."}
+    slices: [english, version_exact, historical, wrong_version, branch_tag]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-046
+    dataset_version: code-golden-v1
+    task: test_validation
+    query: "Which current tests exercise calculate_total?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: test_selector, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*test_gold, *test_total, *pricing_total]
+    expected_unit_ids: [*u_test_gold, *u_test_total, *u_pricing_total]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_test_gold, *l_test_total, *l_pricing_total]
+    required_paths: [*p_test_gold_to_total, *p_test_total_to_total]
+    required_edge_types: [TESTS]
+    expected_context_roles: [target, test, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*validation_c3_pass]
+    candidate_judgments:
+      - {entity_id: *test_gold, retrieval_unit_id: *u_test_gold, relevance_grade: 2, necessity_role: test, note: "Direct dirty-current test."}
+      - {entity_id: *test_total, retrieval_unit_id: *u_test_total, relevance_grade: 2, necessity_role: test, note: "Direct tax test."}
+      - {entity_id: *validation_c3_pass, retrieval_unit_id: *u_validation_c3_pass, relevance_grade: -1, necessity_role: harmful, note: "Historical result is not a current test definition."}
+    slices: [english, identifier_heavy, graph_required, test_validation, dirty_current, wrong_version]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}
+
+  - case_id: code-golden-v1-047
+    dataset_version: code-golden-v1
+    task: test_validation
+    query: "Did release-v1 round_total pass validation?"
+    query_language: en
+    code_languages: [python, text]
+    query_profile: {style: test_selector, repository_id: *repository, scope_ref: *c2_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*hist_c2_round, *validation_c2_fail]
+    expected_unit_ids: [*u_hist_c2_round, *u_validation_c2_fail]
+    expected_entity_types: [CodeSymbol, TestResult]
+    expected_locators: [*l_hist_c2_round, *l_validation_c2]
+    required_paths: [*p_c2_failed]
+    required_edge_types: [FAILED_VALIDATION]
+    expected_context_roles: [target, validation, history, version]
+    expected_ref: *c2_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*validation_c3_pass]
+    candidate_judgments:
+      - {entity_id: *validation_c2_fail, retrieval_unit_id: *u_validation_c2_fail, relevance_grade: 2, necessity_role: validation, note: "Observed nonzero failing result."}
+      - {entity_id: *hist_c2_round, retrieval_unit_id: *u_hist_c2_round, relevance_grade: 2, necessity_role: target, note: "Exact tested version."}
+      - {entity_id: *validation_c3_pass, retrieval_unit_id: *u_validation_c3_pass, relevance_grade: -1, necessity_role: harmful, note: "Passing result belongs to a later commit and different symbol."}
+    slices: [english, test_selector, graph_required, test_validation, wrong_version, historical]
+    smoke: true
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: null}
+
+  - case_id: code-golden-v1-048
+    dataset_version: code-golden-v1
+    task: test_validation
+    query: "Which passing validation applies to clean commit 333333333333 calculate_total?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: test_selector, repository_id: *repository, scope_ref: *c3_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*hist_c3_total, *validation_c3_pass]
+    expected_unit_ids: [*u_hist_c3_total, *u_validation_c3_pass]
+    expected_entity_types: [CodeSymbol, TestResult]
+    expected_locators: [*l_hist_c3_total, *l_validation_c3]
+    required_paths: [*p_c3_passed]
+    required_edge_types: [VALIDATED_BY]
+    expected_context_roles: [target, validation, history, version]
+    expected_ref: *c3_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*pricing_total, *validation_dirty_fail]
+    candidate_judgments:
+      - {entity_id: *validation_c3_pass, retrieval_unit_id: *u_validation_c3_pass, relevance_grade: 2, necessity_role: validation, note: "Observed passing result at the exact clean commit."}
+      - {entity_id: *hist_c3_total, retrieval_unit_id: *u_hist_c3_total, relevance_grade: 2, necessity_role: target, note: "Validated clean symbol."}
+      - {entity_id: *validation_dirty_fail, retrieval_unit_id: *u_validation_dirty_fail, relevance_grade: -1, necessity_role: harmful, note: "Dirty failure belongs to another manifest."}
+    slices: [english, test_selector, graph_required, test_validation, wrong_version, historical]
+    smoke: true
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: DG-002}
+
+  - case_id: code-golden-v1-049
+    dataset_version: code-golden-v1
+    task: test_validation
+    query: "当前 dirty manifest 的 gold customer 校验状态是什么？"
+    query_language: zh-CN
+    code_languages: [python, text]
+    query_profile: {style: test_selector, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: required}
+    expected_entity_ids: [*pricing_total, *test_gold, *validation_dirty_fail]
+    expected_unit_ids: [*u_pricing_total, *u_test_gold, *u_validation_dirty_fail]
+    expected_entity_types: [CodeSymbol, TestResult]
+    expected_locators: [*l_pricing_total, *l_test_gold, *l_validation_dirty]
+    required_paths: [*p_test_gold_to_total, *p_dirty_failed]
+    required_edge_types: [TESTS, FAILED_VALIDATION]
+    expected_context_roles: [target, test, validation, version]
+    expected_ref: *current_ref
+    expected_answer_mode: direct
+    answerability: answerable
+    forbidden_entity_ids: [*validation_c3_pass]
+    candidate_judgments:
+      - {entity_id: *validation_dirty_fail, retrieval_unit_id: *u_validation_dirty_fail, relevance_grade: 2, necessity_role: validation, note: "Observed failure bound to the dirty manifest."}
+      - {entity_id: *test_gold, retrieval_unit_id: *u_test_gold, relevance_grade: 2, necessity_role: test, note: "Exact failing selector."}
+      - {entity_id: *validation_c3_pass, retrieval_unit_id: *u_validation_c3_pass, relevance_grade: -1, necessity_role: harmful, note: "Clean passing result must not validate dirty code."}
+    slices: [chinese, test_selector, graph_required, test_validation, dirty_current, wrong_version]
+    smoke: false
+    review: {status: primary_reviewed, reviewer: c0-02-primary, disagreement_id: DG-002}
+
+  - case_id: code-golden-v1-050
+    dataset_version: code-golden-v1
+    task: test_validation
+    query: "What passing test validates the administrative submit_order function?"
+    query_language: en
+    code_languages: [python]
+    query_profile: {style: test_selector, repository_id: *repository, scope_ref: *current_ref, acl_refs: [*team_acl], graph_requirement: harmful_if_expanded}
+    expected_entity_ids: [*admin_submit]
+    expected_unit_ids: [*u_admin_submit]
+    expected_entity_types: [CodeSymbol]
+    expected_locators: [*l_admin_submit]
+    required_paths: []
+    required_edge_types: []
+    expected_context_roles: [target, warning, validation]
+    expected_ref: *current_ref
+    expected_answer_mode: missing_evidence
+    answerability: unanswerable
+    forbidden_entity_ids: [*validation_c3_pass, *test_total]
+    candidate_judgments:
+      - {entity_id: *admin_submit, retrieval_unit_id: *u_admin_submit, relevance_grade: 2, necessity_role: target, note: "Target exists, but no matching TestResult exists."}
+      - {entity_id: *validation_c3_pass, retrieval_unit_id: *u_validation_c3_pass, relevance_grade: -1, necessity_role: harmful, note: "Passing result covers clean calculate_total, not admin submit_order."}
+    slices: [english, test_selector, unanswerable, graph_harmful, same_name_hard_negative, test_validation]
+    smoke: false
+    review: {status: delayed_reviewed, reviewer: c0-02-delayed-review, disagreement_id: null}

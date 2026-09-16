@@ -1,0 +1,8 @@
+{
+  "commit": "2222222222222222222222222222222222222222",
+  "selector": "tests/pricing_cases.py::test_round_total",
+  "status": "failed",
+  "exit_code": 1,
+  "observed": true,
+  "stack_artifact": "history/validations/222222222222-stack.txt"
+}

@@ -1,0 +1,545 @@
+{
+  "canonical_symbol_label_count": 16,
+  "fixture": {
+    "case_ids": [
+      "cb6-add",
+      "cb6-ambiguous",
+      "cb6-binary",
+      "cb6-class-level",
+      "cb6-delete",
+      "cb6-file-top-level",
+      "cb6-function-body",
+      "cb6-function-signature",
+      "cb6-multi-symbol",
+      "cb6-rename",
+      "cb6-whitespace-only",
+      "cb6-wrong-parent"
+    ],
+    "commits": {
+      "base": "59b386b1784d4d3323241b2c2888d34c427022c8",
+      "seed": "0dc83b13c285a9fa3dadd8a169f6b10c518e446b",
+      "target": "578cc272a80ad9d23a104e75405763c8d8c05bf8"
+    },
+    "labels": [
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-add",
+        "change_context_required": true,
+        "expected_symbols": [
+          {
+            "lineage_id": "lineage:introduced",
+            "path": "src/added.py",
+            "qualified_name": "introduced",
+            "role": "introduced",
+            "side": "new",
+            "symbol_id": "python:src/added.py:introduced",
+            "symbol_range": {
+              "count": 2,
+              "end": 2,
+              "start": 1
+            }
+          }
+        ],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/added.py",
+        "new_range": {
+          "count": 2,
+          "end": 2,
+          "start": 1
+        },
+        "note": "Added Python file and function",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": null,
+        "old_range": {
+          "count": 0,
+          "end": 0,
+          "start": 0
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "labeled",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [
+          "python:src/ambiguous.py:left",
+          "python:src/ambiguous.py:right"
+        ],
+        "case_id": "cb6-ambiguous",
+        "change_context_required": false,
+        "expected_symbols": [],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/ambiguous.py",
+        "new_range": {
+          "count": 1,
+          "end": 5,
+          "start": 5
+        },
+        "note": "Top-level comment between two symbols has no canonical sole owner",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/ambiguous.py",
+        "old_range": {
+          "count": 1,
+          "end": 5,
+          "start": 5
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "ambiguous",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-binary",
+        "change_context_required": false,
+        "expected_symbols": [],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "assets/blob.bin",
+        "new_range": null,
+        "note": "Binary diff must remain honestly unavailable",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "assets/blob.bin",
+        "old_range": null,
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "unavailable",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-class-level",
+        "change_context_required": true,
+        "expected_symbols": [
+          {
+            "lineage_id": "lineage:calculator",
+            "path": "src/calculator.py",
+            "qualified_name": "Calculator",
+            "role": "modified",
+            "side": "old",
+            "symbol_id": "python:src/calculator.py:Calculator",
+            "symbol_range": {
+              "count": 6,
+              "end": 13,
+              "start": 8
+            }
+          },
+          {
+            "lineage_id": "lineage:calculator",
+            "path": "src/calculator.py",
+            "qualified_name": "Calculator",
+            "role": "modified",
+            "side": "new",
+            "symbol_id": "python:src/calculator.py:Calculator",
+            "symbol_range": {
+              "count": 6,
+              "end": 13,
+              "start": 8
+            }
+          }
+        ],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/calculator.py",
+        "new_range": {
+          "count": 1,
+          "end": 9,
+          "start": 9
+        },
+        "note": "Class-level attribute change outside a method",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/calculator.py",
+        "old_range": {
+          "count": 1,
+          "end": 9,
+          "start": 9
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "labeled",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-delete",
+        "change_context_required": true,
+        "expected_symbols": [
+          {
+            "lineage_id": "lineage:removed",
+            "path": "src/removed.py",
+            "qualified_name": "removed",
+            "role": "removed",
+            "side": "old",
+            "symbol_id": "python:src/removed.py:removed",
+            "symbol_range": {
+              "count": 2,
+              "end": 2,
+              "start": 1
+            }
+          }
+        ],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": null,
+        "new_range": {
+          "count": 0,
+          "end": 0,
+          "start": 0
+        },
+        "note": "Deleted Python file and function",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/removed.py",
+        "old_range": {
+          "count": 2,
+          "end": 2,
+          "start": 1
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "labeled",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-file-top-level",
+        "change_context_required": true,
+        "expected_symbols": [
+          {
+            "lineage_id": "lineage:calculator-module",
+            "path": "src/calculator.py",
+            "qualified_name": "<module>",
+            "role": "modified",
+            "side": "old",
+            "symbol_id": "python:src/calculator.py:<module>",
+            "symbol_range": {
+              "count": 21,
+              "end": 21,
+              "start": 1
+            }
+          },
+          {
+            "lineage_id": "lineage:calculator-module",
+            "path": "src/calculator.py",
+            "qualified_name": "<module>",
+            "role": "modified",
+            "side": "new",
+            "symbol_id": "python:src/calculator.py:<module>",
+            "symbol_range": {
+              "count": 21,
+              "end": 21,
+              "start": 1
+            }
+          }
+        ],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/calculator.py",
+        "new_range": {
+          "count": 1,
+          "end": 1,
+          "start": 1
+        },
+        "note": "File-top-level assignment change",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/calculator.py",
+        "old_range": {
+          "count": 1,
+          "end": 1,
+          "start": 1
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "labeled",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-function-body",
+        "change_context_required": true,
+        "expected_symbols": [
+          {
+            "lineage_id": "lineage:calculator-compute",
+            "path": "src/calculator.py",
+            "qualified_name": "Calculator.compute",
+            "role": "modified",
+            "side": "old",
+            "symbol_id": "python:src/calculator.py:Calculator.compute",
+            "symbol_range": {
+              "count": 3,
+              "end": 13,
+              "start": 11
+            }
+          },
+          {
+            "lineage_id": "lineage:calculator-compute",
+            "path": "src/calculator.py",
+            "qualified_name": "Calculator.compute",
+            "role": "modified",
+            "side": "new",
+            "symbol_id": "python:src/calculator.py:Calculator.compute",
+            "symbol_range": {
+              "count": 3,
+              "end": 13,
+              "start": 11
+            }
+          }
+        ],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/calculator.py",
+        "new_range": {
+          "count": 1,
+          "end": 12,
+          "start": 12
+        },
+        "note": "Python method body change",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/calculator.py",
+        "old_range": {
+          "count": 1,
+          "end": 12,
+          "start": 12
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "labeled",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-function-signature",
+        "change_context_required": true,
+        "expected_symbols": [
+          {
+            "lineage_id": "lineage:helper",
+            "path": "src/calculator.py",
+            "qualified_name": "helper",
+            "role": "modified",
+            "side": "old",
+            "symbol_id": "python:src/calculator.py:helper",
+            "symbol_range": {
+              "count": 2,
+              "end": 5,
+              "start": 4
+            }
+          },
+          {
+            "lineage_id": "lineage:helper",
+            "path": "src/calculator.py",
+            "qualified_name": "helper",
+            "role": "modified",
+            "side": "new",
+            "symbol_id": "python:src/calculator.py:helper",
+            "symbol_range": {
+              "count": 2,
+              "end": 5,
+              "start": 4
+            }
+          }
+        ],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/calculator.py",
+        "new_range": {
+          "count": 2,
+          "end": 5,
+          "start": 4
+        },
+        "note": "Python function signature and body change",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/calculator.py",
+        "old_range": {
+          "count": 2,
+          "end": 5,
+          "start": 4
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "labeled",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-multi-symbol",
+        "change_context_required": true,
+        "expected_symbols": [
+          {
+            "lineage_id": "lineage:alpha",
+            "path": "src/calculator.py",
+            "qualified_name": "alpha",
+            "role": "modified",
+            "side": "old",
+            "symbol_id": "python:src/calculator.py:alpha",
+            "symbol_range": {
+              "count": 2,
+              "end": 17,
+              "start": 16
+            }
+          },
+          {
+            "lineage_id": "lineage:beta",
+            "path": "src/calculator.py",
+            "qualified_name": "beta",
+            "role": "modified",
+            "side": "old",
+            "symbol_id": "python:src/calculator.py:beta",
+            "symbol_range": {
+              "count": 2,
+              "end": 21,
+              "start": 20
+            }
+          },
+          {
+            "lineage_id": "lineage:alpha",
+            "path": "src/calculator.py",
+            "qualified_name": "alpha",
+            "role": "modified",
+            "side": "new",
+            "symbol_id": "python:src/calculator.py:alpha",
+            "symbol_range": {
+              "count": 2,
+              "end": 17,
+              "start": 16
+            }
+          },
+          {
+            "lineage_id": "lineage:beta",
+            "path": "src/calculator.py",
+            "qualified_name": "beta",
+            "role": "modified",
+            "side": "new",
+            "symbol_id": "python:src/calculator.py:beta",
+            "symbol_range": {
+              "count": 2,
+              "end": 21,
+              "start": 20
+            }
+          }
+        ],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/calculator.py",
+        "new_range": {
+          "count": 6,
+          "end": 21,
+          "start": 16
+        },
+        "note": "One hunk range crosses two sibling functions",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/calculator.py",
+        "old_range": {
+          "count": 6,
+          "end": 21,
+          "start": 16
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "labeled",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-rename",
+        "change_context_required": true,
+        "expected_symbols": [
+          {
+            "lineage_id": "lineage:renamed-function",
+            "path": "src/legacy.py",
+            "qualified_name": "legacy_name",
+            "role": "renamed",
+            "side": "old",
+            "symbol_id": "python:src/legacy.py:legacy_name",
+            "symbol_range": {
+              "count": 4,
+              "end": 9,
+              "start": 6
+            }
+          },
+          {
+            "lineage_id": "lineage:renamed-function",
+            "path": "src/modern.py",
+            "qualified_name": "modern_name",
+            "role": "renamed",
+            "side": "new",
+            "symbol_id": "python:src/modern.py:modern_name",
+            "symbol_range": {
+              "count": 4,
+              "end": 9,
+              "start": 6
+            }
+          }
+        ],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/modern.py",
+        "new_range": {
+          "count": 1,
+          "end": 6,
+          "start": 6
+        },
+        "note": "Git file rename plus Python symbol rename",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/legacy.py",
+        "old_range": {
+          "count": 1,
+          "end": 6,
+          "start": 6
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "labeled",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-whitespace-only",
+        "change_context_required": false,
+        "expected_symbols": [],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/spacing.py",
+        "new_range": {
+          "count": 1,
+          "end": 2,
+          "start": 2
+        },
+        "note": "Whitespace-only textual change has zero quality labels",
+        "old_commit_sha": "59b386b1784d4d3323241b2c2888d34c427022c8",
+        "old_path": "src/spacing.py",
+        "old_range": {
+          "count": 1,
+          "end": 2,
+          "start": 2
+        },
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "noise",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      },
+      {
+        "ambiguity_candidates": [],
+        "case_id": "cb6-wrong-parent",
+        "change_context_required": false,
+        "expected_symbols": [],
+        "new_commit_sha": "578cc272a80ad9d23a104e75405763c8d8c05bf8",
+        "new_path": "src/calculator.py",
+        "new_range": null,
+        "note": "Supplied parent is not the target commit parent",
+        "old_commit_sha": "0dc83b13c285a9fa3dadd8a169f6b10c518e446b",
+        "old_path": "src/calculator.py",
+        "old_range": null,
+        "schema_version": "code-c-b6-canonical-label-record-v1",
+        "status": "rejected",
+        "target_parent_sha": "59b386b1784d4d3323241b2c2888d34c427022c8"
+      }
+    ],
+    "membership_digest": "sha256:48d74df8b1914af770e343f0a604bdb71dd5bdded7101cb1c2d7cf07a27ee4cf",
+    "repository_id": "cb6-programmatic-fixture",
+    "schema_version": "code-c-b6-programmatic-git-fixture-v1"
+  },
+  "fixture_digest": "sha256:d75b530049a249adf1fefb52bf21f3a84301301a8be9ceb0e6ca522d062d4518",
+  "label_tamper_detection": "complete-canonical-record-membership-sha256",
+  "labeled_case_count": 8,
+  "labels_are_production_results": false,
+  "membership_digest": "sha256:48d74df8b1914af770e343f0a604bdb71dd5bdded7101cb1c2d7cf07a27ee4cf",
+  "record_count": 12,
+  "run_id": "evaluation-run://project-code-cb6-v1/06eea9107f274fe3b13d77bd68b8a00e",
+  "schema_version": "code-c-b6-canonical-label-record-v1",
+  "source": "fixed-programmatic-temporary-git-fixture",
+  "status_counts": {
+    "ambiguous": 1,
+    "labeled": 8,
+    "noise": 1,
+    "rejected": 1,
+    "unavailable": 1
+  },
+  "validation": {
+    "canonical_symbol_label_count": 16,
+    "case_count": 12,
+    "commit_count": 3,
+    "labeled_case_count": 8,
+    "membership_digest": "sha256:48d74df8b1914af770e343f0a604bdb71dd5bdded7101cb1c2d7cf07a27ee4cf",
+    "status": "valid",
+    "temporary_repository_in_portable_identity": false
+  }
+}

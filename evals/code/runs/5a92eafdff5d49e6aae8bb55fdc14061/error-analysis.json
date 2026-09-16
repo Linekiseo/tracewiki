@@ -1,0 +1,1465 @@
+{
+  "candidate_channels": [
+    {
+      "available_cases": 30,
+      "case_id": null,
+      "denominator": 30.0,
+      "eligible": true,
+      "eligible_cases": 30,
+      "evaluation_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "metric_name": "candidate_count_by_channel",
+      "numerator": 260.0,
+      "slice": {
+        "channel": "dense",
+        "scope": "overall",
+        "stage": "returned"
+      },
+      "source_domain": "code",
+      "status": "available",
+      "total_cases": 33,
+      "unavailable_cases": 0,
+      "unavailable_reason": null,
+      "value": 8.666666666666666
+    },
+    {
+      "available_cases": 33,
+      "case_id": null,
+      "denominator": 33.0,
+      "eligible": true,
+      "eligible_cases": 33,
+      "evaluation_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "metric_name": "candidate_count_by_channel",
+      "numerator": 680.0,
+      "slice": {
+        "channel": "dense_candidates",
+        "scope": "overall",
+        "stage": "retriever"
+      },
+      "source_domain": "code",
+      "status": "available",
+      "total_cases": 33,
+      "unavailable_cases": 0,
+      "unavailable_reason": null,
+      "value": 20.606060606060606
+    },
+    {
+      "available_cases": 33,
+      "case_id": null,
+      "denominator": 33.0,
+      "eligible": true,
+      "eligible_cases": 33,
+      "evaluation_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "metric_name": "candidate_count_by_channel",
+      "numerator": 363.0,
+      "slice": {
+        "channel": "dense_matches",
+        "scope": "overall",
+        "stage": "retriever"
+      },
+      "source_domain": "code",
+      "status": "available",
+      "total_cases": 33,
+      "unavailable_cases": 0,
+      "unavailable_reason": null,
+      "value": 11.0
+    },
+    {
+      "available_cases": 26,
+      "case_id": null,
+      "denominator": 26.0,
+      "eligible": true,
+      "eligible_cases": 26,
+      "evaluation_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "metric_name": "candidate_count_by_channel",
+      "numerator": 277.0,
+      "slice": {
+        "channel": "lexical",
+        "scope": "overall",
+        "stage": "returned"
+      },
+      "source_domain": "code",
+      "status": "available",
+      "total_cases": 33,
+      "unavailable_cases": 0,
+      "unavailable_reason": null,
+      "value": 10.653846153846153
+    },
+    {
+      "available_cases": 33,
+      "case_id": null,
+      "denominator": 33.0,
+      "eligible": true,
+      "eligible_cases": 33,
+      "evaluation_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "metric_name": "candidate_count_by_channel",
+      "numerator": 411.0,
+      "slice": {
+        "channel": "lexical_candidates",
+        "scope": "overall",
+        "stage": "retriever"
+      },
+      "source_domain": "code",
+      "status": "available",
+      "total_cases": 33,
+      "unavailable_cases": 0,
+      "unavailable_reason": null,
+      "value": 12.454545454545455
+    }
+  ],
+  "duplicate_candidates": [],
+  "graph_required_misses": [
+    {
+      "candidate_count": 5,
+      "case_id": "code-golden-v2-030",
+      "entity_recall@20": 0.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 4.0,
+      "mrr@10": 0.0,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "natural_language",
+      "required_path_recall": 0.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~793cc06c4005",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~95a8ecece30d",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line"
+      ],
+      "slices": [
+        "chinese",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    },
+    {
+      "candidate_count": 10,
+      "case_id": "code-golden-v2-017",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "graph_required"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 8,
+      "case_id": "code-golden-v2-022",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.75,
+      "mrr@10": 0.25,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote"
+      ],
+      "slices": [
+        "english",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 10,
+      "case_id": "code-golden-v2-029",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.666667,
+      "mrr@10": 0.3333333333333333,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    },
+    {
+      "candidate_count": 13,
+      "case_id": "code-golden-v2-009",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py"
+      ],
+      "slices": [
+        "english",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "implementation"
+    },
+    {
+      "candidate_count": 6,
+      "case_id": "code-golden-v2-016",
+      "entity_recall@20": 0.5,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.5,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "chinese",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 3,
+      "case_id": "code-golden-v2-032",
+      "entity_recall@20": 0.5,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.5,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py"
+      ],
+      "slices": [
+        "english",
+        "low_lexical_overlap",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    },
+    {
+      "candidate_count": 7,
+      "case_id": "code-golden-v2-015",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "graph_required"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 7,
+      "case_id": "code-golden-v2-018",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py"
+      ],
+      "slices": [
+        "english",
+        "low_lexical_overlap",
+        "graph_required"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 5,
+      "case_id": "code-golden-v2-019",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_coupon",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/validation/check_status.py"
+      ],
+      "slices": [
+        "english",
+        "dirty_current",
+        "graph_required"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 13,
+      "case_id": "code-golden-v2-031",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py"
+      ],
+      "slices": [
+        "english",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    },
+    {
+      "candidate_count": 3,
+      "case_id": "code-golden-v2-034",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_coupon",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total"
+      ],
+      "slices": [
+        "english",
+        "dirty_current",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    }
+  ],
+  "harmful_candidates": [
+    {
+      "candidate_count": 14,
+      "case_id": "code-golden-v2-006",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "mixed",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~793cc06c4005",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~95a8ecece30d",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "chinese",
+        "identifier_heavy",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "exact_location"
+    },
+    {
+      "candidate_count": 10,
+      "case_id": "code-golden-v2-017",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "graph_required"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 13,
+      "case_id": "code-golden-v2-021",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 16,
+      "case_id": "code-golden-v2-023",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "mixed",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~793cc06c4005",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~95a8ecece30d",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "english",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 4,
+      "case_id": "code-golden-v2-025",
+      "entity_recall@20": 0.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 4.0,
+      "mrr@10": 0.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/tax.py"
+      ],
+      "slices": [
+        "english",
+        "dirty_current",
+        "graph_harmful"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 6,
+      "case_id": "code-golden-v2-028",
+      "entity_recall@20": null,
+      "expected_answer_mode": "clarify",
+      "miss_score": 3.0,
+      "mrr@10": 0.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote"
+      ],
+      "slices": [
+        "english",
+        "same_name_hard_negative",
+        "unanswerable",
+        "graph_harmful"
+      ],
+      "task": "bug_localization"
+    }
+  ],
+  "run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+  "same_name_errors": [
+    {
+      "candidate_count": 6,
+      "case_id": "code-golden-v2-028",
+      "entity_recall@20": null,
+      "expected_answer_mode": "clarify",
+      "miss_score": 3.0,
+      "mrr@10": 0.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote"
+      ],
+      "slices": [
+        "english",
+        "same_name_hard_negative",
+        "unanswerable",
+        "graph_harmful"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 14,
+      "case_id": "code-golden-v2-006",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "mixed",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~793cc06c4005",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~95a8ecece30d",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "chinese",
+        "identifier_heavy",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "exact_location"
+    },
+    {
+      "candidate_count": 13,
+      "case_id": "code-golden-v2-021",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 16,
+      "case_id": "code-golden-v2-023",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "mixed",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~793cc06c4005",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~95a8ecece30d",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "english",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "bug_localization"
+    }
+  ],
+  "schema_version": "code-c0-03-error-analysis-v1",
+  "top_misses": [
+    {
+      "candidate_count": 4,
+      "case_id": "code-golden-v2-025",
+      "entity_recall@20": 0.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 4.0,
+      "mrr@10": 0.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/tax.py"
+      ],
+      "slices": [
+        "english",
+        "dirty_current",
+        "graph_harmful"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 5,
+      "case_id": "code-golden-v2-030",
+      "entity_recall@20": 0.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 4.0,
+      "mrr@10": 0.0,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "natural_language",
+      "required_path_recall": 0.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~793cc06c4005",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~95a8ecece30d",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line"
+      ],
+      "slices": [
+        "chinese",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    },
+    {
+      "candidate_count": 2,
+      "case_id": "code-golden-v2-001",
+      "entity_recall@20": 0.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 3.0,
+      "mrr@10": 0.0,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "chinese",
+        "natural_language_to_code"
+      ],
+      "task": "exact_location"
+    },
+    {
+      "candidate_count": 6,
+      "case_id": "code-golden-v2-028",
+      "entity_recall@20": null,
+      "expected_answer_mode": "clarify",
+      "miss_score": 3.0,
+      "mrr@10": 0.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote"
+      ],
+      "slices": [
+        "english",
+        "same_name_hard_negative",
+        "unanswerable",
+        "graph_harmful"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 14,
+      "case_id": "code-golden-v2-006",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "mixed",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~793cc06c4005",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~95a8ecece30d",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "chinese",
+        "identifier_heavy",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "exact_location"
+    },
+    {
+      "candidate_count": 13,
+      "case_id": "code-golden-v2-021",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 10,
+      "case_id": "code-golden-v2-017",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "graph_required"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 16,
+      "case_id": "code-golden-v2-023",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 2.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "mixed",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~793cc06c4005",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~95a8ecece30d",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/payments/gateway.py#symbol=src.payments.gateway.charge~a433d2585bc5",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "english",
+        "same_name_hard_negative",
+        "graph_harmful"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 8,
+      "case_id": "code-golden-v2-022",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.75,
+      "mrr@10": 0.25,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote"
+      ],
+      "slices": [
+        "english",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-033",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.75,
+      "mrr@10": 0.25,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService.__init__",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService.run",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._local",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver.blob_hash",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositorySnapshot",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositorySnapshot.as_storage_dict",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.sync",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._link_calls",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver.resolve",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.list_tree",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.compare",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._remote",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.read_file",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._repository"
+      ],
+      "slices": [
+        "english",
+        "natural_language_to_code"
+      ],
+      "task": "impact_analysis"
+    },
+    {
+      "candidate_count": 8,
+      "case_id": "code-golden-v2-003",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.666667,
+      "mrr@10": 0.3333333333333333,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py"
+      ],
+      "slices": [
+        "english",
+        "low_lexical_overlap",
+        "natural_language_to_code"
+      ],
+      "task": "exact_location"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-012",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.666667,
+      "mrr@10": 0.3333333333333333,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._resolve_ref",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.compare",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.read_file",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver.resolve",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.list_tree",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._remote",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositorySnapshot",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._optional_file",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._diffs",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositorySnapshot.as_storage_dict",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService.run",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._build_records",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._commits",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._local",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py"
+      ],
+      "slices": [
+        "chinese",
+        "natural_language_to_code"
+      ],
+      "task": "implementation"
+    },
+    {
+      "candidate_count": 3,
+      "case_id": "code-golden-v2-013",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.666667,
+      "mrr@10": 0.3333333333333333,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/historical-error@6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_coupon"
+      ],
+      "slices": [
+        "english",
+        "dirty_current",
+        "low_lexical_overlap"
+      ],
+      "task": "implementation"
+    },
+    {
+      "candidate_count": 10,
+      "case_id": "code-golden-v2-029",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.666667,
+      "mrr@10": 0.3333333333333333,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-004",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._local",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._remote",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._remote_identity",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver.resolve",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.sync",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver.discover_files",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._fetch_remote_heads",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/repository.py#symbol=src.evidence_rag.repository.RepositoryResolver._is_inside_git",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._safe_path",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.list_tree",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._resolve_ref",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._commits",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.refs",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._repository"
+      ],
+      "slices": [
+        "english",
+        "natural_language_to_code"
+      ],
+      "task": "exact_location"
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-005",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService.enqueue",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService.run",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._locator",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService.__init__",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._symbol_signature",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._edge",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._import_keys",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._view",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._link_calls",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._git_ok",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._link_imports",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._git",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._fetch_remote_heads",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService._git_bytes",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService._build_records",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.stable_hash",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.IngestionService",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/ingestion.py#symbol=src.evidence_rag.ingestion.edge_id",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryService.__init__",
+        "code://fixtures.invalid/code-golden/current-project-snapshot@bc3326edc761e3bdb42ed78726a21f314ab44974/src/evidence_rag/code_history/service.py#symbol=src.evidence_rag.code_history.service.CodeHistoryError"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy"
+      ],
+      "task": "exact_location"
+    },
+    {
+      "candidate_count": 13,
+      "case_id": "code-golden-v2-009",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.5,
+      "mrr@10": 0.5,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/__init__.py"
+      ],
+      "slices": [
+        "english",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "implementation"
+    },
+    {
+      "candidate_count": 6,
+      "case_id": "code-golden-v2-016",
+      "entity_recall@20": 0.5,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.5,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "zh",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.apply_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total"
+      ],
+      "slices": [
+        "chinese",
+        "natural_language_to_code",
+        "graph_required"
+      ],
+      "task": "call_reference_path"
+    },
+    {
+      "candidate_count": 3,
+      "case_id": "code-golden-v2-032",
+      "entity_recall@20": 0.5,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.5,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": 1.0,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py"
+      ],
+      "slices": [
+        "english",
+        "low_lexical_overlap",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    },
+    {
+      "candidate_count": 10,
+      "case_id": "code-golden-v2-002",
+      "entity_recall@20": 1.0,
+      "expected_answer_mode": "direct",
+      "miss_score": 1.0,
+      "mrr@10": 1.0,
+      "passed": false,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.calculate_tax",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.calculate_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/tax.py#symbol=src.checkout.tax.format_line",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_gold_customer_discount",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/tests/pricing_cases.py#symbol=tests.pricing_cases.test_regular_customer_total",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine",
+        "code://fixtures.invalid/code-golden/controlled-multilingual@85e41dc96462ddfa897483d17388d2be5f9d5fff/src/checkout/pricing.py#symbol=src.checkout.pricing.PriceEngine.quote"
+      ],
+      "slices": [
+        "english",
+        "identifier_heavy"
+      ],
+      "task": "exact_location"
+    }
+  ],
+  "wrong_or_missing_version": [
+    {
+      "case_id": "code-golden-v2-014",
+      "missing_version_rate": null,
+      "missing_version_status": "unavailable",
+      "missing_version_unavailable_reason": "no retrieved candidate exposes version evidence",
+      "wrong_version_rate": null,
+      "wrong_version_status": "unavailable",
+      "wrong_version_unavailable_reason": "no retrieved candidate exposes version evidence"
+    },
+    {
+      "case_id": "code-golden-v2-027",
+      "missing_version_rate": null,
+      "missing_version_status": "unavailable",
+      "missing_version_unavailable_reason": "no retrieved candidate exposes version evidence",
+      "wrong_version_rate": null,
+      "wrong_version_status": "unavailable",
+      "wrong_version_unavailable_reason": "no retrieved candidate exposes version evidence"
+    },
+    {
+      "case_id": "code-golden-v2-035",
+      "missing_version_rate": null,
+      "missing_version_status": "unavailable",
+      "missing_version_unavailable_reason": "no retrieved candidate exposes version evidence",
+      "wrong_version_rate": null,
+      "wrong_version_status": "unavailable",
+      "wrong_version_unavailable_reason": "no retrieved candidate exposes version evidence"
+    }
+  ],
+  "zero_results": [
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-014",
+      "entity_recall@20": null,
+      "expected_answer_mode": "refuse",
+      "miss_score": 0.0,
+      "mrr@10": null,
+      "passed": true,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [],
+      "slices": [
+        "english",
+        "acl_forbidden",
+        "unanswerable"
+      ],
+      "task": "implementation"
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-027",
+      "entity_recall@20": null,
+      "expected_answer_mode": "missing_evidence",
+      "miss_score": 0.0,
+      "mrr@10": null,
+      "passed": true,
+      "query_language": "en",
+      "query_style": "natural_language",
+      "required_path_recall": null,
+      "result_entity_ids": [],
+      "slices": [
+        "english",
+        "generated_vendor",
+        "unanswerable"
+      ],
+      "task": "bug_localization"
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-035",
+      "entity_recall@20": null,
+      "expected_answer_mode": "refuse",
+      "miss_score": 0.0,
+      "mrr@10": null,
+      "passed": true,
+      "query_language": "en",
+      "query_style": "identifier_heavy",
+      "required_path_recall": null,
+      "result_entity_ids": [],
+      "slices": [
+        "english",
+        "acl_forbidden",
+        "unanswerable",
+        "graph_required"
+      ],
+      "task": "impact_analysis"
+    }
+  ]
+}

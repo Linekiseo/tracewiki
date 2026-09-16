@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="多源研发证据 RAG · 版本化代码摄取与检索控制台" />
+    <title>多源研发证据 RAG</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("rag-theme")
+        || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M18 20h28M18 32h20M18 44h28' stroke='white' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/assets/app.css?v=20260724d" />
+    <link rel="stylesheet" href="/assets/rag-workbench.css?v=20260724o" />
+    <link rel="stylesheet" href="/assets/graph-workbench.css?v=20260724a" />
+    <link rel="stylesheet" href="/assets/codex-session-board.css?v=20260724g" />
+    <link rel="stylesheet" href="/assets/document-import.css?v=20260724a" />
+    <link rel="stylesheet" href="/assets/workbench-experience.css?v=20260724y" />
+    <link rel="stylesheet" href="/assets/design-system.css?v=20260724l" />
+    <link rel="stylesheet" href="/assets/project-network.css?v=20260724j" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><span></span>
+          </div>
+          <div><strong>研发证据</strong><small>RAG / CODE INTEL</small></div>
+        </div>
+
+        <nav class="nav" aria-label="主导航">
+          <div class="nav-label">研究工作</div>
+          <button class="nav-item active" data-view="workspace">
+            <i class="ph ph-layout" aria-hidden="true"></i><span>项目工作台</span>
+          </button>
+          <button class="nav-item" data-view="search">
+            <i class="ph ph-magnifying-glass" aria-hidden="true"></i><span>证据工作台</span>
+          </button>
+          <button class="nav-item nav-item-emphasis" data-view="graph">
+            <i class="ph ph-graph" aria-hidden="true"></i><span>图谱探索</span>
+          </button>
+          <div class="nav-label">研发资产</div>
+          <button class="nav-item" data-view="repository">
+            <i class="ph ph-git-branch" aria-hidden="true"></i><span>代码与版本</span>
+          </button>
+          <button class="nav-item" data-view="codex">
+            <i class="ph ph-chats-circle" aria-hidden="true"></i><span>研发会话</span>
+          </button>
+          <button class="nav-item" data-view="codex-bridge">
+            <i class="ph ph-plugs-connected" aria-hidden="true"></i><span>Codex 联动</span>
+          </button>
+          <button class="nav-item" data-view="experiments">
+            <i class="ph ph-flask" aria-hidden="true"></i><span>实验与数据</span>
+          </button>
+          <button class="nav-item" data-view="documents">
+            <i class="ph ph-file-text" aria-hidden="true"></i><span>科研文档</span>
+          </button>
+          <div class="nav-label">证据治理</div>
+          <button class="nav-item" data-view="bindings">
+            <i class="ph ph-link" aria-hidden="true"></i><span>关系复核</span>
+          </button>
+          <button class="nav-item" data-view="drift">
+            <i class="ph ph-wave-sine" aria-hidden="true"></i><span>有效性分析</span>
+          </button>
+          <div class="nav-label">系统</div>
+          <button class="nav-item" data-view="governance">
+            <i class="ph ph-shield-check" aria-hidden="true"></i><span>治理与运维</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-note">
+          <div class="pulse-row"><span class="live-dot"></span> INDEX CORE ONLINE</div>
+          <p>代码、会话、实验与文档索引正常。</p>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="avatar">研</div>
+          <div><strong>RAG Core</strong><small>工程证据工作区</small></div>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <button class="project-switcher">
+            <span class="project-glyph">▣</span>
+            <strong>RAG Core</strong>
+            <span class="live-dot"></span>
+            <span class="chevron">⌄</span>
+          </button>
+          <form id="global-search" class="global-search">
+            <span>⌕</span>
+            <input name="query" autocomplete="off" placeholder="向项目提问，或搜索代码、会话、实验与文档…" />
+            <kbd>⌘ K</kbd>
+          </form>
+          <div class="top-actions">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换深浅色模式" title="切换深浅色模式">
+              <i class="ph ph-moon" aria-hidden="true"></i><span>深色</span>
+            </button>
+            <a class="icon-button" href="/docs" title="API 文档">API</a>
+            <span class="top-avatar">研</span>
+          </div>
+        </header>
+
+        <main>
+          <section id="view-workspace" class="view active research-project-page">
+            <header class="research-project-context">
+              <div class="research-context-picker">
+                <button id="research-context-switcher" class="research-context-switcher" type="button" aria-haspopup="dialog" aria-expanded="false">
+                  <span class="research-context-project">RAG Core</span>
+                  <i class="ph ph-caret-right"></i>
+                  <strong id="workspace-project-title">科研项目</strong>
+                  <i class="ph ph-caret-right"></i>
+                  <span id="workspace-context-iteration">当前研究</span>
+                  <i class="ph ph-caret-down"></i>
+                </button>
+                <section id="research-context-menu" class="research-context-menu" hidden>
+                  <header><span>切换研究主题</span><button type="button" id="edit-topic"><i class="ph ph-pencil-simple"></i>编辑</button></header>
+                  <div id="research-context-topic-list"></div>
+                  <footer>
+                    <button type="button" id="open-topic"><i class="ph ph-plus"></i>新建主题</button>
+                    <button type="button" id="open-iteration" disabled><i class="ph ph-git-commit"></i>新建迭代</button>
+                  </footer>
+                </section>
+              </div>
+              <span id="workspace-context-status" class="research-context-status">准备就绪</span>
+              <div class="research-context-actions">
+                <button type="button" id="refresh-workspace" class="research-icon-action" aria-label="刷新项目" title="刷新项目"><i class="ph ph-arrows-clockwise"></i></button>
+                <button type="button" id="open-work-item" class="button primary" disabled><i class="ph ph-terminal-window"></i>交给 Codex</button>
+              </div>
+            </header>
+
+            <nav class="research-view-tabs" aria-label="项目呈现方式">
+              <button type="button" class="active" data-research-view="network"><i class="ph ph-graph"></i>关系网</button>
+              <button type="button" data-research-view="record"><i class="ph ph-clock-counter-clockwise"></i>研究记录</button>
+              <button type="button" data-research-view="products"><i class="ph ph-stack"></i>产物</button>
+            </nav>
+
+            <section class="research-view-panel research-network-panel" data-research-panel="network">
+              <div id="research-network-workarea" class="research-network-workarea">
+                <div class="research-canvas-column">
+                  <h1 id="research-network-focus-title" class="research-visually-hidden">研究关系网</h1>
+
+                  <div id="research-network-canvas" class="research-network-canvas" tabindex="0" aria-label="可拖动、缩放的研究关系网">
+                    <div id="research-network-world" class="research-network-world">
+                      <svg id="research-network-edges" viewBox="0 0 930 740" aria-hidden="true">
+                        <defs>
+                          <marker id="research-edge-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                            <path d="M0,0 L8,4 L0,8 z"></path>
+                          </marker>
+                        </defs>
+                        <g id="research-network-edge-layer"></g>
+                      </svg>
+                      <div id="research-network-node-layer"></div>
+                    </div>
+                    <div id="research-network-empty" class="research-network-empty" hidden>
+                      <i class="ph ph-bezier-curve"></i>
+                      <h2>先创建一个研究主题</h2>
+                      <button type="button" class="button primary" data-create-first-topic>创建研究主题</button>
+                    </div>
+                    <div class="research-canvas-dock">
+                      <div class="research-canvas-controls" aria-label="画布缩放">
+                        <button type="button" id="research-zoom-out" aria-label="缩小"><i class="ph ph-minus"></i></button>
+                        <output id="research-zoom-level">90%</output>
+                        <button type="button" id="research-zoom-in" aria-label="放大"><i class="ph ph-plus"></i></button>
+                        <button type="button" id="research-fit-view" aria-label="适应画布"><i class="ph ph-corners-out"></i></button>
+                      </div>
+                      <div class="research-filter">
+                        <button type="button" id="research-relation-filter" aria-expanded="false"><i class="ph ph-funnel"></i>关系筛选<i class="ph ph-caret-down"></i></button>
+                        <div id="research-relation-menu" hidden></div>
+                      </div>
+                      <div class="research-network-legend"></div>
+                    </div>
+                    <div class="research-expand-dock">
+                      <div class="research-add-node">
+                        <button type="button" id="research-add-node" aria-expanded="false" aria-haspopup="menu"><i class="ph ph-plus"></i>新增节点</button>
+                        <div id="research-add-node-menu" role="menu" hidden>
+                          <button type="button" data-add-research-node="topic"><i class="ph ph-lightbulb"></i><span><strong>研究主题</strong><small>建立新的研究问题</small></span></button>
+                          <button type="button" data-add-research-node="iteration"><i class="ph ph-git-commit"></i><span><strong>研究迭代</strong><small>关联当前研究主题</small></span></button>
+                          <button type="button" data-add-research-node="work"><i class="ph ph-clipboard-text"></i><span><strong>开发或分析任务</strong><small>交给研究人员或 Codex</small></span></button>
+                          <button type="button" data-add-research-node="experiment"><i class="ph ph-flask"></i><span><strong>实验</strong><small>进入实验与数据工作台</small></span></button>
+                          <button type="button" data-add-research-node="document"><i class="ph ph-file-text"></i><span><strong>科研文档</strong><small>批量导入论文与结果</small></span></button>
+                        </div>
+                      </div>
+                      <button type="button" id="research-expand-neighbors"><i class="ph ph-selection-plus"></i>展开一阶</button>
+                      <button type="button" id="research-expand-all">展开全部<i class="ph ph-caret-right"></i></button>
+                    </div>
+                  </div>
+
+                  <form id="research-command-form" class="research-command-bar">
+                    <i class="ph ph-sparkle"></i>
+                    <input name="objective" autocomplete="off" placeholder="描述下一步研究或开发目标…" />
+                    <button type="submit">交给 Codex <kbd>↵</kbd></button>
+                  </form>
+                </div>
+
+                <aside id="research-node-inspector" class="research-node-inspector" hidden aria-label="节点详情">
+                  <header>
+                    <div><span id="research-inspector-kind">节点</span><h2 id="research-inspector-title">详情</h2></div>
+                    <button type="button" id="research-inspector-close" aria-label="关闭详情"><i class="ph ph-x"></i></button>
+                  </header>
+                  <nav aria-label="节点详情内容">
+                    <button type="button" class="active" data-research-inspector-tab="overview">概览</button>
+                    <button type="button" data-research-inspector-tab="diff">Diff</button>
+                    <button type="button" data-research-inspector-tab="tests">测试</button>
+                    <button type="button" data-research-inspector-tab="evidence">证据</button>
+                  </nav>
+                  <div id="research-inspector-content" class="research-inspector-content"></div>
+                  <footer id="research-inspector-actions"></footer>
+                </aside>
+              </div>
+            </section>
+
+            <section class="research-view-panel research-record-panel" data-research-panel="record" hidden>
+              <header><div><span>按时间追溯</span><h1>研究记录</h1></div><button type="button" id="research-record-refresh"><i class="ph ph-arrows-clockwise"></i>刷新</button></header>
+              <div id="research-record-list" class="research-record-list"></div>
+            </section>
+
+            <section class="research-view-panel research-products-panel" data-research-panel="products" hidden>
+              <header><div><span>已进入项目上下文</span><h1>研究产物</h1></div></header>
+              <div id="research-products-list" class="research-products-list"></div>
+            </section>
+          </section>
+
+          <section id="view-ingestion" class="view">
+            <div class="page-heading source-ledger-heading">
+              <div>
+                <div class="eyebrow">EXPERIMENT DATA / SOURCE ADAPTER / RAW EVIDENCE</div>
+                <h1>实验数据接入</h1>
+                <p>接入真实实验 Run、Metric、Artifact 与 Notebook 执行记录；代码仓库和 Codex 会话在各自工作台独立管理。</p>
+              </div>
+              <div class="heading-actions">
+                <button class="button ghost" id="open-notebook">＋ 接入 Notebook</button>
+                <button class="button ghost" id="open-manual-run">＋ 手工记录 Run</button>
+                <button class="button primary" id="open-mlflow">↻ 同步 MLflow</button>
+              </div>
+            </div>
+
+            <div class="metric-grid" id="ingestion-metric-grid">
+              <article class="metric blue"><span>外部实验源</span><strong>—</strong><small>MLFLOW SOURCE</small></article>
+              <article class="metric green"><span>实验 Runs</span><strong>—</strong><small>VERSIONED RUN</small></article>
+              <article class="metric violet"><span>Notebook 执行</span><strong>—</strong><small>STRUCTURED NOTEBOOK</small></article>
+              <article class="metric amber"><span>实验原始对象</span><strong>—</strong><small>MLFLOW + NOTEBOOK RAW</small></article>
+            </div>
+
+            <div class="experiment-ingestion-grid">
+              <article class="panel connector-catalog-panel">
+                <div class="panel-head">
+                  <div><strong>实验数据连接器</strong><small>每种入口只产生实验域实体，不会隐式创建代码仓库</small></div>
+                  <span class="mono-label">3 CONNECTORS</span>
+                </div>
+                <div class="connector-cards">
+                  <button class="connector-card" data-open-experiment-source="mlflow">
+                    <span class="connector-icon">ML</span>
+                    <span><strong>MLflow Tracking</strong><small>同步 Experiment / Run / Metric / Artifact</small></span>
+                    <b>连接</b>
+                  </button>
+                  <button class="connector-card" data-open-experiment-source="notebook">
+                    <span class="connector-icon violet">NB</span>
+                    <span><strong>Jupyter Notebook</strong><small>保留 Cell / Output / 参数与执行版本</small></span>
+                    <b>接入</b>
+                  </button>
+                  <button class="connector-card" data-open-experiment-source="manual">
+                    <span class="connector-icon amber">R</span>
+                    <span><strong>手工 Run</strong><small>记录数据版本、配置、Commit 与指标</small></span>
+                    <b>记录</b>
+                  </button>
+                </div>
+              </article>
+
+              <aside class="panel source-adapter-panel">
+                <div class="panel-head"><div><strong>MLflow 来源状态</strong><small>同步结果、失败原因与最新时间</small></div><button class="text-button" id="refresh-experiment-sources">刷新</button></div>
+                <div id="adapter-source-list" class="adapter-source-list"><div class="empty-state compact"><p>尚无 MLflow 数据源</p></div></div>
+              </aside>
+            </div>
+
+            <div class="source-ledger-grid">
+              <article class="panel raw-ledger-panel">
+                <div class="panel-head">
+                  <div><strong>实验原始证据</strong><small>只显示 MLflow 与 Notebook 的不可变原文</small></div>
+                  <span id="experiment-raw-count" class="mono-label">0 OBJECTS</span>
+                </div>
+                <div class="table-wrap"><table><thead><tr><th>来源</th><th>对象 / 版本</th><th>状态</th><th>派生实体</th><th>时间</th></tr></thead><tbody id="experiment-raw-table"><tr><td colspan="5" class="empty-row">尚无实验原始对象</td></tr></tbody></table></div>
+              </article>
+
+              <aside class="panel notebook-panel">
+                <div class="panel-head"><div><strong>Notebook 执行</strong><small>Cell / Output / 参数</small></div><span id="notebook-count" class="mono-label">0 RUNS</span></div>
+                <div id="notebook-list" class="notebook-list"><div class="empty-state compact"><p>尚未接入 Notebook</p></div></div>
+              </aside>
+            </div>
+          </section>
+
+          <section id="view-sources" class="view">
+            <div class="page-heading source-ledger-heading">
+              <div>
+                <div class="eyebrow">RAW OBJECT / SOURCE EVENT / DERIVATION</div>
+                <h1>原文与数据源台账</h1>
+                <p>跨代码、会话、实验和文档检查不可变原文、幂等事件、ACL 与删除状态；这里只核验来源，不发起业务接入。</p>
+              </div>
+              <div class="heading-actions"><button class="button ghost" id="refresh-sources">刷新台账</button></div>
+            </div>
+            <div class="metric-grid" id="raw-metric-grid">
+              <article class="metric blue"><span>原始对象</span><strong>—</strong><small>CONTENT ADDRESSED</small></article>
+              <article class="metric green"><span>有效原文</span><strong>—</strong><small>ACTIVE RAW</small></article>
+              <article class="metric amber"><span>隔离 / 删除</span><strong>—</strong><small>QUARANTINED + TOMBSTONED</small></article>
+              <article class="metric violet"><span>源事件</span><strong>—</strong><small>IDEMPOTENT EVENT</small></article>
+            </div>
+            <div class="source-ledger-grid">
+              <article class="panel raw-ledger-panel">
+                <div class="panel-head"><div><strong>Raw Object Ledger</strong><small>内容哈希、状态、ACL 与派生计数</small></div><span class="mono-label">IMMUTABLE</span></div>
+                <div class="table-wrap"><table><thead><tr><th>来源</th><th>对象 / 版本</th><th>状态</th><th>大小</th><th>ACL</th><th>时间</th></tr></thead><tbody id="raw-object-table"><tr><td colspan="6" class="empty-row">尚无原始对象</td></tr></tbody></table></div>
+              </article>
+              <aside class="panel source-adapter-panel">
+                <div class="panel-head"><div><strong>来源分布</strong><small>按原始对象类型统计</small></div><span class="live-dot"></span></div>
+                <div id="source-type-list" class="source-type-list"><div class="empty-state compact"><p>尚无来源数据</p></div></div>
+              </aside>
+            </div>
+          </section>
+
+          <section id="view-search" class="view">
+            <div class="page-heading rag-heading">
+              <div>
+                <div class="eyebrow">PROJECT EVIDENCE WORKBENCH</div>
+                <h1>证据工作台</h1>
+                <p>跨代码、研发会话、实验与科研文档检索，让回答和原始依据始终并排可核验。</p>
+              </div>
+              <div class="rag-heading-status"><span class="live-dot"></span><div><b>PROJECT INDEX READY</b><small id="rag-generation-label">正在读取项目范围</small></div></div>
+            </div>
+            <article class="rag-question-deck">
+              <form id="evidence-search-form">
+                <div class="rag-question-guidance"><b>向整个项目提问</b><span>默认检索全部来源，需要时再缩小范围。</span></div>
+                <div class="rag-question-main">
+                  <span class="rag-prompt-mark"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></span>
+                  <textarea name="query" rows="2" autocomplete="off" aria-label="向整个项目提问" placeholder="项目如何解析源码并建立调用关系？有哪些测试或实验支持？" required></textarea>
+                  <button class="button primary rag-submit" type="submit"><span>检索并核验</span><small>⌘ ↵</small></button>
+                </div>
+                <div class="rag-question-examples" aria-label="问题示例">
+                  <span>可以这样问</span>
+                  <button type="button" data-rag-question="SourceAnalyzer 如何解析源码并建立调用关系？" data-rag-intent="current_implementation">查当前实现</button>
+                  <button type="button" data-rag-question="哪个 Codex 会话修改了相关实现，为什么这样改？" data-rag-intent="rationale">追设计原因</button>
+                  <button type="button" data-rag-question="当前实现有哪些测试或实验结果支持？" data-rag-intent="experiment_validation">核实验依据</button>
+                  <button type="button" data-rag-question="科研文档中的结论是否仍被当前代码和实验支持？" data-rag-intent="claim_verification">验文档结论</button>
+                </div>
+                <div class="rag-scope-bar">
+                  <div class="rag-project-scope">
+                    <span class="rag-project-scope-icon">全</span>
+                    <div><strong id="rag-scope-title">整个研发项目</strong><small id="rag-scope-description">代码、会话、实验与科研文档</small></div>
+                  </div>
+                  <div class="rag-project-coverage" aria-label="项目索引范围">
+                    <span><b id="rag-coverage-repositories">0</b> 代码库</span>
+                    <span><b id="rag-coverage-files">0</b> 文件</span>
+                    <span><b id="rag-coverage-sessions">0</b> 会话</span>
+                    <span><b id="rag-coverage-experiments">0</b> 实验</span>
+                    <span><b id="rag-coverage-documents">0</b> 文档</span>
+                  </div>
+                  <button type="button" class="rag-scope-toggle" id="toggle-rag-scope" aria-expanded="false">筛选范围 <span>⌄</span></button>
+                </div>
+                <div class="rag-advanced-scope" id="rag-advanced-scope" hidden>
+                  <div><strong>仅在需要缩小范围时使用</strong><small>默认搜索整个项目；这里的选择只影响下一次查询。</small></div>
+                  <label><span>代码仓库</span><select id="rag-repository" name="repository_id"><option value="">全部代码仓库</option></select></label>
+                  <label><span>问题类型</span><select name="intent"><option value="">自动判断</option><option value="current_implementation">当前实现</option><option value="historical_implementation">历史实现</option><option value="change_trace">变更追踪</option><option value="rationale">设计原因</option><option value="experiment_validation">实验验证</option><option value="claim_verification">Claim 核验</option><option value="reproduction">实验复现</option><option value="staleness_check">有效性检查</option><option value="global_synthesis">全局综合</option></select></label>
+                  <label><span>证据类型</span><select name="source" id="search-source"><option value="">全部证据</option><option value="code">仅代码</option><option value="codex">仅研发会话</option><option value="experiment">仅实验</option><option value="document">仅科研文档</option><option value="workspace">仅研究工作区</option></select></label>
+                </div>
+              </form>
+            </article>
+
+            <div class="rag-workbench" id="rag-workbench">
+              <section class="rag-code-surface" aria-label="项目 RAG 来源">
+                <header class="rag-pane-head">
+                  <div><span class="rag-pane-kicker">PROJECT SOURCES</span><strong>项目来源</strong><small>浏览进入 RAG 的代码、会话、实验与科研文档</small></div>
+                  <div class="rag-pane-actions">
+                    <button type="button" class="rag-icon-button" id="rag-open-repository" title="在代码与版本中打开" aria-label="在代码与版本中打开"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2.5h4v1.5h-4v8h8v-4H13v4.25c0 .69-.56 1.25-1.25 1.25h-8.5C2.56 13.5 2 12.94 2 12.25v-8.5C2 3.06 2.56 2.5 3.25 2.5h.25Zm5.75-.5H14v4.75h-1.5V4.56L7.53 9.53 6.47 8.47l4.97-4.97H9.25V2Z"/></svg></button>
+                    <button type="button" class="rag-icon-button" data-rag-layout="code" title="聚焦项目来源" aria-label="聚焦项目来源"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.75 2h12.5c.97 0 1.75.78 1.75 1.75v8.5c0 .97-.78 1.75-1.75 1.75H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.78.78 2 1.75 2ZM1.5 3.75v8.5c0 .14.11.25.25.25H10V3.5H1.75a.25.25 0 0 0-.25.25Zm10 8.75h2.75c.14 0 .25-.11.25-.25v-8.5a.25.25 0 0 0-.25-.25H11.5v9Z"/></svg></button>
+                  </div>
+                </header>
+                <nav class="rag-source-tabs" role="tablist" aria-label="项目来源类型">
+                  <button type="button" class="active" role="tab" aria-selected="true" data-rag-source-tab="code"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m5.53 3.53-1.06-1.06L0 6.94v1.12l4.47 4.47 1.06-1.06L1.56 7.5l3.97-3.97Zm4.94 0 1.06-1.06L16 6.94v1.12l-4.47 4.47-1.06-1.06 3.97-3.97-3.97-3.97Z"/></svg><span>代码</span><b id="rag-source-code-count">0</b></button>
+                  <button type="button" role="tab" aria-selected="false" data-rag-source-tab="codex"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.75 2h10.5C14.77 2 16 3.23 16 4.75v5.5A2.75 2.75 0 0 1 13.25 13H8.81l-3.09 2.32A.75.75 0 0 1 4.5 14.7V13H2.75A2.75 2.75 0 0 1 0 10.25v-5.5A2.75 2.75 0 0 1 2.75 2Zm0 1.5c-.69 0-1.25.56-1.25 1.25v5.5c0 .69.56 1.25 1.25 1.25H6v1.7l2.31-1.7h4.94c.69 0 1.25-.56 1.25-1.25v-5.5c0-.69-.56-1.25-1.25-1.25H2.75Z"/></svg><span>研发会话</span><b id="rag-source-codex-count">0</b></button>
+                  <button type="button" role="tab" aria-selected="false" data-rag-source-tab="experiment"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 1.25A.75.75 0 0 1 5.75.5h4.5a.75.75 0 0 1 0 1.5H10v3.12l3.66 6.1A2.5 2.5 0 0 1 11.52 15H4.48a2.5 2.5 0 0 1-2.14-3.78L6 5.12V2h-.25A.75.75 0 0 1 5 1.25ZM7.5 5.54l-3.87 6.45a1 1 0 0 0 .85 1.51h7.04a1 1 0 0 0 .85-1.51L8.5 5.54V2h-1v3.54Zm-2.03 5.02h5.06l.9 1.5H4.57l.9-1.5Z"/></svg><span>实验</span><b id="rag-source-experiment-count">0</b></button>
+                  <button type="button" role="tab" aria-selected="false" data-rag-source-tab="document"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.75 1h5.19L13 5.06v9.19A1.75 1.75 0 0 1 11.25 16h-7.5A1.75 1.75 0 0 1 2 14.25V2.75A1.75 1.75 0 0 1 3.75 1Zm0 1.5a.25.25 0 0 0-.25.25v11.5c0 .14.11.25.25.25h7.5c.14 0 .25-.11.25-.25V6h-2A1.25 1.25 0 0 1 8.25 4.75V2.5h-4.5Zm6 .56V4.5h1.44L9.75 3.06ZM5 8h5v1.25H5V8Zm0 2.5h5v1.25H5V10.5Z"/></svg><span>科研文档</span><b id="rag-source-document-count">0</b></button>
+                </nav>
+                <div class="rag-source-pane active" data-rag-source-pane="code">
+                  <div class="rag-code-grid">
+                    <aside class="rag-file-rail">
+                      <div class="rag-file-tree-head">
+                        <div><strong>Files</strong><small id="rag-file-summary">项目代码目录</small></div>
+                        <button type="button" id="rag-file-collapse" title="折叠全部目录" aria-label="折叠全部目录"><i class="ph ph-arrows-in-line-vertical"></i></button>
+                      </div>
+                      <label class="rag-file-filter"><span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 1a5.5 5.5 0 1 1-3.47 9.77l-2.5 2.5-1.06-1.06 2.5-2.5A5.5 5.5 0 0 1 6.5 1Zm0 1.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg></span><input id="rag-file-filter" placeholder="Go to file…" /><kbd>⌘P</kbd></label>
+                      <div id="rag-file-list" class="rag-file-list rag-project-tree" role="tree" aria-label="项目仓库目录"><div class="rag-empty compact"><b>正在读取项目目录</b><span>代码仓库会按层级显示在这里</span></div></div>
+                    </aside>
+                    <article class="rag-code-viewer">
+                      <div class="rag-code-head">
+                        <div class="rag-code-title">
+                          <nav id="rag-code-breadcrumb" class="rag-code-breadcrumb" aria-label="当前文件路径"><span id="rag-code-repository-name">project</span><i>/</i><strong id="rag-code-path">选择文件</strong></nav>
+                          <small id="rag-code-locator">从目录打开文件，或先向项目提问</small>
+                        </div>
+                        <div class="rag-code-head-meta"><span id="rag-code-size">—</span><span id="rag-code-language" class="status-pill code-language-badge language-text">Text</span></div>
+                      </div>
+                      <div id="rag-code-content" class="rag-code-content"><div class="rag-empty"><span>{ }</span><b>选择文件查看源码</b><small>查询命中的代码会自动定位到具体版本与行号。</small></div></div>
+                    </article>
+                  </div>
+                </div>
+                <div class="rag-source-pane" data-rag-source-pane="codex">
+                  <div class="rag-asset-browser" id="rag-codex-assets"><div class="rag-empty"><b>正在读取研发会话</b></div></div>
+                </div>
+                <div class="rag-source-pane" data-rag-source-pane="experiment">
+                  <div class="rag-asset-browser" id="rag-experiment-assets"><div class="rag-empty"><b>正在读取实验数据</b></div></div>
+                </div>
+                <div class="rag-source-pane" data-rag-source-pane="document">
+                  <div class="rag-asset-browser" id="rag-document-assets"><div class="rag-empty"><b>正在读取科研文档</b></div></div>
+                </div>
+              </section>
+
+              <div class="rag-splitter" id="rag-splitter" role="separator" aria-label="调整代码与 RAG 面板比例" aria-orientation="vertical" tabindex="0">
+                <span></span><i></i><span></span>
+              </div>
+
+              <section class="rag-evidence-surface" aria-label="RAG Evidence Pack">
+                <header class="rag-pane-head">
+                  <div><span class="rag-pane-kicker">PROJECT ANSWER</span><strong>回答与依据</strong><small>每个结论都可以回到来源核对</small></div>
+                  <div class="rag-pane-actions">
+                    <span id="search-duration" class="mono-label">— MS</span>
+                    <button type="button" class="rag-icon-button" data-rag-layout="balanced" title="恢复均衡布局" aria-label="恢复均衡布局"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.75 2h12.5c.97 0 1.75.78 1.75 1.75v8.5c0 .97-.78 1.75-1.75 1.75H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.78.78 2 1.75 2ZM1.5 3.75v8.5c0 .14.11.25.25.25h5.5V3.5h-5.5a.25.25 0 0 0-.25.25Zm7.25 8.75h5.5c.14 0 .25-.11.25-.25v-8.5a.25.25 0 0 0-.25-.25h-5.5v9Z"/></svg></button>
+                    <button type="button" class="rag-icon-button" data-rag-layout="evidence" title="聚焦回答" aria-label="聚焦回答"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.75 2h12.5c.97 0 1.75.78 1.75 1.75v8.5c0 .97-.78 1.75-1.75 1.75H1.75A1.75 1.75 0 0 1 0 12.25v-8.5C0 2.78.78 2 1.75 2ZM1.5 3.75v8.5c0 .14.11.25.25.25H4V3.5H1.75a.25.25 0 0 0-.25.25Zm4 8.75h8.75c.14 0 .25-.11.25-.25v-8.5a.25.25 0 0 0-.25-.25H5.5v9Z"/></svg></button>
+                  </div>
+                </header>
+                <div class="rag-output-tabs" role="tablist">
+                  <button type="button" class="active" data-rag-tab="answer" role="tab">回答摘要 <span id="rag-answer-count">1</span></button>
+                  <button type="button" data-rag-tab="evidence" role="tab">证据来源 <span id="rag-evidence-count">0</span></button>
+                  <button type="button" data-rag-tab="relations" role="tab">关系链 <span id="rag-relation-count">0</span></button>
+                  <button type="button" class="rag-open-graph" data-view-target="graph" role="button"><i class="ph ph-graph"></i> 在图谱中展开</button>
+                  <small id="search-summary">直接在上方输入问题</small>
+                </div>
+                <div class="rag-output-body">
+                  <div class="rag-tab-panel active" data-rag-panel="answer">
+                    <div id="rag-query-brief" class="rag-query-brief" hidden></div>
+                    <div id="query-decision" class="query-decision" hidden></div>
+                    <div id="rag-answer-content" class="rag-answer-content">
+                      <div class="rag-empty"><span>问</span><b>向整个项目提问</b><small>系统会从代码、会话、实验和科研文档中寻找依据，并明确哪些信息仍然缺失。</small></div>
+                    </div>
+                  </div>
+                  <div class="rag-tab-panel" data-rag-panel="evidence">
+                    <div id="search-results" class="search-results"><div class="rag-empty"><span>证</span><b>还没有证据结果</b><small>查询后可逐条查看来源，并在左侧打开对应代码。</small></div></div>
+                  </div>
+                  <div class="rag-tab-panel" data-rag-panel="relations">
+                    <aside class="evidence-inspector" id="evidence-inspector">
+                      <div class="rag-empty"><span>链</span><b>选择一条证据查看关系</b><small>这里解释这条证据与代码、会话、实验或文档之间的联系。</small></div>
+                    </aside>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section id="view-graph" class="view graph-page">
+            <div class="graph-page-heading">
+              <div>
+                <div class="eyebrow">MULTI-SOURCE EVIDENCE GRAPH</div>
+                <h1>图谱探索</h1>
+                <p>在代码、研发会话与科研证据之间浏览真实关系；跨源关系只展示已确认记录。</p>
+              </div>
+              <div class="graph-kpi-strip" aria-label="图谱可见性">
+                <span><small>已载入</small><strong id="rag-graph-loaded-count">0</strong></span>
+                <span><small>当前可见</small><strong id="rag-graph-visible-count">0</strong></span>
+                <span><small>全量节点</small><strong id="rag-graph-total-count">—</strong></span>
+              </div>
+            </div>
+            <div class="rag-graph-shell" id="rag-graph-workspace">
+              <section class="rag-graph-stage">
+                <header>
+                  <div class="rag-graph-heading">
+                    <span id="rag-graph-eyebrow">OVERVIEW · RELATION NETWORK</span>
+                    <strong id="rag-graph-title">跨源总览</strong>
+                    <small id="rag-graph-summary">正在读取项目关系网络</small>
+                  </div>
+                  <nav class="rag-graph-domain-tabs" aria-label="图谱类型">
+                    <button type="button" class="active" data-rag-graph-domain="overview"><i class="overview"></i><span>跨源总览</span><em id="rag-graph-overview-total">—</em></button>
+                    <button type="button" data-rag-graph-domain="code"><i class="code"></i><span>代码图谱</span><em id="rag-graph-code-total">—</em></button>
+                    <button type="button" data-rag-graph-domain="codex"><i class="codex"></i><span>会话图谱</span><em id="rag-graph-codex-total">—</em></button>
+                    <button type="button" data-rag-graph-domain="research"><i class="research"></i><span>科研图谱</span><em id="rag-graph-research-total">—</em></button>
+                  </nav>
+                  <div class="rag-graph-mode" role="group" aria-label="图谱模式">
+                    <button type="button" class="active" data-rag-graph-mode="relations">关系网络</button>
+                    <button type="button" data-rag-graph-mode="semantic">语义邻域</button>
+                  </div>
+                </header>
+                <div class="graph-studio-grid">
+                  <aside class="graph-filter-rail" aria-label="图谱筛选">
+                    <div class="graph-rail-title"><i class="ph ph-funnel"></i><div><strong>筛选与定位</strong><small>缩小子图，不改变全量索引</small></div></div>
+                    <form id="rag-graph-search">
+                      <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+                      <input id="rag-graph-query" name="query" placeholder="搜索实体或主题…" />
+                      <button type="submit" aria-label="运行图谱查询">定位</button>
+                    </form>
+                    <div class="graph-rail-section">
+                      <span>节点类型</span>
+                      <div id="rag-graph-categories" class="rag-graph-categories" aria-label="节点类型筛选"></div>
+                    </div>
+                    <div class="graph-rail-section">
+                      <span>可见节点</span>
+                      <div class="rag-graph-progressive rag-graph-visibility" id="rag-graph-progressive">
+                        <div class="rag-graph-visibility-head">
+                          <b>画布密度</b>
+                          <strong id="rag-graph-visible-slider-value">—</strong>
+                        </div>
+                        <input
+                          id="rag-graph-visible-slider"
+                          type="range"
+                          min="1"
+                          max="60"
+                          value="60"
+                          aria-label="调整图谱可见节点数量"
+                        />
+                        <div class="rag-graph-visibility-scale" aria-hidden="true"><span>更精简</span><span>全部索引</span></div>
+                        <small>只改变当前画布可见量，不限制继续展开。</small>
+                      </div>
+                    </div>
+                    <div id="rag-graph-index-state" class="rag-graph-index-state"><b>正在读取索引</b><span>图谱与向量状态将在这里显示</span></div>
+                    <div class="graph-truth-note"><i class="ph ph-seal-check"></i><span>实线为来源中的真实关系；虚线只表示本次语义召回。</span></div>
+                  </aside>
+                  <div class="rag-graph-canvas" id="rag-graph-canvas">
+                    <div class="rag-graph-float rag-graph-canvas-actions">
+                      <button type="button" id="rag-graph-path-toggle" aria-pressed="false" title="依次选择两个节点查找路径"><i class="ph ph-path"></i> 路径</button>
+                      <button type="button" id="rag-graph-reveal-all" hidden>恢复隐藏</button>
+                    </div>
+                    <svg id="rag-graph-svg" viewBox="0 0 1200 760" role="img" aria-label="项目知识图谱"></svg>
+                    <div id="rag-graph-context" class="rag-graph-context" hidden></div>
+                    <div class="rag-graph-canvas-info">
+                      <div id="rag-graph-selection-hint" class="rag-graph-selection-hint">拖动节点固定位置 · 拖动画布平移 · 滚轮缩放 · 单击查看详情</div>
+                      <div class="rag-graph-controls">
+                        <button type="button" id="rag-graph-layout-toggle" aria-pressed="true" title="切换力导向或分层布局"><i class="ph ph-tree-structure"></i><span>力导向</span></button>
+                        <button type="button" data-rag-graph-zoom="out" aria-label="缩小图谱"><i class="ph ph-minus"></i></button>
+                        <button type="button" data-rag-graph-zoom="fit" aria-label="适合窗口"><i class="ph ph-corners-out"></i></button>
+                        <button type="button" data-rag-graph-zoom="in" aria-label="放大图谱"><i class="ph ph-plus"></i></button>
+                        <button type="button" id="rag-graph-download" aria-label="导出当前图谱"><i class="ph ph-download-simple"></i></button>
+                      </div>
+                    </div>
+                    <div id="rag-graph-overlay" class="rag-graph-overlay"><b>正在载入关系网络</b><span>读取项目中的节点与关系</span></div>
+                  </div>
+                  <aside class="rag-graph-inspector" id="rag-graph-inspector">
+                    <div class="graph-inspector-empty"><i class="ph ph-cursor-click"></i><strong>选择节点查看详情</strong><p>这里会显示稳定实体 ID、来源、版本和直接关系，并可展开一跳邻居。</p></div>
+                  </aside>
+                </div>
+                <details class="rag-graph-fallback">
+                  <summary>以列表查看当前图谱 <span id="rag-graph-list-count">0 个节点</span></summary>
+                  <div id="rag-graph-list"></div>
+                </details>
+              </section>
+            </div>
+          </section>
+
+          <section id="view-codex" class="view codex-page">
+            <div class="page-heading codex-heading">
+              <div>
+                <div class="eyebrow">CODEX THREAD / DEVELOPMENT EPISODE</div>
+                <h1>Codex 会话</h1>
+                <p>把本机 Thread、Turn、命令与文件变更转成可追溯的研发证据。</p>
+              </div>
+              <div class="heading-actions"><button class="button ghost" id="compare-codex-sessions" disabled>⇄ 对照所选会话</button><button class="button primary" id="open-codex-sync">↻ 同步会话</button></div>
+            </div>
+
+            <div class="metric-grid" id="codex-metric-grid">
+              <article class="metric blue"><span>已索引会话</span><strong>—</strong><small>CodexThread</small></article>
+              <article class="metric green"><span>研发轮次</span><strong>—</strong><small>CodexTurn</small></article>
+              <article class="metric violet"><span>命令执行</span><strong>—</strong><small>CommandExecution</small></article>
+              <article class="metric amber"><span>文件变更</span><strong>—</strong><small>Patch / FileChange</small></article>
+            </div>
+
+            <article class="search-command codex-search-command">
+              <form id="codex-search-form">
+                <span class="command-prefix">⌕</span>
+                <input name="query" autocomplete="off" placeholder="例如：哪次会话实现了 rerank，并执行了哪些验证？" required />
+                <select name="item_type">
+                  <option value="">全部会话证据</option>
+                  <option value="DevelopmentEpisode">Episode 摘要</option>
+                  <option value="UserGoal">用户目标</option>
+                  <option value="CommandExecution">命令执行</option>
+                  <option value="FileChange">文件变更</option>
+                  <option value="AgentMessage">助手回复</option>
+                </select>
+                <button class="button primary" type="submit">检索会话</button>
+              </form>
+              <div class="scope-row"><span>THREAD → TURN → ITEM</span><span>REASONING EXCLUDED</span><span>SECRET REDACTION</span><span>ACTIVE GENERATION</span></div>
+            </article>
+
+            <div class="codex-workbench">
+              <aside class="panel codex-session-panel">
+                <div class="panel-head"><strong>会话列表</strong><span id="codex-session-count" class="mono-label">0 THREADS</span></div>
+                <div class="codex-filter-row">
+                  <input id="codex-session-filter" placeholder="按标题或工作目录过滤…" />
+                  <button class="icon-refresh" id="refresh-codex" title="刷新">↻</button>
+                </div>
+                <div id="codex-session-list" class="codex-session-list"><div class="empty-state compact"><p>尚未同步 Codex 会话</p></div></div>
+              </aside>
+
+              <article class="panel codex-timeline-panel">
+                <div class="panel-head codex-thread-head">
+                  <div class="codex-thread-heading"><strong id="codex-thread-title">选择一个会话</strong><small id="codex-thread-meta">Thread 时间线与结构化研发事件</small></div>
+                  <div class="codex-board-commandbar" aria-label="会话白板控制">
+                    <span id="codex-board-visible-count" class="mono-label">0 NODES</span>
+                    <button type="button" data-codex-board-zoom="out" aria-label="缩小会话白板" title="缩小"><i class="ph ph-minus"></i></button>
+                    <button type="button" data-codex-board-zoom="fit" aria-label="适合窗口" title="适合窗口"><i class="ph ph-corners-out"></i></button>
+                    <button type="button" data-codex-board-zoom="in" aria-label="放大会话白板" title="放大"><i class="ph ph-plus"></i></button>
+                    <span id="codex-thread-status" class="status-pill neutral">未选择</span>
+                  </div>
+                </div>
+                <div id="codex-timeline" class="codex-timeline codex-board" tabindex="0" aria-describedby="codex-board-description">
+                  <p id="codex-board-description" class="sr-only">可拖动、缩放的串行会话主线。白板显示 Turn 与操作簇，原始事件在固定抽屉中搜索和分页查看。使用方向键平移，加减键缩放，数字零适合窗口。</p>
+                  <div id="codex-board-scene" class="codex-board-scene" aria-live="polite">
+                    <svg id="codex-board-links" class="codex-board-links" aria-hidden="true"></svg>
+                    <div id="codex-board-nodes" class="codex-board-nodes"></div>
+                  </div>
+                  <section id="codex-event-drawer" class="codex-event-drawer" aria-label="原始会话事件" hidden>
+                    <header class="codex-event-drawer-head">
+                      <div><span class="eyebrow">RAW EVENT STREAM</span><strong id="codex-event-drawer-title">操作事件</strong><small id="codex-event-drawer-meta">0 个事件</small></div>
+                      <button type="button" id="codex-event-drawer-close" aria-label="关闭事件抽屉"><i class="ph ph-x"></i></button>
+                    </header>
+                    <label class="codex-event-search"><i class="ph ph-magnifying-glass"></i><input id="codex-event-filter" type="search" placeholder="搜索命令、路径或事件内容…" /><kbd>⌘F</kbd></label>
+                    <div id="codex-event-list" class="codex-event-list"></div>
+                    <footer class="codex-event-pager">
+                      <span id="codex-event-range">0 / 0</span>
+                      <div>
+                        <button type="button" id="codex-event-prev" data-codex-event-page="prev" aria-label="上一页"><i class="ph ph-caret-left"></i></button>
+                        <button type="button" id="codex-event-next" data-codex-event-page="next" aria-label="下一页"><i class="ph ph-caret-right"></i></button>
+                      </div>
+                    </footer>
+                  </section>
+                  <div id="codex-board-overlay" class="codex-board-overlay">
+                    <i class="ph ph-chats-circle" aria-hidden="true"></i>
+                    <strong>从真实研发过程取证</strong>
+                    <span>选择会话后，可沿 Turn 主线展开操作簇，并在抽屉中核对完整事件。</span>
+                  </div>
+                  <div class="codex-board-hint"><i class="ph ph-cursor-click"></i><span>拖动画布平移 · 滚轮缩放 · 点击 Turn 切换操作簇 · 点击操作簇查看完整事件</span></div>
+                </div>
+                <details id="codex-timeline-fallback" class="codex-timeline-fallback">
+                  <summary>以无障碍列表查看完整会话 <span id="codex-fallback-count">0 EVENTS</span></summary>
+                  <div id="codex-fallback-list"></div>
+                </details>
+              </article>
+
+              <aside class="panel codex-evidence-panel">
+                <div class="panel-head"><div><strong>关联来源</strong><small id="codex-related-status">选择会话查看跨来源节点</small></div><span id="codex-related-count" class="mono-label">0 NODES</span></div>
+                <div id="codex-thread-summary" class="codex-thread-summary"><div class="empty-state compact"><p>选择会话查看结构化摘要</p></div></div>
+                <div id="codex-related-filters" class="codex-related-filters" role="group" aria-label="关联来源筛选"></div>
+                <div id="codex-related-sources" class="codex-related-sources"><div class="empty-state compact"><p>选择会话查看代码、实验与文档关联</p></div></div>
+                <footer id="codex-related-pager" class="list-pager codex-related-pager" hidden>
+                  <span id="codex-related-page-summary">0–0 / 0</span>
+                  <div>
+                    <button type="button" data-codex-related-page="previous" aria-label="上一页"><i class="ph ph-caret-left"></i></button>
+                    <button type="button" data-codex-related-page="next" aria-label="下一页"><i class="ph ph-caret-right"></i></button>
+                  </div>
+                </footer>
+                <details class="codex-rail-disclosure codex-search-disclosure">
+                  <summary><span><i class="ph ph-magnifying-glass"></i>会话检索结果</span><b id="codex-search-duration">— MS</b></summary>
+                  <small id="codex-search-summary">在上方输入问题进行混合检索</small>
+                  <div id="codex-search-results" class="codex-search-results"></div>
+                </details>
+                <details class="codex-rail-disclosure codex-comparison-history">
+                  <summary><span><i class="ph ph-arrows-left-right"></i>已保存对照</span><b id="codex-comparison-count">0</b></summary>
+                  <div id="codex-comparison-list"><p>尚未创建会话对照</p></div>
+                </details>
+              </aside>
+            </div>
+          </section>
+
+          <section id="view-codex-bridge" class="view">
+            <div class="page-heading">
+              <div>
+                <div class="eyebrow">CODEX / MCP / RESEARCH EXECUTION</div>
+                <h1>Codex 联动</h1>
+                <p>用结构化项目上下文把科研任务交给 Codex 执行；读取自动，写入确认，完成必须人工复核。</p>
+              </div>
+              <div class="heading-actions">
+                <button class="button ghost" type="button" id="refresh-codex-bridge"><i class="ph ph-arrows-clockwise"></i><span>刷新状态</span></button>
+                <button class="button primary" type="button" id="open-codex-execution"><i class="ph ph-play"></i><span>新建执行</span></button>
+              </div>
+            </div>
+
+            <div id="bridge-status-grid" class="bridge-status-grid">
+              <article class="bridge-status-card">
+                <div><span class="status-pill indexing">检查中</span><i class="ph ph-plugs"></i></div>
+                <h3>MCP 服务</h3><p>正在读取连接状态</p>
+              </article>
+              <article class="bridge-status-card">
+                <div><span class="status-pill indexing">检查中</span><i class="ph ph-package"></i></div>
+                <h3>本地插件</h3><p>正在检查安装状态</p>
+              </article>
+              <article class="bridge-status-card">
+                <div><span class="status-pill indexing">检查中</span><i class="ph ph-terminal-window"></i></div>
+                <h3>Codex CLI</h3><p>正在检查执行环境</p>
+              </article>
+              <article class="bridge-status-card">
+                <div><span class="status-pill neutral">受控</span><i class="ph ph-shield-check"></i></div>
+                <h3>权限策略</h3><p>读取自动 · 写入确认 · 禁止删除</p>
+              </article>
+            </div>
+
+            <article class="panel bridge-permission-panel">
+              <div class="panel-head">
+                <div><strong>工作区绑定与权限</strong><small>系统业务权限与 Codex 代码沙箱分开管理</small></div>
+                <span class="mono-label" id="bridge-project-binding">PROJECT-RAG</span>
+              </div>
+              <div class="bridge-permission-matrix">
+                <div><strong>项目上下文</strong><span id="bridge-project-context">当前科研项目</span></div>
+                <div><strong>数据写入</strong><span>每次调用由 Codex 请求确认</span></div>
+                <div><strong>代码沙箱</strong><span>workspace-write，不授予全盘权限</span></div>
+              </div>
+            </article>
+
+            <div class="bridge-main-grid">
+              <article class="panel bridge-execution-panel">
+                <div class="panel-head">
+                  <div><strong>执行中心</strong><small>会话、队列、代码变化、验证与失败原因</small></div>
+                  <span class="mono-label" id="bridge-execution-count">0 EXECUTIONS</span>
+                </div>
+                <div id="bridge-execution-list" class="bridge-execution-list">
+                  <div class="empty-state"><h3>尚无 Codex 执行</h3><p>从科研任务中选择“交给 Codex”，或在此创建一次执行。</p></div>
+                </div>
+              </article>
+
+              <article class="panel bridge-approval-panel">
+                <div class="panel-head">
+                  <div><strong>审批中心</strong><small>后台启动、证据绑定与任务完成集中复核</small></div>
+                  <span class="mono-label" id="bridge-approval-count">0 PENDING</span>
+                </div>
+                <div id="bridge-approval-list" class="bridge-approval-list">
+                  <div class="empty-state compact"><p>当前没有待审批操作</p></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="view-repository" class="view">
+            <div class="page-heading repository-heading">
+              <div>
+                <div class="eyebrow">REPOSITORY / SYMBOL REVISION</div>
+                <h1>代码仓库</h1>
+                <p>接入、同步并浏览 Git 仓库的版本、文件、Symbol 与索引状态。</p>
+              </div>
+              <div class="heading-actions">
+                <button class="button ghost repository-evidence-action" id="ask-about-repository" aria-label="在证据工作台核对当前仓库"><i class="ph ph-magnifying-glass"></i><span>证据核对</span></button>
+                <select id="browser-repository" class="repository-select"><option value="">选择仓库</option></select>
+                <button class="button primary" id="open-ingest">＋ 添加仓库</button>
+              </div>
+            </div>
+
+            <div class="metric-grid" id="metric-grid">
+              <article class="metric blue"><span>接入仓库</span><strong>—</strong><small>REPOSITORY</small></article>
+              <article class="metric green"><span>代码文件</span><strong>—</strong><small>FILE VERSION</small></article>
+              <article class="metric violet"><span>代码实体</span><strong>—</strong><small>CODE SYMBOL</small></article>
+              <article class="metric amber"><span>结构关系</span><strong>—</strong><small>GRAPH EDGE</small></article>
+            </div>
+
+            <div class="split-layout ingestion-layout">
+              <article class="panel source-panel">
+                <div class="panel-head"><div><strong>已接入仓库</strong><small>本地目录、Git 工作区或远程 Git URL</small></div><span id="repository-count" class="mono-label">0 REPOSITORIES</span></div>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>仓库</th><th>类型</th><th>状态</th><th>版本</th><th>Symbol</th><th>更新时间</th></tr></thead>
+                    <tbody id="repository-table"><tr><td colspan="6" class="empty-row">尚未接入代码仓库</td></tr></tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="panel detail-panel" id="source-detail">
+                <div class="panel-head"><strong>仓库详情</strong><span class="status-pill neutral">等待选择</span></div>
+                <div class="empty-state compact"><span class="empty-symbol">⌁</span><p>选择仓库查看版本、索引状态与同步操作</p></div>
+              </article>
+            </div>
+
+            <div class="split-layout workflow-layout">
+              <article class="panel recent-panel">
+                <div class="panel-head">
+                  <div><strong>索引任务</strong><small>运行中与失败任务优先显示</small></div>
+                  <button class="text-button" id="refresh-data">刷新</button>
+                </div>
+                <div class="workflow-filter-row">
+                  <select id="workflow-status-filter" aria-label="筛选索引任务状态"><option value="">全部状态</option><option value="running">运行中</option><option value="failed">失败</option><option value="completed">完成</option></select>
+                  <span id="workflow-list-count" class="mono-label">0 TASKS</span>
+                </div>
+                <div id="workflow-list" class="workflow-list"><div class="empty-state compact"><p>暂无仓库索引任务</p></div></div>
+              </article>
+
+              <article class="panel workflow-detail-panel">
+                <div class="panel-head">
+                  <div><strong id="workflow-detail-title">任务进度</strong><small id="workflow-detail-summary">选择任务后查看当前阶段与处理结果</small></div>
+                  <span class="status-pill neutral" id="workflow-detail-status">未选择</span>
+                </div>
+                <div class="workflow-detail-empty" id="workflow-detail-empty">
+                  <i class="ph ph-stack"></i>
+                  <strong>选择一项索引任务</strong>
+                  <span>任务详情只在需要检查进度或处理失败时显示。</span>
+                </div>
+                <div id="workflow-detail-content" class="workflow-detail-content" hidden>
+                  <section class="workflow-stage-summary">
+                    <div class="workflow-current-stage">
+                      <span class="workflow-stage-icon"><i class="ph ph-spinner-gap"></i></span>
+                      <div><small>当前阶段</small><strong id="workflow-current-stage">等待开始</strong><span id="workflow-stage-updated">—</span></div>
+                    </div>
+                    <div class="workflow-progress-value"><strong id="workflow-progress-value">0%</strong><span>总体进度</span></div>
+                  </section>
+                  <ol class="workflow-stage-rail" id="workflow-track" aria-label="索引阶段">
+                    <li data-stage="discover"><i></i><span>发现</span></li>
+                    <li data-stage="capture"><i></i><span>读取</span></li>
+                    <li data-stage="parse"><i></i><span>解析</span></li>
+                    <li data-stage="structure"><i></i><span>结构化</span></li>
+                    <li data-stage="index"><i></i><span>建索引</span></li>
+                    <li data-stage="publish"><i></i><span>发布</span></li>
+                  </ol>
+                  <div class="workflow-stats-grid">
+                    <div><span>已发现</span><strong id="workflow-stat-discovered">0</strong></div>
+                    <div><span>文件</span><strong id="workflow-stat-files">0</strong></div>
+                    <div><span>Symbol</span><strong id="workflow-stat-symbols">0</strong></div>
+                    <div><span>关系</span><strong id="workflow-stat-edges">0</strong></div>
+                  </div>
+                  <div class="workflow-error-callout" id="workflow-error-callout" hidden>
+                    <i class="ph ph-warning-circle"></i>
+                    <div><strong>任务在当前阶段停止</strong><p id="workflow-error-message"></p></div>
+                  </div>
+                  <details class="workflow-technical-details">
+                    <summary>技术信息</summary>
+                    <div id="workflow-detail-meta" class="workflow-detail-meta"><span>工作流 ID</span><b id="workflow-id">NO ACTIVE RUN</b></div>
+                    <pre id="workflow-raw-error" class="workflow-raw-error" hidden></pre>
+                  </details>
+                </div>
+              </article>
+            </div>
+
+            <div class="section-divider">
+              <div><strong>仓库内容浏览</strong><small>文件树、代码与 Symbol 对应同一版本；历史版本只读</small></div>
+              <div class="repository-browser-tools">
+                <div class="repository-version-picker">
+                  <label class="mono-label" for="code-version-ref">VERSION</label>
+                  <select id="code-version-ref" aria-label="选择代码版本"><option value="HEAD">当前 HEAD</option></select>
+                  <button class="button ghost compact-button" type="button" id="open-code-compare"><i class="ph ph-arrows-left-right"></i><span>比较版本</span></button>
+                </div>
+                <div class="git-history-flyout">
+                  <button
+                    type="button"
+                    id="git-history-toggle"
+                    class="git-history-trigger"
+                    aria-expanded="false"
+                    aria-controls="git-history-popover"
+                    aria-haspopup="dialog"
+                  >
+                    <i class="ph ph-git-branch" aria-hidden="true"></i>
+                    <span><b id="git-history-trigger-branch">选择仓库</b><small id="git-history-trigger-commit">查看版本历史</small></span>
+                    <i class="ph ph-caret-down git-history-caret" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="browser-layout">
+              <aside class="panel file-browser github-file-browser">
+                <div class="panel-head file-tree-head">
+                  <div><strong>Files</strong><small>Repository tree</small></div>
+                  <div><span id="file-count" class="mono-label">0 FILES</span><button type="button" id="file-tree-collapse" aria-label="折叠全部目录" title="折叠全部目录"><i class="ph ph-arrows-in-line-vertical"></i></button></div>
+                </div>
+                <label class="file-filter-shell" for="file-filter"><i class="ph ph-magnifying-glass"></i><input id="file-filter" class="file-filter" placeholder="Go to file…" autocomplete="off" /><kbd>⌘ P</kbd></label>
+                <div id="file-list" class="file-list code-file-tree" role="tree" aria-label="仓库文件树"><div class="empty-state compact"><p>请选择仓库</p></div></div>
+              </aside>
+              <article class="panel code-viewer github-code-viewer">
+                <div class="panel-head code-head">
+                  <div class="code-title-stack">
+                    <nav id="code-breadcrumb" class="code-breadcrumb" aria-label="文件路径"><strong id="code-path">未选择文件</strong></nav>
+                    <small id="code-version">—</small>
+                  </div>
+                  <div class="code-head-meta"><span id="code-size" class="mono-label">—</span><span id="code-language" class="status-pill neutral">TEXT</span></div>
+                </div>
+                <div id="history-version-banner" class="history-version-banner" hidden><i class="ph ph-lock-key"></i><span>正在浏览历史只读版本</span></div>
+                <div id="code-content" class="code-content" aria-live="polite"><div class="empty-state"><span class="empty-symbol">{ }</span><p>从左侧目录树选择文件查看原始证据</p></div></div>
+              </article>
+              <aside class="panel symbol-panel">
+                <div class="panel-head"><div><strong>Symbols</strong><small>Outline</small></div><span id="symbol-count" class="mono-label">0</span></div>
+                <div id="symbol-list" class="symbol-list"><div class="empty-state compact"><p>暂无 Symbol</p></div></div>
+              </aside>
+            </div>
+          </section>
+
+          <section id="view-bindings" class="view">
+            <div class="page-heading binding-heading">
+              <div>
+                <div class="eyebrow">CROSS-SOURCE LINKER / HUMAN REVIEW</div>
+                <h1>关系复核</h1>
+                <p>把 Codex 变更路径映射到版本化 File / Symbol；推断关系经人工确认后才进入证据图。</p>
+              </div>
+              <button class="button primary" id="scan-bindings">↻ 扫描绑定候选</button>
+            </div>
+            <div class="metric-grid" id="binding-metric-grid">
+              <article class="metric blue"><span>全部候选</span><strong>—</strong><small>BINDING CANDIDATE</small></article>
+              <article class="metric amber"><span>待复核</span><strong>—</strong><small>REVIEW QUEUE</small></article>
+              <article class="metric green"><span>高置信候选</span><strong>—</strong><small>CONFIDENCE ≥ 0.90</small></article>
+              <article class="metric violet"><span>已确认</span><strong>—</strong><small>HUMAN CONFIRMED</small></article>
+            </div>
+            <div class="binding-layout">
+              <aside class="panel binding-queue-panel">
+                <div class="panel-head"><div><strong>候选关系队列</strong><small>路径、工作区和版本信号联合匹配</small></div><span id="binding-count" class="mono-label">0 ITEMS</span></div>
+                <div class="binding-filter-row">
+                  <select id="binding-status-filter"><option value="">全部状态</option><option value="unreviewed" selected>待复核</option><option value="confirmed">已确认</option><option value="rejected">已拒绝</option></select>
+                  <button class="icon-refresh" id="refresh-bindings">↻</button>
+                </div>
+                <div id="binding-list" class="binding-list"><div class="empty-state compact"><p>尚无绑定候选</p></div></div>
+                <footer id="binding-pager" class="list-pager" hidden>
+                  <span id="binding-page-summary">0–0 / 0</span>
+                  <div>
+                    <button type="button" data-binding-page="previous" aria-label="上一页"><i class="ph ph-caret-left"></i></button>
+                    <button type="button" data-binding-page="next" aria-label="下一页"><i class="ph ph-caret-right"></i></button>
+                  </div>
+                </footer>
+              </aside>
+              <article class="panel binding-review-panel" id="binding-review-panel">
+                <div class="panel-head"><div><strong>关系复核</strong><small>比较会话变更与当前代码实体</small></div><span class="status-pill neutral">未选择</span></div>
+                <div class="empty-state"><span class="empty-symbol">绑</span><h3>选择一个候选关系</h3><p>复核源事件、目标文件、匹配信号和版本上下文。</p></div>
+              </article>
+            </div>
+          </section>
+
+          <section id="view-experiments" class="view">
+            <div class="page-heading experiment-heading">
+              <div><div class="eyebrow">EXPERIMENT / RUN / METRIC / ARTIFACT</div><h1>实验中心</h1><p>记录可复现的版本、数据、配置与指标，并在控制变量检查后执行对照分析。</p></div>
+              <div class="heading-actions"><button class="button ghost" id="open-mlflow-from-experiments">↻ MLflow</button><button class="button ghost" id="open-notebook-from-experiments">＋ Notebook</button><button class="button ghost" id="open-experiment">＋ 实验</button><button class="button primary" id="open-run">＋ 记录 Run</button></div>
+            </div>
+            <div class="metric-grid" id="experiment-metric-grid">
+              <article class="metric blue"><span>实验</span><strong>—</strong><small>EXPERIMENT</small></article>
+              <article class="metric violet"><span>全部 Run</span><strong>—</strong><small>EXPERIMENT RUN</small></article>
+              <article class="metric green"><span>版本绑定 Run</span><strong>—</strong><small>RUN → COMMIT</small></article>
+              <article class="metric amber"><span>指标记录</span><strong>—</strong><small>METRIC</small></article>
+            </div>
+            <div class="research-asset-strip">
+              <div><strong>实验数据不是通用“数据源”</strong><p>这里统一管理 Experiment、Run、Dataset、Config、Metric、Artifact 与 Notebook 执行；代码仓库和科研文档分别在对应资产页接入。</p></div>
+              <div class="research-asset-stat"><span>MLFLOW SOURCES</span><b id="experiment-source-count">0</b></div>
+              <div class="research-asset-stat"><span>NOTEBOOK RUNS</span><b id="experiment-notebook-count">0</b></div>
+              <div class="research-asset-stat"><span>RAW EVIDENCE</span><b id="experiment-evidence-count">0</b></div>
+            </div>
+            <div class="experiment-layout">
+              <aside class="panel experiment-list-panel">
+                <div class="panel-head"><div><strong>实验列表</strong><small>按研究目标组织 Runs</small></div><span id="experiment-count" class="mono-label">0 EXP</span></div>
+                <div id="experiment-list" class="experiment-list"><div class="empty-state compact"><p>尚未创建实验</p></div></div>
+              </aside>
+              <article class="panel run-panel">
+                <div class="panel-head"><div><strong id="run-panel-title">实验 Runs</strong><small id="run-panel-subtitle">选择两个或更多 Run 进行受控对照</small></div><button class="button ghost compact-button" id="compare-runs" disabled>对照分析</button></div>
+                <div class="table-wrap run-table-wrap"><table class="run-table"><thead><tr><th></th><th>Run</th><th>状态</th><th>Commit</th><th>Dataset</th><th>配置</th><th>Metrics</th><th>完成时间</th></tr></thead><tbody id="run-table"><tr><td colspan="8" class="empty-row">尚无 Run</td></tr></tbody></table></div>
+                <div id="comparison-result" class="comparison-result"></div>
+              </article>
+            </div>
+          </section>
+
+          <section id="view-documents" class="view">
+            <div class="page-heading document-heading"><div><div class="eyebrow">DOCUMENT / CONCLUSION / EVIDENCE</div><h1>科研文档与结论</h1><p>从文档中提取可验证结论，并关联实验、代码和会话证据。</p></div><div class="heading-actions"><button class="button ghost" id="scan-claim-matches">↻ 查找证据候选</button><button class="button primary" id="open-document"><i class="ph ph-files"></i> 批量导入文档</button></div></div>
+            <div class="metric-grid" id="document-metric-grid">
+              <article class="metric blue"><span>文档</span><strong>—</strong><small>已导入</small></article><article class="metric violet"><span>结论</span><strong>—</strong><small>自动提取与人工记录</small></article><article class="metric green"><span>已验证</span><strong>—</strong><small>证据充分</small></article><article class="metric amber"><span>风险结论</span><strong>—</strong><small>反证或可能失效</small></article>
+            </div>
+            <div class="document-layout">
+              <aside class="panel document-list-panel"><div class="panel-head"><div><strong>文档版本</strong><small>MD / TXT / HTML / PDF / DOCX</small></div><span id="document-count" class="mono-label">0 DOCS</span></div><div id="document-list" class="document-list"><div class="empty-state compact"><p>尚未接入文档</p></div></div></aside>
+              <article class="panel claim-list-panel"><div class="panel-head"><div><strong id="claim-panel-title">文档结论</strong><small id="claim-panel-subtitle">选择文档查看结构与结论</small></div><span id="claim-count" class="mono-label">0 条</span></div><div id="claim-list" class="claim-list"><div class="empty-state"><span class="empty-symbol">文</span><h3>尚无可验证结论</h3><p>选择文档后查看自动提取和人工记录的结论。</p></div></div></article>
+              <aside class="panel claim-detail-panel" id="claim-detail-panel"><div class="panel-head"><strong>结论验证</strong><span class="status-pill neutral">未选择</span></div><div class="empty-state"><span class="empty-symbol">证</span><p>选择结论查看来源与证据</p></div></aside>
+            </div>
+          </section>
+
+          <section id="view-drift" class="view">
+            <div class="page-heading drift-heading"><div><div class="eyebrow">CONCLUSION / SOURCE VERSION / CURRENT VERSION</div><h1>版本漂移分析</h1><p>比较结论所依据的代码版本与当前版本，找出需要重新验证的结论。</p></div><button class="button primary" id="scan-drift">↻ 检查版本变化</button></div>
+            <div class="drift-summary" id="drift-summary"><article><span>已评估</span><strong>0</strong></article><article><span>仍有效</span><strong>0</strong></article><article><span>可能失效</span><strong>0</strong></article><article><span>平均风险</span><strong>0.00</strong></article></div>
+            <article class="panel drift-panel"><div class="panel-head"><div><strong>结论版本评估</strong><small>版本不一致只标记风险；缺少差异记录时不会推断影响</small></div><span id="drift-count" class="mono-label">0 项</span></div><div class="table-wrap"><table><thead><tr><th>结论</th><th>支持实验</th><th>仓库</th><th>原始版本</th><th>当前版本</th><th>状态</th><th>风险</th><th>评估时间</th></tr></thead><tbody id="drift-table"><tr><td colspan="8" class="empty-row">尚未检查版本变化</td></tr></tbody></table></div></article>
+          </section>
+
+          <section id="view-governance" class="view">
+            <div class="page-heading governance-heading"><div><div class="eyebrow">EVALUATION / AUDIT / SETTINGS</div><h1>评测与治理</h1><p>回归检索质量，并集中查看权限审计与项目策略。</p></div><div class="heading-actions"><button class="button ghost" id="open-eval-case">＋ 新建评测问题</button><button class="button primary" id="run-evaluation">▶ 运行评测</button></div></div>
+            <div class="metric-grid" id="evaluation-metric-grid"><article class="metric blue"><span>评测问题</span><strong>—</strong><small>已配置</small></article><article class="metric green"><span>平均通过率</span><strong>—</strong><small>最近回归</small></article><article class="metric violet"><span>查询次数</span><strong>—</strong><small>已观测</small></article><article class="metric amber"><span>平均查询延迟</span><strong>—</strong><small>毫秒</small></article></div>
+            <div class="governance-grid">
+              <article class="panel eval-case-panel"><div class="panel-head"><div><strong>评测问题</strong><small>预期来源、实体与版本</small></div><span id="eval-case-count" class="mono-label">0 项</span></div><div id="eval-case-list" class="eval-case-list"><div class="empty-state compact"><p>尚未创建评测问题</p></div></div></article>
+              <article class="panel eval-run-panel"><div class="panel-head"><div><strong>最近回归</strong><small>实体、证据路径、提交、版本与权限</small></div><span id="eval-run-count" class="mono-label">0 次</span></div><div id="eval-run-list" class="eval-run-list"><div class="empty-state compact"><p>尚未运行回归</p></div></div></article>
+              <article class="panel project-settings-panel"><div class="panel-head"><div><strong>项目设置</strong><small>分类与检索策略</small></div><span class="status-pill">已启用</span></div><form id="project-settings-form" class="project-settings-form"><label><span>项目名称</span><input name="name" required /></label><label><span>数据分类</span><select name="classification"><option value="public">Public</option><option value="internal">Internal</option><option value="confidential">Confidential</option><option value="restricted">Restricted</option></select></label><label><span>默认召回数量</span><input name="default_limit" type="number" min="1" max="100" value="20" /></label><label class="settings-check"><input name="require_relation_review" type="checkbox" checked /><span>推断关系必须人工复核</span></label><button class="button primary" type="submit">保存设置</button></form></article>
+            </div>
+            <article class="panel platform-ops-panel">
+              <div class="panel-head"><div><strong>来源与索引状态</strong><small>展示各类来源是否可用及最近更新时间</small></div><span class="mono-label" id="platform-ops-summary">0 个来源</span></div>
+              <div id="platform-source-list" class="platform-source-list"><div class="empty-state compact"><p>正在加载来源健康状态</p></div></div>
+            </article>
+            <article class="panel audit-panel"><div class="panel-head"><div><strong>权限与审计</strong><small>平台写操作与访问记录</small></div><button class="text-button" id="refresh-governance">刷新</button></div><div class="table-wrap"><table><thead><tr><th>时间</th><th>操作者</th><th>操作</th><th>对象</th><th>定位</th><th>追踪号</th></tr></thead><tbody id="audit-table"><tr><td colspan="6" class="empty-row">暂无审计记录</td></tr></tbody></table></div></article>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <dialog id="ingest-dialog" class="modal">
+      <form method="dialog" id="ingest-form">
+        <div class="modal-accent"></div>
+        <div class="modal-head">
+          <div><span class="eyebrow">NEW CODE SOURCE</span><h2>接入代码仓库</h2></div>
+          <button class="close-button" type="button" data-close-modal aria-label="关闭">×</button>
+        </div>
+        <p class="modal-intro">支持工作区内本地目录或 HTTP(S) / SSH Git 地址。每次构建生成独立索引快照，验证通过后原子发布。</p>
+        <label><span>本地路径或 Git URL</span><input name="source" required placeholder="/workspace/project 或 https://github.com/org/repo.git" /></label>
+        <div class="form-grid">
+          <label><span>分支（可选）</span><input name="branch" placeholder="main" /></label>
+          <label><span>Git 历史深度</span><input name="history_depth" type="number" min="1" max="500" value="25" /></label>
+        </div>
+        <label><span>忽略规则</span><input name="ignore" placeholder="docs/generated, fixtures" /><small>逗号分隔，默认已忽略依赖与构建目录。</small></label>
+        <div class="modal-note"><b>敏感数据门禁</b><span>命中私钥、AWS Key 或 GitHub Token 的文件将被隔离，不进入实体与索引。</span></div>
+        <div id="ingest-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit" value="default">开始构建</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="codex-sync-dialog" class="modal">
+      <form method="dialog" id="codex-sync-form">
+        <div class="modal-accent codex-accent"></div>
+        <div class="modal-head">
+          <div><span class="eyebrow">CODEX SESSION ADAPTER</span><h2>同步 Codex 会话</h2></div>
+          <button class="close-button" type="button" data-close-modal aria-label="关闭">×</button>
+        </div>
+        <p class="modal-intro">读取 Codex rollout JSONL，并标准化为 Thread、Turn、Item 与 Development Episode。默认仅接入当前项目工作目录匹配的会话。</p>
+        <label><span>Codex 数据目录</span><input name="source" required placeholder="~/.codex" /><small>只扫描 sessions/**/*.jsonl；不会读取 auth.json、历史或日志。</small></label>
+        <label><span>项目路径</span><input name="project_path" required placeholder="/absolute/path/to/project" /><small>会话 cwd 或 workspace root 必须与该路径匹配。</small></label>
+        <div class="form-grid">
+          <label><span>项目标识</span><input name="project_id" value="project-rag" /></label>
+          <label><span>最多同步</span><input name="max_sessions" type="number" min="1" max="2000" value="200" /></label>
+        </div>
+        <label class="check-label"><input name="include_archived" type="checkbox" /><span>包含 archived_sessions 中的归档会话</span></label>
+        <div class="modal-note"><b>证据安全</b><span>内部 reasoning 不入库；私钥、Token 与 API Key 在落库前脱敏。原始事件仅通过稳定 Locator 引用。</span></div>
+        <div id="codex-sync-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit" value="default">开始同步</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="codex-compare-dialog" class="modal codex-compare-modal">
+      <div class="modal-accent codex-accent"></div>
+      <div class="modal-head compare-modal-head"><div><span class="eyebrow">CODEX THREAD COMPARISON</span><h2 id="codex-compare-title">会话对照</h2></div><button class="close-button" type="button" data-close-modal aria-label="关闭">×</button></div>
+      <div id="codex-compare-content" class="codex-compare-content"><div class="empty-state"><p>选择至少两个会话后生成对照。</p></div></div>
+    </dialog>
+
+    <dialog id="topic-dialog" class="modal compact-modal">
+      <form method="dialog" id="topic-form">
+        <div class="modal-accent topic-accent"></div>
+        <div class="modal-head">
+          <div><span class="eyebrow">NEW RESEARCH TOPIC</span><h2>创建研究主题</h2></div>
+          <button class="close-button" type="button" data-close-modal aria-label="关闭">×</button>
+        </div>
+        <p class="modal-intro">先记录研究问题。状态、优先级、负责人和日期由系统使用默认值，稍后可在详情中编辑。</p>
+        <label><span>研究问题 / 主题标题</span><input name="title" required maxlength="240" autofocus placeholder="例如：如何提高代码与会话证据的关联精度？" /></label>
+        <div id="topic-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit" value="default">创建主题</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="iteration-dialog" class="modal compact-modal">
+      <form method="dialog" id="iteration-form">
+        <div class="modal-accent iteration-accent"></div>
+        <div class="modal-head">
+          <div><span class="eyebrow">NEW RESEARCH ITERATION</span><h2>创建研究迭代</h2></div>
+          <button class="close-button" type="button" data-close-modal aria-label="关闭">×</button>
+        </div>
+        <p class="modal-intro">当前研究主题会自动关联。目标、假设和时间在创建后进入详情完善。</p>
+        <input name="topic_id" id="iteration-topic" type="hidden" />
+        <label><span>迭代标题</span><input name="title" required maxlength="240" autofocus placeholder="例如：建立第一条可复核证据链" /></label>
+        <div id="iteration-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit" value="default">创建迭代</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="topic-edit-dialog" class="modal">
+      <form method="dialog" id="topic-edit-form">
+        <div class="modal-accent topic-accent"></div>
+        <div class="modal-head"><div><span class="eyebrow">RESEARCH TOPIC DETAIL</span><h2>编辑研究主题</h2></div><button class="close-button" type="button" data-close-modal aria-label="关闭">×</button></div>
+        <input name="topic_id" type="hidden" />
+        <label><span>标题 / 研究问题</span><input name="title" required maxlength="240" /></label>
+        <label><span>问题陈述</span><textarea name="problem_statement" rows="4" placeholder="当前事实、缺口与研究影响"></textarea></label>
+        <label><span>研究目标</span><textarea name="objective" rows="4" placeholder="希望验证、解释或实现什么"></textarea></label>
+        <div class="form-grid">
+          <label><span>状态</span><select name="status"><option value="backlog">待规划</option><option value="active">研究中</option><option value="blocked">受阻</option><option value="completed">完成</option><option value="archived">归档</option></select></label>
+          <label><span>优先级</span><select name="priority"><option value="1">P1 · 最高</option><option value="2">P2 · 高</option><option value="3">P3 · 常规</option><option value="4">P4 · 低</option><option value="5">P5 · 观察</option></select></label>
+        </div>
+        <div class="form-grid">
+          <label><span>负责人</span><input name="owner" /></label>
+          <label><span>标签</span><input name="tags" placeholder="retrieval, evaluation" /></label>
+        </div>
+        <div id="topic-edit-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button danger-action" type="button" data-delete-record="topic"><i class="ph ph-trash"></i>删除主题</button><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">保存修改</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="iteration-edit-dialog" class="modal">
+      <form method="dialog" id="iteration-edit-form">
+        <div class="modal-accent iteration-accent"></div>
+        <div class="modal-head"><div><span class="eyebrow">RESEARCH ITERATION DETAIL</span><h2>编辑研究迭代</h2></div><button class="close-button" type="button" data-close-modal aria-label="关闭">×</button></div>
+        <input name="iteration_id" type="hidden" />
+        <label><span>迭代标题</span><input name="title" required maxlength="240" /></label>
+        <label><span>本轮目标</span><textarea name="goal" rows="3"></textarea></label>
+        <label><span>可验证假设</span><textarea name="hypothesis" rows="3"></textarea></label>
+        <div class="form-grid">
+          <label><span>状态</span><select name="status"><option value="planned">已规划</option><option value="active">研究中</option><option value="validating">验证中</option><option value="blocked">受阻</option><option value="completed">完成</option></select></label>
+          <label><span>进度</span><input name="progress" type="number" min="0" max="100" /></label>
+        </div>
+        <div class="form-grid">
+          <label><span>负责人</span><input name="owner" /></label>
+          <label><span>目标日期</span><input name="target_at" type="date" /></label>
+        </div>
+        <label><span>阶段结论</span><textarea name="summary" rows="3"></textarea></label>
+        <div id="iteration-edit-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button danger-action" type="button" data-delete-record="iteration"><i class="ph ph-trash"></i>删除迭代</button><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">保存修改</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="work-item-dialog" class="modal compact-modal">
+      <form method="dialog" id="work-item-form">
+        <div class="modal-accent codex-accent"></div>
+        <div class="modal-head"><div><span class="eyebrow">ACTIONABLE RESEARCH WORK</span><h2>创建开发 / 分析任务</h2></div><button class="close-button" type="button" data-close-modal aria-label="关闭">×</button></div>
+        <p class="modal-intro">当前主题和当前迭代自动带入。这里只填写需要完成的目标，执行条件可稍后完善。</p>
+        <label><span>任务目标</span><input name="title" required maxlength="240" autofocus placeholder="例如：实现历史分支文件读取并补充回归测试" /></label>
+        <div id="work-item-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">创建任务</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="work-item-edit-dialog" class="modal">
+      <form method="dialog" id="work-item-edit-form">
+        <div class="modal-accent codex-accent"></div>
+        <div class="modal-head"><div><span class="eyebrow">RESEARCH WORK DETAIL</span><h2>任务详情</h2></div><button class="close-button" type="button" data-close-modal aria-label="关闭">×</button></div>
+        <input name="work_item_id" type="hidden" /><input name="expected_version" type="hidden" />
+        <label><span>任务标题</span><input name="title" required /></label>
+        <label><span>任务目标</span><textarea name="objective" rows="4"></textarea></label>
+        <label><span>验收条件</span><textarea name="acceptance_criteria" rows="4" placeholder="每行一条"></textarea></label>
+        <div class="form-grid">
+          <label><span>类型</span><select name="kind"><option value="research">研究</option><option value="development">开发</option><option value="experiment">实验</option><option value="analysis">分析</option><option value="review">复核</option></select></label>
+          <label><span>状态</span><select name="status"><option value="backlog">待规划</option><option value="ready">可执行</option><option value="running">执行中</option><option value="review">待复核</option><option value="blocked">受阻</option><option value="done">完成</option><option value="cancelled">取消</option></select></label>
+        </div>
+        <div class="form-grid">
+          <label><span>负责人类型</span><select name="assignee_type"><option value="human">研究人员</option><option value="codex">Codex</option></select></label>
+          <label><span>负责人</span><input name="assignee" /></label>
+        </div>
+        <div class="form-grid">
+          <label><span>工作目录</span><input name="workspace_path" /></label>
+          <label><span>基础分支 / 提交</span><input name="base_ref" /></label>
+        </div>
+        <label><span>执行摘要</span><textarea name="summary" rows="3"></textarea></label>
+        <div id="work-item-edit-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button danger-action" type="button" data-delete-record="work-item"><i class="ph ph-trash"></i>删除任务</button><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">保存修改</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="codex-execution-dialog" class="modal">
+      <form method="dialog" id="codex-execution-form">
+        <div class="modal-accent codex-accent"></div>
+        <div class="modal-head"><div><span class="eyebrow">HAND OFF TO CODEX</span><h2>交给 Codex</h2></div><button class="close-button" type="button" data-close-modal aria-label="关闭">×</button></div>
+        <p class="modal-intro">选择任务和执行方式即可。项目、研究主题、迭代、仓库、目录与分支由系统自动带入。</p>
+        <label><span>要完成的科研任务</span><select name="work_item_id" id="codex-execution-work-item" required></select></label>
+        <div id="codex-execution-context" class="inferred-context" aria-live="polite"></div>
+        <label><span>执行方式</span><select name="mode"><option value="interactive">打开 Codex 会话（提示只预填）</option><option value="queue">后台执行（先进入审批）</option></select></label>
+        <details class="advanced-settings">
+          <summary><span><i class="ph ph-sliders-horizontal"></i>高级设置</span><small>通常不需要修改</small></summary>
+          <label><span>基础分支 / 提交</span><input name="base_ref" placeholder="系统自动识别 HEAD" /></label>
+          <label><span>工作目录</span><input name="workspace_path" placeholder="系统自动使用任务或项目目录" /></label>
+          <label><span>补充执行要求</span><textarea name="prompt" rows="4" placeholder="留空时系统根据任务目标与验收条件生成提示"></textarea></label>
+        </details>
+        <div id="codex-execution-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">创建执行</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="record-delete-dialog" class="modal compact-modal">
+      <form method="dialog" id="record-delete-form">
+        <div class="modal-accent danger-accent"></div>
+        <div class="modal-head"><div><span class="eyebrow">REMOVE FROM ACTIVE WORKSPACE</span><h2 id="record-delete-title">删除记录</h2></div><button class="close-button" type="button" data-close-modal aria-label="关闭">×</button></div>
+        <p class="modal-intro" id="record-delete-copy">该记录将从当前工作区移除。为保证科研审计链完整，系统保留其历史活动与证据引用。</p>
+        <div class="delete-record-summary" id="record-delete-summary"></div>
+        <div id="record-delete-error" class="form-error" hidden></div>
+        <div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button danger-primary" type="submit"><i class="ph ph-trash"></i>确认删除</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="code-compare-dialog" class="modal codex-compare-modal">
+      <div class="modal-accent topic-accent"></div>
+      <div class="modal-head compare-modal-head"><div><span class="eyebrow">GIT VERSION COMPARISON</span><h2>比较代码版本</h2></div><button class="close-button" type="button" data-close-modal aria-label="关闭">×</button></div>
+      <form id="code-compare-form" class="code-compare-controls">
+        <label><span>基准版本</span><select name="base_ref" id="compare-base-ref"></select></label>
+        <label><span>目标版本</span><select name="target_ref" id="compare-target-ref"></select></label>
+        <button class="button primary" type="submit">开始比较</button>
+      </form>
+      <div id="code-compare-content" class="codex-compare-content"><div class="empty-state"><p>选择两个分支或提交，查看变更文件与 Diff。</p></div></div>
+    </dialog>
+
+    <dialog id="experiment-dialog" class="modal compact-modal">
+      <form method="dialog" id="experiment-form">
+        <div class="modal-accent experiment-accent"></div><div class="modal-head"><div><span class="eyebrow">NEW EXPERIMENT</span><h2>创建实验</h2></div><button class="close-button" type="button" data-close-modal>×</button></div>
+        <p class="modal-intro">实验描述目标与假设；每个 Run 单独固定 Commit、数据版本、配置、环境和输出。</p>
+        <label><span>所属迭代（可选）</span><select name="iteration_id" id="experiment-iteration"><option value="">不关联迭代</option></select></label>
+        <label><span>实验标题</span><input name="title" required placeholder="例如：Rerank top-k 对照实验" /></label>
+        <label><span>目标</span><textarea name="objective" rows="3"></textarea></label>
+        <label><span>假设</span><textarea name="hypothesis" rows="3"></textarea></label>
+        <div id="experiment-error" class="form-error" hidden></div><div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">创建实验</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="run-dialog" class="modal">
+      <form method="dialog" id="run-form">
+        <div class="modal-accent run-accent"></div><div class="modal-head"><div><span class="eyebrow">VERSIONED EXPERIMENT RUN</span><h2>记录实验 Run</h2></div><button class="close-button" type="button" data-close-modal>×</button></div>
+        <p class="modal-intro">Commit SHA 只有能在已接入仓库的当前 Generation 中验证时，才会生成确定性 Run → Commit 关系。</p>
+        <div class="form-grid"><label><span>实验</span><select name="experiment_id" id="run-experiment" required></select></label><label><span>Run 名称</span><input name="name" required value="Experiment run" /></label></div>
+        <div class="form-grid"><label><span>代码仓库</span><select name="repository_id" id="run-repository"><option value="">未绑定仓库</option></select></label><label><span>Commit SHA</span><input name="commit_sha" placeholder="选择仓库后默认当前版本" /></label></div>
+        <div class="form-grid"><label><span>数据集 ID</span><input name="dataset_id" placeholder="dataset://nq" /></label><label><span>数据版本</span><input name="dataset_version" placeholder="1.2" /></label></div>
+        <label><span>配置 JSON</span><textarea name="config" rows="3" placeholder='{"top_k": 200, "threshold": 0.15}'></textarea></label>
+        <div class="form-grid"><label><span>主要指标</span><input name="metric_name" placeholder="ndcg@10" /></label><label><span>指标值</span><input name="metric_value" type="number" step="any" placeholder="0.842" /></label></div>
+        <div id="run-error" class="form-error" hidden></div><div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">保存 Run</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="document-dialog" class="modal document-import-modal">
+      <form method="dialog" id="document-form">
+        <div class="modal-accent document-accent"></div>
+        <div class="document-import-shell">
+          <header class="modal-head document-import-head">
+            <div><span class="eyebrow">SCIENTIFIC DOCUMENT INTAKE</span><h2>批量导入科研文档</h2><p>统一接入文档版本，并提取 Page、Table、Figure、Citation 与可验证 Claim。</p></div>
+            <button class="close-button" type="button" data-close-modal aria-label="关闭">×</button>
+          </header>
+          <nav class="document-import-tabs" role="tablist" aria-label="文档导入方式">
+            <button type="button" class="active" role="tab" aria-selected="true" data-document-mode="files"><i class="ph ph-files"></i><span>批量文件</span><b id="document-file-count">0</b></button>
+            <button type="button" role="tab" aria-selected="false" data-document-mode="paths"><i class="ph ph-folder-open"></i><span>服务器路径</span></button>
+            <button type="button" role="tab" aria-selected="false" data-document-mode="text"><i class="ph ph-text-t"></i><span>粘贴正文</span></button>
+          </nav>
+          <div class="document-import-body">
+            <section class="document-import-stage">
+              <div class="document-import-panel active" data-document-panel="files">
+                <label id="document-dropzone" class="document-dropzone" for="document-files" tabindex="0">
+                  <input id="document-files" type="file" accept=".md,.markdown,.txt,.html,.htm,.pdf,.docx" multiple hidden />
+                  <span class="document-drop-icon"><i class="ph ph-upload-simple"></i></span>
+                  <strong>拖放文件到这里，或点击选择</strong>
+                  <small>MD · TXT · HTML · PDF · DOCX　支持任意文件大小与批量数量</small>
+                  <em>选择文件</em>
+                </label>
+                <div class="document-queue-head">
+                  <div><strong>待处理队列</strong><small id="document-queue-summary">尚未选择文件</small></div>
+                  <button type="button" id="document-clear-files" disabled>清空队列</button>
+                </div>
+                <div id="document-upload-queue" class="document-upload-queue">
+                  <div class="document-queue-empty"><i class="ph ph-file-dashed"></i><strong>还没有待导入文档</strong><span>可一次选择不同格式，文件标题可在队列中逐项调整。</span></div>
+                </div>
+              </div>
+              <div class="document-import-panel" data-document-panel="paths" hidden>
+                <div class="document-panel-intro"><i class="ph ph-hard-drives"></i><div><strong>从服务器工作区批量接入</strong><span>每行填写一个允许目录内的绝对路径，标题默认使用文件名。</span></div></div>
+                <label><span>本地文档路径</span><textarea name="source_paths" rows="14" placeholder="/workspace/papers/report-v2.pdf&#10;/workspace/notes/ablation.md&#10;/workspace/specs/method.docx"></textarea><small>仅允许系统配置的本地根目录；不支持目录或通配符。</small></label>
+              </div>
+              <div class="document-import-panel" data-document-panel="text" hidden>
+                <div class="document-panel-intro"><i class="ph ph-article"></i><div><strong>快速记录一份研究文本</strong><span>适用于会议结论、实验摘要或尚未形成文件的 Markdown。</span></div></div>
+                <label><span>文档标题</span><input name="inline_title" placeholder="例如：Rerank 消融实验结论" /></label>
+                <label><span>Markdown / 纯文本正文</span><textarea name="inline_content" rows="12" placeholder="# Results&#10;&#10;Claim: nDCG@10 reaches 0.842 on NQ v1.2."></textarea></label>
+              </div>
+            </section>
+            <aside class="document-import-settings">
+              <div class="document-settings-title"><span>IMPORT SETTINGS</span><strong>批次设置</strong><small>应用到本批次中的全部文档</small></div>
+              <label><span>文档版本</span><input name="version" value="v1" required /></label>
+              <label><span>所属迭代</span><select name="iteration_id" id="document-iteration"><option value="">不关联迭代</option></select></label>
+              <label><span>作者</span><input name="authors" placeholder="Alice, Bob" /><small>多个作者使用逗号分隔</small></label>
+              <label><span>标签</span><input name="tags" placeholder="rerank, evaluation" /><small>用于后续过滤和证据定位</small></label>
+              <label class="document-setting-toggle"><input name="extract_claims" type="checkbox" checked /><span><b>提取可验证 Claim</b><small>识别显式 Claim 与数值性结论</small></span></label>
+              <div class="document-import-policy"><i class="ph ph-shield-check"></i><div><strong>版本与安全门禁</strong><span>同标题同版本会复用已有记录；命中高置信敏感信息的文件将被隔离。</span></div></div>
+            </aside>
+          </div>
+          <section id="document-import-progress" class="document-import-progress" hidden>
+            <div><span id="document-progress-label">正在上传文档</span><b id="document-progress-value">0%</b></div>
+            <progress id="document-progress-bar" max="100" value="0"></progress>
+            <small id="document-progress-detail">准备上传队列</small>
+          </section>
+          <div id="document-error" class="form-error" hidden></div>
+          <footer class="modal-actions document-import-actions">
+            <span id="document-selection-summary">选择文档开始建立导入队列</span>
+            <div><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" id="document-submit" type="submit" disabled><i class="ph ph-play"></i> 开始导入</button></div>
+          </footer>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="mlflow-dialog" class="modal compact-modal">
+      <form method="dialog" id="mlflow-form"><div class="modal-accent experiment-accent"></div><div class="modal-head"><div><span class="eyebrow">MLFLOW TRACKING ADAPTER</span><h2>同步 MLflow</h2></div><button class="close-button" type="button" data-close-modal>×</button></div>
+        <p class="modal-intro">连接本地 mlruns FileStore 或 MLflow HTTP Tracking Server，幂等导入 Experiment、Run、Metric 与 Artifact 引用。</p>
+        <label><span>Tracking URI</span><input name="tracking_uri" required placeholder="/workspace/mlruns 或 http://mlflow:5000" /></label>
+        <label><span>关联代码仓库（可选）</span><select name="repository_id" id="mlflow-repository"><option value="">按 Git URL 自动匹配</option></select></label>
+        <div class="form-grid"><label><span>实验 ID（逗号分隔，可选）</span><input name="experiment_ids" placeholder="7, 12" /></label><label><span>最大 Runs</span><input name="max_runs" type="number" min="1" max="10000" value="500" /></label></div>
+        <div id="mlflow-error" class="form-error" hidden></div><div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">开始同步</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="notebook-dialog" class="modal compact-modal">
+      <form method="dialog" id="notebook-form"><div class="modal-accent run-accent"></div><div class="modal-head"><div><span class="eyebrow">JUPYTER NOTEBOOK ADAPTER</span><h2>接入 Notebook 执行</h2></div><button class="close-button" type="button" data-close-modal>×</button></div>
+        <p class="modal-intro">读取真实 .ipynb，保留参数 Cell、执行序号、文本输出、错误和二进制 Artifact 类型，不把图片正文复制进事务库。</p>
+        <label><span>Notebook 路径</span><input name="source" required placeholder="/workspace/experiments/eval.ipynb" /></label>
+        <div class="form-grid"><label><span>版本标签</span><input name="version" value="v1" required /></label><label><span>关联 Run ID（可选）</span><input name="run_id" placeholder="run://..." /></label></div>
+        <div id="notebook-error" class="form-error" hidden></div><div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">解析执行证据</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="eval-case-dialog" class="modal compact-modal"><form method="dialog" id="eval-case-form"><div class="modal-accent eval-accent"></div><div class="modal-head"><div><span class="eyebrow">GOLDEN QUESTION</span><h2>创建评测问题</h2></div><button class="close-button" type="button" data-close-modal>×</button></div><p class="modal-intro">至少定义预期来源；可进一步指定必须召回的实体 ID 与版本，作为错误版本率门禁。</p><label><span>名称</span><input name="name" required placeholder="例如：报告指标来源追溯" /></label><label><span>问题</span><textarea name="question" rows="3" required></textarea></label><label><span>预期来源</span><select name="expected_source" required><option value="code">代码</option><option value="codex">Codex</option><option value="workspace">研究工作区</option><option value="experiment">实验</option><option value="document">文档</option></select></label><label><span>预期实体 ID（可选）</span><input name="expected_entity_id" placeholder="claim://... / run://... / git://..." /></label><label><span>要求版本（可选）</span><input name="required_version" /></label><div id="eval-case-error" class="form-error" hidden></div><div class="modal-actions"><button class="button ghost" type="button" data-close-modal>取消</button><button class="button primary" type="submit">创建</button></div></form></dialog>
+
+    <section id="git-history-popover" class="git-history-popover" role="dialog" aria-label="Git Commit 与 Diff" hidden>
+      <header>
+        <div><span class="eyebrow">VERSION HISTORY</span><strong>Git Commit 与 Diff</strong><small>已索引历史按需展开，不占用代码浏览空间</small></div>
+        <button type="button" id="git-history-close" aria-label="关闭 Git 历史"><i class="ph ph-x"></i></button>
+      </header>
+      <div class="git-history-context">
+        <div><span>BRANCH</span><b id="git-history-branch">—</b></div>
+        <div><span>HEAD</span><b id="git-history-head">—</b></div>
+        <div><span>COMMITS</span><b id="git-history-count">0</b></div>
+        <label><span>REPOSITORY</span><select id="history-repository" class="compact-select"><option value="">选择仓库</option></select></label>
+      </div>
+      <div class="git-history-table-wrap">
+        <table>
+          <thead><tr><th>Commit</th><th>说明 / Diff 来源</th><th>作者</th><th>父提交</th><th>提交时间</th></tr></thead>
+          <tbody id="history-table"><tr><td colspan="5" class="empty-row">请选择仓库</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/assets/source-workbenches.js?v=20260724i" defer></script>
+    <script src="/assets/rag-workbench.js?v=20260724m" defer></script>
+    <script src="/assets/document-import.js?v=20260724b" defer></script>
+    <script src="/assets/graph-workbench.js?v=20260724c" defer></script>
+    <script src="/assets/ui-shell.js?v=20260723a" defer></script>
+    <script src="/assets/codex-session-board.js?v=20260724f" defer></script>
+    <script src="/assets/workbench-experience.js?v=20260724i" defer></script>
+    <script src="/assets/project-network-model.js?v=20260724e" defer></script>
+    <script src="/assets/project-network.js?v=20260724h" defer></script>
+    <script src="/assets/app.js?v=20260724n" defer></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "artifact_id": "a22b322a141741ae9a710aa347fbf032",
+  "executed_at_utc": "2026-07-28T07:18:14+00:00",
+  "metrics": {
+    "entity_recall@10": {
+      "acceptance_eligible": false,
+      "reason": "retrieval phase is outside this semantic-edge treatment Run",
+      "status": "unavailable",
+      "value": null
+    },
+    "expected_locator_recall@10": {
+      "acceptance_eligible": false,
+      "reason": "retrieval phase is outside this semantic-edge treatment Run",
+      "status": "unavailable",
+      "value": null
+    },
+    "harmful_candidate_rate@10": {
+      "acceptance_eligible": false,
+      "reason": "retrieval phase is outside this semantic-edge treatment Run",
+      "status": "unavailable",
+      "value": null
+    },
+    "mrr@10": {
+      "acceptance_eligible": false,
+      "reason": "retrieval phase is outside this semantic-edge treatment Run",
+      "status": "unavailable",
+      "value": null
+    },
+    "ndcg@10": {
+      "acceptance_eligible": false,
+      "reason": "retrieval phase is outside this semantic-edge treatment Run",
+      "status": "unavailable",
+      "value": null
+    },
+    "retrieval_latency_ms_p95": {
+      "acceptance_eligible": false,
+      "reason": "retrieval phase is outside this semantic-edge treatment Run",
+      "status": "unavailable",
+      "value": null
+    },
+    "unauthorized_candidate_rate": {
+      "acceptance_eligible": false,
+      "reason": "retrieval phase is outside this semantic-edge treatment Run",
+      "status": "unavailable",
+      "value": null
+    },
+    "wrong_version_rate": {
+      "acceptance_eligible": false,
+      "reason": "retrieval phase is outside this semantic-edge treatment Run",
+      "status": "unavailable",
+      "value": null
+    }
+  },
+  "pipeline_profile": "golden-python30-three-arm-production-v1",
+  "python_case_denominator": {
+    "case_count": 30,
+    "case_membership_hash": "sha256:a42a607f37d10c6f92c7ceffd84cd8dad4a7bf20dd38197275d940d1d971a3f5"
+  },
+  "reason": "C-B4 isolates semantic-edge treatment; no retrieval ranking was executed",
+  "run_id": "evaluation-run://project-code-golden-v2/a22b322a141741ae9a710aa347fbf032",
+  "schema_version": "code-c-b4-retrieval-v1",
+  "status": "not-executed"
+}

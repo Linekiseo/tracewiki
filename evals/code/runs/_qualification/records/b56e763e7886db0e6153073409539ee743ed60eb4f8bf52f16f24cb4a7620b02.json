@@ -1,0 +1,26 @@
+{
+  "artifact_directory": "24fdc3e12de74c4198627b3df40f86f1",
+  "artifact_set_hash": "sha256:8a20b982087b674c96a2cf19a44a8e887582f30e7ead72ae93b153158335e29a",
+  "authority": "code-c0-03-controlled-local-ledger",
+  "config_fingerprint": "sha256:cffeadd4b4f7a0ba22e018b942c69e4ef869817a631d26d911af50c231f5fdc9",
+  "dataset_package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+  "decision": "qualified",
+  "hash_scope": "canonical record excluding record_hash",
+  "manifest_canonical_hash": "sha256:a98de6821dcbc0aaed502aa694f68202f3309e22ee9c7a53d1c9456d2a0d9e06",
+  "previous_record_hash": "sha256:491dd04a9b93cc1012ba4c61eb37730df76ecce1ccbd000f95dadbddaa335160",
+  "reason_code": "c0-03-p0-09-p0-10-remediated",
+  "record_hash": "sha256:b56e763e7886db0e6153073409539ee743ed60eb4f8bf52f16f24cb4a7620b02",
+  "recorded_at": "2026-07-26T20:54:32.472124+00:00",
+  "run_id": "evaluation-run://project-code-golden-v2/24fdc3e12de74c4198627b3df40f86f1",
+  "schema_version": "code-c0-03-qualification-record-v1",
+  "sequence": 2,
+  "threat_model": {
+    "out_of_scope": "An actor able to rewrite the implementation and the complete qualification ledger history is out of scope because commits and cryptographic signing are prohibited for C0-03.",
+    "protected_changes": "Any manifest or artifact-map modification, alone or together, fails unless a new controlled qualification record is appended for the new canonical manifest digest.",
+    "trusted_inputs": [
+      "released Code Golden v2 package anchor",
+      "runner verification contract in this implementation",
+      "append-only qualification record directory rooted at the fixed genesis hash"
+    ]
+  }
+}

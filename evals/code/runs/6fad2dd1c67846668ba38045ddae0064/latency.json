@@ -1,0 +1,461 @@
+{
+  "cases": [
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-001",
+      "dense_candidates": 22,
+      "exact_candidates": null,
+      "latency_ms": 58.190334,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-002",
+      "dense_candidates": 23,
+      "exact_candidates": 6,
+      "latency_ms": 88.742875,
+      "sparse_candidates": 17
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-003",
+      "dense_candidates": 22,
+      "exact_candidates": null,
+      "latency_ms": 74.17125,
+      "sparse_candidates": 12
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-004",
+      "dense_candidates": 40,
+      "exact_candidates": null,
+      "latency_ms": 516.918375,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-005",
+      "dense_candidates": 40,
+      "exact_candidates": 3,
+      "latency_ms": 518.491875,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-006",
+      "dense_candidates": 34,
+      "exact_candidates": 10,
+      "latency_ms": 87.873166,
+      "sparse_candidates": 10
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-007",
+      "dense_candidates": 40,
+      "exact_candidates": null,
+      "latency_ms": 87.84825,
+      "sparse_candidates": 39
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-008",
+      "dense_candidates": 40,
+      "exact_candidates": null,
+      "latency_ms": 69.55475,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-009",
+      "dense_candidates": 28,
+      "exact_candidates": null,
+      "latency_ms": 89.321833,
+      "sparse_candidates": 28
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-010",
+      "dense_candidates": 40,
+      "exact_candidates": null,
+      "latency_ms": 80.303041,
+      "sparse_candidates": 31
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-011",
+      "dense_candidates": 40,
+      "exact_candidates": 20,
+      "latency_ms": 600.85575,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-012",
+      "dense_candidates": 40,
+      "exact_candidates": null,
+      "latency_ms": 506.66025,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-013",
+      "dense_candidates": null,
+      "exact_candidates": null,
+      "latency_ms": 2.796875,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-014",
+      "dense_candidates": null,
+      "exact_candidates": null,
+      "latency_ms": 8.21175,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 16,
+      "case_id": "code-golden-v2-015",
+      "dense_candidates": 8,
+      "exact_candidates": 2,
+      "latency_ms": 85.654208,
+      "sparse_candidates": 12
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-016",
+      "dense_candidates": 25,
+      "exact_candidates": null,
+      "latency_ms": 67.778792,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-017",
+      "dense_candidates": 23,
+      "exact_candidates": 15,
+      "latency_ms": 94.23425,
+      "sparse_candidates": 17
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-018",
+      "dense_candidates": 40,
+      "exact_candidates": null,
+      "latency_ms": 72.095167,
+      "sparse_candidates": 12
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-019",
+      "dense_candidates": null,
+      "exact_candidates": null,
+      "latency_ms": 2.563375,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-021",
+      "dense_candidates": 40,
+      "exact_candidates": 10,
+      "latency_ms": 101.059917,
+      "sparse_candidates": 35
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-022",
+      "dense_candidates": 27,
+      "exact_candidates": null,
+      "latency_ms": 78.764291,
+      "sparse_candidates": 16
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-023",
+      "dense_candidates": 35,
+      "exact_candidates": 10,
+      "latency_ms": 93.766583,
+      "sparse_candidates": 28
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-025",
+      "dense_candidates": null,
+      "exact_candidates": null,
+      "latency_ms": 2.716375,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-026",
+      "dense_candidates": 40,
+      "exact_candidates": 20,
+      "latency_ms": 551.561375,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 15,
+      "case_id": "code-golden-v2-027",
+      "dense_candidates": 14,
+      "exact_candidates": null,
+      "latency_ms": 71.587542,
+      "sparse_candidates": 9
+    },
+    {
+      "candidate_count": 17,
+      "case_id": "code-golden-v2-028",
+      "dense_candidates": 15,
+      "exact_candidates": 10,
+      "latency_ms": 77.73325,
+      "sparse_candidates": 10
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-029",
+      "dense_candidates": 36,
+      "exact_candidates": 13,
+      "latency_ms": 90.366709,
+      "sparse_candidates": 18
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-030",
+      "dense_candidates": 27,
+      "exact_candidates": null,
+      "latency_ms": 69.345125,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-031",
+      "dense_candidates": 28,
+      "exact_candidates": 6,
+      "latency_ms": 89.13075,
+      "sparse_candidates": 28
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-032",
+      "dense_candidates": 36,
+      "exact_candidates": null,
+      "latency_ms": 72.098042,
+      "sparse_candidates": 5
+    },
+    {
+      "candidate_count": 20,
+      "case_id": "code-golden-v2-033",
+      "dense_candidates": 40,
+      "exact_candidates": 20,
+      "latency_ms": 549.17575,
+      "sparse_candidates": 40
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-034",
+      "dense_candidates": null,
+      "exact_candidates": null,
+      "latency_ms": 2.52875,
+      "sparse_candidates": null
+    },
+    {
+      "candidate_count": 0,
+      "case_id": "code-golden-v2-035",
+      "dense_candidates": null,
+      "exact_candidates": null,
+      "latency_ms": 16.220208,
+      "sparse_candidates": null
+    }
+  ],
+  "compute": {
+    "cpu_logical_count": {
+      "status": "available",
+      "value": 14
+    },
+    "gpu": {
+      "reason": "local-hash C-B2 does not use or probe a GPU",
+      "status": "unavailable"
+    },
+    "machine": "arm64",
+    "physical_memory_bytes": {
+      "source": "os.sysconf",
+      "status": "available",
+      "value": 25769803776
+    },
+    "process_peak_rss_bytes": {
+      "source": "resource.getrusage(RUSAGE_SELF).ru_maxrss",
+      "status": "available",
+      "value": 191119360
+    },
+    "python_implementation": "CPython",
+    "system": "Darwin"
+  },
+  "dense_index": {
+    "p95_ms": {
+      "sample_count": 3,
+      "status": "available",
+      "value": 516.2864205
+    },
+    "total_ms": 669.000458
+  },
+  "ingest": {
+    "p95_ms": {
+      "sample_count": 3,
+      "status": "available",
+      "value": 603.9252369
+    },
+    "total_ms": 1645.718167
+  },
+  "query_p95": {
+    "cb0_qualified_baseline": {
+      "baseline": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 15.04,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 15.04
+      },
+      "delta": {
+        "direction": "lower",
+        "directional_delta": -535.09,
+        "status": "available",
+        "treatment_minus_baseline": 535.09
+      },
+      "membership": {
+        "canonical_case_ids": [
+          "code-golden-v2-001",
+          "code-golden-v2-002",
+          "code-golden-v2-003",
+          "code-golden-v2-004",
+          "code-golden-v2-005",
+          "code-golden-v2-006",
+          "code-golden-v2-007",
+          "code-golden-v2-008",
+          "code-golden-v2-009",
+          "code-golden-v2-010",
+          "code-golden-v2-011",
+          "code-golden-v2-012",
+          "code-golden-v2-013",
+          "code-golden-v2-014",
+          "code-golden-v2-015",
+          "code-golden-v2-016",
+          "code-golden-v2-017",
+          "code-golden-v2-018",
+          "code-golden-v2-019",
+          "code-golden-v2-021",
+          "code-golden-v2-022",
+          "code-golden-v2-023",
+          "code-golden-v2-025",
+          "code-golden-v2-026",
+          "code-golden-v2-027",
+          "code-golden-v2-028",
+          "code-golden-v2-029",
+          "code-golden-v2-030",
+          "code-golden-v2-031",
+          "code-golden-v2-032",
+          "code-golden-v2-033",
+          "code-golden-v2-034",
+          "code-golden-v2-035"
+        ],
+        "case_count": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+      },
+      "metric_denominator_equal": true,
+      "metric_name": "latency_p95_ms",
+      "same_case_membership": true,
+      "scope": "overall",
+      "treatment": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 550.13,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 550.13
+      }
+    },
+    "cb1_not_qualified_audit": {
+      "baseline": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 86.22237479999998,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 86.22237479999998
+      },
+      "delta": {
+        "direction": "lower",
+        "directional_delta": -463.9076252,
+        "status": "available",
+        "treatment_minus_baseline": 463.9076252
+      },
+      "membership": {
+        "canonical_case_ids": [
+          "code-golden-v2-001",
+          "code-golden-v2-002",
+          "code-golden-v2-003",
+          "code-golden-v2-004",
+          "code-golden-v2-005",
+          "code-golden-v2-006",
+          "code-golden-v2-007",
+          "code-golden-v2-008",
+          "code-golden-v2-009",
+          "code-golden-v2-010",
+          "code-golden-v2-011",
+          "code-golden-v2-012",
+          "code-golden-v2-013",
+          "code-golden-v2-014",
+          "code-golden-v2-015",
+          "code-golden-v2-016",
+          "code-golden-v2-017",
+          "code-golden-v2-018",
+          "code-golden-v2-019",
+          "code-golden-v2-021",
+          "code-golden-v2-022",
+          "code-golden-v2-023",
+          "code-golden-v2-025",
+          "code-golden-v2-026",
+          "code-golden-v2-027",
+          "code-golden-v2-028",
+          "code-golden-v2-029",
+          "code-golden-v2-030",
+          "code-golden-v2-031",
+          "code-golden-v2-032",
+          "code-golden-v2-033",
+          "code-golden-v2-034",
+          "code-golden-v2-035"
+        ],
+        "case_count": 33,
+        "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+      },
+      "metric_denominator_equal": true,
+      "metric_name": "latency_p95_ms",
+      "same_case_membership": true,
+      "scope": "overall",
+      "treatment": {
+        "available_cases": 33,
+        "denominator": 1.0,
+        "eligible_cases": 33,
+        "membership_case_count": 33,
+        "metric_name": "latency_p95_ms",
+        "numerator": 550.13,
+        "reason": null,
+        "status": "available",
+        "unavailable_cases": 0,
+        "value": 550.13
+      }
+    }
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064",
+  "schema_version": "code-c-b2-latency-v1"
+}

@@ -1,0 +1,245 @@
+name: G0 source admission
+
+on:
+  workflow_dispatch:
+    inputs:
+      g0_admission_authority_commit:
+        description: Exact reviewed evidence commit containing admission.json
+        required: false
+        type: string
+      g0_admission_file_sha256:
+        description: Reviewed admission.json SHA-256 without prefix
+        required: false
+        type: string
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: backend-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  authority:
+    name: Bind reviewed G0 admission
+    if: ${{ github.event_name == 'workflow_dispatch' || (vars.G0_ADMISSION_AUTHORITY_COMMIT != '' && vars.G0_ADMISSION_FILE_SHA256 != '') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    environment: g0-reviewed-authority
+    env:
+      G0_ADMISSION_AUTHORITY_COMMIT: ${{ inputs.g0_admission_authority_commit || vars.G0_ADMISSION_AUTHORITY_COMMIT }}
+      G0_ADMISSION_FILE_SHA256: ${{ inputs.g0_admission_file_sha256 || vars.G0_ADMISSION_FILE_SHA256 }}
+    outputs:
+      authority-commit: ${{ steps.bind.outputs.authority-commit }}
+      manifest-file-sha256: ${{ steps.bind.outputs.manifest-file-sha256 }}
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
+      artifact-digest: ${{ steps.upload.outputs.artifact-digest }}
+      artifact-url: ${{ steps.upload.outputs.artifact-url }}
+    steps:
+      - name: Validate reviewed authority selection
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${G0_ADMISSION_AUTHORITY_COMMIT}" || {
+            echo "authority commit is required" >&2
+            exit 2
+          }
+          test -n "${G0_ADMISSION_FILE_SHA256}" || {
+            echo "manifest SHA-256 is required" >&2
+            exit 2
+          }
+          [[ "${G0_ADMISSION_AUTHORITY_COMMIT}" =~ ^[0-9a-f]{40}$ ]] || {
+            echo "authority commit must be 40 lowercase hex characters" >&2
+            exit 2
+          }
+          [[ "${G0_ADMISSION_FILE_SHA256}" =~ ^[0-9a-f]{64}$ ]] || {
+            echo "manifest SHA-256 must be 64 lowercase hex characters" >&2
+            exit 2
+          }
+      - name: Checkout reviewed authority commit
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}
+          ref: ${{ env.G0_ADMISSION_AUTHORITY_COMMIT }}
+          path: authority
+          fetch-depth: 1
+          persist-credentials: false
+      - name: Bind reviewed admission bytes
+        id: bind
+        shell: bash
+        run: |
+          set -euo pipefail
+          authority_head="$(git -C authority rev-parse HEAD)"
+          test "${authority_head}" = "${G0_ADMISSION_AUTHORITY_COMMIT}"
+          tree_entry="$(git -C authority ls-tree "${G0_ADMISSION_AUTHORITY_COMMIT}" -- admission.json)"
+          object_mode="$(printf '%s\n' "${tree_entry}" | awk '{print $1}')"
+          object_type="$(printf '%s\n' "${tree_entry}" | awk '{print $2}')"
+          object_path="$(printf '%s\n' "${tree_entry}" | awk '{print $4}')"
+          test "${object_mode}" = "100644"
+          test "${object_type}" = "blob"
+          test "${object_path}" = "admission.json"
+
+          authority_dir="${RUNNER_TEMP}/g0-reviewed-authority"
+          manifest_path="${authority_dir}/admission.json"
+          mkdir -p "${authority_dir}"
+          cp authority/admission.json "${manifest_path}"
+          actual_sha256="$(sha256sum "${manifest_path}" | awk '{print $1}')"
+          test "${actual_sha256}" = "${G0_ADMISSION_FILE_SHA256}"
+
+          receipt_path="${authority_dir}/transport-receipt.txt"
+          {
+            printf 'schema_version=rag-g0-ci-transport-receipt-v1\n'
+            printf 'candidate_commit=%s\n' "${GITHUB_SHA}"
+            printf 'authority_commit=%s\n' "${G0_ADMISSION_AUTHORITY_COMMIT}"
+            printf 'manifest_file_sha256=%s\n' "${actual_sha256}"
+            printf 'run_id=%s\n' "${GITHUB_RUN_ID}"
+            printf 'run_attempt=%s\n' "${GITHUB_RUN_ATTEMPT}"
+          } > "${receipt_path}"
+          (
+            cd "${authority_dir}"
+            sha256sum admission.json transport-receipt.txt > SHA256SUMS
+          )
+          echo "authority-commit=${G0_ADMISSION_AUTHORITY_COMMIT}" >> "${GITHUB_OUTPUT}"
+          echo "manifest-file-sha256=${actual_sha256}" >> "${GITHUB_OUTPUT}"
+      - name: Upload reviewed admission authority
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: g0-reviewed-admission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/g0-reviewed-authority
+          if-no-files-found: error
+          retention-days: 30
+
+  verify:
+    name: Python ${{ matrix.python-version }}
+    needs: authority
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      UV_NO_SYNC: "1"
+      RAG_DATA_DIR: ${{ runner.temp }}/evidence-rag-ci-${{ matrix.python-version }}
+      RAG_ALLOWED_LOCAL_ROOTS: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Restore frozen Code Golden history
+        run: >-
+          git fetch tests/fixtures/g0_history/code-golden-v2-history.bundle
+          refs/heads/code-golden-v2-source:refs/heads/code-golden-v2-source
+      - name: Download reviewed admission authority
+        uses: actions/download-artifact@v4
+        with:
+          name: g0-reviewed-admission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/g0-reviewed-authority
+      - name: Verify transported admission bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          manifest_path="${RUNNER_TEMP}/g0-reviewed-authority/admission.json"
+          actual_sha256="$(sha256sum "${manifest_path}" | awk '{print $1}')"
+          test "${actual_sha256}" = "${{ needs.authority.outputs.manifest-file-sha256 }}"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.14"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+      - name: Install locked test environment
+        run: uv sync --frozen --extra test
+      - name: Verify exact admitted source
+        run: make g0-admission-verify G0_ADMISSION_MANIFEST="${RUNNER_TEMP}/g0-reviewed-authority/admission.json"
+      - name: Verify backend
+        run: make backend-full
+
+  admission:
+    name: Exact source, cleanroom, and frontend
+    needs: [authority, verify]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      UV_NO_SYNC: "1"
+      RAG_DATA_DIR: ${{ runner.temp }}/evidence-rag-g0-admission
+      RAG_ALLOWED_LOCAL_ROOTS: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Download reviewed admission authority
+        uses: actions/download-artifact@v4
+        with:
+          name: g0-reviewed-admission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/g0-reviewed-authority
+      - name: Verify transported admission bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          manifest_path="${RUNNER_TEMP}/g0-reviewed-authority/admission.json"
+          actual_sha256="$(sha256sum "${manifest_path}" | awk '{print $1}')"
+          test "${actual_sha256}" = "${{ needs.authority.outputs.manifest-file-sha256 }}"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.14"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Pin reviewed npm runtime
+        run: |
+          npm install --global npm@11.17.0 --ignore-scripts
+          test "$(npm --version)" = "11.17.0"
+      - name: Install locked environments
+        run: |
+          uv sync --frozen --extra test
+          make frontend-ci
+      - name: Verify exact admitted source
+        run: make g0-admission-verify G0_ADMISSION_MANIFEST="${RUNNER_TEMP}/g0-reviewed-authority/admission.json"
+      - name: Verify self-contained cleanroom
+        run: make g0-admission-cleanroom G0_ADMISSION_MANIFEST="${RUNNER_TEMP}/g0-reviewed-authority/admission.json"
+      - name: Verify frontend supply chain
+        run: |
+          mkdir -p "${RUNNER_TEMP}/rag-frontend-supply-chain"
+          audit_status=0
+          npm --version > "${RUNNER_TEMP}/rag-frontend-supply-chain/npm-version.txt"
+          npm --prefix frontend approve-scripts --allow-scripts-pending --json > "${RUNNER_TEMP}/rag-frontend-supply-chain/pending-install-scripts.json"
+          npm --prefix frontend run verify:install-policy -- --pending "${RUNNER_TEMP}/rag-frontend-supply-chain/pending-install-scripts.json" > "${RUNNER_TEMP}/rag-frontend-supply-chain/install-policy.json"
+          npm --prefix frontend audit --audit-level=high --json > "${RUNNER_TEMP}/rag-frontend-supply-chain/npm-audit.json" || audit_status=$?
+          npm --prefix frontend sbom --sbom-format cyclonedx --json > "${RUNNER_TEMP}/rag-frontend-supply-chain/frontend-sbom.cdx.json"
+          sha256sum frontend/package.json frontend/package-lock.json frontend/.npmrc "${RUNNER_TEMP}/rag-frontend-supply-chain/npm-version.txt" "${RUNNER_TEMP}/rag-frontend-supply-chain/pending-install-scripts.json" "${RUNNER_TEMP}/rag-frontend-supply-chain/install-policy.json" "${RUNNER_TEMP}/rag-frontend-supply-chain/npm-audit.json" "${RUNNER_TEMP}/rag-frontend-supply-chain/frontend-sbom.cdx.json" > "${RUNNER_TEMP}/rag-frontend-supply-chain/SHA256SUMS"
+          exit "${audit_status}"
+      - name: Upload frontend supply-chain evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rag-frontend-supply-chain-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/rag-frontend-supply-chain
+          if-no-files-found: error
+      - name: Verify frontend tests
+        run: npm --prefix frontend test
+      - name: Verify frontend types
+        run: npm --prefix frontend run typecheck
+      - name: Verify frontend production build
+        run: npm --prefix frontend run build
+      - name: Verify clean release-ready checkout
+        run: make g0-admission-release-verify G0_ADMISSION_MANIFEST="${RUNNER_TEMP}/g0-reviewed-authority/admission.json"

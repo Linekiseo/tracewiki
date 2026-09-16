@@ -1,0 +1,81 @@
+{
+  "artifact_id": "a22b322a141741ae9a710aa347fbf032",
+  "executed_at_utc": "2026-07-28T07:18:14+00:00",
+  "execution_guards": {
+    "exact_production_identity": true,
+    "fixed_python_case_membership": true,
+    "formal_database_hash_size_mtime_guard": true,
+    "no_overwrite": true,
+    "old_run_byte_mtime_guard": true,
+    "single_new_run": true
+  },
+  "gate_authorization": {
+    "completion_status": "passed",
+    "decision": "C-B4 PRODUCTION EXECUTION AUTHORIZED",
+    "decision_block_hash": "sha256:7d3ffcc3666aa2c2252a568f35c9e291e63b37dc98daf02c2b43cf4df2ceb67a",
+    "evidence": [
+      "C5-02 engineering PASS",
+      "P0 findings: 0",
+      "P1 findings: 0",
+      "C-B4 PRODUCTION EXECUTION AUTHORIZED"
+    ],
+    "production_component": {
+      "class": "SemanticEdgeTreatment",
+      "evaluation_entry_point": "evaluate_semantic_edges",
+      "functional_entry_point": "treat_python_semantic_edges",
+      "functions": {
+        "evaluate_semantic_edges": true,
+        "treat_python_semantic_edges": true
+      },
+      "identity_policy": "exact-type-only",
+      "implementation_module": "evidence_rag.rag.sources.code.semantic_edges_v1",
+      "import_mode": "delayed",
+      "interfaces": {
+        "SemanticEdgeScope": true,
+        "SemanticEdgeTreatmentResult": true,
+        "TreeSitterConservativeEdge": true
+      },
+      "method": "treat",
+      "module": "evidence_rag.rag.sources.code.semantic_edges_v1",
+      "public_module": "evidence_rag.rag.sources.code",
+      "status": "ready",
+      "version": "c5-python-semantic-edges-v1"
+    },
+    "report": "docs/rag-optimization/development/reviews/06_CODE_C5_GATE_REVIEW.md",
+    "report_sha256": "sha256:80c1dbcc25e843ad67709e3118862153631f32d73ead43d9d5e0a2a2cbcfff48",
+    "schema_version": "code-c-b4-c5-02-authorization-v1",
+    "snapshot_hash": "sha256:aa558b59cd3c8b59170164461235aa65fbbc213e7a32624655912d8be8659306",
+    "status": "authorized"
+  },
+  "label_evidence_ref": {
+    "dataset_hash": null,
+    "label_set_version": "code-c-b4-human-edge-labels-v1",
+    "production_output_attestation_hash": "sha256:23feb1ee5ecf3f59cb7aad63b487bae61321da0fc140d64ae27dfb43b8b9f064",
+    "record_count": 0,
+    "schema_version": "code-c-b4-edge-label-evidence-ref-v1",
+    "status": "absent"
+  },
+  "label_status": "unavailable",
+  "pipeline_profile": "golden-python30-three-arm-production-v1",
+  "qualification_reason": "zero real human edge-label records",
+  "qualification_status": "NOT QUALIFIED",
+  "quality_acceptance": {
+    "label_evidence_ref": {
+      "dataset_hash": null,
+      "label_set_version": "code-c-b4-human-edge-labels-v1",
+      "production_output_attestation_hash": "sha256:23feb1ee5ecf3f59cb7aad63b487bae61321da0fc140d64ae27dfb43b8b9f064",
+      "record_count": 0,
+      "schema_version": "code-c-b4-edge-label-evidence-ref-v1",
+      "status": "absent"
+    },
+    "label_status": "unavailable",
+    "precision_gate_satisfied": false,
+    "production_quality_qualification_eligible": false,
+    "treatment_qualified": false
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/a22b322a141741ae9a710aa347fbf032",
+  "sample_count": 0,
+  "schema_version": "code-c-b4-attempt-audit-v1",
+  "status": "completed",
+  "treatment_qualified": false
+}

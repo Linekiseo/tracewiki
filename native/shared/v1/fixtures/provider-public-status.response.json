@@ -1,0 +1,12 @@
+{
+  "contract_version": "llm-provider-runtime-v1",
+  "project_id": "project-rag",
+  "provider": "openai_compatible",
+  "base_url": null,
+  "model": null,
+  "configured": false,
+  "api_key_present": false,
+  "secret_storage": "os_keychain_required",
+  "source": null,
+  "capabilities": []
+}

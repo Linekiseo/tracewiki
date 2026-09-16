@@ -1,0 +1,32 @@
+[
+  {
+    "id": "agent://codex",
+    "client_id": null,
+    "name": "Codex",
+    "connector": "research-project-bridge",
+    "version": null,
+    "availability": "unavailable",
+    "reason": "plugin_missing",
+    "capabilities": [],
+    "capability_snapshot": null,
+    "scope": {
+      "project_id": "project-rag",
+      "token_scopes": []
+    },
+    "last_seen_at": null,
+    "recent_executions": [],
+    "active_execution_count": 0,
+    "session_count": 0,
+    "sync": {
+      "status": "no_data",
+      "reason": "source_not_configured",
+      "source_status": "unconfigured",
+      "indexed_sessions": 0,
+      "source_count": 0,
+      "active_workflow": false,
+      "last_sync_at": null,
+      "data_available": false
+    },
+    "recent_events": []
+  }
+]

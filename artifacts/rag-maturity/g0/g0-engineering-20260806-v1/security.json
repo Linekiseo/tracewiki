@@ -1,0 +1,1 @@
+{"absolute_user_path_disclosure":false,"database_read_access":"not-instrumented","database_state_unchanged":true,"finding_count":0,"findings":[],"network_required_by_verification_commands":false}

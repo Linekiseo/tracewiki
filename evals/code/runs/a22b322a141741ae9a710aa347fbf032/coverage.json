@@ -1,0 +1,51 @@
+{
+  "artifact_id": "a22b322a141741ae9a710aa347fbf032",
+  "executed_at_utc": "2026-07-28T07:18:14+00:00",
+  "pipeline_profile": "golden-python30-three-arm-production-v1",
+  "quality_metrics": {
+    "edge_coverage": {
+      "acceptance_eligible": false,
+      "reason": "zero real human labels cannot establish quality coverage",
+      "status": "unavailable",
+      "value": null
+    },
+    "unresolved_reduction": {
+      "acceptance_eligible": false,
+      "reason": "zero real human labels cannot establish quality unresolved reduction",
+      "status": "unavailable",
+      "value": null
+    }
+  },
+  "required_path_recall": {
+    "acceptance_eligible": false,
+    "reason": "semantic-edge treatment does not execute a retrieval candidate ranking",
+    "status": "unavailable",
+    "value": null
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/a22b322a141741ae9a710aa347fbf032",
+  "same_python_case_denominator": {
+    "case_count": 30,
+    "case_membership_hash": "sha256:a42a607f37d10c6f92c7ceffd84cd8dad4a7bf20dd38197275d940d1d971a3f5"
+  },
+  "schema_version": "code-c-b4-coverage-v1",
+  "structural_target_coverage": {
+    "merged_policy": {
+      "classification": "non_quality_structural_observation",
+      "expected_target_count": 42,
+      "matched_target_count": 42,
+      "value": 1.0
+    },
+    "scip_semantic": {
+      "classification": "non_quality_structural_observation",
+      "expected_target_count": 42,
+      "matched_target_count": 42,
+      "value": 1.0
+    },
+    "tree_sitter_conservative": {
+      "classification": "non_quality_structural_observation",
+      "expected_target_count": 42,
+      "matched_target_count": 42,
+      "value": 1.0
+    }
+  }
+}

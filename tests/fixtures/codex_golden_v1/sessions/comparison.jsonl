@@ -1,0 +1,7 @@
+{"cwd":"${PROJECT_ROOT}","thread_id":"codex-golden-comparison","timestamp":"2026-07-05T12:00:00Z","type":"thread.started"}
+{"timestamp":"2026-07-05T12:00:01Z","turn_id":"comparison-turn","type":"turn.started"}
+{"item":{"id":"comparison-goal","message":"Compare the current parser repair with the archived failed attempt on the same path.","type":"user_message"},"timestamp":"2026-07-05T12:00:02Z","type":"item.completed"}
+{"item":{"aggregated_output":"src/parser.py appears in both thread summaries","command":"rg -n src/parser.py evidence-index.txt","exit_code":0,"id":"comparison-read","type":"command_execution"},"timestamp":"2026-07-05T12:00:03Z","type":"item.completed"}
+{"item":{"id":"comparison-decision","text":"Prefer the current thread because its second attempt has an observed zero exit code.","type":"agent_message"},"timestamp":"2026-07-05T12:00:04Z","type":"item.completed"}
+{"item":{"id":"comparison-outcome","text":"The archived thread is counter-evidence, not the final parser outcome.","type":"agent_message"},"timestamp":"2026-07-05T12:00:05Z","type":"item.completed"}
+{"timestamp":"2026-07-05T12:00:06Z","turn_id":"comparison-turn","type":"turn.completed"}

@@ -1,0 +1,13 @@
+{
+  "attempt_id": "attempt-20260726T200913Z-5a52819f",
+  "baseline_qualified": false,
+  "completed_at": "2026-07-26T20:12:57.789219+00:00",
+  "failure": {
+    "message": "error-analysis classified expected refuse/missing-evidence zero results as retrieval misses",
+    "type": "BaselineError"
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/d16b4602efed4458b06ac99c5de4bcd3",
+  "schema_version": "code-c0-03-attempt-audit-v1",
+  "started_at": "2026-07-26T20:09:13.246570+00:00",
+  "status": "failed"
+}

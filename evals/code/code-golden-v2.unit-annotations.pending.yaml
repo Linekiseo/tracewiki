@@ -1,0 +1,18 @@
+schema_version: code-golden-unit-annotation-layer-v1
+dataset_id: code-golden
+dataset_version: code-golden-v2
+layer_id: code-golden-v2-unit-annotations-pending
+status: pending_c2
+builder_version:
+required_builder_version: c2-code-retrieval-unit-builder-v1
+activation_guards:
+  - builder_version must be a concrete immutable implementation version
+  - source package_hash must equal the reviewed Code Golden v2 package hash
+  - every generated retrieval unit must carry its source entity ID and content hash
+  - rebuilding the same entity at the same ref must reproduce the same unit identity
+  - a new review provenance record must bind the generated layer hash
+annotations: []
+unavailable_reason: >-
+  C2 has not yet supplied a versioned retrieval-unit builder. No Unit identity is
+  included in the v2 baseline cases, candidate judgments, manifest treatment fields,
+  or any enabled evaluation input.

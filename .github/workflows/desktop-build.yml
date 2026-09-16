@@ -1,0 +1,95 @@
+name: Desktop engineering builds
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "frontend/**"
+      - "native/**"
+      - "src/evidence_rag/**"
+      - ".github/workflows/desktop-build.yml"
+
+concurrency:
+  group: desktop-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tracewiki-app:
+    name: TraceWiki ${{ matrix.label }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-14
+            label: macOS app
+            bundles: app,dmg
+          - os: windows-2022
+            label: Windows installers
+            bundles: nsis,msi
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: frontend/src-tauri
+      - name: Install locked frontend dependencies
+        working-directory: frontend
+        run: npm ci
+      - name: Verify TraceWiki UI and desktop host
+        working-directory: frontend
+        run: |
+          npm run typecheck
+          npm test -- --run
+          npm run desktop:test
+      - name: Build unsigned engineering package
+        working-directory: frontend
+        run: npm run desktop:build -- --bundles ${{ matrix.bundles }}
+      - name: Upload TraceWiki package
+        uses: actions/upload-artifact@v4
+        with:
+          name: tracewiki-${{ runner.os }}-unsigned
+          path: frontend/src-tauri/target/release/bundle/**
+          if-no-files-found: error
+
+  macos-native:
+    name: macOS SwiftUI app
+    runs-on: macos-14
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify native SwiftUI client
+        working-directory: native/macos
+        run: |
+          swift format lint --strict --recursive Sources Tests
+          swift test
+          ./scripts/build_and_run.sh --package
+      - name: Upload native package
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-rag-macos-native-unsigned
+          path: native/macos/dist/**
+          if-no-files-found: error
+
+  windows-native:
+    name: Windows WinUI 3 app
+    runs-on: windows-2022
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Verify native WinUI 3 client
+        shell: pwsh
+        working-directory: native/windows
+        run: .\ci\windows-build.ps1

@@ -1,0 +1,17 @@
+{
+  "contract_version": "llm-provider-runtime-v1",
+  "project_id": "project-rag",
+  "provider": "openai_compatible",
+  "base_url": "https://provider.invalid/v1",
+  "model": "contract-model",
+  "configured": true,
+  "api_key_present": true,
+  "secret_storage": "os_keychain_ephemeral_backend",
+  "source": "desktop_runtime",
+  "capabilities": [
+    "structured_query_understanding",
+    "grounded_generation"
+  ],
+  "health": "ready",
+  "tested": true
+}

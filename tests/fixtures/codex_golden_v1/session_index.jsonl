@@ -1,0 +1,8 @@
+{"id":"codex-golden-current","thread_name":"Current parser retry repair","updated_at":"2026-07-01T08:00:11Z"}
+{"id":"codex-golden-decision","thread_name":"Deterministic ranking decision","updated_at":"2026-07-02T09:00:09Z"}
+{"id":"codex-golden-plan","thread_name":"Plan-only cache migration","updated_at":"2026-07-03T10:00:06Z"}
+{"id":"codex-golden-truncated","thread_name":"Bounded worker log inspection","updated_at":"2026-07-04T11:00:06Z"}
+{"id":"codex-golden-comparison","thread_name":"Compare parser attempts","updated_at":"2026-07-05T12:00:06Z"}
+{"id":"codex-golden-privacy","thread_name":"Privacy-safe credential audit","updated_at":"2026-07-06T13:00:06Z"}
+{"id":"codex-golden-subagent","thread_name":"Parser retry supporting task","updated_at":"2026-07-07T14:00:07Z"}
+{"id":"codex-golden-archived","thread_name":"Archived parser attempt","updated_at":"2026-06-20T07:00:09Z"}

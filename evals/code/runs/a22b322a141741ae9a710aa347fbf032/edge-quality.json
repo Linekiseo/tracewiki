@@ -1,0 +1,125 @@
+{
+  "artifact_id": "a22b322a141741ae9a710aa347fbf032",
+  "executed_at_utc": "2026-07-28T07:18:14+00:00",
+  "label_evidence_ref": {
+    "dataset_hash": null,
+    "label_set_version": "code-c-b4-human-edge-labels-v1",
+    "production_output_attestation_hash": "sha256:23feb1ee5ecf3f59cb7aad63b487bae61321da0fc140d64ae27dfb43b8b9f064",
+    "record_count": 0,
+    "schema_version": "code-c-b4-edge-label-evidence-ref-v1",
+    "status": "absent"
+  },
+  "label_status": "unavailable",
+  "pipeline_profile": "golden-python30-three-arm-production-v1",
+  "quality_acceptance": {
+    "label_evidence_ref": {
+      "dataset_hash": null,
+      "label_set_version": "code-c-b4-human-edge-labels-v1",
+      "production_output_attestation_hash": "sha256:23feb1ee5ecf3f59cb7aad63b487bae61321da0fc140d64ae27dfb43b8b9f064",
+      "record_count": 0,
+      "schema_version": "code-c-b4-edge-label-evidence-ref-v1",
+      "status": "absent"
+    },
+    "label_status": "unavailable",
+    "precision_gate_satisfied": false,
+    "production_quality_qualification_eligible": false,
+    "treatment_qualified": false
+  },
+  "quality_metrics": {
+    "edge_coverage": {
+      "acceptance_eligible": false,
+      "reason": "zero real human labels cannot establish quality coverage",
+      "status": "unavailable",
+      "value": null
+    },
+    "edge_precision": {
+      "acceptance_eligible": false,
+      "reason": "zero real human edge-label records",
+      "status": "unavailable",
+      "value": null
+    },
+    "graph_harmful_candidate_rate@10": {
+      "acceptance_eligible": false,
+      "reason": "zero real human labels cannot establish graph harm",
+      "status": "unavailable",
+      "value": null
+    },
+    "graph_noise_rate@10": {
+      "acceptance_eligible": false,
+      "reason": "zero real human labels cannot establish graph noise",
+      "status": "unavailable",
+      "value": null
+    },
+    "unresolved_reduction": {
+      "acceptance_eligible": false,
+      "reason": "zero real human labels cannot establish quality unresolved reduction",
+      "status": "unavailable",
+      "value": null
+    }
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/a22b322a141741ae9a710aa347fbf032",
+  "sample_count": 0,
+  "schema_version": "code-c-b4-edge-quality-v1",
+  "structural_counts": {
+    "merged_policy": {
+      "classification": "non_quality_structural_counts",
+      "conflict_count": 0,
+      "conflict_rate": 0.0,
+      "diagnostic_count": 0,
+      "legal_edge_count": 42,
+      "provenance_counts": {
+        "multi_provenance_edge_count": 42,
+        "provenance_record_count": 84,
+        "scip_edge_count": 42,
+        "tree_sitter_edge_count": 42
+      },
+      "provenance_merge_rate": 1.0,
+      "relation_counts": {
+        "REFERENCES": 42
+      },
+      "scip_legal_edge_count": 42,
+      "unresolved_after": 0,
+      "unresolved_before": 0
+    },
+    "scip_semantic": {
+      "classification": "non_quality_structural_counts",
+      "conflict_count": 0,
+      "conflict_rate": 0.0,
+      "diagnostic_count": 0,
+      "legal_edge_count": 42,
+      "provenance_counts": {
+        "multi_provenance_edge_count": 0,
+        "provenance_record_count": 42,
+        "scip_edge_count": 42,
+        "tree_sitter_edge_count": 0
+      },
+      "provenance_merge_rate": 0.0,
+      "relation_counts": {
+        "REFERENCES": 42
+      },
+      "scip_legal_edge_count": 42,
+      "unresolved_after": 0,
+      "unresolved_before": 0
+    },
+    "tree_sitter_conservative": {
+      "classification": "non_quality_structural_counts",
+      "conflict_count": 0,
+      "conflict_rate": 0.0,
+      "diagnostic_count": 30,
+      "legal_edge_count": 42,
+      "provenance_counts": {
+        "multi_provenance_edge_count": 0,
+        "provenance_record_count": 42,
+        "scip_edge_count": 0,
+        "tree_sitter_edge_count": 42
+      },
+      "provenance_merge_rate": 0.0,
+      "relation_counts": {
+        "REFERENCES": 42
+      },
+      "scip_legal_edge_count": 0,
+      "unresolved_after": null,
+      "unresolved_before": null
+    }
+  }
+}

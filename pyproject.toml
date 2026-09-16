@@ -1,0 +1,63 @@
+[project]
+name = "evidence-rag"
+version = "0.1.0"
+description = "Version-aware engineering evidence RAG for source code repositories"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "httpx>=0.28,<1.0",
+  "pydantic>=2.10,<3.0",
+  "python-dotenv>=1.0,<2.0",
+  "pyyaml>=6.0,<7.0",
+  "pypdf>=5.0,<7.0",
+  "python-docx>=1.1,<2.0",
+  "python-multipart>=0.0.20,<1.0",
+  "tree-sitter>=0.25.2,<0.26.0",
+  "tree-sitter-language-pack>=1.13,<2.0",
+  "uvicorn[standard]>=0.34,<1.0",
+  "cryptography>=45,<46",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.3,<10.0",
+  "pytest-cov>=6.0,<8.0",
+  "ruff>=0.11,<1.0",
+  "setuptools>=77",
+]
+
+[project.scripts]
+evidence-rag = "evidence_rag.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Linekiseo/tracewiki"
+Repository = "https://github.com/Linekiseo/tracewiki"
+Issues = "https://github.com/Linekiseo/tracewiki/issues"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501", "B008"]
+
+[tool.coverage.run]
+source = ["evidence_rag"]

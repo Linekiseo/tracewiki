@@ -1,0 +1,41 @@
+{
+  "mcp": {
+    "endpoint": "http://127.0.0.1:8000/mcp",
+    "transport": "streamable-http",
+    "status": "needs-token",
+    "authentication": "missing"
+  },
+  "plugin": {
+    "installed": false,
+    "location": "not-configured",
+    "version": null,
+    "name": "research-project-bridge"
+  },
+  "codex_cli": {
+    "available": false,
+    "location": "not-detected"
+  },
+  "permissions": {
+    "read": "automatic",
+    "write": "confirmation-required",
+    "delete": "unavailable",
+    "sandbox": "read-only"
+  },
+  "project_id": "project-rag",
+  "clients": [],
+  "capabilities": [],
+  "capability_snapshots": [],
+  "availability": "unavailable",
+  "reason": "plugin_missing",
+  "last_connected_at": null,
+  "sync": {
+    "status": "no_data",
+    "reason": "source_not_configured",
+    "source_status": "unconfigured",
+    "indexed_sessions": 0,
+    "source_count": 0,
+    "active_workflow": false,
+    "last_sync_at": null,
+    "data_available": false
+  }
+}

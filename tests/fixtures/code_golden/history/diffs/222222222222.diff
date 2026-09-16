@@ -1,0 +1,9 @@
+diff --git a/src/checkout/legacy_total.py b/src/checkout/totals.py
+similarity index 74%
+rename from src/checkout/legacy_total.py
+rename to src/checkout/totals.py
+@@
+-def legacy_round_total(amount: float) -> int:
+-    return int(amount)
++def round_total(amount: float) -> int:
++    return round(amount)

@@ -1,0 +1,1158 @@
+schema_version: code-golden-cases-v2
+dataset_id: code-golden
+dataset_version: code-golden-v2
+
+profiles:
+  controlled: &controlled
+    repository_id: repo://fixtures.invalid/code-golden/controlled-multilingual
+    ref_key: controlled_main
+    acl_refs: [acl://code-golden-v2/public]
+  project: &project
+    repository_id: repo://fixtures.invalid/code-golden/current-project-snapshot
+    ref_key: project_fixed_head
+    acl_refs: [acl://code-golden-v2/public]
+  history_dirty: &history_dirty
+    repository_id: repo://fixtures.invalid/code-golden/historical-error
+    ref_key: history_dirty
+    acl_refs: [acl://code-golden-v2/public]
+  history_release: &history_release
+    repository_id: repo://fixtures.invalid/code-golden/historical-error
+    ref_key: history_release_branch
+    acl_refs: [acl://code-golden-v2/public]
+  history_initial: &history_initial
+    repository_id: repo://fixtures.invalid/code-golden/historical-error
+    ref_key: history_initial
+    acl_refs: [acl://code-golden-v2/public]
+  history_main: &history_main
+    repository_id: repo://fixtures.invalid/code-golden/historical-error
+    ref_key: history_main
+    acl_refs: [acl://code-golden-v2/public]
+
+eligibility:
+  active: &active
+    status: eligible
+    reason:
+  historical: &historical
+    status: ineligible
+    reason: >-
+      C0-01 stores only the active CodeSymbol generation; the validator verifies this
+      historical target through CodeHistoryService.read_file, but C0-03 must not put
+      it in a retrieval-treatment denominator until historical symbol retrieval exists.
+  validation: &validation
+    status: ineligible
+    reason: >-
+      C0-01 ingestion does not consume repository validation artifacts and TestResult
+      IDs are generated at record time; the materializer executes the stable target,
+      but C0-03 must keep this case out of treatment denominators for now.
+
+cases:
+  - case_id: code-golden-v2-001
+    source_class: controlled_multilingual
+    task: exact_location
+    query: 金牌客户订单总价在哪里计算？
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [controlled_calculate_total]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_calculate_total, relevance_grade: 2, necessity_role: required, note: 实际总价入口}
+      - {target_key: controlled_tax_format_line, relevance_grade: -1, necessity_role: hard_negative, note: 同名格式化函数不是总价入口}
+    slices: [chinese, natural_language_to_code]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-002
+    source_class: controlled_multilingual
+    task: exact_location
+    query: Locate calculate_tax.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: identifier_heavy, graph_requirement: not_required}
+    expected_target_keys: [controlled_tax]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_tax, relevance_grade: 2, necessity_role: required, note: Exact tax implementation}
+      - {target_key: controlled_tax_format_line, relevance_grade: 0, necessity_role: irrelevant, note: Same file but unrelated}
+    slices: [english, identifier_heavy]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-003
+    source_class: controlled_multilingual
+    task: exact_location
+    query: Which method turns a subtotal into the final display line?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [controlled_price_quote]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_price_quote, relevance_grade: 2, necessity_role: required, note: Quote composes total and display}
+      - {target_key: controlled_js_format, relevance_grade: -1, necessity_role: hard_negative, note: Similar display wording in another language}
+    slices: [english, low_lexical_overlap, natural_language_to_code]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-004
+    source_class: current_project_snapshot
+    task: exact_location
+    query: Where is local or remote repository identity resolved?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *project, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [project_repository_resolver]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: project_repository_resolver, relevance_grade: 2, necessity_role: required, note: Resolver owner class}
+      - {target_key: project_ingestion_run, relevance_grade: 1, necessity_role: supporting, note: Calls the resolver but does not define it}
+    slices: [english, natural_language_to_code]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-005
+    source_class: current_project_snapshot
+    task: exact_location
+    query: IngestionService.run implementation
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *project, style: identifier_heavy, graph_requirement: not_required}
+    expected_target_keys: [project_ingestion_run]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: project_ingestion_run, relevance_grade: 2, necessity_role: required, note: Exact method}
+      - {target_key: project_build_records, relevance_grade: 1, necessity_role: supporting, note: Important callee but not requested definition}
+    slices: [english, identifier_heavy]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-006
+    source_class: controlled_multilingual
+    task: exact_location
+    query: 找到 Python 订单行的 format_line，不要税模块里的同名函数。
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: mixed, graph_requirement: harmful_if_expanded}
+    expected_target_keys: [controlled_format_line]
+    validation_target_keys: []
+    forbidden_target_keys: [controlled_tax_format_line]
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_format_line, relevance_grade: 2, necessity_role: required, note: 订单行实现}
+      - {target_key: controlled_tax_format_line, relevance_grade: -1, necessity_role: hard_negative, note: 明确排除的同名税格式化函数}
+    slices: [chinese, identifier_heavy, same_name_hard_negative, graph_harmful]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-007
+    source_class: controlled_multilingual
+    task: exact_location
+    query: Return the production implementation of generatedCharge.
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {<<: *controlled, style: identifier_heavy, graph_requirement: not_required}
+    expected_target_keys: []
+    validation_target_keys: []
+    forbidden_target_keys: [controlled_generated_charge]
+    required_path_keys: []
+    expected_context_roles: []
+    expected_answer_mode: missing_evidence
+    answerability: unanswerable
+    candidate_judgments:
+      - {target_key: controlled_generated_charge, relevance_grade: -1, necessity_role: excluded_source, note: Generated root is outside the ingest contract}
+    slices: [english, identifier_heavy, generated_vendor, unanswerable]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-008
+    source_class: controlled_multilingual
+    task: implementation
+    query: 金牌客户折扣规则如何实现？
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [controlled_apply_discount]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_apply_discount, relevance_grade: 2, necessity_role: required, note: 折扣分支定义}
+      - {target_key: controlled_tax, relevance_grade: 0, necessity_role: irrelevant, note: 税费不是折扣}
+    slices: [chinese, natural_language_to_code]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-009
+    source_class: controlled_multilingual
+    task: implementation
+    query: Explain how checkout total combines discount and tax.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: optional}
+    expected_target_keys: [controlled_calculate_total, controlled_apply_discount, controlled_tax]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_total_to_discount, controlled_total_to_tax]
+    expected_context_roles: [primary, dependency]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_calculate_total, relevance_grade: 2, necessity_role: required, note: Composition root}
+      - {target_key: controlled_apply_discount, relevance_grade: 2, necessity_role: required, note: Discount dependency}
+      - {target_key: controlled_tax, relevance_grade: 2, necessity_role: required, note: Tax dependency}
+    slices: [english, natural_language_to_code, graph_required]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-010
+    source_class: controlled_multilingual
+    task: implementation
+    query: How does the browser format the amount shown at checkout?
+    query_language: en
+    code_languages: [typescript]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: optional}
+    expected_target_keys: [controlled_ts_checkout, controlled_ts_money]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary, dependency]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_ts_money, relevance_grade: 2, necessity_role: required, note: Currency formatter}
+      - {target_key: controlled_js_format, relevance_grade: -1, necessity_role: hard_negative, note: Similar JavaScript helper not imported by checkout}
+    slices: [english, low_lexical_overlap, natural_language_to_code]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-011
+    source_class: current_project_snapshot
+    task: implementation
+    query: Explain how a local Git checkout gets its stable repository ID and dirty ref.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *project, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [project_local_resolver]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: project_local_resolver, relevance_grade: 2, necessity_role: required, note: Computes identity and dirty head}
+      - {target_key: project_resolve, relevance_grade: 1, necessity_role: supporting, note: Dispatches to local resolution}
+    slices: [english, low_lexical_overlap]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-012
+    source_class: current_project_snapshot
+    task: implementation
+    query: 历史文件读取如何解析 ref 并返回符号定位？
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *project, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [project_history_read_file]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: project_history_read_file, relevance_grade: 2, necessity_role: required, note: 读取并解析历史 blob}
+      - {target_key: project_local_resolver, relevance_grade: 0, necessity_role: irrelevant, note: 仓库解析不读取历史文件}
+    slices: [chinese, natural_language_to_code]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-013
+    source_class: historical_error
+    task: implementation
+    query: What uncommitted coupon logic can produce a negative subtotal?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_dirty, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [history_dirty_apply_coupon]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_dirty_apply_coupon, relevance_grade: 2, necessity_role: required, note: Dirty coupon branch returns -1}
+      - {target_key: history_dirty_tax, relevance_grade: 0, necessity_role: irrelevant, note: Tax helper does not introduce the negative subtotal}
+    slices: [english, dirty_current, low_lexical_overlap]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-014
+    source_class: controlled_multilingual
+    task: implementation
+    query: Show the total calculation from the private checkout source.
+    query_language: en
+    code_languages: [python]
+    query_profile:
+      <<: *controlled
+      style: natural_language
+      graph_requirement: not_required
+      acl_refs: [acl://code-golden-v2/denied]
+    expected_target_keys: []
+    validation_target_keys: []
+    forbidden_target_keys: [controlled_calculate_total]
+    required_path_keys: []
+    expected_context_roles: []
+    expected_answer_mode: refuse
+    answerability: forbidden
+    candidate_judgments:
+      - {target_key: controlled_calculate_total, relevance_grade: -1, necessity_role: forbidden, note: Relevant but outside the requested ACL}
+    slices: [english, acl_forbidden, unanswerable]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-015
+    source_class: controlled_multilingual
+    task: call_reference_path
+    query: Trace PriceEngine.quote to the total computation.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: identifier_heavy, graph_requirement: required}
+    expected_target_keys: [controlled_price_quote, controlled_calculate_total]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_quote_to_total]
+    expected_context_roles: [caller, callee]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_price_quote, relevance_grade: 2, necessity_role: required, note: Path source}
+      - {target_key: controlled_calculate_total, relevance_grade: 2, necessity_role: required, note: Path target}
+    slices: [english, identifier_heavy, graph_required]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-016
+    source_class: controlled_multilingual
+    task: call_reference_path
+    query: 总价计算会调用哪个折扣函数？
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: required}
+    expected_target_keys: [controlled_calculate_total, controlled_apply_discount]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_total_to_discount]
+    expected_context_roles: [caller, callee]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_apply_discount, relevance_grade: 2, necessity_role: required, note: 被调用的折扣实现}
+      - {target_key: controlled_tax_format_line, relevance_grade: -1, necessity_role: hard_negative, note: 无关同名格式化函数}
+    slices: [chinese, natural_language_to_code, graph_required]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-017
+    source_class: controlled_multilingual
+    task: call_reference_path
+    query: calculate_total CALLS calculate_tax
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: identifier_heavy, graph_requirement: required}
+    expected_target_keys: [controlled_calculate_total, controlled_tax]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_total_to_tax]
+    expected_context_roles: [caller, callee]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_tax, relevance_grade: 2, necessity_role: required, note: Exact callee}
+      - {target_key: controlled_tax_format_line, relevance_grade: -1, necessity_role: hard_negative, note: Same module but wrong symbol}
+    slices: [english, identifier_heavy, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-018
+    source_class: controlled_multilingual
+    task: call_reference_path
+    query: Which test directly calls the total calculator?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: required}
+    expected_target_keys: [controlled_calculate_total, controlled_gold_test]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_test_to_total]
+    expected_context_roles: [implementation, test]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_gold_test, relevance_grade: 2, necessity_role: required, note: Incoming CALLS edge from test}
+      - {target_key: controlled_regular_test, relevance_grade: 1, necessity_role: acceptable_support, note: Another direct test caller}
+    slices: [english, low_lexical_overlap, graph_required]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-019
+    source_class: historical_error
+    task: call_reference_path
+    query: Trace the dirty total function to the coupon defect.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_dirty, style: natural_language, graph_requirement: required}
+    expected_target_keys: [history_dirty_total, history_dirty_apply_coupon]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [history_dirty_total_to_coupon]
+    expected_context_roles: [caller, defect]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_dirty_total, relevance_grade: 2, necessity_role: required, note: Dirty path source}
+      - {target_key: history_dirty_apply_coupon, relevance_grade: 2, necessity_role: required, note: Dirty path target}
+    slices: [english, dirty_current, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-020
+    source_class: historical_error
+    task: call_reference_path
+    query: At release-v1, trace calculate_total to its rounding helper.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_release, style: natural_language, graph_requirement: required}
+    expected_target_keys: [history_release_total, history_release_round]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [history_release_total_to_round]
+    expected_context_roles: [caller, callee]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_release_total, relevance_grade: 2, necessity_role: required, note: Historical caller verified from blob}
+      - {target_key: history_release_round, relevance_grade: 2, necessity_role: required, note: Historical callee verified from blob}
+    slices: [english, wrong_version, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-021
+    source_class: controlled_multilingual
+    task: call_reference_path
+    query: Return only the checkout format_line definition; do not expand its graph.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: identifier_heavy, graph_requirement: harmful_if_expanded}
+    expected_target_keys: [controlled_format_line]
+    validation_target_keys: []
+    forbidden_target_keys: [controlled_tax_format_line]
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_format_line, relevance_grade: 2, necessity_role: required, note: Exact requested definition}
+      - {target_key: controlled_tax_format_line, relevance_grade: -1, necessity_role: hard_negative, note: Graph expansion would add the wrong same-name symbol}
+    slices: [english, identifier_heavy, same_name_hard_negative, graph_harmful]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-022
+    source_class: controlled_multilingual
+    task: bug_localization
+    query: The gold total is wrong; localize both the composition and discount branch.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: required}
+    expected_target_keys: [controlled_calculate_total, controlled_apply_discount]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_total_to_discount]
+    expected_context_roles: [symptom, cause]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_apply_discount, relevance_grade: 2, necessity_role: cause, note: Tier branch}
+      - {target_key: controlled_tax, relevance_grade: 1, necessity_role: supporting, note: Downstream arithmetic context}
+    slices: [english, natural_language_to_code, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-023
+    source_class: controlled_multilingual
+    task: bug_localization
+    query: Python format_line produces the wrong checkout label.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: mixed, graph_requirement: harmful_if_expanded}
+    expected_target_keys: [controlled_format_line]
+    validation_target_keys: []
+    forbidden_target_keys: [controlled_tax_format_line]
+    required_path_keys: []
+    expected_context_roles: [cause]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_format_line, relevance_grade: 2, necessity_role: cause, note: Checkout formatter}
+      - {target_key: controlled_tax_format_line, relevance_grade: -1, necessity_role: hard_negative, note: Same-name tax formatter}
+    slices: [english, same_name_hard_negative, graph_harmful]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-024
+    source_class: historical_error
+    task: bug_localization
+    query: 未提交的 BROKEN 优惠券为什么会让金额变成负数？
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *history_dirty, style: mixed, graph_requirement: required}
+    expected_target_keys: [history_dirty_apply_coupon, history_dirty_total]
+    validation_target_keys: [history_dirty_failing]
+    forbidden_target_keys: []
+    required_path_keys: [history_dirty_total_to_coupon]
+    expected_context_roles: [cause, caller, validation]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_dirty_apply_coupon, relevance_grade: 2, necessity_role: cause, note: 返回负数的分支}
+      - {target_key: history_dirty_tax, relevance_grade: -1, necessity_role: hard_negative, note: 税函数不是负数来源}
+    slices: [chinese, dirty_current, graph_required]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *validation
+
+  - case_id: code-golden-v2-025
+    source_class: historical_error
+    task: bug_localization
+    query: Is calculate_tax the source of the dirty negative-subtotal defect?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_dirty, style: natural_language, graph_requirement: optional}
+    expected_target_keys: [history_dirty_apply_coupon]
+    validation_target_keys: []
+    forbidden_target_keys: [history_dirty_tax]
+    required_path_keys: []
+    expected_context_roles: [cause]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_dirty_apply_coupon, relevance_grade: 2, necessity_role: cause, note: Actual source}
+      - {target_key: history_dirty_tax, relevance_grade: -1, necessity_role: hard_negative, note: Explicitly rejected hypothesis}
+    slices: [english, dirty_current, graph_harmful]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-026
+    source_class: current_project_snapshot
+    task: bug_localization
+    query: Repository ingest succeeds at resolve but fails while publishing parsed records; where is the orchestration?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *project, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [project_ingestion_run]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: project_ingestion_run, relevance_grade: 2, necessity_role: required, note: Orchestrates all stages}
+      - {target_key: project_build_records, relevance_grade: 1, necessity_role: supporting, note: Builds records within orchestration}
+    slices: [english, low_lexical_overlap]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-027
+    source_class: controlled_multilingual
+    task: bug_localization
+    query: The vendor charge helper is broken; identify our production source fix.
+    query_language: en
+    code_languages: [javascript]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: []
+    validation_target_keys: []
+    forbidden_target_keys: [controlled_vendor_charge]
+    required_path_keys: []
+    expected_context_roles: []
+    expected_answer_mode: missing_evidence
+    answerability: unanswerable
+    candidate_judgments:
+      - {target_key: controlled_vendor_charge, relevance_grade: -1, necessity_role: excluded_source, note: Vendor root cannot justify an internal production fix}
+    slices: [english, generated_vendor, unanswerable]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-028
+    source_class: controlled_multilingual
+    task: bug_localization
+    query: format_line is broken.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: identifier_heavy, graph_requirement: harmful_if_expanded}
+    expected_target_keys: []
+    validation_target_keys: []
+    forbidden_target_keys: [controlled_format_line, controlled_tax_format_line]
+    required_path_keys: []
+    expected_context_roles: []
+    expected_answer_mode: clarify
+    answerability: ambiguous
+    candidate_judgments:
+      - {target_key: controlled_format_line, relevance_grade: 1, necessity_role: alternative, note: Plausible checkout meaning}
+      - {target_key: controlled_tax_format_line, relevance_grade: 1, necessity_role: alternative, note: Plausible tax meaning}
+    slices: [english, same_name_hard_negative, unanswerable, graph_harmful]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-029
+    source_class: controlled_multilingual
+    task: impact_analysis
+    query: If calculate_total changes, which quote and test callers are directly affected?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: identifier_heavy, graph_requirement: required}
+    expected_target_keys: [controlled_calculate_total, controlled_price_quote, controlled_gold_test]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_quote_to_total, controlled_test_to_total]
+    expected_context_roles: [changed, caller, test]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_price_quote, relevance_grade: 2, necessity_role: impacted, note: Direct caller}
+      - {target_key: controlled_gold_test, relevance_grade: 2, necessity_role: impacted, note: Direct test caller}
+      - {target_key: controlled_js_format, relevance_grade: -1, necessity_role: hard_negative, note: Separate JavaScript helper}
+    slices: [english, identifier_heavy, graph_required]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-030
+    source_class: controlled_multilingual
+    task: impact_analysis
+    query: 修改折扣规则会直接影响哪个总价入口？
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: required}
+    expected_target_keys: [controlled_apply_discount, controlled_calculate_total]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_total_to_discount]
+    expected_context_roles: [changed, caller]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_calculate_total, relevance_grade: 2, necessity_role: impacted, note: 直接调用折扣}
+      - {target_key: controlled_tax, relevance_grade: -1, necessity_role: hard_negative, note: 并非折扣调用者}
+    slices: [chinese, natural_language_to_code, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-031
+    source_class: controlled_multilingual
+    task: impact_analysis
+    query: What checkout calculation directly depends on calculate_tax?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: required}
+    expected_target_keys: [controlled_tax, controlled_calculate_total]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_total_to_tax]
+    expected_context_roles: [changed, caller]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_calculate_total, relevance_grade: 2, necessity_role: impacted, note: Direct caller}
+      - {target_key: controlled_tax_format_line, relevance_grade: 0, necessity_role: irrelevant, note: Same file without call relation}
+    slices: [english, natural_language_to_code, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-032
+    source_class: controlled_multilingual
+    task: impact_analysis
+    query: Which implementation is upstream of the rendered quote?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *controlled, style: natural_language, graph_requirement: required}
+    expected_target_keys: [controlled_price_quote, controlled_calculate_total]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [controlled_quote_to_total]
+    expected_context_roles: [caller, dependency]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: controlled_calculate_total, relevance_grade: 2, necessity_role: dependency, note: Quote calls total}
+      - {target_key: controlled_ts_money, relevance_grade: -1, necessity_role: hard_negative, note: Similar rendering in another source file}
+    slices: [english, low_lexical_overlap, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-033
+    source_class: current_project_snapshot
+    task: impact_analysis
+    query: If local repository resolution changes, which resolver entry point owns that dispatch?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *project, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [project_resolve, project_local_resolver]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [caller, changed]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: project_resolve, relevance_grade: 2, necessity_role: impacted, note: Entry dispatch}
+      - {target_key: project_local_resolver, relevance_grade: 2, necessity_role: changed, note: Local implementation}
+    slices: [english, natural_language_to_code]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-034
+    source_class: historical_error
+    task: impact_analysis
+    query: What dirty calculation calls apply_coupon and therefore inherits its defect?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_dirty, style: natural_language, graph_requirement: required}
+    expected_target_keys: [history_dirty_apply_coupon, history_dirty_total]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: [history_dirty_total_to_coupon]
+    expected_context_roles: [changed, caller]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_dirty_total, relevance_grade: 2, necessity_role: impacted, note: Direct dirty caller}
+      - {target_key: history_dirty_tax, relevance_grade: 0, necessity_role: irrelevant, note: Separate dependency}
+    slices: [english, dirty_current, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-035
+    source_class: controlled_multilingual
+    task: impact_analysis
+    query: List private callers of calculate_total without checkout access.
+    query_language: en
+    code_languages: [python]
+    query_profile:
+      <<: *controlled
+      style: identifier_heavy
+      graph_requirement: required
+      acl_refs: [acl://code-golden-v2/denied]
+    expected_target_keys: []
+    validation_target_keys: []
+    forbidden_target_keys: [controlled_calculate_total, controlled_price_quote, controlled_gold_test]
+    required_path_keys: []
+    expected_context_roles: []
+    expected_answer_mode: refuse
+    answerability: forbidden
+    candidate_judgments:
+      - {target_key: controlled_price_quote, relevance_grade: -1, necessity_role: forbidden, note: Relevant caller but ACL denied}
+      - {target_key: controlled_gold_test, relevance_grade: -1, necessity_role: forbidden, note: Relevant test but ACL denied}
+    slices: [english, acl_forbidden, unanswerable, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *active
+
+  - case_id: code-golden-v2-036
+    source_class: historical_error
+    task: change_context
+    query: How did legacy_round_total become round_total between the first commit and release-v1?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_release, style: identifier_heavy, graph_requirement: not_required}
+    expected_target_keys: [history_initial_round, history_release_round]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [before, after]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_initial_round, relevance_grade: 2, necessity_role: before, note: Initial helper}
+      - {target_key: history_release_round, relevance_grade: 2, necessity_role: after, note: Renamed release helper}
+    slices: [english, identifier_heavy, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-037
+    source_class: historical_error
+    task: change_context
+    query: 说明 release-v1 的舍入总价如何在 main 中被税费总价替换。
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *history_main, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [history_release_total, history_main_total]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [before, after]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_release_total, relevance_grade: 2, necessity_role: before, note: release 版本}
+      - {target_key: history_main_total, relevance_grade: 2, necessity_role: after, note: main 版本}
+    slices: [chinese, natural_language_to_code, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-038
+    source_class: historical_error
+    task: change_context
+    query: What uncommitted coupon behavior differs from clean main?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_dirty, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [history_main_total, history_dirty_total, history_dirty_apply_coupon]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [base, dirty_change]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_dirty_apply_coupon, relevance_grade: 2, necessity_role: dirty_change, note: New uncommitted behavior}
+      - {target_key: history_main_total, relevance_grade: 2, necessity_role: base, note: Clean comparison point}
+    slices: [english, dirty_current, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-039
+    source_class: historical_error
+    task: change_context
+    query: Which real commits bracket the failing release validation and passing main validation?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_main, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [history_release_total, history_main_total]
+    validation_target_keys: [history_release_failing, history_main_passing]
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [before, after, validation]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_release_total, relevance_grade: 2, necessity_role: failing_ref, note: Release commit target}
+      - {target_key: history_main_total, relevance_grade: 2, necessity_role: passing_ref, note: Main commit target}
+    slices: [english, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *validation
+
+  - case_id: code-golden-v2-040
+    source_class: historical_error
+    task: change_context
+    query: Why did the author choose an 11% tax at release-v1?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_release, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: []
+    validation_target_keys: []
+    forbidden_target_keys: [history_release_total]
+    required_path_keys: []
+    expected_context_roles: []
+    expected_answer_mode: missing_evidence
+    answerability: unanswerable
+    candidate_judgments:
+      - {target_key: history_release_total, relevance_grade: 0, necessity_role: insufficient, note: Source contains no rationale and no 11 percent rule}
+    slices: [english, low_lexical_overlap, unanswerable, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-041
+    source_class: historical_error
+    task: historical_version
+    query: At the initial commit, where was legacy_round_total defined?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_initial, style: identifier_heavy, graph_requirement: not_required}
+    expected_target_keys: [history_initial_round]
+    validation_target_keys: []
+    forbidden_target_keys: [history_release_round]
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_initial_round, relevance_grade: 2, necessity_role: required, note: Exact initial symbol}
+      - {target_key: history_release_round, relevance_grade: -1, necessity_role: wrong_version, note: Later renamed symbol}
+    slices: [english, identifier_heavy, wrong_version]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-042
+    source_class: historical_error
+    task: historical_version
+    query: release-v1 使用哪个舍入函数？
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *history_release, style: natural_language, graph_requirement: required}
+    expected_target_keys: [history_release_total, history_release_round]
+    validation_target_keys: []
+    forbidden_target_keys: [history_initial_round]
+    required_path_keys: [history_release_total_to_round]
+    expected_context_roles: [caller, callee]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_release_round, relevance_grade: 2, necessity_role: required, note: release 舍入函数}
+      - {target_key: history_initial_round, relevance_grade: -1, necessity_role: wrong_version, note: 初始版本旧名称}
+    slices: [chinese, natural_language_to_code, wrong_version, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-043
+    source_class: historical_error
+    task: historical_version
+    query: In clean main, locate the tax-based total implementation.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_main, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [history_main_total]
+    validation_target_keys: []
+    forbidden_target_keys: [history_dirty_total]
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_main_total, relevance_grade: 2, necessity_role: required, note: Clean main symbol}
+      - {target_key: history_dirty_total, relevance_grade: -1, necessity_role: wrong_version, note: Dirty worktree symbol}
+    slices: [english, wrong_version, dirty_current]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-044
+    source_class: historical_error
+    task: historical_version
+    query: Resolve the v1.0.0 tag and return its round_total symbol.
+    query_language: en
+    code_languages: [python]
+    query_profile:
+      <<: *history_release
+      ref_key: history_release_tag
+      style: identifier_heavy
+      graph_requirement: not_required
+    expected_target_keys: [history_release_round]
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [primary]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_release_round, relevance_grade: 2, necessity_role: required, note: Tag points at the release symbol}
+    slices: [english, identifier_heavy, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility:
+      status: ineligible
+      reason: >-
+        The Git tag is real and verified by the materializer, but C0-01
+        CodeHistoryService does not index tags as resolvable refs.
+
+  - case_id: code-golden-v2-045
+    source_class: historical_error
+    task: historical_version
+    query: At release-v1, find apply_coupon.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_release, style: identifier_heavy, graph_requirement: not_required}
+    expected_target_keys: []
+    validation_target_keys: []
+    forbidden_target_keys: [history_dirty_apply_coupon]
+    required_path_keys: []
+    expected_context_roles: []
+    expected_answer_mode: missing_evidence
+    answerability: unanswerable
+    candidate_judgments:
+      - {target_key: history_dirty_apply_coupon, relevance_grade: -1, necessity_role: wrong_version, note: Symbol exists only in the dirty worktree}
+    slices: [english, identifier_heavy, wrong_version, unanswerable, dirty_current]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *historical
+
+  - case_id: code-golden-v2-046
+    source_class: historical_error
+    task: test_validation
+    query: Did validation pass at release-v1?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_release, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [history_release_total]
+    validation_target_keys: [history_release_failing]
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [implementation, validation]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_release_total, relevance_grade: 2, necessity_role: implementation, note: Code under validation}
+      - {target_key: history_dirty_total, relevance_grade: -1, necessity_role: wrong_version, note: Dirty code is not the release target}
+    slices: [english, wrong_version]
+    smoke: true
+    review: {status: delayed_reviewed, record_ids: [code-golden-v2-review-author, code-golden-v2-review-delayed]}
+    treatment_eligibility: *validation
+
+  - case_id: code-golden-v2-047
+    source_class: historical_error
+    task: test_validation
+    query: main 分支的确定性校验是否通过？
+    query_language: zh
+    code_languages: [python]
+    query_profile: {<<: *history_main, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [history_main_total]
+    validation_target_keys: [history_main_passing]
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [implementation, validation]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_main_total, relevance_grade: 2, necessity_role: implementation, note: main 被测实现}
+      - {target_key: history_release_total, relevance_grade: -1, necessity_role: wrong_version, note: release 不是 main}
+    slices: [chinese, natural_language_to_code, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *validation
+
+  - case_id: code-golden-v2-048
+    source_class: historical_error
+    task: test_validation
+    query: What is the dirty validation status after adding BROKEN coupon behavior?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_dirty, style: natural_language, graph_requirement: optional}
+    expected_target_keys: [history_dirty_apply_coupon, history_dirty_total]
+    validation_target_keys: [history_dirty_failing]
+    forbidden_target_keys: []
+    required_path_keys: [history_dirty_total_to_coupon]
+    expected_context_roles: [cause, validation]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_dirty_apply_coupon, relevance_grade: 2, necessity_role: cause, note: Dirty change}
+      - {target_key: history_main_total, relevance_grade: -1, necessity_role: wrong_version, note: Clean main is not the dirty target}
+    slices: [english, dirty_current, graph_required]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *validation
+
+  - case_id: code-golden-v2-049
+    source_class: historical_error
+    task: test_validation
+    query: Compare the failing release check with the passing main check.
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_main, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: [history_release_total, history_main_total]
+    validation_target_keys: [history_release_failing, history_main_passing]
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: [before, after, validation]
+    expected_answer_mode: direct
+    answerability: answerable
+    candidate_judgments:
+      - {target_key: history_release_total, relevance_grade: 2, necessity_role: failing_ref, note: Failing release implementation}
+      - {target_key: history_main_total, relevance_grade: 2, necessity_role: passing_ref, note: Passing main implementation}
+    slices: [english, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *validation
+
+  - case_id: code-golden-v2-050
+    source_class: historical_error
+    task: test_validation
+    query: Did the production integration suite pass for v2.1.0?
+    query_language: en
+    code_languages: [python]
+    query_profile: {<<: *history_main, style: natural_language, graph_requirement: not_required}
+    expected_target_keys: []
+    validation_target_keys: []
+    forbidden_target_keys: []
+    required_path_keys: []
+    expected_context_roles: []
+    expected_answer_mode: missing_evidence
+    answerability: unanswerable
+    candidate_judgments:
+      - {target_key: history_main_total, relevance_grade: 0, necessity_role: insufficient, note: Fixture has no v2.1.0 or production integration suite evidence}
+    slices: [english, unanswerable, wrong_version]
+    smoke: false
+    review: {status: reviewed, record_ids: [code-golden-v2-review-author]}
+    treatment_eligibility: *validation

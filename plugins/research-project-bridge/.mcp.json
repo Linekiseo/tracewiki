@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "research-project-bridge": {
+      "type": "http",
+      "url": "http://127.0.0.1:8000/mcp",
+      "bearer_token_env_var": "EVIDENCE_RAG_MCP_TOKEN",
+      "required": false,
+      "startup_timeout_sec": 10,
+      "tool_timeout_sec": 120,
+      "disabled_tools": []
+    }
+  }
+}

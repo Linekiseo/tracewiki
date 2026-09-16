@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "tests/pricing_cases.py", line 6, in test_gold_customer_discount
+    assert calculate_total(100.0, "US", "gold") == 96.3
+  File "src/checkout/pricing.py", line 17, in calculate_total
+    return taxable + calculate_tax(taxable, region)
+AssertionError: expected 96.3, got 96.30000000000001

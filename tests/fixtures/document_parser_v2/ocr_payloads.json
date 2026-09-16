@@ -1,0 +1,101 @@
+{
+  "mixed.pdf": {
+    "2": {
+      "blocks": [
+        {
+          "bbox": [
+            94.0,
+            126.0,
+            390.0,
+            158.0
+          ],
+          "block_type": "header",
+          "confidence": 0.99,
+          "text": "Mixed Scan Page Two"
+        },
+        {
+          "bbox": [
+            94.0,
+            198.0,
+            440.0,
+            220.0
+          ],
+          "block_type": "body",
+          "confidence": 0.98,
+          "text": "Finding: Mixed OCR accuracy is 91 percent."
+        }
+      ],
+      "ocr_text": "# Mixed Scan Page Two\n\nFinding: Mixed OCR accuracy is 91 percent.\n\nProvider payload: deterministic local fixture",
+      "status": "available"
+    },
+    "3": {
+      "blocks": [
+        {
+          "bbox": [
+            94.0,
+            126.0,
+            410.0,
+            158.0
+          ],
+          "block_type": "header",
+          "confidence": 0.99,
+          "text": "Mixed Scan Page Three"
+        },
+        {
+          "bbox": [
+            94.0,
+            198.0,
+            440.0,
+            220.0
+          ],
+          "block_type": "body",
+          "confidence": 0.98,
+          "text": "Limit: Third page needs local OCR fallback."
+        }
+      ],
+      "ocr_text": "# Mixed Scan Page Three\n\nLimit: Third page needs local OCR fallback.\n\nNo network provider is configured.",
+      "status": "available"
+    }
+  },
+  "scanned.pdf": {
+    "1": {
+      "blocks": [
+        {
+          "bbox": [
+            94.0,
+            126.0,
+            360.0,
+            158.0
+          ],
+          "block_type": "header",
+          "confidence": 0.99,
+          "text": "Scanned Evaluation"
+        },
+        {
+          "bbox": [
+            94.0,
+            198.0,
+            430.0,
+            220.0
+          ],
+          "block_type": "body",
+          "confidence": 0.98,
+          "text": "Claim: OCR Recall reaches 88.4 percent."
+        },
+        {
+          "bbox": [
+            94.0,
+            252.0,
+            290.0,
+            274.0
+          ],
+          "block_type": "body",
+          "confidence": 0.98,
+          "text": "Dataset: Local Fixture"
+        }
+      ],
+      "ocr_text": "# Scanned Evaluation\n\nClaim: OCR Recall reaches 88.4 percent.\n\nDataset: Local Fixture",
+      "status": "available"
+    }
+  }
+}

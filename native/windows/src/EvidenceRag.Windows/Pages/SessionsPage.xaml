@@ -1,0 +1,9 @@
+<Page x:Class="EvidenceRag.Windows.Pages.SessionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Padding="32" RowSpacing="16">
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+        <StackPanel Spacing="4"><TextBlock Style="{StaticResource PageTitle}" Text="研发会话"/><TextBlock Style="{StaticResource PageSubtitle}" Text="按项目分页读取真实 Codex 会话；列表不替代图谱中的代码影响关系。"/></StackPanel>
+        <ListView Grid.Row="1" ItemsSource="{Binding Sessions}"><ListView.ItemTemplate><DataTemplate><Border Style="{StaticResource CardBorder}" Margin="0,0,0,8"><Grid ColumnSpacing="16"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions><StackPanel Spacing="4"><TextBlock FontSize="17" FontWeight="SemiBold" Text="{Binding Title}"/><TextBlock Opacity="0.65" IsTextSelectionEnabled="True" Text="{Binding ThreadId}"/><TextBlock Text="{Binding UpdatedAt}"/></StackPanel><StackPanel Grid.Column="1"><TextBlock Text="{Binding Status}"/><StackPanel Orientation="Horizontal" Spacing="4"><TextBlock Text="项目"/><TextBlock Text="{Binding ItemCount}"/></StackPanel></StackPanel></Grid></Border></DataTemplate></ListView.ItemTemplate></ListView>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="8"><Button Content="上一页" IsEnabled="{Binding CanPrevious}" Click="Previous_Click"/><TextBlock VerticalAlignment="Center" Text="{Binding PageLabel}"/><Button Content="下一页" IsEnabled="{Binding CanNext}" Click="Next_Click"/><Button Content="刷新" Click="Refresh_Click"/><ProgressRing Width="20" Height="20" IsActive="{Binding IsBusy}"/><TextBlock Foreground="{ThemeResource SystemFillColorCriticalBrush}" Text="{Binding ErrorMessage}"/></StackPanel>
+    </Grid>
+</Page>

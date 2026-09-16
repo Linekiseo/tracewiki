@@ -1,0 +1,581 @@
+{
+  "acceptance": {
+    "audit_control_is_qualified_baseline": false,
+    "audit_control_run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+    "decision": "not-qualified",
+    "gates": [
+      {
+        "evidence": {
+          "execution_mode": "qualified",
+          "publisher": {
+            "class": "CodeDenseProfilePublisher",
+            "module": "evidence_rag.rag.sources.code.dense_v2",
+            "version": "code-dense-publication-v1"
+          },
+          "retriever": {
+            "channels": [
+              "exact",
+              "sparse",
+              "dense"
+            ],
+            "class": "CodeHybridV2Retriever",
+            "fusion": "deterministic-weighted-rrf-v2",
+            "index_family": "ast-v2",
+            "module": "evidence_rag.rag.sources.code.dense_v2",
+            "version": "code-hybrid-v2"
+          }
+        },
+        "gate": "production_component_identity",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "case_count": 33,
+          "result_count": 33
+        },
+        "gate": "complete_33_case_coverage",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "clean": true
+        },
+        "gate": "artifact_security",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "baseline": {
+            "available_cases": 6,
+            "denominator": 6.0,
+            "eligible_cases": 6,
+            "membership_case_count": 7,
+            "metric_name": "entity_recall@10",
+            "numerator": 5.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.8333333333333334
+          },
+          "delta": {
+            "direction": "higher",
+            "directional_delta": 0.16666666666666663,
+            "status": "available",
+            "treatment_minus_baseline": 0.16666666666666663
+          },
+          "membership": {
+            "canonical_case_ids": [
+              "code-golden-v2-001",
+              "code-golden-v2-002",
+              "code-golden-v2-003",
+              "code-golden-v2-004",
+              "code-golden-v2-005",
+              "code-golden-v2-006",
+              "code-golden-v2-007"
+            ],
+            "case_count": 7,
+            "case_membership_hash": "sha256:ca0588e6e5e177e95eec303594da460397a8fb1eece9a6cadf400078ff264f96"
+          },
+          "metric_denominator_equal": true,
+          "metric_name": "entity_recall@10",
+          "same_case_membership": true,
+          "scope": "exact",
+          "treatment": {
+            "available_cases": 6,
+            "denominator": 6.0,
+            "eligible_cases": 6,
+            "membership_case_count": 7,
+            "metric_name": "entity_recall@10",
+            "numerator": 6.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 1.0
+          }
+        },
+        "gate": "cb0_exact_non_regression",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "baseline": {
+            "available_cases": 6,
+            "denominator": 10.0,
+            "eligible_cases": 6,
+            "membership_case_count": 9,
+            "metric_name": "entity_recall@10",
+            "numerator": 10.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 1.0
+          },
+          "delta": {
+            "direction": "higher",
+            "directional_delta": 0.0,
+            "status": "available",
+            "treatment_minus_baseline": 0.0
+          },
+          "membership": {
+            "canonical_case_ids": [
+              "code-golden-v2-002",
+              "code-golden-v2-005",
+              "code-golden-v2-007",
+              "code-golden-v2-015",
+              "code-golden-v2-017",
+              "code-golden-v2-021",
+              "code-golden-v2-028",
+              "code-golden-v2-029",
+              "code-golden-v2-035"
+            ],
+            "case_count": 9,
+            "case_membership_hash": "sha256:72ea399fe97be26548c55f231ffbefeeb7a2ac06ffce32900b39634142d3e3a9"
+          },
+          "metric_denominator_equal": true,
+          "metric_name": "entity_recall@10",
+          "same_case_membership": true,
+          "scope": "identifier",
+          "treatment": {
+            "available_cases": 6,
+            "denominator": 10.0,
+            "eligible_cases": 6,
+            "membership_case_count": 9,
+            "metric_name": "entity_recall@10",
+            "numerator": 10.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 1.0
+          }
+        },
+        "gate": "cb0_identifier_non_regression",
+        "passed": true,
+        "reason": null,
+        "status": "passed"
+      },
+      {
+        "evidence": {
+          "baseline": {
+            "available_cases": 28,
+            "denominator": 44.0,
+            "eligible_cases": 28,
+            "membership_case_count": 33,
+            "metric_name": "expected_locator_recall@10",
+            "numerator": 37.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.8409090909090909
+          },
+          "delta": {
+            "direction": "higher",
+            "directional_delta": -0.2727272727272727,
+            "status": "available",
+            "treatment_minus_baseline": -0.2727272727272727
+          },
+          "membership": {
+            "canonical_case_ids": [
+              "code-golden-v2-001",
+              "code-golden-v2-002",
+              "code-golden-v2-003",
+              "code-golden-v2-004",
+              "code-golden-v2-005",
+              "code-golden-v2-006",
+              "code-golden-v2-007",
+              "code-golden-v2-008",
+              "code-golden-v2-009",
+              "code-golden-v2-010",
+              "code-golden-v2-011",
+              "code-golden-v2-012",
+              "code-golden-v2-013",
+              "code-golden-v2-014",
+              "code-golden-v2-015",
+              "code-golden-v2-016",
+              "code-golden-v2-017",
+              "code-golden-v2-018",
+              "code-golden-v2-019",
+              "code-golden-v2-021",
+              "code-golden-v2-022",
+              "code-golden-v2-023",
+              "code-golden-v2-025",
+              "code-golden-v2-026",
+              "code-golden-v2-027",
+              "code-golden-v2-028",
+              "code-golden-v2-029",
+              "code-golden-v2-030",
+              "code-golden-v2-031",
+              "code-golden-v2-032",
+              "code-golden-v2-033",
+              "code-golden-v2-034",
+              "code-golden-v2-035"
+            ],
+            "case_count": 33,
+            "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa"
+          },
+          "metric_denominator_equal": true,
+          "metric_name": "expected_locator_recall@10",
+          "same_case_membership": true,
+          "scope": "overall",
+          "treatment": {
+            "available_cases": 28,
+            "denominator": 44.0,
+            "eligible_cases": 28,
+            "membership_case_count": 33,
+            "metric_name": "expected_locator_recall@10",
+            "numerator": 25.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.5681818181818182
+          }
+        },
+        "gate": "cb0_locator_non_regression",
+        "passed": false,
+        "reason": "treatment regressed or comparison is unavailable against qualified C-B0",
+        "status": "failed"
+      },
+      {
+        "evidence": {
+          "baseline": {
+            "available_cases": 7,
+            "denominator": 10.0,
+            "eligible_cases": 7,
+            "membership_case_count": 7,
+            "metric_name": "entity_recall@10",
+            "numerator": 6.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.6
+          },
+          "delta": {
+            "direction": "higher",
+            "directional_delta": 0.0,
+            "status": "available",
+            "treatment_minus_baseline": 0.0
+          },
+          "membership": {
+            "canonical_case_ids": [
+              "code-golden-v2-003",
+              "code-golden-v2-010",
+              "code-golden-v2-011",
+              "code-golden-v2-013",
+              "code-golden-v2-018",
+              "code-golden-v2-026",
+              "code-golden-v2-032"
+            ],
+            "case_count": 7,
+            "case_membership_hash": "sha256:d36142ad74a0c7433a81ffdd29a07d8dfdda8cb1c12ac5aadf861a9a2f47032a"
+          },
+          "metric_denominator_equal": true,
+          "metric_name": "entity_recall@10",
+          "same_case_membership": true,
+          "scope": "low_overlap",
+          "treatment": {
+            "available_cases": 7,
+            "denominator": 10.0,
+            "eligible_cases": 7,
+            "membership_case_count": 7,
+            "metric_name": "entity_recall@10",
+            "numerator": 6.0,
+            "reason": null,
+            "status": "available",
+            "unavailable_cases": 0,
+            "value": 0.6
+          }
+        },
+        "gate": "cb1_audit_low_overlap_strict_improvement",
+        "passed": false,
+        "reason": "local-hash did not strictly improve low-overlap entity recall over the fixed NOT QUALIFIED C-B1 audit",
+        "status": "failed"
+      }
+    ],
+    "qualified_baseline_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+    "schema_version": "code-c-b2-acceptance-v1"
+  },
+  "artifact_set_hash": "sha256:24d0e24c92294e43fe310b9502b5ea47f0848b9f433561819bc0714b7f653667",
+  "artifacts": {
+    "attempt-audit.json": {
+      "bytes": 625,
+      "sha256": "sha256:cd576654e9d87c99c14a557730b5862aed55ce28c8e897238c6c13856571226c"
+    },
+    "coverage.json": {
+      "bytes": 14792,
+      "sha256": "sha256:ff560b034a6e27247033bac3011a967f84a211660fbdabbb2ad0a3af7ce41fa9"
+    },
+    "error-analysis.json": {
+      "bytes": 155678,
+      "sha256": "sha256:6ae60e2786f4ad128233d8ca7baff9908fd2a69607b7c0d4e9d2c1764f74b891"
+    },
+    "evaluation.sqlite3": {
+      "bytes": 10788864,
+      "sha256": "sha256:f9ee95f6b3a75e3d660aef5c0fb1236fbbf2cb3fa1f93e81e10b3cbdb35f9425"
+    },
+    "latency.json": {
+      "bytes": 12367,
+      "sha256": "sha256:789002c3a50410e747182eb5132c1c172e4bdec8cc780199e04b3530646d1ea2"
+    },
+    "materialization.json": {
+      "bytes": 28595,
+      "sha256": "sha256:64a6c244d4e8e54d85c9409b68cb8ce40704d7c37fcf1f5e80296d57841abf89"
+    },
+    "metrics.json": {
+      "bytes": 1408191,
+      "sha256": "sha256:50a82306835231a3f64c1f582915df076b39396b13fa33e77ded9353e6127512"
+    },
+    "slices.json": {
+      "bytes": 962722,
+      "sha256": "sha256:7abfe450601241524c2323e44545926909c804556c1533673948eae6894c3bdd"
+    },
+    "storage.json": {
+      "bytes": 1751,
+      "sha256": "sha256:e9e5f58630a83cb0c75d6bd1ac2e52bbcae47a887cbf692680000dad97bf4746"
+    }
+  },
+  "c3_02_gate_approved": true,
+  "completed_at": "2026-07-27T12:32:04.748055+00:00",
+  "config": {
+    "audit_control_is_qualified_baseline": false,
+    "audit_control_run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+    "capability_boundary": {
+      "available": [
+        "active-generation ast-v2 retrieval units",
+        "exact candidate retrieval",
+        "fielded sparse candidate retrieval",
+        "local-hash code_nl dense retrieval",
+        "complete embedding cache/vector publication",
+        "retrieval-unit identity and source locator projection"
+      ],
+      "unavailable": [
+        {
+          "capability": "learned local embedding candidates",
+          "reason": "Qwen/BGE/code-specific models are optional and unavailable without a local install."
+        },
+        {
+          "capability": "remote embedding candidates",
+          "reason": "C-B2 is offline-only unless a separately governed future run authorizes remote use."
+        },
+        {
+          "capability": "graph candidate expansion",
+          "reason": "C-B2 isolates dense + exact/sparse; graph treatment belongs to C4."
+        },
+        {
+          "capability": "historical and validation retrieval",
+          "reason": "The released 17 ineligible cases stay outside the fixed 33-case denominator."
+        }
+      ]
+    },
+    "channel_budget": {
+      "context_token_budget": 4000,
+      "dense_candidates": 40,
+      "exact_candidates": 20,
+      "graph_candidates": 0,
+      "graph_edge_budget": 0,
+      "graph_node_budget": 0,
+      "history_candidates": 0,
+      "sparse_candidates": 40,
+      "test_candidates": 0,
+      "total_candidates": 60
+    },
+    "context": "snippet-v1",
+    "graph_candidate": false,
+    "optional_candidates": [
+      {
+        "candidate": "Qwen3-Embedding-0.6B",
+        "reason": "not installed locally; C-B2 preparation forbids downloads and network access",
+        "status": "unavailable"
+      },
+      {
+        "candidate": "BGE-M3",
+        "reason": "not installed locally; C-B2 preparation forbids downloads and network access",
+        "status": "unavailable"
+      },
+      {
+        "candidate": "remote embedding upper bound",
+        "reason": "remote providers are disabled and no network execution is authorized",
+        "status": "unavailable"
+      }
+    ],
+    "profile": {
+      "batch_size": 64,
+      "dimension": 384,
+      "id": "code_nl/local-hash-v2",
+      "instruction": "",
+      "instruction_revision": "none-v1",
+      "locality": "local",
+      "max_tokens": 8192,
+      "model": "local-hash-v2",
+      "normalization_revision": "local-hash-v2",
+      "purpose": "code_nl",
+      "redaction_policy": "deny-secrets-v1",
+      "revision": "1"
+    },
+    "provider_provenance": {
+      "dimension": 384,
+      "locality": "local",
+      "model": "local-hash-v2",
+      "provider": "local-hash",
+      "revision": "2"
+    },
+    "publisher": {
+      "class": "CodeDenseProfilePublisher",
+      "module": "evidence_rag.rag.sources.code.dense_v2",
+      "version": "code-dense-publication-v1"
+    },
+    "qualified_baseline_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+    "rag_code_unit_builder": "ast-v2",
+    "reranker": "off",
+    "retriever": {
+      "channels": [
+        "exact",
+        "sparse",
+        "dense"
+      ],
+      "class": "CodeHybridV2Retriever",
+      "fusion": "deterministic-weighted-rrf-v2",
+      "index_family": "ast-v2",
+      "module": "evidence_rag.rag.sources.code.dense_v2",
+      "version": "code-hybrid-v2"
+    },
+    "schema_version": "code-c-b2-config-snapshot-v1",
+    "semantic_resolver": "off",
+    "sparse_index_version": "fts5-code-v2",
+    "top_k": 20,
+    "treatment": "C-B2 local dense + exact/sparse"
+  },
+  "config_fingerprint": "sha256:a02c99c77d1c7ca2886837eeaaa439eb09edfd3b4d320f4c07b8c494ff33af84",
+  "controls": {
+    "audit_control": {
+      "artifact_directory": "33f76ed55a3d4c9ab1060a54bfa13d35",
+      "artifact_set_hash": "sha256:8804f5338a3284e4bd877e3b3e28365c0a67553e2a9db18a1dede3e644778f50",
+      "manifest_canonical_hash": "sha256:868a89a906e176cc9a94ac6a7d151266ae73291bb9e6d4b9fa7386c1f3a85355",
+      "qualification_use": "forbidden",
+      "run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+      "treatment_qualified": false
+    },
+    "qualified_baseline": {
+      "artifact_directory": "5a92eafdff5d49e6aae8bb55fdc14061",
+      "artifact_set_hash": "sha256:9d9f3bc86a2e9e0419db54a85b89156c7593596a1903a940e2e37f8c1e33ab44",
+      "manifest_canonical_hash": "sha256:6ef5a2f1b3c82ed9007da41fd17d07ad8fd64fd0f12532b2751dc0dd510035ca",
+      "qualification_record_hash": "sha256:9ba8081fa67285e5e9d418703b53d1ffc42562f33e24de2028afeaaa223a034f",
+      "run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061"
+    }
+  },
+  "dataset": {
+    "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+    "eligible_cases": 33,
+    "id": "code-golden",
+    "ineligible_cases": 17,
+    "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+    "release_record_id": "code-golden-v2-release-001",
+    "total_cases": 50,
+    "version": "code-golden-v2"
+  },
+  "display_key": "CODE-EVAL-6FAD2DD1",
+  "execution_mode": "qualified",
+  "implementation": {
+    "evaluation_runner": "code-evaluation-v2.1",
+    "input_fingerprint": {
+      "cb0_qualified_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "cb1_audit_is_qualified_baseline": false,
+      "cb1_audit_run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+      "cb2_treatment_input_hash": "sha256:1ab89bd08a78733a33942f585f6a465fcbc3cef0566fadae543e3f26ddb57fe3",
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "implementation_input_hash": "sha256:97f2d91a2872d0a5eec20779bcaf78efed52f27d417290fb7b29bededaa9301c",
+      "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+      "profile_fingerprint": "sha256:bd1cb491c743aeb3ee4a94ea74427e13d5cf3c9f6b51d915655080fc854f359d",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:3c74c5ff38719d9e6c9c5c18c19bcdc4f20187145bdcbefd8c3c5e2d8b03b977",
+      "workspace_status_hash": "sha256:e8419599ef56e55f4a7f0a74e0d0ba7fd5d5437b17c24892ac04c81447da9568",
+      "worktree_list_hash": "sha256:f752ead7f0430a859108ac8788410a4332b4c14d2d23c14107566b552924688e"
+    },
+    "input_fingerprint_after": {
+      "cb0_qualified_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "cb1_audit_is_qualified_baseline": false,
+      "cb1_audit_run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+      "cb2_treatment_input_hash": "sha256:1ab89bd08a78733a33942f585f6a465fcbc3cef0566fadae543e3f26ddb57fe3",
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "implementation_input_hash": "sha256:97f2d91a2872d0a5eec20779bcaf78efed52f27d417290fb7b29bededaa9301c",
+      "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+      "profile_fingerprint": "sha256:bd1cb491c743aeb3ee4a94ea74427e13d5cf3c9f6b51d915655080fc854f359d",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:3c74c5ff38719d9e6c9c5c18c19bcdc4f20187145bdcbefd8c3c5e2d8b03b977",
+      "workspace_status_hash": "sha256:e8419599ef56e55f4a7f0a74e0d0ba7fd5d5437b17c24892ac04c81447da9568",
+      "worktree_list_hash": "sha256:f752ead7f0430a859108ac8788410a4332b4c14d2d23c14107566b552924688e"
+    },
+    "input_fingerprint_matched": true,
+    "runner": "code-c-b2-runner-v1"
+  },
+  "project_id": "project-code-golden-v2",
+  "run_id": "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064",
+  "schema_version": "code-c-b2-dense-treatment-artifact-v1",
+  "security": {
+    "absolute_temporary_paths_included": false,
+    "credentials_included": false,
+    "network_used": false,
+    "portable_placeholders": [
+      "<redacted-temp-path>"
+    ],
+    "scanner_rule_ids": [
+      "portable-system-temp-roots-v1",
+      "high-confidence-credential-assignments-v1"
+    ],
+    "scanner_scope": "all SQLite TEXT columns and all artifact JSON files"
+  },
+  "snapshot": {
+    "case_membership_hash": "sha256:91a5ab7c4d61fbb4d6b587d77e06a264ca38372745897663fd2fee7e3c1d5f74",
+    "comparison_fingerprint": "sha256:d002b4047aa0e1e0cd68dd7766fd5360a6268978a12b3749b9c643c34dab4773",
+    "observed_index_generations": [
+      "gen-114f0662-c69c-4114-8083-8d8589dfa2ae",
+      "gen-35cbd60a-fac0-4f32-9499-cbe6acf22399",
+      "gen-9b5e50a8-4753-4b54-9832-fe9af42009d0"
+    ],
+    "observed_retriever": {
+      "embedding_model": [
+        "local-hash-v2"
+      ],
+      "embedding_model_revision": [
+        "2"
+      ],
+      "embedding_profile_id": [
+        "code_nl/local-hash-v2"
+      ],
+      "embedding_profile_revision": [
+        "1"
+      ],
+      "fusion": [
+        "deterministic-weighted-rrf-v2"
+      ],
+      "graph_candidate_enabled": false,
+      "index_version": [
+        "code-hybrid-v2:index-set-0af3c397a621e75d",
+        "code-hybrid-v2:index-set-8f85fac21244d43c",
+        "code-hybrid-v2:index-set-f8d71f16d18f2206"
+      ],
+      "publisher_version": [
+        "code-dense-publication-v1"
+      ],
+      "retriever_version": [
+        "code-hybrid-v2"
+      ],
+      "unit_builder_version": [
+        "ast-v2"
+      ]
+    },
+    "schema_version": 191,
+    "snapshot_id": "sha256:f409cca72b5ae56f58e0060e1d352bb8da8ea77acdfd5531ffabcf24b6a3abc0"
+  },
+  "started_at": "2026-07-27T12:31:58.832697+00:00",
+  "status": "completed",
+  "treatment_qualified": false
+}

@@ -1,0 +1,47 @@
+{
+  "artifact_id": "a22b322a141741ae9a710aa347fbf032",
+  "executed_at_utc": "2026-07-28T07:18:14+00:00",
+  "formal_database_before": {
+    "exists": true,
+    "mtime_ns": 1785136263772927732,
+    "path": "var/evidence-rag.sqlite3",
+    "sha256": "sha256:9b1710e77ecff9b6c8b6ebd4a86cc6d8242900e6ae79f6bfbaf953c3c3b2546b",
+    "sidecars": {
+      "-shm": {
+        "exists": false,
+        "mtime_ns": null,
+        "sha256": null,
+        "size": null
+      },
+      "-wal": {
+        "exists": false,
+        "mtime_ns": null,
+        "sha256": null,
+        "size": null
+      }
+    },
+    "size": 1915490304
+  },
+  "isolation": {
+    "database": "artifact-local-isolated-sqlite",
+    "formal_database_writes": false,
+    "network_execution": false,
+    "old_run_writes": false
+  },
+  "old_run_tree_before": {
+    "file_count": 111,
+    "tree_hash": "sha256:773a2dcdafda010f840fbaf0bf06f0b6747daafa473efede385e236076ff15be"
+  },
+  "pipeline_profile": "golden-python30-three-arm-production-v1",
+  "portable_contract": {
+    "absolute_or_temporary_paths": "absent",
+    "canonical_json": true,
+    "credential_assignments": "absent",
+    "pyc_or_pycache": "absent",
+    "symlinks": "absent",
+    "wal_shm_sidecars": "absent"
+  },
+  "run_id": "evaluation-run://project-code-golden-v2/a22b322a141741ae9a710aa347fbf032",
+  "schema_version": "code-c-b4-security-v1",
+  "status": "clean"
+}

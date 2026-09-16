@@ -1,0 +1,36 @@
+{
+  "not_found": {
+    "status": 404,
+    "body": {
+      "detail": "project not found"
+    }
+  },
+  "validation": {
+    "status": 422,
+    "body": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "project_id"
+          ],
+          "msg": "Field required",
+          "input": null
+        }
+      ]
+    }
+  },
+  "provider_failure": {
+    "status": 502,
+    "body": {
+      "detail": "llm_provider_test_failed"
+    }
+  },
+  "query_provider_failure": {
+    "status": 502,
+    "body": {
+      "detail": "answer_provider_failed"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "commit": "3333333333333333333333333333333333333333",
+  "selector": "tests/pricing_cases.py::test_total_with_tax",
+  "status": "passed",
+  "exit_code": 0,
+  "observed": true
+}

@@ -1,0 +1,22 @@
+{
+  "canonical_json": true,
+  "clean": true,
+  "credential_assignment_findings": 0,
+  "downloads_performed": false,
+  "finding_locations": {
+    "json_credentials": [],
+    "json_temporary_paths": [],
+    "sqlite_credentials": [],
+    "sqlite_temporary_paths": []
+  },
+  "json_files_scanned": 8,
+  "network_used": false,
+  "portable_sqlite": true,
+  "pyc_pycache_absent": true,
+  "schema_version": "code-c-b3-security-v1",
+  "scope": "all SQLite TEXT columns and all artifact JSON files",
+  "sqlite_text_columns_scanned": 874,
+  "sqlite_text_values_scanned": 92244,
+  "temporary_path_findings": 0,
+  "wal_shm_absent": true
+}

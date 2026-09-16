@@ -1,0 +1,75 @@
+name: Project CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: project-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    name: Backend / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      UV_NO_SYNC: "1"
+      RAG_DATA_DIR: ${{ runner.temp }}/evidence-rag-ci-${{ matrix.python-version }}
+      RAG_ALLOWED_LOCAL_ROOTS: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Restore frozen Code Golden history
+        run: >-
+          git fetch tests/fixtures/g0_history/code-golden-v2-history.bundle
+          refs/heads/code-golden-v2-source:refs/heads/code-golden-v2-source
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.14"
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+      - name: Install locked test environment
+        run: uv sync --frozen --extra test
+      - name: Verify backend
+        run: make backend-full
+
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Pin npm runtime
+        run: |
+          npm install --global npm@11.17.0 --ignore-scripts
+          test "$(npm --version)" = "11.17.0"
+      - name: Install locked dependencies
+        run: npm --prefix frontend ci
+      - name: Verify tests
+        run: npm --prefix frontend test -- --run
+      - name: Verify types
+        run: npm --prefix frontend run typecheck
+      - name: Verify production build
+        run: npm --prefix frontend run build

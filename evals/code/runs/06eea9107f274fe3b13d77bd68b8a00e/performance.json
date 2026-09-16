@@ -1,0 +1,236 @@
+{
+  "arms": {
+    "ast_enclosing": {
+      "observations": [
+        {
+          "case_id": "cb6-add",
+          "duration_ns": 4076792,
+          "peak_memory_bytes": 125213
+        },
+        {
+          "case_id": "cb6-ambiguous",
+          "duration_ns": 4067334,
+          "peak_memory_bytes": 127485
+        },
+        {
+          "case_id": "cb6-binary",
+          "duration_ns": 3383000,
+          "peak_memory_bytes": 123986
+        },
+        {
+          "case_id": "cb6-class-level",
+          "duration_ns": 3863584,
+          "peak_memory_bytes": 125985
+        },
+        {
+          "case_id": "cb6-delete",
+          "duration_ns": 3849209,
+          "peak_memory_bytes": 125794
+        },
+        {
+          "case_id": "cb6-file-top-level",
+          "duration_ns": 3865792,
+          "peak_memory_bytes": 127453
+        },
+        {
+          "case_id": "cb6-function-body",
+          "duration_ns": 3905208,
+          "peak_memory_bytes": 126899
+        },
+        {
+          "case_id": "cb6-function-signature",
+          "duration_ns": 4168500,
+          "peak_memory_bytes": 127297
+        },
+        {
+          "case_id": "cb6-multi-symbol",
+          "duration_ns": 4319709,
+          "peak_memory_bytes": 129851
+        },
+        {
+          "case_id": "cb6-rename",
+          "duration_ns": 4072333,
+          "peak_memory_bytes": 127245
+        },
+        {
+          "case_id": "cb6-whitespace-only",
+          "duration_ns": 3523666,
+          "peak_memory_bytes": 123617
+        },
+        {
+          "case_id": "cb6-wrong-parent",
+          "duration_ns": 1625,
+          "peak_memory_bytes": 0
+        }
+      ],
+      "summary": {
+        "latency_ms": {
+          "p50": 3.865792,
+          "p95": 4.319709
+        },
+        "memory_bytes": {
+          "p50": 125985,
+          "p95": 129851,
+          "peak": 129851
+        },
+        "observation_count": 12
+      }
+    },
+    "ast_rename_lineage_merged": {
+      "observations": [
+        {
+          "case_id": "cb6-add",
+          "duration_ns": 3758125,
+          "peak_memory_bytes": 126977
+        },
+        {
+          "case_id": "cb6-ambiguous",
+          "duration_ns": 3954750,
+          "peak_memory_bytes": 129249
+        },
+        {
+          "case_id": "cb6-binary",
+          "duration_ns": 3327625,
+          "peak_memory_bytes": 125750
+        },
+        {
+          "case_id": "cb6-class-level",
+          "duration_ns": 4115000,
+          "peak_memory_bytes": 127749
+        },
+        {
+          "case_id": "cb6-delete",
+          "duration_ns": 4244750,
+          "peak_memory_bytes": 128070
+        },
+        {
+          "case_id": "cb6-file-top-level",
+          "duration_ns": 4296250,
+          "peak_memory_bytes": 129217
+        },
+        {
+          "case_id": "cb6-function-body",
+          "duration_ns": 4032958,
+          "peak_memory_bytes": 128663
+        },
+        {
+          "case_id": "cb6-function-signature",
+          "duration_ns": 4048667,
+          "peak_memory_bytes": 129573
+        },
+        {
+          "case_id": "cb6-multi-symbol",
+          "duration_ns": 4383875,
+          "peak_memory_bytes": 132127
+        },
+        {
+          "case_id": "cb6-rename",
+          "duration_ns": 4326417,
+          "peak_memory_bytes": 129009
+        },
+        {
+          "case_id": "cb6-whitespace-only",
+          "duration_ns": 3622500,
+          "peak_memory_bytes": 125381
+        },
+        {
+          "case_id": "cb6-wrong-parent",
+          "duration_ns": 1208,
+          "peak_memory_bytes": 0
+        }
+      ],
+      "summary": {
+        "latency_ms": {
+          "p50": 4.032958,
+          "p95": 4.383875
+        },
+        "memory_bytes": {
+          "p50": 128070,
+          "p95": 132127,
+          "peak": 132127
+        },
+        "observation_count": 12
+      }
+    },
+    "line_overlap_legacy": {
+      "observations": [
+        {
+          "case_id": "cb6-add",
+          "duration_ns": 2114042,
+          "peak_memory_bytes": 108033
+        },
+        {
+          "case_id": "cb6-ambiguous",
+          "duration_ns": 2297792,
+          "peak_memory_bytes": 110113
+        },
+        {
+          "case_id": "cb6-binary",
+          "duration_ns": 1628625,
+          "peak_memory_bytes": 105758
+        },
+        {
+          "case_id": "cb6-class-level",
+          "duration_ns": 2028000,
+          "peak_memory_bytes": 109125
+        },
+        {
+          "case_id": "cb6-delete",
+          "duration_ns": 1982125,
+          "peak_memory_bytes": 109254
+        },
+        {
+          "case_id": "cb6-file-top-level",
+          "duration_ns": 2414250,
+          "peak_memory_bytes": 110913
+        },
+        {
+          "case_id": "cb6-function-body",
+          "duration_ns": 2315750,
+          "peak_memory_bytes": 110359
+        },
+        {
+          "case_id": "cb6-function-signature",
+          "duration_ns": 2242417,
+          "peak_memory_bytes": 110757
+        },
+        {
+          "case_id": "cb6-multi-symbol",
+          "duration_ns": 2451083,
+          "peak_memory_bytes": 113311
+        },
+        {
+          "case_id": "cb6-rename",
+          "duration_ns": 2162375,
+          "peak_memory_bytes": 110705
+        },
+        {
+          "case_id": "cb6-whitespace-only",
+          "duration_ns": 1914209,
+          "peak_memory_bytes": 107077
+        },
+        {
+          "case_id": "cb6-wrong-parent",
+          "duration_ns": 1375,
+          "peak_memory_bytes": 0
+        }
+      ],
+      "summary": {
+        "latency_ms": {
+          "p50": 2.114042,
+          "p95": 2.451083
+        },
+        "memory_bytes": {
+          "p50": 109254,
+          "p95": 113311,
+          "peak": 113311
+        },
+        "observation_count": 12
+      }
+    }
+  },
+  "measurement_source": "per-case-perf-counter-ns-and-tracemalloc-peak",
+  "observation_count_per_arm": 12,
+  "run_id": "evaluation-run://project-code-cb6-v1/06eea9107f274fe3b13d77bd68b8a00e",
+  "schema_version": "code-c-b6-performance-v1"
+}

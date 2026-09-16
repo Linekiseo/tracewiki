@@ -1,0 +1,16 @@
+diff --git a/src/checkout/totals.py b/src/checkout/pricing.py
+similarity index 61%
+rename from src/checkout/totals.py
+rename to src/checkout/pricing.py
+@@
+-def round_total(amount: float) -> int:
+-    return round(amount)
+-
+-
+-def calculate_total(subtotal: float, tax_rate: float) -> float:
+-    return subtotal * (1 + tax_rate)
++from .tax import compute_tax as calculate_tax
++
++
++def calculate_total(subtotal: float, region: str) -> float:
++    return subtotal + calculate_tax(subtotal, region)

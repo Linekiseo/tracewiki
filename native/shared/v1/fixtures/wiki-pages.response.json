@@ -1,0 +1,62 @@
+{
+  "project_id": "project-rag",
+  "generation_id": "wiki-generation-native-contract-v1",
+  "total": 1,
+  "offset": 0,
+  "limit": 50,
+  "next_offset": null,
+  "pages": [
+    {
+      "fragment_id": "fragment-native-contract-v1",
+      "logical_path": "/components/query-service",
+      "page_type": "component",
+      "title": "查询服务",
+      "summary": "由可核验代码证据编译的查询服务说明。",
+      "aliases": [],
+      "tags": [
+        "query"
+      ],
+      "scope": {
+        "project_id": "project-rag",
+        "visibility_partition": "vis-bbc9a6f0046ffb6ecd6cf6b9",
+        "acl_refs": [
+          "project:project-rag"
+        ],
+        "source_generations": [
+          {
+            "source": "code",
+            "generation_id": "source-code-native-contract-v1",
+            "watermark": "watermark-code-native-contract-v1",
+            "content_sha256": "sha256:921debc48e744d5883b678ac94b355eea1f67f65139edc7e2ce85180dffc8c5f"
+          }
+        ],
+        "as_of": "2026-08-04T00:00:00Z"
+      },
+      "source_refs": [
+        {
+          "source_ref_id": "source-ref-native-contract-v1",
+          "source": "code",
+          "entity_type": "code.CodeSymbol",
+          "entity_id": "entity-native-contract-v1",
+          "locator": "code://project-rag/symbol/query-service",
+          "generation_id": "source-code-native-contract-v1",
+          "watermark": "watermark-code-native-contract-v1",
+          "acl_refs": [
+            "project:project-rag"
+          ],
+          "observed_at": "2026-08-04T00:00:00Z",
+          "raw_content_sha256": "sha256:765eaa28adf7c092fb270b35d11a2d2d88acc447088f9baae32cd595656b21ae",
+          "content_sha256": "sha256:7b988b5a97070f10d88b0906dd4086fd103f2bd5b263b67d20a8074cc92e4fb5"
+        }
+      ],
+      "facts": [],
+      "links": [],
+      "evidence_roles": [
+        "implementation"
+      ],
+      "compiler_version": "evidence-compiled-wiki-v1",
+      "contract_version": "agent-native-wiki-contract-v1",
+      "content_sha256": "sha256:0578d2b8fab20da6b44e8de5bebd537c4c3a6f2a6645dc9022b906fd3317d0eb"
+    }
+  ]
+}

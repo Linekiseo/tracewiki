@@ -1,0 +1,33 @@
+{
+  "ast_unit_count": 425,
+  "cb0_comparison": {
+    "baseline_active_code_index_logical_bytes": 313932,
+    "baseline_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+    "logical_index_bytes_delta": {
+      "measurement": "logical indexed payload bytes",
+      "status": "available",
+      "treatment_minus_baseline": 901832
+    },
+    "physical_index_bytes_delta": {
+      "reason": "C-B0 and C-B1 do not expose the same SQLite physical index family; both absolute values remain reported without inventing a delta.",
+      "status": "unavailable",
+      "value": null
+    },
+    "treatment_exact_sparse_index_logical_bytes": 1215764
+  },
+  "database_bytes": 8634368,
+  "exact_sparse_index_logical_bytes": 1215764,
+  "exact_sparse_index_physical_bytes": {
+    "source": "SQLite dbstat",
+    "status": "available",
+    "value": 3588096
+  },
+  "fts_row_count": 425,
+  "run_id": "evaluation-run://project-code-golden-v2/ee42ee27441a4361a2ec40f483c26be1",
+  "schema_version": "code-c-b1-storage-v1",
+  "sqlite_free_bytes": 0,
+  "sqlite_free_pages": 0,
+  "sqlite_page_count": 2108,
+  "sqlite_page_size": 4096,
+  "vector_count": 0
+}

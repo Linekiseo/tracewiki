@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "absolute_path_free": "passed",
+    "canonical_json": "passed",
+    "isolated_sqlite": "passed",
+    "portable_relative_identifiers": "passed",
+    "pyc_free": "passed",
+    "regular_files_only": "passed",
+    "secret_free": "passed",
+    "symlink_free": "passed",
+    "wal_shm_free": "passed"
+  },
+  "finding_count": 0,
+  "run_id": "evaluation-run://project-code-cb6-v1/06eea9107f274fe3b13d77bd68b8a00e",
+  "schema_version": "code-c-b6-security-v1",
+  "status": "clean"
+}

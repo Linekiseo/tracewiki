@@ -1,0 +1,38 @@
+{
+  "contract_version": "query-history-v1",
+  "project_id": "project-rag",
+  "items": [
+    {
+      "id": "audit://native-contract-v1",
+      "created_at": "2026-08-04T00:00:00+00:00",
+      "query_id": "global-query://native-contract-v1",
+      "trace_id": "00000000000000000000000000000000",
+      "question_digest": "sha256:642416ba6e8173ba6fe337523e77b275cc221f0b85b474a8fe4e04809259465f",
+      "intent": "current_implementation",
+      "resolved_scope": {
+        "project_id": "project-rag",
+        "repository_ids": [],
+        "branch": null,
+        "commit": null,
+        "as_of": "2026-08-04T00:00:00+00:00",
+        "source_types": [
+          "code",
+          "codex"
+        ]
+      },
+      "interaction_state": "refused",
+      "answer_mode": "refusal",
+      "reason_code": "insufficient_evidence",
+      "source_status": {},
+      "evidence": {
+        "citation_ids": [],
+        "sources": [],
+        "entity_ids": [],
+        "count": 0
+      },
+      "consistency_watermark": {
+        "index_generations": []
+      }
+    }
+  ]
+}

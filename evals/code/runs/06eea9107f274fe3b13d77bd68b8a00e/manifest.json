@@ -1,0 +1,85 @@
+{
+  "artifact_files": {
+    "evaluation.sqlite3": {
+      "bytes": 86016,
+      "sha256": "sha256:12fda1b7f3625f3658b411d0f8aa3fb7c7b29539887a057e90365979d4497255"
+    },
+    "labels.json": {
+      "bytes": 17681,
+      "sha256": "sha256:b051e0bcf27b491349c55951983e81622b0954a5e474b8f6637955e6f5c0e2ed"
+    },
+    "metrics.json": {
+      "bytes": 12524,
+      "sha256": "sha256:633aa2bbcaae8ae65f170e7e67f66e9cddb0ba2360b933309ff1625b1d2569bd"
+    },
+    "performance.json": {
+      "bytes": 5984,
+      "sha256": "sha256:34d7673c97eb50150b72bab034018b502bf6dc6eee2e60352bfad280113e4aef"
+    },
+    "results.json": {
+      "bytes": 610223,
+      "sha256": "sha256:2b7477bb89bc7d1fedcc0636f36ad5994435d4743501367e85812a7f9c3e08c0"
+    },
+    "security.json": {
+      "bytes": 493,
+      "sha256": "sha256:fdccedea4d6de642e132011eba240367dd6b7099913106f1c2fbfadd1519b058"
+    }
+  },
+  "artifact_set_hash": "sha256:746819b679dc29ae6ae07c3b39d6222aff4f779d348eab2d2f5d2b5d8a25cec9",
+  "controls": {
+    "audit_controls": {
+      "C-B1": {
+        "qualification_use": "forbidden",
+        "run_id": "evaluation-run://project-code-golden-v2/33f76ed55a3d4c9ab1060a54bfa13d35",
+        "treatment_qualified": false
+      },
+      "C-B2": {
+        "qualification_use": "forbidden",
+        "run_id": "evaluation-run://project-code-golden-v2/6fad2dd1c67846668ba38045ddae0064",
+        "treatment_qualified": false
+      },
+      "C-B3": {
+        "qualification_use": "forbidden",
+        "run_id": "evaluation-run://project-code-golden-v2/92f8d8e190f449bab9ba253227473419",
+        "treatment_qualified": false
+      },
+      "C-B4": {
+        "qualification_use": "forbidden",
+        "run_id": "evaluation-run://project-code-golden-v2/a22b322a141741ae9a710aa347fbf032",
+        "treatment_qualified": false
+      },
+      "C-B5": {
+        "qualification_use": "forbidden",
+        "run_id": "evaluation-run://project-code-golden-v2/baf5b9eb49464ca79920030fd1c772de",
+        "treatment_qualified": false
+      }
+    },
+    "cb6_scope": {
+      "kind": "independent-diff-binding-quality-audit",
+      "replaces_cb0": false
+    },
+    "qualified_global_retrieval_baseline": {
+      "name": "C-B0",
+      "replaced_by_cb6": false,
+      "run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+      "scope": "global-retrieval-anchor-only",
+      "treatment_qualified": true
+    }
+  },
+  "denominator_membership_digest": "sha256:609a11322a88a21b6db9b3c82ed2e908f537fed863997ab2017975fe8d6fb4da",
+  "engineering_pass_is_quality_qualification": false,
+  "execution_status": "completed",
+  "fixture_digest": "sha256:d75b530049a249adf1fefb52bf21f3a84301301a8be9ceb0e6ca522d062d4518",
+  "label_membership_digest": "sha256:48d74df8b1914af770e343f0a604bdb71dd5bdded7101cb1c2d7cf07a27ee4cf",
+  "method_implementation_sha256": "sha256:ed93080d100f35acefdaaa3c00bb769d180ae10a74ab9fed0df649e95ce5bc9c",
+  "portable_schema_version": "code-c-b6-portable-artifact-v1",
+  "production_component_identity": "evidence_rag.rag.sources.code.diff_symbol_v2.DiffSymbolMapper.map_hunk@c6-diff-symbol-mapper-v2",
+  "production_execution": true,
+  "qualification_status": "PROVISIONAL NOT QUALIFIED",
+  "run_id": "evaluation-run://project-code-cb6-v1/06eea9107f274fe3b13d77bd68b8a00e",
+  "same_eligible_denominator": true,
+  "same_parent_target_membership": true,
+  "schema_version": "code-c-b6-diff-symbol-audit-v1",
+  "treatment_qualified": false,
+  "verification_contract": "canonical-portable-verify-only-read-only"
+}

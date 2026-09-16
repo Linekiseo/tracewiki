@@ -1,0 +1,28 @@
+{
+  "name": "research-project-bridge",
+  "version": "0.2.0+wiki.20260803",
+  "description": "Governed project work, Agent-Native Wiki navigation, raw evidence verification, and reviewed RAG collaboration for Codex.",
+  "author": {
+    "name": "RAG Core"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Research Wiki + RAG Bridge",
+    "shortDescription": "Navigate governed project knowledge and execute reviewed work.",
+    "longDescription": "Connects Codex to the local Wiki + RAG workbench through scoped MCP tools. Codex can search and navigate the published Wiki, follow grounded relationships, verify exact raw evidence, execute approved work, and submit unreviewed Wiki Builder proposals without approving or publishing its own output.",
+    "developerName": "RAG Core",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write",
+      "MCP"
+    ],
+    "defaultPrompt": [
+      "使用受治理 Wiki 导航当前项目，并用原始证据核验关键结论。",
+      "基于证据义务执行多跳智能检索，返回可审阅的 EvidencePack。",
+      "执行指定研发任务并回传测试、代码与 Wiki 影响证据。"
+    ],
+    "brandColor": "#315BF5"
+  },
+  "mcpServers": "./.mcp.json"
+}

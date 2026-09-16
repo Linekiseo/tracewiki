@@ -1,0 +1,35 @@
+{
+  "authority_sha256": "sha256:48c3765e5daffba298144da9ef99ff49a950d428f32c78813a8ac50e1905f669",
+  "case_count": 50,
+  "dataset_id": "document-golden-v1",
+  "dataset_version": "v1",
+  "entity_counts": {
+    "citation_mention": 10,
+    "claim": 9,
+    "claim_candidate": 9,
+    "figure": 4,
+    "formula": 4,
+    "layout_block": 6,
+    "page": 6,
+    "paragraph": 32,
+    "reference_work": 6,
+    "section": 16,
+    "section_summary": 16,
+    "table": 3,
+    "table_cell_fact": 44,
+    "table_row": 10
+  },
+  "fixture_recipe_sha256": "sha256:3cadb6e70f81aa765276584ad517268144ab0a50ee352ae555d9e8cd8ccaf493",
+  "package_sha256": "sha256:a0e3eba2692925d8c3afce1c9568dc61aa51bc956a2623f84e6bb61bc92cf6d0",
+  "release_status": "RELEASED_IMMUTABLE_PROGRAMMATIC_GOLDEN",
+  "slice_counts": {
+    "citation_resolution": 4,
+    "claim_validation": 10,
+    "document_section_location": 8,
+    "figure_formula": 5,
+    "global_summary": 3,
+    "local_fact": 8,
+    "table_numeric": 10,
+    "version_staleness": 2
+  }
+}

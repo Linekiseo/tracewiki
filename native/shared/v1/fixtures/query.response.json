@@ -1,0 +1,169 @@
+{
+  "query_id": "global-query://native-contract-v1",
+  "resolved_scope": {
+    "project_id": "project-rag",
+    "repositories": [],
+    "branch": null,
+    "commit": null,
+    "as_of": "2026-08-04T00:00:00+00:00"
+  },
+  "answer": {
+    "status": "insufficient_evidence",
+    "decision_status": "insufficient_evidence",
+    "text": "证据不足，暂不能下结论。",
+    "citations": [],
+    "analysis": {
+      "findings": [],
+      "counter_findings": [],
+      "source_coverage": {},
+      "versions": [],
+      "missing_roles": [
+        "current_code",
+        "version",
+        "tests"
+      ]
+    },
+    "refusal": true,
+    "refusal_reason": "insufficient_evidence",
+    "answer_mode": "refusal",
+    "next_actions": [
+      "补充缺失角色证据"
+    ]
+  },
+  "evidence_pack": {
+    "query_id": "global-query://native-contract-v1",
+    "intent": "current_implementation",
+    "verified_facts": [],
+    "supporting_evidence": [],
+    "counter_evidence": [],
+    "missing_evidence": [
+      {
+        "role": "current_code",
+        "reason_code": "required_role_not_satisfied",
+        "reason": "当前授权范围内没有满足当前代码的可核验证据。"
+      }
+    ],
+    "citation_map": {},
+    "reasoning_included": false
+  },
+  "trace_id": "00000000000000000000000000000000",
+  "state": "refused",
+  "interaction_id": "native-contract-turn-1",
+  "parent_interaction_id": null,
+  "interaction_state": "refused",
+  "reason_code": "insufficient_evidence",
+  "answer_mode": "refusal",
+  "required_roles": [
+    "current_code",
+    "version",
+    "tests"
+  ],
+  "satisfied_roles": [],
+  "missing_roles": [
+    "current_code",
+    "version",
+    "tests"
+  ],
+  "corrective_rounds": 0,
+  "consistency_watermark": {
+    "index_generations": [],
+    "sources": {}
+  },
+  "claim_verification": null,
+  "fallback": null,
+  "next_actions": [
+    "补充缺失角色证据"
+  ],
+  "source_status": {
+    "code": {
+      "status": "no_matching_evidence",
+      "reason": "no_matching_evidence",
+      "candidate_count": 0,
+      "index_generation": [],
+      "watermark": null
+    },
+    "codex": {
+      "status": "no_matching_evidence",
+      "reason": "no_matching_evidence",
+      "candidate_count": 0,
+      "index_generation": [],
+      "watermark": null
+    }
+  },
+  "conversation_id": "native-contract-conversation",
+  "client_turn_id": "native-contract-turn-1",
+  "parent_turn_id": null,
+  "context_revision": 1,
+  "conversation_snapshot": {
+    "schema_version": "conversation-snapshot-v1",
+    "conversation_id": "native-contract-conversation",
+    "revision": 1,
+    "last_turn_id": "native-contract-turn-1",
+    "project_id": "project-rag",
+    "repository_ids": [],
+    "commit": null,
+    "as_of": "2026-08-04T00:00:00+00:00",
+    "source_types": [
+      "code",
+      "codex"
+    ],
+    "intent": "current_implementation",
+    "citation_ids": [],
+    "index_generations": [],
+    "scope_digest": "sha256:aa3e78b22854cdce3f6bdc619e0165059254a35fb9a3789b7218c6e53d84db89"
+  },
+  "query_understanding": {
+    "contract_version": "query-understanding-hybrid-v2",
+    "strategy": "local_statistical",
+    "intent": "current_implementation",
+    "intent_confidence": 1.0,
+    "source_hints": [
+      "code",
+      "codex"
+    ],
+    "required_roles": [
+      "current_code",
+      "version",
+      "tests"
+    ],
+    "ambiguity": [],
+    "algorithm": {
+      "version": "query-understanding-hybrid-v2",
+      "encoder": "frozen_tfidf_word_char_ngram",
+      "classifier": "calibrated_centroid_softmax",
+      "decomposition": "evidence_obligation_mmr"
+    },
+    "subqueries": [
+      "说明查询服务如何组织可核验证据。"
+    ],
+    "content_digest": "sha256:5b4ca93dd72d571b94166f936d03c732bce94097df9c6740b26d17807db60c26"
+  },
+  "llm_provider": {
+    "contract_version": "llm-provider-runtime-v1",
+    "configured": false,
+    "provider": "openai_compatible"
+  },
+  "interaction": {
+    "contract_version": "query-interaction-v2",
+    "state": "refused",
+    "transitions": [
+      "received",
+      "validated",
+      "query_resolved",
+      "scope_snapshotted",
+      "planned",
+      "retrieving",
+      "evidence_verified",
+      "context_packed",
+      "answer_mode_selected",
+      "refused"
+    ],
+    "answer_mode": "refusal",
+    "reason": "insufficient_evidence",
+    "deadline_exceeded": false,
+    "clarification": null,
+    "next_actions": [
+      "补充缺失角色证据"
+    ]
+  }
+}

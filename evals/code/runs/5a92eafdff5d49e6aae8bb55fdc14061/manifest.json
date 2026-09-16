@@ -1,0 +1,225 @@
+{
+  "artifact_set_hash": "sha256:9d9f3bc86a2e9e0419db54a85b89156c7593596a1903a940e2e37f8c1e33ab44",
+  "artifacts": {
+    "attempt-audit.json": {
+      "bytes": 356,
+      "sha256": "sha256:ec2c56676d72c3a5e7186e9dbe46f042b2d7e76981de18baac1c69b806fe9573"
+    },
+    "coverage.json": {
+      "bytes": 13615,
+      "sha256": "sha256:1d3aa06d6d005ce347b5b21154c6bf34aa4aa82d0966d81756ed1877a8531ef3"
+    },
+    "error-analysis.json": {
+      "bytes": 99471,
+      "sha256": "sha256:b6a7572d1b3572e7bd650c48b344f76516a5e449034da6613dc6fe73a40bac72"
+    },
+    "evaluation.sqlite3": {
+      "bytes": 4956160,
+      "sha256": "sha256:8d5b9ea0c09bbf33874a55b584d3a0e2aa9f8174eb2d04a3f1a792b44008b8c4"
+    },
+    "latency.json": {
+      "bytes": 6680,
+      "sha256": "sha256:41f8e6834273d85a58c5e20c09a60748061e33677518a2897faaddb0e63b8262"
+    },
+    "materialization.json": {
+      "bytes": 6964,
+      "sha256": "sha256:3422337111c0d616bc2055ab5bb70a7210c375b71c4f8122740dc00987486781"
+    },
+    "metrics.json": {
+      "bytes": 1316794,
+      "sha256": "sha256:eb82f4c05e541a27288cd5c5a98392bd0f61fc2691e6e919ca87c28ab729435e"
+    },
+    "slices.json": {
+      "bytes": 866508,
+      "sha256": "sha256:7b1f8bf5f67352d59dc6b27bbd65ee18fd37f67083882e8b5d9991ae304ff2e7"
+    },
+    "storage.json": {
+      "bytes": 3104,
+      "sha256": "sha256:9ddf6ef07eef59601be5c4abdcde04efb895d37c5a1c7896a4dda867b3110230"
+    }
+  },
+  "baseline_qualified": true,
+  "completed_at": "2026-07-26T20:57:20.765169+00:00",
+  "config": {
+    "embedding": "local-hash-v2",
+    "fusion": "weighted-hybrid-v2",
+    "graph_candidate": false,
+    "graph_post_expand": "record_separately",
+    "retriever": "HybridRetriever",
+    "top_k": 20,
+    "views": [
+      "file.raw",
+      "symbol.raw"
+    ]
+  },
+  "config_fingerprint": "sha256:cffeadd4b4f7a0ba22e018b942c69e4ef869817a631d26d911af50c231f5fdc9",
+  "dataset": {
+    "case_membership_hash": "sha256:a9551e3b77822fd67f11c32dffa04e6b0069cd88e44adbfabfb6cd12bd343aaa",
+    "eligible_cases": 33,
+    "id": "code-golden",
+    "ineligible_cases": 17,
+    "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+    "release_record_id": "code-golden-v2-release-001",
+    "total_cases": 50,
+    "version": "code-golden-v2"
+  },
+  "display_key": "CODE-EVAL-5A92EAFD",
+  "implementation": {
+    "input_fingerprint": {
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "implementation_input_hash": "sha256:b69edf8fbb496e93a0f1b03b7cc964e0221585c5bbdcff865aef783c1c9ef376",
+      "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:48d26e20e3b00590582f20e4c27da5e3cdeb95cdd2707faa1439b7990fba7024",
+      "workspace_status_hash": "sha256:c0867ba9d0fd07a3e63292d9eae76dbb7b01a66179b3ce595a01f6e2edc71d37",
+      "worktree_list_hash": "sha256:f752ead7f0430a859108ac8788410a4332b4c14d2d23c14107566b552924688e"
+    },
+    "input_fingerprint_after": {
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "implementation_input_hash": "sha256:b69edf8fbb496e93a0f1b03b7cc964e0221585c5bbdcff865aef783c1c9ef376",
+      "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:48d26e20e3b00590582f20e4c27da5e3cdeb95cdd2707faa1439b7990fba7024",
+      "workspace_status_hash": "sha256:c0867ba9d0fd07a3e63292d9eae76dbb7b01a66179b3ce595a01f6e2edc71d37",
+      "worktree_list_hash": "sha256:f752ead7f0430a859108ac8788410a4332b4c14d2d23c14107566b552924688e"
+    },
+    "input_fingerprint_matched": true,
+    "runner_version": "code-evaluation-v2.1",
+    "snapshot_state": {
+      "c0_content_hash": "sha256:f54f2462eb628290021ee2dab3cf098faba2712ae35a2b57a1792302b909cd46",
+      "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "head_tree": "2fe240ebdf1f3d04c252c32b505ca923394171da",
+      "workspace_dirty": true,
+      "workspace_state_hash": "sha256:7503887a19a099fdb5f1e0db6524302e8727a4457a6886c1f61eff638c9e6a06",
+      "workspace_status_hash": "sha256:a6983a6914f9a3f015f8e370c2d4c32bd4d476508b5ba3bf2c740657d8227958"
+    }
+  },
+  "project_id": "project-code-golden-v2",
+  "run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+  "schema_version": "code-c0-03-baseline-artifact-v1",
+  "security": {
+    "absolute_temporary_paths_included": false,
+    "credentials_included": false,
+    "scanner_rule_ids": [
+      "portable-system-temp-roots-v1",
+      "high-confidence-credential-assignments-v1"
+    ],
+    "scanner_scope": "all SQLite TEXT columns and all artifact JSON files"
+  },
+  "snapshot": {
+    "case_membership_hash": "sha256:91a5ab7c4d61fbb4d6b587d77e06a264ca38372745897663fd2fee7e3c1d5f74",
+    "comparison_fingerprint": "sha256:ab9f8e695c9d14ab8d49ac5ff638da7207ced3d8d82c20ec41f17b13da4994f4",
+    "observed_index_generations": [
+      "gen-5e8f6158-6077-48b5-9a8e-e1686f82989c",
+      "gen-b2b5e80a-17cf-4e72-a1ca-aba6974ccd4a",
+      "gen-f3e7bec4-998f-4b71-be78-38632b89ba92"
+    ],
+    "observed_retriever": {
+      "baseline_config_version": [
+        "code-c0-03-v1"
+      ],
+      "embedding_model": [
+        "local-hash-v2"
+      ],
+      "fusion": [
+        "weighted-hybrid-v2"
+      ],
+      "graph_candidate_enabled": false,
+      "retriever_version": [
+        "HybridRetriever"
+      ],
+      "view_profile": [
+        "file.raw,symbol.raw"
+      ]
+    },
+    "repositories": [
+      {
+        "active_generation_id": "gen-f3e7bec4-998f-4b71-be78-38632b89ba92",
+        "counts": {
+          "commits": 1,
+          "diff_hunks": 10,
+          "discovered": 8,
+          "edges": 33,
+          "files": 8,
+          "parse_errors": 0,
+          "quarantined": 0,
+          "raw_objects": 9,
+          "skipped": 0,
+          "symbols": 15,
+          "unresolved_calls": 2,
+          "unresolved_imports": 2,
+          "unresolved_references": 41,
+          "views": 23
+        },
+        "generation_commit": "85e41dc96462ddfa897483d17388d2be5f9d5fff",
+        "head_commit": "85e41dc96462ddfa897483d17388d2be5f9d5fff",
+        "id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+        "parser_versions": {
+          "code_parser": "tree-sitter-language-pack-1.13",
+          "embedding": "local-hash-v2",
+          "schema": "code-evidence-v1"
+        }
+      },
+      {
+        "active_generation_id": "gen-b2b5e80a-17cf-4e72-a1ca-aba6974ccd4a",
+        "counts": {
+          "commits": 1,
+          "diff_hunks": 34,
+          "discovered": 3,
+          "edges": 145,
+          "files": 3,
+          "parse_errors": 0,
+          "quarantined": 0,
+          "raw_objects": 4,
+          "skipped": 0,
+          "symbols": 53,
+          "unresolved_calls": 272,
+          "unresolved_imports": 39,
+          "unresolved_references": 861,
+          "views": 56
+        },
+        "generation_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+        "head_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+        "id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+        "parser_versions": {
+          "code_parser": "tree-sitter-language-pack-1.13",
+          "embedding": "local-hash-v2",
+          "schema": "code-evidence-v1"
+        }
+      },
+      {
+        "active_generation_id": "gen-5e8f6158-6077-48b5-9a8e-e1686f82989c",
+        "counts": {
+          "commits": 3,
+          "diff_hunks": 10,
+          "discovered": 4,
+          "edges": 11,
+          "files": 4,
+          "parse_errors": 0,
+          "quarantined": 0,
+          "raw_objects": 5,
+          "skipped": 0,
+          "symbols": 3,
+          "unresolved_calls": 0,
+          "unresolved_imports": 0,
+          "unresolved_references": 11,
+          "views": 7
+        },
+        "generation_commit": "6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809",
+        "head_commit": "6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809",
+        "id": "repo://fixtures.invalid/code-golden/historical-error",
+        "parser_versions": {
+          "code_parser": "tree-sitter-language-pack-1.13",
+          "embedding": "local-hash-v2",
+          "schema": "code-evidence-v1"
+        }
+      }
+    ],
+    "schema_version": 165,
+    "snapshot_id": "sha256:fd2d2bf63b55f4def68cc65f7f08554ee5731ca15a9b3b45369075a0b7826a5c"
+  },
+  "started_at": "2026-07-26T20:57:20.366412+00:00",
+  "status": "completed"
+}

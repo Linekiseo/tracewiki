@@ -1,0 +1,382 @@
+{
+  "ast_units": 425,
+  "cb0_ingest_time_comparison": {
+    "baseline": {
+      "reason": "Qualified C-B0 did not persist a total ingestion duration.",
+      "status": "unavailable",
+      "value": null
+    },
+    "baseline_run_id": "evaluation-run://project-code-golden-v2/5a92eafdff5d49e6aae8bb55fdc14061",
+    "delta": {
+      "reason": "C-B0 ingestion duration is unavailable; no delta is fabricated.",
+      "status": "unavailable",
+      "treatment_minus_baseline": null
+    },
+    "treatment": {
+      "status": "available",
+      "value": 1670.160167
+    }
+  },
+  "database_isolated": true,
+  "dataset_id": "code-golden",
+  "dataset_version": "code-golden-v2",
+  "fts_rows": 425,
+  "ingest_time_ms": {
+    "clock": "time.perf_counter",
+    "per_source": {
+      "controlled_multilingual": 506.061375,
+      "current_project_snapshot": 610.962958,
+      "historical_error": 383.439083
+    },
+    "status": "available",
+    "value": 1670.160167
+  },
+  "ingestion": "IngestionService",
+  "ingestion_observations": [
+    {
+      "counters": {
+        "commits": 1,
+        "diff_hunks": 10,
+        "discovered": 8,
+        "edges": 33,
+        "files": 8,
+        "parse_errors": 0,
+        "quarantined": 0,
+        "raw_objects": 9,
+        "skipped": 0,
+        "symbols": 15,
+        "unresolved_calls": 2,
+        "unresolved_imports": 2,
+        "unresolved_references": 41,
+        "views": 23
+      },
+      "error": null,
+      "generation_id": "gen-82350e49-1c4c-4730-9785-5a9d8f8bafdb",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "source_class": "controlled_multilingual",
+      "stage": "publish",
+      "status": "completed"
+    },
+    {
+      "counters": {
+        "commits": 1,
+        "diff_hunks": 34,
+        "discovered": 3,
+        "edges": 145,
+        "files": 3,
+        "parse_errors": 0,
+        "quarantined": 0,
+        "raw_objects": 4,
+        "skipped": 0,
+        "symbols": 53,
+        "unresolved_calls": 272,
+        "unresolved_imports": 39,
+        "unresolved_references": 861,
+        "views": 56
+      },
+      "error": null,
+      "generation_id": "gen-2c3a87e3-d17d-45f0-aaed-cc0805cedc6b",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "source_class": "current_project_snapshot",
+      "stage": "publish",
+      "status": "completed"
+    },
+    {
+      "counters": {
+        "commits": 3,
+        "diff_hunks": 10,
+        "discovered": 4,
+        "edges": 11,
+        "files": 4,
+        "parse_errors": 0,
+        "quarantined": 0,
+        "raw_objects": 5,
+        "skipped": 0,
+        "symbols": 3,
+        "unresolved_calls": 0,
+        "unresolved_imports": 0,
+        "unresolved_references": 11,
+        "views": 7
+      },
+      "error": null,
+      "generation_id": "gen-11daec0f-9cd7-48ef-8652-cbf88b3b0785",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "source_class": "historical_error",
+      "stage": "publish",
+      "status": "completed"
+    }
+  ],
+  "materializer": "tests/fixtures/code_golden/v2/materializer.py:materialize_all",
+  "observation_fingerprint": "sha256:f96ff54e71a74d1272e52ed1c67020b83a7b1339723666ed55a4861441729cc8",
+  "package_hash": "sha256:8b0283edc4ef81bd99cb6dad26326b42b49963c8fd3fa3c44b7faeaac25c0a61",
+  "parser": "CodeParser",
+  "production_database_accessed": false,
+  "publications": [
+    {
+      "builder": "c2-code-retrieval-unit-builder-v1",
+      "embedding": "not-built",
+      "generation_id": "gen-82350e49-1c4c-4730-9785-5a9d8f8bafdb",
+      "graph": "not-built",
+      "project_id": "project-code-golden-v2",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "sparse": "fts5-code-v2",
+      "status": "published",
+      "validation": {
+        "capabilities": {
+          "ast_unit_builder": true,
+          "dense_retrieval": false,
+          "fts_row_integrity": true,
+          "graph_retrieval": false,
+          "sparse_retrieval": true,
+          "unit_store": true
+        },
+        "cb1_treatment_publication": {
+          "fts_row_count": 45,
+          "fusion": "deterministic-weighted-rrf-v1",
+          "isolated_evaluation_only": true,
+          "retriever_version": "code-exact-sparse-v1",
+          "schema_version": "code-c-b1-sparse-publication-v1",
+          "sparse_index_version": "fts5-code-v2",
+          "unit_count": 45
+        },
+        "foundation": {
+          "builder_version": "c2-code-retrieval-unit-builder-v1",
+          "files": 8,
+          "parser_versions": [
+            "tree-sitter-language-pack-1.13"
+          ],
+          "publication_hash": "sha256:d0c2226f35252522926a5f61299542a8da3bfa8d23d73622df960d0972208b9b",
+          "relations_built": 45,
+          "units": 45
+        },
+        "integrity": {
+          "active_units": 45,
+          "diagnostics": 0,
+          "fts_indexed_units": 45,
+          "healthy": true,
+          "publications": 1,
+          "units": 45,
+          "units_without_vectors": 45,
+          "vectors": 0,
+          "violations": {
+            "foreign_keys": 0,
+            "fts_index": 0,
+            "identity": 0,
+            "vector_content_hash": 0
+          }
+        }
+      }
+    },
+    {
+      "builder": "c2-code-retrieval-unit-builder-v1",
+      "embedding": "not-built",
+      "generation_id": "gen-2c3a87e3-d17d-45f0-aaed-cc0805cedc6b",
+      "graph": "not-built",
+      "project_id": "project-code-golden-v2",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "sparse": "fts5-code-v2",
+      "status": "published",
+      "validation": {
+        "capabilities": {
+          "ast_unit_builder": true,
+          "dense_retrieval": false,
+          "fts_row_integrity": true,
+          "graph_retrieval": false,
+          "sparse_retrieval": true,
+          "unit_store": true
+        },
+        "cb1_treatment_publication": {
+          "fts_row_count": 368,
+          "fusion": "deterministic-weighted-rrf-v1",
+          "isolated_evaluation_only": true,
+          "retriever_version": "code-exact-sparse-v1",
+          "schema_version": "code-c-b1-sparse-publication-v1",
+          "sparse_index_version": "fts5-code-v2",
+          "unit_count": 368
+        },
+        "foundation": {
+          "builder_version": "c2-code-retrieval-unit-builder-v1",
+          "files": 3,
+          "parser_versions": [
+            "tree-sitter-language-pack-1.13"
+          ],
+          "publication_hash": "sha256:08b16922cead0d3cce508a2fe8f1d87a41c258874488bbf4d791ae32d68cc0cc",
+          "relations_built": 368,
+          "units": 368
+        },
+        "integrity": {
+          "active_units": 368,
+          "diagnostics": 0,
+          "fts_indexed_units": 368,
+          "healthy": true,
+          "publications": 1,
+          "units": 368,
+          "units_without_vectors": 368,
+          "vectors": 0,
+          "violations": {
+            "foreign_keys": 0,
+            "fts_index": 0,
+            "identity": 0,
+            "vector_content_hash": 0
+          }
+        }
+      }
+    },
+    {
+      "builder": "c2-code-retrieval-unit-builder-v1",
+      "embedding": "not-built",
+      "generation_id": "gen-11daec0f-9cd7-48ef-8652-cbf88b3b0785",
+      "graph": "not-built",
+      "project_id": "project-code-golden-v2",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "sparse": "fts5-code-v2",
+      "status": "published",
+      "validation": {
+        "capabilities": {
+          "ast_unit_builder": true,
+          "dense_retrieval": false,
+          "fts_row_integrity": true,
+          "graph_retrieval": false,
+          "sparse_retrieval": true,
+          "unit_store": true
+        },
+        "cb1_treatment_publication": {
+          "fts_row_count": 12,
+          "fusion": "deterministic-weighted-rrf-v1",
+          "isolated_evaluation_only": true,
+          "retriever_version": "code-exact-sparse-v1",
+          "schema_version": "code-c-b1-sparse-publication-v1",
+          "sparse_index_version": "fts5-code-v2",
+          "unit_count": 12
+        },
+        "foundation": {
+          "builder_version": "c2-code-retrieval-unit-builder-v1",
+          "files": 4,
+          "parser_versions": [
+            "tree-sitter-language-pack-1.13"
+          ],
+          "publication_hash": "sha256:f242f839de55d66f72ab254f93a05963a800fc504a3a27252024a98920c87648",
+          "relations_built": 12,
+          "units": 12
+        },
+        "integrity": {
+          "active_units": 12,
+          "diagnostics": 0,
+          "fts_indexed_units": 12,
+          "healthy": true,
+          "publications": 1,
+          "units": 12,
+          "units_without_vectors": 12,
+          "vectors": 0,
+          "violations": {
+            "foreign_keys": 0,
+            "fts_index": 0,
+            "identity": 0,
+            "vector_content_hash": 0
+          }
+        }
+      }
+    }
+  ],
+  "resolver": "RepositoryResolver",
+  "schema_version": "code-c-b1-materialization-v1",
+  "sources": {
+    "controlled_multilingual": {
+      "base_commit": "85e41dc96462ddfa897483d17388d2be5f9d5fff",
+      "branch": "main",
+      "branches": {
+        "main": "85e41dc96462ddfa897483d17388d2be5f9d5fff"
+      },
+      "commits": [
+        "85e41dc96462ddfa897483d17388d2be5f9d5fff"
+      ],
+      "dirty": false,
+      "remote_url": "https://fixtures.invalid/code-golden/controlled-multilingual.git",
+      "repository_id": "repo://fixtures.invalid/code-golden/controlled-multilingual",
+      "resolved_ref": "85e41dc96462ddfa897483d17388d2be5f9d5fff",
+      "source_class": "controlled_multilingual",
+      "tags": {},
+      "validation_observations": []
+    },
+    "current_project_snapshot": {
+      "base_commit": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "branch": "HEAD",
+      "branches": {},
+      "commits": [
+        "bc3326edc761e3bdb42ed78726a21f314ab44974",
+        "aee6638d7bfecc63ace41aac019711b2ea2f0374",
+        "0c275774940d561319e114972c82121ff64e7e03"
+      ],
+      "dirty": false,
+      "remote_url": "https://fixtures.invalid/code-golden/current-project-snapshot.git",
+      "repository_id": "repo://fixtures.invalid/code-golden/current-project-snapshot",
+      "resolved_ref": "bc3326edc761e3bdb42ed78726a21f314ab44974",
+      "source_class": "current_project_snapshot",
+      "tags": {},
+      "validation_observations": []
+    },
+    "historical_error": {
+      "base_commit": "6bb97313737dbb53ac508dba84f01082dda7fab4",
+      "branch": "main",
+      "branches": {
+        "main": "6bb97313737dbb53ac508dba84f01082dda7fab4",
+        "release-v1": "5e14f7af3812336eee75ce57ae9ba48134d64576"
+      },
+      "commits": [
+        "e46ce01ad5701c1dc3a3a6fc77f4d2c09cc0ae0b",
+        "5e14f7af3812336eee75ce57ae9ba48134d64576",
+        "6bb97313737dbb53ac508dba84f01082dda7fab4"
+      ],
+      "dirty": true,
+      "remote_url": "https://fixtures.invalid/code-golden/historical-error.git",
+      "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+      "resolved_ref": "6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809",
+      "source_class": "historical_error",
+      "tags": {
+        "v1.0.0": "5e14f7af3812336eee75ce57ae9ba48134d64576"
+      },
+      "validation_observations": [
+        {
+          "expected_exit_code": 1,
+          "expected_status": "failed",
+          "observed_exit_code": 1,
+          "observed_status": "failed",
+          "ref_name": "release-v1",
+          "ref_sha": "5e14f7af3812336eee75ce57ae9ba48134d64576",
+          "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+          "script_path": "validation/check_status.py",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "validation_id": "historical-release-failing"
+        },
+        {
+          "expected_exit_code": 0,
+          "expected_status": "passed",
+          "observed_exit_code": 0,
+          "observed_status": "passed",
+          "ref_name": "main",
+          "ref_sha": "6bb97313737dbb53ac508dba84f01082dda7fab4",
+          "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+          "script_path": "validation/check_status.py",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "validation_id": "historical-main-passing"
+        },
+        {
+          "expected_exit_code": 1,
+          "expected_status": "failed",
+          "observed_exit_code": 1,
+          "observed_status": "failed",
+          "ref_name": "dirty",
+          "ref_sha": "6bb97313737dbb53ac508dba84f01082dda7fab4+dirty.ce8366654809",
+          "repository_id": "repo://fixtures.invalid/code-golden/historical-error",
+          "script_path": "validation/check_status.py",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "validation_id": "historical-dirty-failing"
+        }
+      ]
+    }
+  },
+  "unit_builder": "ast-v2"
+}
