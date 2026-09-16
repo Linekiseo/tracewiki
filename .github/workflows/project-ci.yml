@@ -25,12 +25,14 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: "1"
       UV_NO_SYNC: "1"
-      RAG_DATA_DIR: ${{ runner.temp }}/evidence-rag-ci-${{ matrix.python-version }}
       RAG_ALLOWED_LOCAL_ROOTS: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Configure isolated runtime data
+        shell: bash
+        run: echo "RAG_DATA_DIR=${RUNNER_TEMP}/evidence-rag-ci-${{ matrix.python-version }}" >> "${GITHUB_ENV}"
       - name: Restore frozen Code Golden history
         run: >-
           git fetch tests/fixtures/g0_history/code-golden-v2-history.bundle
